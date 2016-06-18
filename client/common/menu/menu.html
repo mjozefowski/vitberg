@@ -1,0 +1,10 @@
+<template name="menu">
+menu<br>
+    {{#each categories}}
+
+        {{this.name}}
+
+        {{>menuSubitems this._id}}
+<br>
+    {{/each}}
+</template>
