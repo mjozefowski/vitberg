@@ -21,3 +21,7 @@ iron:router
 aldeed:simple-schema
 reywood:publish-composite
 aldeed:collection2
+less
+momentjs:moment
+accounts-base
+accounts-password

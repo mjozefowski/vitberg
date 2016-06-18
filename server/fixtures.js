@@ -9,6 +9,7 @@ Meteor.startup(function () {
 
     Categories.remove({});
     SubCategories.remove({});
+    News.remove({});
 
     for(var i=0;i<7;i++){
         var text = "Category" + ' ' + i;
@@ -18,5 +19,18 @@ Meteor.startup(function () {
             SubCategories.insert({categoryId:id,name:text2});
         }
     }
+    user = Accounts.createUser({
+        username: 'user',
+        email: 'user@onebi.eu',
+        password: 'useronebi'
+    })
+
+    for(var i=0;i<10;i++){
+        News.insert({text:'Tekst aktualności ' + i, authorId:user, date:new Date()})
+
+    }
+
+
+
 
 })

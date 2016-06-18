@@ -26,5 +26,7 @@ Template.menu.helpers({
 })
 
 Template.menu.events({
-
+    'click #news': function () {
+        Router.go('/static/news')
+    }
 })

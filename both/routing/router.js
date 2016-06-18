@@ -21,6 +21,34 @@ Router.map(function () {
             }
         }
     });
+    this.route('/:_id',{
+
+        waitOn: function () {
+            return [Meteor.subscribe("Categories")];
+        },
+        action: function () {
+            if (this.ready()) {
+                this.render('SubPage', {
+                    data:this.params._id
+
+
+                });
+            }
+        }
+    });
+    this.route('/static/news',{
+
+        waitOn: function () {
+            return [Meteor.subscribe("news")];
+        },
+        action: function () {
+            if (this.ready()) {
+                this.render('News', {
+
+                });
+            }
+        }
+    });
 
     //this.route('/diplomaInfo/:_id', {
     //    waitOn: function () {
