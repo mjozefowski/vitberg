@@ -4,3 +4,11 @@
  * Proprietary and confidential
  * Created by Maciej Józefowski, 18.06.16
  */
+$(document).ready(function() {
+
+    $('.collapsible').collapsible();
+    $('.slider').slider({
+        full_width: true
+    });
+    $('.materialboxed').materialbox();
+});
