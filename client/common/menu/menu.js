@@ -31,5 +31,12 @@ Template.menu.events({
     },
     'click #map': function () {
         Router.go('/static/map')
+    },
+    'click #admin-panel': function () {
+        Router.go('/static/admin')
+    },
+    'click #logout': function () {
+        Meteor.logout()
+        Router.go("/")
     }
 })

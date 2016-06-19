@@ -5,10 +5,6 @@
  * Created by Maciej Józefowski, 19.06.16
  */
 
-Meteor.publish('adminPublication', function () {
-
-    if(this.userId){
-        return [News.find(),Categories.find(),SubCategories.find(),Images.find()]
-    }
-
+Meteor.publish('images', function () {
+    Images.find({})
 })

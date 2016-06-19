@@ -5,20 +5,31 @@
  * Created by Maciej Józefowski, 18.06.16
  */
 
+
 Schemas.newsSchema = new SimpleSchema({
 
     text:{
         type:String
     },
     authorId:{
-        type:String
+        type:String,
+        optional:true
     },
     media:{
         type:[String],
         optional:true
     },
     date:{
-        type:Date
+        type:Date,
+        optional:true
     }
 
-})
+});
+
+News.attachSchema(Schemas.newsSchema);
+
+News.allow({
+    insert: function () { return true; },
+    update: function () { return true; },
+    remove: function () { return true; }
+});

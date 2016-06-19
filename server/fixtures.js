@@ -14,10 +14,10 @@ Meteor.startup(function () {
     Markers.remove({})
 
 
-    for(var i=0;i<7;i++){
+    for(var i=0;i<3;i++){
         var text = "Category" + ' ' + i;
         var id = Categories.insert({name:text});
-        for(var j=0;j<7;j++){
+        for(var j=0;j<2;j++){
             var text2 = "SubCategory" + ' ' + j;
             SubCategories.insert({categoryId:id,name:text2});
         }
@@ -27,6 +27,8 @@ Meteor.startup(function () {
         email: 'user@onebi.eu',
         password: 'useronebi'
     })
+
+    Roles.addUsersToRoles(user, "admin");
 
     for(var i=0;i<10;i++){
         News.insert({text:'Tekst aktualności ' + i, authorId:user, date:new Date()})

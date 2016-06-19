@@ -1,0 +1,42 @@
+<template name="login">
+
+
+    {{#if isLoginFailed}}
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            User not found, or wrong password.
+            <br>
+            Please try again.
+        </div>
+    {{/if}}
+    <div class="flex-container">
+
+
+        <!--<div class="flex-item">-->
+
+            <!--<button id="facebook-login" class="btn btn-primary"> Login with Facebook</button>-->
+
+        <!--</div>-->
+
+        <div class="flex-item">
+            <form>
+                <label><input type="email" name="loginEmail" placeholder="E-mail"></label><br>
+                <label><input type="password" name="loginPassword" placeholder="Password"></label>
+
+
+                <div class="flex-item">
+                    <br>
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+</template>

@@ -62,13 +62,30 @@ Router.map(function () {
     })
 
 
-    this.route('/static/adminPanel',{
+    this.route('/static/admin',{
         waitOn:function(){
             return Meteor.subscribe("adminPublication")
         },
         action:function(){
             if(this.ready()){
                 this.render('adminPanel')
+            }
+        }
+    }),
+
+        this.route('/static/login',{
+
+        action:function(){
+            if(this.ready()){
+                this.render('login')
+            }
+        }
+    })
+        this.route('/static/imageUpload',{
+
+        action:function(){
+            if(this.ready()){
+                this.render('imageUpload')
             }
         }
     })

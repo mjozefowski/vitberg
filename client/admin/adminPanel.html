@@ -1,4 +1,14 @@
 <template name="adminPanel">
 
+<!--menu-->
+    {{#if isInRole 'admin'}}
+
+    {{/if}}
+    {{#if isInRole 'admin,editor'}}
+        <ol id="adminNews" class="admin-navigation-item">Aktualności</ol>
+    {{/if}}
+
+    <!--content-->
+    {{> UI.dynamic template=template}}
 
 </template>

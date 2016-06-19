@@ -1,0 +1,19 @@
+<template name="dropzone">
+    <div class="row">
+
+            <div id="dropzone" class="dropzone" style="background-color: black;height: 100px; width: 100px">
+                <div class="well well-drop-zone">
+                    Upuść tutaj aby wysłać
+                </div>
+            </div>
+
+    </div>
+
+    {{#each array}}
+        <div>{{this.data.blob.name}}<div><span id="{{this.data.blob.name}}" class="fa fa-remove remove-image"></span></div></div>
+    {{/each}}
+
+    <form id="newsForm">
+        <input type="submit">
+    </form>
+</template>

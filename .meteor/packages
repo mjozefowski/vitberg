@@ -28,3 +28,10 @@ accounts-password
 alanning:roles
 materialize:materialize
 dburles:google-maps
+aldeed:autoform
+cfs:standard-packages
+cfs:gridfs
+yogiben:autoform-file
+raix:ui-dropped-event
+templates:array
+fortawesome:fontawesome

@@ -11,4 +11,12 @@
         {{>menuSubitems this._id}}
 <br>
     {{/each}}
+
+    {{#if currentUser}}
+
+        {{#if isInRole 'admin,editor'}}
+            <li id="admin-panel">Panel administratora</li>
+        {{/if}}
+        <ol id="logout">Wyloguj</ol>
+    {{/if}}
 </template>
