@@ -1,23 +1,25 @@
 <template name="adminNews">
 
 
-    <form id="news-form">
+    <form id="newsForm">
         <input id="text" type="text" name="text">
-        <!--<input type="file" name="file">-->
 
         <input type="submit">
 
-<br>
-<br>
-<br>
-
-        <br>
-        <br>
-        <br>
-
-
-
     </form>
-    {{> dropzone}}
+    <div class="row">
+
+        <div id="dropzone" class="dropzone" style="background-color: black;height: 100px; width: 100px">
+            <div class="well well-drop-zone">
+                Upuść tutaj aby wysłać
+            </div>
+        </div>
+
+    </div>
+
+    {{#each array}}
+        <div>{{this.data.blob.name}}<div><span id="{{this.data.blob.name}}" class="fa fa-remove remove-image"></span></div></div>
+    {{/each}}
+
 
 </template>

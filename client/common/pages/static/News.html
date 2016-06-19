@@ -7,8 +7,9 @@
 
             {{date this.date}}
             {{this.text}}
-            <img src="/cfs/{{this.media}}">
-
+                {{#each media}}
+                    <img src="{{this}}">
+                {{/each}}
         </div>
 
 
