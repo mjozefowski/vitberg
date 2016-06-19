@@ -28,5 +28,8 @@ Template.menu.helpers({
 Template.menu.events({
     'click #news': function () {
         Router.go('/static/news')
+    },
+    'click #map': function () {
+        Router.go('/static/map')
     }
 })

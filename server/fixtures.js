@@ -10,6 +10,9 @@ Meteor.startup(function () {
     Categories.remove({});
     SubCategories.remove({});
     News.remove({});
+    Meteor.users.remove({})
+    Markers.remove({})
+
 
     for(var i=0;i<7;i++){
         var text = "Category" + ' ' + i;
@@ -31,6 +34,6 @@ Meteor.startup(function () {
     }
 
 
-
+    Markers.insert({lat:51.7166067570067, lng:19.461936959683, header:"Mark 10", main:"Lorem ipsum dolor"})
 
 })

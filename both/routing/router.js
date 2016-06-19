@@ -50,6 +50,29 @@ Router.map(function () {
         }
     });
 
+    this.route('/static/map',{
+        waitOn:function(){
+            return Meteor.subscribe("markers")
+        },
+        action:function(){
+            if(this.ready()){
+                this.render('map')
+            }
+        }
+    })
+
+
+    this.route('/static/adminPanel',{
+        waitOn:function(){
+            return Meteor.subscribe("adminPublication")
+        },
+        action:function(){
+            if(this.ready()){
+                this.render('adminPanel')
+            }
+        }
+    })
+
     //this.route('/diplomaInfo/:_id', {
     //    waitOn: function () {
     //        return Meteor.subscribe("diploma", this.params._id);
