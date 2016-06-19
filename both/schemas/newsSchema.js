@@ -9,7 +9,8 @@
 Schemas.newsSchema = new SimpleSchema({
 
     text:{
-        type:String
+        type:String,
+        optional:true
     },
     authorId:{
         type:String,

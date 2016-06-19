@@ -7,6 +7,7 @@
 
 Template.menu.onCreated(function () {
        Meteor.subscribe('Categories')
+       Meteor.subscribe('images')
 
 })
 

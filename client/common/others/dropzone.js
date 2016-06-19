@@ -4,7 +4,7 @@
  * Proprietary and confidential
  * Created by Maciej Józefowski, 19.06.16
  */
-
+//TODO: move to and connect with news form
 Template.dropzone.onCreated(function () {
     this.imagesArray = new ReactiveArray();
 })

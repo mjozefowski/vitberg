@@ -6,7 +6,7 @@
  */
 
 Template.News.onCreated(function () {
-
+    //Meteor.subscribe('images')
 })
 
 Template.News.onRendered(function () {
