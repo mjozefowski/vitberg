@@ -1,22 +1,31 @@
 <template name="menu">
-<div id="news">Aktualności</div>
-<div id="map">Mapa</div>
 
+    <div class="top-menu">
+        <nav class="menu">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo"><img src="\logos\LOGO.jpg"></a>
+                <ul class="right hide-on-med-and-down">
+                    <li id="news">Aktualności</li>
+                    <li id="map">Mapa</li>
 
+                    {{#each categories}}
 
-    {{#each categories}}
+                        <li>{{this.name}}
+                            {{>menuSubitems this._id}}
+                        </li>
 
-        {{this.name}}
+                    {{/each}}
 
-        {{>menuSubitems this._id}}
-<br>
-    {{/each}}
+                    {{#if currentUser}}
+                        {{#if isInRole 'admin,editor'}}
+                            <li id="admin-panel">Panel administratora</li>
+                        {{/if}}
+                        <ol id="logout">Wyloguj</ol>
+                    {{/if}}
+                </ul>
+            </div>
+        </nav>
 
-    {{#if currentUser}}
+    </div>
 
-        {{#if isInRole 'admin,editor'}}
-            <li id="admin-panel">Panel administratora</li>
-        {{/if}}
-        <ol id="logout">Wyloguj</ol>
-    {{/if}}
 </template>

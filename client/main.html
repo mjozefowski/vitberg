@@ -4,78 +4,60 @@
 
 <body>
 
-<div class="top-menu">
-    <ul id="dropdown1" class="dropdown-content" style="margin-top:64px;">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-    </ul>
-    <ul id="dropdown2" class="dropdown-content" style="margin-top:64px;">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-    </ul>
-    <ul id="dropdown3" class="dropdown-content" style="margin-top:64px;">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-    </ul>
-    <nav class="menu">
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo"><img src="\logos\LOGO.jpg"></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#">Strona Główna</a></li>
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-button" data-hover="true" href="#!" data-activates="dropdown1">Enabio</a></li>
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-button" data-hover="true" href="#!" data-activates="dropdown2">Akcja "Na Zdrowie"</a></li>
-                <!-- Dropdown Trigger -->
-                <li><a class="dropdown-button" data-hover="true" href="#!" data-activates="dropdown3">O firmie</a></li>
-                <li><a href="#">Galeria</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
+    {{>menu}}
 
-<div class="slider">
-    <ul class="slides">
-        <li style="background-color:rgba(0,0,0,0.7)">
-            <img src="http://mortensondental.com/wp-content/uploads/2014/11/iStock_000023448232_Large.jpg"> <!-- random image -->
-            <div class="caption center-align">
-                <h3>Najlepsi terapeuci w Polsce!</h3>
-                <h5 class="light grey-text text-lighten-3">Umów się już teraz.</h5>
-            </div>
-        </li>
-        <li>
-            <img src="http://www.mosio.com/wp-content/uploads/2015/10/iStock_000026304695Large.jpg"> <!-- random image -->
-            <div class="caption left-align">
-                <h3>Vestibulum dapibus</h3>
-                <h5 class="light grey-text text-lighten-3">Pellentesque dapibus hendrerit tortor.</h5>
-            </div>
-        </li>
-        <li>
-            <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
-            <div class="caption right-align">
-                <h3>Right Aligned Caption</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-        </li>
-        <li>
-            <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
-            <div class="caption center-align">
-                <h3>This is our big Tagline!</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-            </div>
-        </li>
-    </ul>
-</div>
+    <div class="slider">
+          <ul class="slides">
+              <li style="background-color:rgba(0,0,0,0.7)">
+                  <img src="http://mortensondental.com/wp-content/uploads/2014/11/iStock_000023448232_Large.jpg"> <!-- random image -->
+                  <div class="caption center-align">
+                      <h3>Najlepsi terapeuci w Polsce!</h3>
+                      <h5 class="light grey-text text-lighten-3">Umów się już teraz.</h5>
+                  </div>
+              </li>
+              <li>
+                  <img src="http://www.mosio.com/wp-content/uploads/2015/10/iStock_000026304695Large.jpg"> <!-- random image -->
+                  <div class="caption left-align">
+                      <h3>Vestibulum dapibus</h3>
+                      <h5 class="light grey-text text-lighten-3">Pellentesque dapibus hendrerit tortor.</h5>
+                  </div>
+              </li>
+          </ul>
+      </div>
+
+    <div class="four-blocks row">
+
+        <div class="center block-main"> Lorem ipsum</div>
+
+        <div class="center block-main"> Lorem ipsum </div>
+
+        <div class="center block-main">  Lorem ipsum</div>
+
+        <div class="center block-main"> Lorem ipsum </div>
+
+    </div>
+
+    <div class="first-main-container">
 
 
-  {{>menu}}
+    </div>
+
+    <div class="second-main-container">
+
+
+    </div>
+
+    <div class="third-main-container">
+
+
+    </div>
+
+    <div class="fourth-main-container">
+
+    </div>
+
+
+
 
 </body>
 

@@ -1,9 +1,9 @@
 <template name="menuSubitems">
 
+    <ul class="dropdown-content">
     {{#each items}}
-
-        <div id="{{this._id}}" class="menu-item">{{this.name}}</div>
-
+        <li id="{{this._id}}" class="menu-item">{{this.name}}</li>
     {{/each}}
+    </ul>
 
 </template>

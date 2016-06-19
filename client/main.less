@@ -1,9 +1,14 @@
+@font-face { font-family: Avenir-Light; src: url('/fonts/AvenirLTStd-Light.otf');}
+//WHOLE PROJECT STYLES
 html{
+  font-family:Avenir-light;
+  body{
+
+  }
 
 }
-body{
 
-}
+//TOP MENU STYLES
 .top-menu{
 
   .menu{
@@ -15,12 +20,102 @@ body{
 
       ul{
 
-        a{
+        li{
           color:red;
+          padding:0 15px;
         }
+
+        li:hover{
+          background-color:#e6e6e6;
+
+          ul{
+            max-height:650px;
+            display:block;
+            opacity:1;
+            margin-left:-39px;
+
+            li{
+              padding: 15px 15px;
+              white-space: nowrap;
+            }
+          }
+
+        }
+
       }
+
+    }
+
+  }
+
+}
+
+
+
+/*LANDING PAGE STYLES
+**********************************************************************/
+  //SLIDER STYLES
+  .slider{
+
+  }
+
+  //FOUR BLOCKS STYLES
+  .four-blocks{
+    min-height:100px;
+
+    .block-main{
+      background-color:rgba(255,0,0,0.4);
+      z-index:3;
+      display:inline-block;
+    }
+
+    @media (max-width: 767px) {
+
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+    }
+
+    @media (min-width: 1199px) and (max-width: 992px) {
+
+    }
+
+    @media (min-width: 1200px) {
+      .block-main{
+        height:100px;
+        box-sizing: content-box;
+        width:19%;
+        margin:0 2%;
+      }
+
     }
   }
 
+  //FIRST MAIN CONTAINER STYLES
+  .first-main-container{
+    min-height:100px;
+    background-color: #0d00ff;
+    opacity:0.3;
+  }
 
-}
+  //SECOND MAIN CONTAINER STYLES
+  .second-main-container{
+    min-height:100px;
+    background-color: #ffe363;
+    opacity:0.3;
+  }
+
+  //THIRD MAIN CONTAINER STYLES
+  .third-main-container{
+    min-height:100px;
+    background-color: #5fffe9;
+    opacity:0.3;
+  }
+
+  //FOURTH MAIN CONTAINER STYLES
+  .fourth-main-container{
+    min-height:100px;
+    background-color: #ff6cf5;
+    opacity:0.3;
+  }
