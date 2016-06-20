@@ -22,7 +22,7 @@ Template.News.helpers({
         return Meteor.users.findOne(authorId).username;
     },
     date: function (date) {
-        return moment(date).format('ll')
+        return moment(date).locale('pl').format('ll')
     }
 
 

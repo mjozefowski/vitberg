@@ -1,5 +1,5 @@
 <template name="adminNews">
-
+    {{isUploadDone}}
 
     <form id="newsForm">
         <!--<input id="text" type="text" name="text">-->
@@ -7,7 +7,7 @@
         <input type="submit">
 
     </form>
-    <textarea rows="4" cols="50" name="text" form="newsForm">
+    <textarea id="text" rows="4" cols="50" name="text" form="newsForm">
         </textarea>
         <div class="row">
 

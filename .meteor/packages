@@ -26,6 +26,7 @@ momentjs:moment
 accounts-base
 accounts-password
 alanning:roles
+materialize:materialize
 dburles:google-maps
 aldeed:autoform
 cfs:standard-packages
@@ -34,4 +35,14 @@ yogiben:autoform-file
 raix:ui-dropped-event
 templates:array
 fortawesome:fontawesome
-materialize:materialize
+rzymek:moment-locales
+altapp:recaptcha
+juliancwirko:s-alert
+juliancwirko:s-alert-scale
+juliancwirko:s-alert-slide
+juliancwirko:s-alert-genie
+juliancwirko:s-alert-jelly
+juliancwirko:s-alert-flip
+juliancwirko:s-alert-bouncyflip
+juliancwirko:s-alert-stackslide
+ejson

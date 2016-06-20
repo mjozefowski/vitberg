@@ -7,6 +7,7 @@
 
 Template.adminNews.onCreated(function () {
     this.imagesArray = new ReactiveArray();
+    this.done = new ReactiveVar();
 })
 
 Template.adminNews.onRendered(function () {
@@ -18,6 +19,10 @@ Template.adminNews.helpers({
         var ti = Template.instance();
         console.log(ti.imagesArray.get());
         return ti.imagesArray.get();
+    },
+    isUploadDone: function () {
+        var ti = Template.instance();
+        return ti.done.get();
     }
 })
 
@@ -26,6 +31,7 @@ Template.adminNews.events({
 
     'submit #newsForm': function (e,t) {
         e.preventDefault();
+        t.done.set(false);
         var target = e.target;
         var text = target.text.value;
         console.log(text)
@@ -59,6 +65,7 @@ Template.adminNews.events({
 
             }
             t.imagesArray.set([]);
+            t.done.set(true);
         });
 
 
