@@ -81,11 +81,11 @@ Router.map(function () {
             }
         }
     })
-        this.route('/static/imageUpload',{
+        this.route('/static/addOpinion',{
 
         action:function(){
             if(this.ready()){
-                this.render('imageUpload')
+                this.render('dropzone')
             }
         }
     })

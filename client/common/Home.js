@@ -4,6 +4,11 @@
  * Proprietary and confidential
  * Created by Maciej Józefowski, 18.06.16
  */
+
+Template.Home.onCreated(function () {
+
+})
+
 Template.Home.onRendered(function () {
     $('.collapsible').collapsible();
     $('.slider').slider({
@@ -12,4 +17,14 @@ Template.Home.onRendered(function () {
     });
     $('.materialboxed').materialbox();
 })
+
+Template.Home.helpers({
+
+})
+
+Template.Home.events({
+
+})
+
+
 

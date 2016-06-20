@@ -1,6 +1,26 @@
 <template name="dropzone">
-    <div class="row">
+    {{> sAlert}}
 
+    <textarea id="text" rows="4" cols="50" name="text" form="clientOpinionForm">
+        </textarea>
+
+
+    <br>
+    <br>
+
+    {{>reCAPTCHA}}
+
+    <br>
+    <br>
+    <form id="clientOpinionForm">
+        <input type="submit">
+    </form>
+
+
+
+
+
+    <div class="row">
             <div id="dropzone" class="dropzone" style="background-color: black;height: 100px; width: 100px">
                 <div class="well well-drop-zone">
                     Upuść tutaj aby wysłać
@@ -8,12 +28,26 @@
             </div>
 
     </div>
-
+<div>
     {{#each array}}
-        <div>{{this.data.blob.name}}<div><span id="{{this.data.blob.name}}" class="fa fa-remove remove-image"></span></div></div>
+        <div>{{this.data.blob.name}}<div><span id="{{this.data.blob.name}}" class="remove-image"> x </span></div></div>
+    {{/each}}
+</div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    {{#each opinions}}
+
+        {{this.opinionText}}
+        {{#each images}}
+            <img src="{{this}}">
+        {{/each}}
+
     {{/each}}
 
-    <form id="newsForm">
-        <input type="submit">
-    </form>
 </template>

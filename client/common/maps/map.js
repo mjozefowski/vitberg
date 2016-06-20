@@ -84,9 +84,10 @@ Template.map.helpers({
     mapOptions: function() {
         if (GoogleMaps.loaded()) {
             return {
-
-                center: new google.maps.LatLng(52.0295093, 20.6562381),
+                center: new google.maps.LatLng(52.0295093, 20.6562381), //polska
                 zoom: 6
+                //center: new google.maps.LatLng(49.6065985,20.711387), //vitberg
+                //zoom: 15
             };
         }
     }
