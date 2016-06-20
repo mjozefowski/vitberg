@@ -27,6 +27,9 @@ Template.menu.helpers({
 })
 
 Template.menu.events({
+    'click #strona_glowna': function () {
+        Router.go('/')
+    },
     'click #news': function () {
         Router.go('/static/news')
     },
