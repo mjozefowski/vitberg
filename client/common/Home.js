@@ -4,12 +4,12 @@
  * Proprietary and confidential
  * Created by Maciej Józefowski, 18.06.16
  */
-$(document).ready(function() {
-
+Template.Home.onRendered(function () {
     $('.collapsible').collapsible();
     $('.slider').slider({
         full_width: true,
         indicators: false
     });
     $('.materialboxed').materialbox();
-});
+})
+
