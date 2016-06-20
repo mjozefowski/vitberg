@@ -15,10 +15,10 @@ Meteor.startup(function () {
 
 
     for(var i=0;i<3;i++){
-        var text = "Category" + ' ' + i;
+        var text = "Kategoria" + ' ' + i;
         var id = Categories.insert({name:text});
         for(var j=0;j<2;j++){
-            var text2 = "SubCategory" + ' ' + j;
+            var text2 = "Podkategoria" + ' ' + j;
             SubCategories.insert({categoryId:id,name:text2});
         }
     }
@@ -37,5 +37,7 @@ Meteor.startup(function () {
 
 
     Markers.insert({lat:51.7166067570067, lng:19.461936959683, header:"Mark 10", main:"Lorem ipsum dolor"})
+    Markers.insert({lat:51.7166067570067, lng:18.461936959683, header:"Mark 9", main:"Lorem ipsum dolor"})
+    Markers.insert({lat:51.7166067570067, lng:17.461936959683, header:"Mark 8", main:"Lorem ipsum dolor"})
 
 })
