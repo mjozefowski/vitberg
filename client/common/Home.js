@@ -11,5 +11,7 @@ Template.Home.onRendered(function () {
         indicators: false
     });
     $('.materialboxed').materialbox();
+
+    $('.parallax').parallax();
 })
 
