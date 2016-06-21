@@ -13,7 +13,9 @@ Template.Home.onRendered(function () {
     $('.collapsible').collapsible();
     $('.slider').slider({
         full_width: true,
-        indicators: false
+        indicators: false,
+        height: 600,
+        transition: 1000
     });
     $('.materialboxed').materialbox();
 
@@ -27,6 +29,3 @@ Template.Home.helpers({
 Template.Home.events({
 
 })
-
-
-
