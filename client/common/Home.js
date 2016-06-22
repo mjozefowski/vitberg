@@ -15,11 +15,26 @@ Template.Home.onRendered(function () {
         full_width: true,
         indicators: false,
         height: 600,
-        transition: 1000
+        transition: 300
     });
     $('.materialboxed').materialbox();
 
     $('.parallax').parallax();
+
+    window.sr = ScrollReveal();
+    sr.reveal('#first-image-o-firmie',
+        {viewOffset:{top:250}, origin:'right',duration:1000, distance:'100px'}
+    );
+    sr.reveal('#third-first-photo',
+        {viewOffset:{top:200}, origin:'left',duration:1000, distance:'100px'}
+    );
+    sr.reveal('#third-second-photo',
+        {viewOffset:{top:200}, origin:'left',duration:1000, distance:'100px', delay:100}
+    );
+    sr.reveal('#third-third-photo',
+        {viewOffset:{top:200}, origin:'left',duration:1000, distance:'100px', delay:200}
+    );
+
 })
 
 Template.Home.helpers({
@@ -29,3 +44,5 @@ Template.Home.helpers({
 Template.Home.events({
 
 })
+
+
