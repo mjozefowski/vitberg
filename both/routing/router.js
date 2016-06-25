@@ -82,6 +82,10 @@ Router.map(function () {
         }
     })
         this.route('/static/addOpinion',{
+            waitOn:function(){
+                return Meteor.subscribe("opinions")
+            },
+
 
         action:function(){
             if(this.ready()){
