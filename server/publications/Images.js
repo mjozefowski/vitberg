@@ -6,5 +6,5 @@
  */
 
 Meteor.publish('images', function () {
-    Images.find({})
+    return Images.find({})
 })

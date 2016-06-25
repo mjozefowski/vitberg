@@ -39,7 +39,7 @@ Router.map(function () {
     this.route('/static/news',{
 
         waitOn: function () {
-            return [Meteor.subscribe("news")];
+            return [Meteor.subscribe("news"),Meteor.subscribe('images')];
         },
         action: function () {
             if (this.ready()) {
@@ -83,7 +83,7 @@ Router.map(function () {
     })
         this.route('/static/addOpinion',{
             waitOn:function(){
-                return Meteor.subscribe("opinions")
+                return [Meteor.subscribe("opinions"),Meteor.subscribe('images')]
             },
 
 
