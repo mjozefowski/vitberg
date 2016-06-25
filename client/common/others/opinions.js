@@ -32,6 +32,11 @@ Template.dropzone.helpers({
         return Opinions.find()
     },
 
+    thumbs: function (id) {
+        return Thumbs.find({_id:id})
+
+    }
+
 
 
 })
@@ -73,12 +78,17 @@ Template.dropzone.events({
                                 if (error) {
                                     console.log("addClientOpinion ImagesFromClient.insert failed")
                                 } else {
-                                    console.log("addClientOpinion ImagesFromClient.insert passed: ")
-                                    Opinions.update(opinion, {$addToSet: {images: "/cfs/files/imagesFromClient/" + fileObj._id}}, function (e, r) {
-                                        if (e) {
-                                            console.log("update failed")
+                                    Thumbs.insert(e, function (err, file) {
+                                        if(!err){
+                                            console.log("addClientOpinion ImagesFromClient.insert passed: ")
+                                            Opinions.update(opinion, {$addToSet: {images: {img:fileObj._id,thumb:file._id}}}, function (e, r) {
+                                                if (e) {
+                                                    console.log("update failed")
+                                                }
+                                            })
                                         }
-                                    })
+                                    });
+
                                 }
                             });
                         })

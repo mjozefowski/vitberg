@@ -34,8 +34,9 @@ Template.adminNews.events({
         t.done.set(false);
         var target = e.target;
         var text = target.text.value;
+        var title = target.title.value;
         console.log(text)
-        var newsId = News.insert({authorId:Meteor.userId(),text:text}, function (e,r) {
+        var newsId = News.insert({authorId:Meteor.userId(),text:text, title:title }, function (e,r) {
             if(!e){
                 $('#text').val("")
                 var newsId = r;
@@ -50,7 +51,7 @@ Template.adminNews.events({
                             console.log(newsId);
                             console.log(fileObj._id);
                             console.log("images end")
-                            News.update(newsId,{$addToSet:{media:"/cfs/files/images/"+fileObj._id}}, function (e,r) {
+                            News.update(newsId,{$addToSet:{media:fileObj._id}}, function (e,r) {
                                 if(e){
                                     console.log("update failed")
                                 }

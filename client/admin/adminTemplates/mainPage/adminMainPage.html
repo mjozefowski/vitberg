@@ -1,0 +1,26 @@
+<template name="adminMainPage">
+
+        {{#autoForm collection="MainPage" id="editMainPage" doc=doc type="update"}}
+            <fieldset>
+                <legend>Edycja - Strona główna</legend>
+                {{> afQuickField name='sectionOne' type="textarea" rows=10}}
+                <div class="hiddendiv">{{> afQuickField name='sectionOneImage' type="textarea" rows=10}}</div>
+                {{> afQuickField name='sectionTwo' type="textarea" rows=10}}
+                <div class="hiddendiv"> {{> afQuickField name='sectionTwoImage' type="textarea" rows=10}}</div>
+                {{> afQuickField name='sectionThree' type="textarea" rows=10}}
+               <div class="hiddendiv">{{> afQuickField name='sectionThreeImageOne' }}</div>
+               <div class="hiddendiv">{{> afQuickField name='sectionThreeImageTwo' }}</div>
+               <div class="hiddendiv">{{> afQuickField name='sectionThreeImageThree'}}</div>
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Aktualizuj</button>
+        {{/autoForm}}
+
+        {{#if isImage}}
+
+        {{else}}
+
+        {{/if}}
+
+
+
+</template>

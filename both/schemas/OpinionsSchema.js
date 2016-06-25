@@ -4,6 +4,16 @@
  * Proprietary and confidential
  * Created by Maciej Józefowski, 20.06.16
  */
+Schemas.OpinionImagesSchema = new SimpleSchema({
+    img:{
+        type:String,
+        optional: true
+    },
+    thumb:{
+        type:String,
+        optional: true
+    }
+})
 
 Schemas.OpinionsSchema = new SimpleSchema({
 
@@ -11,7 +21,7 @@ Schemas.OpinionsSchema = new SimpleSchema({
         type:String
     },
     images:{
-        type:[String],
+        type:[Schemas.OpinionImagesSchema],
         optional:true
     },
     approved:{

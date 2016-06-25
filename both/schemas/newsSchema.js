@@ -23,6 +23,10 @@ Schemas.newsSchema = new SimpleSchema({
     date:{
         type:Date,
         optional:true
+    },
+    title:{
+        type:String,
+        optional:true
     }
 
 });
