@@ -407,6 +407,7 @@ body {
     padding-left:40px;
     padding-right:40px;
     margin-top:50px;
+    margin-bottom:80px;
 
     .third-container-title{
       border-bottom: solid 2px red;
@@ -625,18 +626,51 @@ body {
 
   //FOOTER
   .footer{
-    background-color: rgba(120,120,120,0.6);
-    padding:30px 25px;
-    margin-top:50px;
-    margin-bottom:0;
-    color:white;
+    background-color:#fff;
+    padding:15px 0px 30px;
+    margin:0 40px;
+    font-size:.8rem;
+    color:#333;
+    border-top:1px solid @red-vitberg;
+
+    .container-footer{
+      display:flex;
+      justify-content: center;
+
+      .single-col-footer{
+        flex:1 0 auto;
+        padding:0 20px;
+        text-align:left;
+
+        >:first-child{
+          margin-bottom: 5px;
+          span {
+            margin-left: -5px;
+            font-size: 1rem;
+            //border-bottom: 1px solid @red-vitberg;
+            font-weight: bold;
+            padding: 0 4px;
+          }
+        }
+
+        >:nth-child(n){
+          cursor:pointer;
+          transition:all .4s;
+        }
+        >:nth-child(n):hover{
+          color:@red-vitberg;
+        }
+
+      }
+
+    }
   }
 
   .podpis{
     position: absolute;
-    color: #ffffff;
+    color: @red-vitberg;
     right: 5px;
-    margin-top: 70px;
+    margin-top: 145px;
   }
 
 /*NEWS PAGE STYLES
