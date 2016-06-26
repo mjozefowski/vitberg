@@ -91,16 +91,29 @@ Template.adminMap.helpers({
         }
     },
     markers: function () {
-        return Markers.find();
-    },
-    markerSet: function (marker) {
-        var ti = Template.instance();
-        ti.marker.set(marker)
-    },
-    markerGet: function () {
-        var ti = Template.instance();
-        return ti.marker.get();
+        return Markers.find().fetch().reverse();
     }
 })
 
-Template.adminMap.events({})
+Template.adminMap.events({
+
+    "click .remove-map-item": function (e,t) {
+        var id = $(e.target).attr("about");
+
+        Meteor.call('removePointFromMap', id, function (e,r) {
+            if(e){
+                alert("usuwanie nieudane")
+            }
+        })
+    },
+    "click .add-map-item": function (e,t) {
+        var id = $(e.target).attr("about");
+
+        Meteor.call('addPointToMap', id, function (e,r) {
+            if(e){
+                alert("usuwanie nieudane")
+            }
+        })
+    }
+
+})
