@@ -42,8 +42,31 @@
         </div>
 
         <div class="col l4 offset-l1 m10 s12">
-            <div class="red-line-bottom header-small left-align">DRUGI HEADER</div>
-            <div style="background-color: rgba(255,255,255,0.6); padding:15px; height:200px;"> COKOLWIEK JESZCZE NIE WIEM CO MOZE JAKIS KALKULATOR DO SELEKCJONOWANIA NEWSOW + SZUKAJKA PO TYTULACH</div>
+            <div class="red-line-bottom header-small left-align">Wyroznione <div style="float:right;"><i class="material-icons big-header">new_releases</i></div></div>
+
+                {{#each news}}
+                    <div class="important-news">
+
+                            <div class="news-title">{{this.title}} Prezentacja Enabio 2</div>
+
+                            <div class="news-image">
+                                {{#each media}}
+                                    <!--<img src="{{this}}">-->
+                                {{/each}}
+                                <img src="/photos/news-image2.jpg">
+                            </div>
+
+                            <div class="news-time"> {{date this.date}}</div>
+
+                            <div class="news-text">
+                                {{this.text}} Cras varius. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi. Suspendisse nisl elit, rhoncus eget, elementum ac, condimentum eget, diam. Fusce fermentum.
+
+                                Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Nam adipiscing
+                            </div>
+                             <div class="read-more">czytaj wiecej ></div>
+
+                    </div>
+                {{/each}}
         </div>
 
     </div>

@@ -176,7 +176,6 @@ body {
     }
     label>input:hover{
       border-bottom:1px solid @red-vitberg;
-      box-shadow: 0 1px 0 0 @red-vitberg;
     }
 
     .log-int-btn-container{
@@ -200,9 +199,6 @@ body {
     font-size:3rem;
   }
 }
-
-
-
 
 /*LANDING PAGE STYLES
 **********************************************************************/
@@ -745,11 +741,12 @@ body {
     box-shadow:2px 3px 5px @black-transparent;
     margin:20px 0;
     padding:0;
+    border-bottom: 1px solid red;
 
 
     .single-news-header{
       min-height: 36px;
-      background: #929292;
+      background: @red-vitberg;
       color:white;
       text-align: left;
       font-size:18px;
@@ -757,12 +754,13 @@ body {
       display:flex;
 
       .news-title{
-        padding-left:10px;
+        padding-left:20px;
         display:inline-block;
         flex: 1 1 auto;
+        font-weight: bold;
       }
       .news-time{
-        padding-right:10px;
+        padding-right:20px;
         display:inline-block;
         flex: 1 0 auto;
         text-align: right;
@@ -771,35 +769,78 @@ body {
 
     .news-content{
       display:flex;
-      padding:15px 10px;
+      padding:15px 20px;
 
       .news-text{
-        text-align:left;
+        text-align:justify;
         flex:1 1 auto;
       }
       .news-image{
         flex:1 1 auto;
         padding:5px 25px;
         >:first-child{
-          padding: 5px;
+          padding: 8px;
           box-shadow: 2px 2px 6px rgba(0,0,0,0.6);
           transition: all 0.5s;
+          -webkit-backface-visibility:hidden;
             img{
-              height: 200px;
+              width: 250px;
               transition: all 0.5s;
             }
         }
         >:first-child:hover{
-          padding: 2px;
+          padding: 4px;
           box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+          transform: rotate(5deg);
+          -webkit-backface-visibility:hidden;
           img{
-            height: 206px;
+            width:258px;
           }
         }
 
 
       }
     }
+  }
+
+  .important-news{
+    background-color: rgba(255,255,255,0.6);
+    padding:0 0 30px;
+    box-shadow:1px 3px 10px @black-transparent;
+    margin-bottom:20px;
+
+    .news-title{
+      padding:5px 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    .news-image{
+      img{
+        width:100%;
+      }
+    }
+    .news-time{
+      background: @red-vitberg;
+      color:white;
+      padding:5px 15px;
+      margin-top: -6px;
+    }
+    .news-text{
+      text-align: justify;
+      padding:10px 15px 5px;
+    }
+    .read-more{
+      float: right;
+      margin-right: 15px;
+      color: @red-vitberg;
+      font-style: italic;
+      cursor: pointer;
+    }
+
+
+
+
   }
 
   @media only screen and (max-width:601px){
