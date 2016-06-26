@@ -20,6 +20,7 @@ body {
     border: none;
     box-shadow: 1px 2px 2px @black-transparent;
     color: #fff;
+    transition: all 0.4s;
   }
   .btn-red:hover {
     background-color: lighten(@red-vitberg, 15%);
@@ -147,6 +148,61 @@ body {
   width:100%;
   height:100%;
 }
+
+//LOG IN STYLES
+.log-in-container{
+  height: ~"calc(100vh - 64px)";
+  padding-top: ~"calc(50vh - 230px)";
+  margin-bottom: 0px;
+  background-image:url("/photos/news_bg.jpg");
+
+  .log-in-box{
+    background-color: rgba(255,255,255,.4);
+    padding:25px !important;
+    text-align:center;
+    border:1px solid @red-vitberg;
+    max-width:450px;
+    min-width:250px;
+    height:230px;
+    float:none !important;
+    margin-left:auto !important;
+    margin-right:auto;
+    box-shadow:2px 3px  10px @black-transparent;
+
+    label>input:focus{
+      border-bottom: 1px solid @red-vitberg;
+      box-shadow: 0 1px 0 0 @red-vitberg;
+      color:#333 !important;
+    }
+    label>input:hover{
+      border-bottom:1px solid @red-vitberg;
+      box-shadow: 0 1px 0 0 @red-vitberg;
+    }
+
+    .log-int-btn-container{
+      .btn-red{
+        padding:10px 40px;
+      }
+    }
+  }
+
+}
+
+.log-in-alert{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  padding-top: ~"calc(50vh - 350px)";
+  p{
+    margin-top:0 !important;
+  }
+  i{
+    font-size:3rem;
+  }
+}
+
+
+
 
 /*LANDING PAGE STYLES
 **********************************************************************/
@@ -756,3 +812,5 @@ body {
   }
 
 }
+
+

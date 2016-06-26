@@ -2,15 +2,14 @@
 
 
     {{#if isLoginFailed}}
-        <div class="alert alert-warning alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            User not found, or wrong password.
-            <br>
-            Please try again.
+        <div class="alert alert-warning alert-dismissible log-in-alert" role="alert">
+            <!--<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>-->
+            <i class="material-icons">sentiment_dissatisfied</i>
+            <p>User not found, or wrong password. <br>
+            Please try again.</p>
         </div>
     {{/if}}
-    <div class="flex-container">
-
+    <div class="row log-in-container">
 
         <!--<div class="flex-item">-->
 
@@ -18,23 +17,19 @@
 
         <!--</div>-->
 
-        <div class="flex-item">
+        <div class="col l6 offset-l3 m6 offset-m3 s10 offset-s1 log-in-box">
             <form>
-                <label><input type="email" name="loginEmail" placeholder="E-mail"></label><br>
+                <label> <input type="email" name="loginEmail" placeholder="E-mail"></label><br>
                 <label><input type="password" name="loginPassword" placeholder="Password"></label>
 
 
-                <div class="flex-item">
+                <div class="log-int-btn-container">
                     <br>
-                    <input type="submit" value="Login">
+                    <input class="btn-red" type="submit" value="Login">
                 </div>
             </form>
 
         </div>
-
-
-
-
 
     </div>
 
