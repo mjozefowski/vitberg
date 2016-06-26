@@ -1,3 +1,20 @@
 <template name="adminMap">
 
+    <div class="map-container">
+        {{> googleMap name="map" options=mapOptions}}
+    </div>
+
+
+    {{#each markers}}
+        {{#autoForm collection="Markers" id=this._id type="update" doc=this}}
+            <fieldset>
+                <legend>Edytuj punkt na mapie</legend>
+                {{> afQuickField name='lat'}}
+                {{> afQuickField name='lng'}}
+                {{> afQuickField name='main' rows=6}}
+                {{> afQuickField name='header'}}
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Aktualizuj</button>
+        {{/autoForm}}
+    {{/each}}
 </template>

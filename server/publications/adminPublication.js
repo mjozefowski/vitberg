@@ -8,7 +8,7 @@
 Meteor.publish('adminPublication', function () {
 
     if(this.userId){
-        return [News.find(),Categories.find(),SubCategories.find(),Images.find(), MainPage.find()]
+        return [News.find(),Categories.find(),SubCategories.find(),Images.find(), MainPage.find(), Markers.find()]
     }
 
 })

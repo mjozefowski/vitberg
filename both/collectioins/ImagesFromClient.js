@@ -9,7 +9,7 @@
 var createThumb = function(fileObj, readStream, writeStream) {
     // Transform the image into a 10x10px thumbnail
     console.log("resizing image")
-    gm(readStream, fileObj.name()).resize('125', '125').stream().pipe(writeStream);
+    gm(readStream, fileObj.name()).resize('200 ', '200').stream().pipe(writeStream);
 };
 
 

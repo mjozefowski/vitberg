@@ -11,13 +11,15 @@ Meteor.startup(function() {
 });
 
 Template.map.onCreated(function () {
+
+
     GoogleMaps.ready('map', function(map) {
 
         //TODO:move this one to admin
-        google.maps.event.addListener(map.instance, 'click', function(event) {
-
-            Markers.insert({ lat: event.latLng.lat(), lng: event.latLng.lng(), header: event.latLng.lat(), main: "main" + event.latLng.lat() });
-        });
+        //google.maps.event.addListener(map.instance, 'click', function(event) {
+        //
+        //    //Markers.insert({ lat: event.latLng.lat(), lng: event.latLng.lng(), header: event.latLng.lat(), main: "main" + event.latLng.lat() });
+        //});
 
         var markers = {};
 
