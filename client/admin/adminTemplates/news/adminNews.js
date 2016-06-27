@@ -33,10 +33,12 @@ Template.adminNews.events({
         e.preventDefault();
         t.done.set(false);
         var target = e.target;
-        var text = target.text.value;
-        var title = target.title.value;
+        var text = $('#text').val();
+        var title = $('#title').val()
+        var isImportant = $('#important').is(':checked');
+        console.log(isImportant)
         console.log(text)
-        var newsId = News.insert({authorId:Meteor.userId(),text:text, title:title }, function (e,r) {
+        var newsId = News.insert({authorId:Meteor.userId(),text:text, title:title, isImportant:isImportant }, function (e,r) {
             if(!e){
                 $('#text').val("")
                 var newsId = r;

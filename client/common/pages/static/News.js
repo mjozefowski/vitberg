@@ -23,6 +23,9 @@ Template.News.helpers({
     },
     date: function (date) {
         return moment(date).locale('pl').format('ll')
+    },
+    newsImportant: function () {
+        return News.find({isImportant:true},{limit:4},{sort:{date:-1}})
     }
 
 
