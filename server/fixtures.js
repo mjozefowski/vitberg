@@ -31,7 +31,11 @@ Meteor.startup(function () {
     Roles.addUsersToRoles(user, "admin");
 
     for(var i=0;i<10;i++){
-        News.insert({text:'Tekst aktualności ' + i, authorId:user, date:new Date()})
+        News.insert({text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:false})
+
+    }
+    for(var i=0;i<4;i++){
+        News.insert({text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:true})
 
     }
 

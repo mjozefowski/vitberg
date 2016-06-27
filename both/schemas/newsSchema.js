@@ -27,6 +27,9 @@ Schemas.newsSchema = new SimpleSchema({
     title:{
         type:String,
         optional:true
+    },
+    isImportant:{
+       type:Boolean
     }
 
 });
