@@ -4,20 +4,22 @@
         {{> googleMap name="map" options=mapOptions}}
     </div>
 
+    <div class="map-markes-admin-panel">
+        {{#each markers}}
+            <div class="remove-map-item" about="{{this._id}}"><i class="material-icons">delete_forever</i> </div>
+            {{#autoForm collection="Markers" id=this._id type="update" doc=this}}
+                <fieldset>
+                    <legend>Edytuj punkt na mapie</legend>
+                    {{> afQuickField name='lat'}}
+                    {{> afQuickField name='lng'}}
+                    {{> afQuickField name='main' rows=6}}
+                    {{> afQuickField name='header'}}
+                </fieldset>
+                <button type="submit" class="btn-red btn-update-map-mark">Aktualizuj</button>
+            {{/autoForm}}
 
-    {{#each markers}}
-        {{#autoForm collection="Markers" id=this._id type="update" doc=this}}
-            <fieldset>
-                <legend>Edytuj punkt na mapie</legend>
-                {{> afQuickField name='lat'}}
-                {{> afQuickField name='lng'}}
-                {{> afQuickField name='main' rows=6}}
-                {{> afQuickField name='header'}}
-            </fieldset>
-            <button type="submit" class="btn btn-primary">Aktualizuj</button>
-        {{/autoForm}}
 
-        <div class="remove-map-item" about="{{this._id}}"> X </div>
 
-    {{/each}}
+        {{/each}}
+    </div>
 </template>

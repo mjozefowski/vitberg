@@ -51,6 +51,16 @@ body {
     border-bottom: solid 2px red;
     margin-bottom: 15px;
   }
+  .header-xsmall::first-letter {
+    font-size: 120%;
+  }
+  .header-xsmall {
+    font-size: 1.5rem;
+    color: #333;
+    text-transform: uppercase;
+    border-bottom: solid 2px red;
+    margin-bottom: 15px;
+  }
 
   .banner-subpage{
     min-height:200px;
@@ -921,12 +931,12 @@ body {
       line-height: 100px;
       position: relative;
       background: rgba(248, 80, 50, 1);
-      background: -moz-linear-gradient(top, rgba(248, 80, 50, 1) 0%, rgba(241, 111, 92, 1) 50%, rgba(246, 41, 12, 1) 51%, rgba(240, 47, 23, 1) 71%, rgba(231, 56, 39, 1) 100%);
-      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248, 80, 50, 1)), color-stop(50%, rgba(241, 111, 92, 1)), color-stop(51%, rgba(246, 41, 12, 1)), color-stop(71%, rgba(240, 47, 23, 1)), color-stop(100%, rgba(231, 56, 39, 1)));
-      background: -webkit-linear-gradient(top, rgba(248, 80, 50, 1) 0%, rgba(241, 111, 92, 1) 50%, rgba(246, 41, 12, 1) 51%, rgba(240, 47, 23, 1) 71%, rgba(231, 56, 39, 1) 100%);
-      background: -o-linear-gradient(top, rgba(248, 80, 50, 1) 0%, rgba(241, 111, 92, 1) 50%, rgba(246, 41, 12, 1) 51%, rgba(240, 47, 23, 1) 71%, rgba(231, 56, 39, 1) 100%);
-      background: -ms-linear-gradient(top, rgba(248, 80, 50, 1) 0%, rgba(241, 111, 92, 1) 50%, rgba(246, 41, 12, 1) 51%, rgba(240, 47, 23, 1) 71%, rgba(231, 56, 39, 1) 100%);
-      background: linear-gradient(to bottom, rgba(248, 80, 50, 1) 0%, rgba(241, 111, 92, 1) 50%, rgba(246, 41, 12, 1) 51%, rgba(240, 47, 23, 1) 71%, rgba(231, 56, 39, 1) 100%);
+      background: -moz-linear-gradient(top, #e81212 0%, #f16f5c 50%, #ff604a 51%, #fb3131 71%, #e81212 100%);
+      //background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248, 80, 50, 1)), color-stop(50%, rgba(241, 111, 92, 1)), color-stop(51%, rgba(246, 41, 12, 1)), color-stop(71%, rgba(240, 47, 23, 1)), color-stop(100%, rgba(231, 56, 39, 1)));
+      background: -webkit-linear-gradient(top, #e81212 0%, #f16f5c 50%, #ff604a 51%, #fb3131 71%, #e81212 100%);
+      background: -o-linear-gradient(top, #e81212 0%, #f16f5c 50%, #ff604a 51%, #fb3131 71%, #e81212 100%);
+      background: -ms-linear-gradient(top, #e81212 0%, #f16f5c 50%, #ff604a 51%, #fb3131 71%, #e81212 100%);
+      background: linear-gradient(to bottom, #e81212 0%, #f16f5c 50%, #ff604a 51%, #fb3131 71%, #e81212 100%);
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f85032', endColorstr='#e73827', GradientType=0);
       color: white;
       font-size: 1.2rem;
@@ -953,11 +963,77 @@ body {
 
 /*ADMIN NEWS STYLES
 *********************************************************************/
+.panel-admin-news-container{
+    padding:20px 25px;
 
-.drop-zone-box{
-  background-color: rgba(255, 255, 255, 0.48);
-  height: 100px;
-  width: 100px;
-  border: 2px dashed red;
-  padding: 10px;
+  .news-create-textarea{
+    min-height:100px;
+    max-width:100%;
+
+  }
+
+  .drop-zone-box{
+    background-color: rgba(255, 255, 255, 0.48);
+    height: 100px;
+    width: 100px;
+    border: 2px dashed red;
+    padding: 10px;
+    margin-top:20px;
+    color: #b6b6b6;
+  }
+
+  .submit-news{
+    font-size:1.2rem;
+    padding:5px 30px;
+    margin-top:20px;
+  }
+
+}
+
+/*ADMIN MAIN PAGE STYLES
+*********************************************************************/
+
+.update-main-page-btn{
+  padding: 5px 20px;
+  margin: 15px 25px;
+}
+
+/*ADMIN MAP MARKERS STYLES
+*********************************************************************/
+.map-markes-admin-panel{
+  background: rgba(255, 255, 255, 0.66);
+  padding: 25px;
+
+  .btn-update-map-mark{
+    margin:20px auto;
+    display: block;
+    padding:5px 15px;
+  }
+  .remove-map-item{
+    text-align: right;
+    cursor:pointer;
+    transition: color .2s;
+  }
+  .remove-map-item:hover{
+    color: @red-vitberg;
+   }
+
+  fieldset{
+    border:2px solid @red-vitberg;
+  }
+
+
+
+}
+
+/*MAP PAGE STYLES
+*********************************************************************/
+.map-page{
+  width: 100%;
+  max-width: 100%;
+  height: ~"calc(100vh - 64px)" ;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin:0;
+  padding: 35px;
+  box-shadow: 1px 2px 5px rgba(0,0,0,0.5);
 }

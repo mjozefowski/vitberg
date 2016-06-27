@@ -1,32 +1,39 @@
 <template name="adminNews">
     {{isUploadDone}}
+    <div class="panel-admin-news-container">
+        <form id="newsForm">
+            <div class="header-xsmall">Tytuł</div>
+            <input class="padding-left:20px;" id="title" type="text" name="title" placeholder="tytuł">
 
-    <form id="newsForm">
-        <input id="title" type="text" name="title">
-        <br>
-        <br>
-        <input id="important" type="checkbox" name="important" style="visibility: visible; position: relative; left: 0;">
-        <br>
-        <br>
-        <br>
-        <input type="submit">
+            <br><br>
 
-    </form>
-    <textarea id="text" rows="4" cols="50" name="text" form="newsForm">
-        </textarea>
-        <div class="row margin-0">
+            <div class="header-xsmall">Treść</div>
+        <textarea id="text" rows="4" cols="50" name="text" form="newsForm" class="news-create-textarea">
+            </textarea>
+            <div class="row margin-0">
 
-        <div id="dropzone" class="dropzone  drop-zone-box">
-            <div class="well well-drop-zone">
-                Upuść tutaj aby wysłać
+            <div id="dropzone" class="dropzone  drop-zone-box">
+                <div class="well well-drop-zone">
+                    Upuść tutaj aby wysłać
+                </div>
             </div>
+
         </div>
 
+        {{#each array}}
+            <div>{{this.data.blob.name}}<div><span id="{{this.data.blob.name}}" class="fa fa-remove remove-image"></span></div></div>
+        {{/each}}
+
+            <br>
+
+            <span style="text-transform: uppercase; "><i class="material-icons">new_releases</i> Wyróżniony  </span>
+            <input id="important" type="checkbox" name="important" style="visibility: visible; position: relative; left: 0;">
+
+            <br>
+
+            <input class="btn-red submit-news" type="submit">
+
+        </form>
     </div>
-
-    {{#each array}}
-        <div>{{this.data.blob.name}}<div><span id="{{this.data.blob.name}}" class="fa fa-remove remove-image"></span></div></div>
-    {{/each}}
-
 
 </template>
