@@ -1,16 +1,19 @@
 <template name="adminPanel">
 
 <!--menu-->
-    {{#if isInRole 'admin'}}
+    <div class="admin-panel-container">
+        {{#if isInRole 'admin'}}
 
-    {{/if}}
-    {{#if isInRole 'admin,editor'}}
-        <ol id="adminMainPage" class="admin-navigation-item">Strona główna</ol>
-        <ol id="adminNews" class="admin-navigation-item">Aktualności</ol>
-        <ol id="adminMap" class="admin-navigation-item">Mapa</ol>
-    {{/if}}
+        {{/if}}
+        {{#if isInRole 'admin,editor'}}
+            <div class="admin-nav-container">
+                <ol id="adminMainPage" class="admin-navigation-item admin-nav-box">Strona główna <i class="material-icons">home</i></ol>
+                <ol id="adminNews" class="admin-navigation-item admin-nav-box">Aktualności <i class="material-icons">new_releases</i></ol>
+                <ol id="adminMap" class="admin-navigation-item admin-nav-box">Mapa <i class="material-icons">location_on</i></ol>
+            </div>
+        {{/if}}
 
-    <!--content-->
-    {{> UI.dynamic template=template}}
-
+        <!--content-->
+        {{> UI.dynamic template=template}}
+    </div>
 </template>
