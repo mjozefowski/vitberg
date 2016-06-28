@@ -4,16 +4,16 @@
         {{> googleMap name="map" options=mapOptions}}
     </div>
 
-    <div class="map-markes-admin-panel">
+    <div class="map-markers-admin-panel">
         {{#each markers}}
             <div class="remove-map-item" about="{{this._id}}"><i class="material-icons">delete_forever</i> </div>
             {{#autoForm collection="Markers" id=this._id type="update" doc=this}}
-                <fieldset>
+                <fieldset class="edit-single-marker">
                     <legend>Edytuj punkt na mapie</legend>
                     {{> afQuickField name='lat'}}
                     {{> afQuickField name='lng'}}
-                    {{> afQuickField name='main' rows=6}}
                     {{> afQuickField name='header'}}
+                    {{> afQuickField name='main' rows=6}}
                 </fieldset>
                 <button type="submit" class="btn-red btn-update-map-mark">Aktualizuj</button>
             {{/autoForm}}
