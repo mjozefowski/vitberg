@@ -38,7 +38,18 @@ Template.Home.onRendered(function () {
 })
 
 Template.Home.helpers({
-
+    blocks: function () {
+        return MainPage.find();
+    },
+    isParallax: function (type) {
+        return type == "mainParallax"
+    },
+    isRedLeft: function (type) {
+        return type == "mainRedLeft"
+    },
+    isRedRight: function (type) {
+        return type == "mainRedRight"
+    },
 })
 
 Template.Home.events({

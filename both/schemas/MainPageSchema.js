@@ -7,37 +7,37 @@
 
 Schemas.MainPage = new SimpleSchema({
 
-    sectionOne:{
+    text:{
         type:String,
         optional:true
     },
-    sectionOneImage:{
+    images:{
+        type:[String],
+        optional:true
+    },
+    link:{
+      type:Schemas.LinkSchema,
+      optional:true
+    },
+    type:{
+        type:String,
+        allowedValues: ['mainParallax', 'mainRedLeft', 'mainRedRight'],
+        autoform: {
+            options: [
+                {label: "Paralaxa", value: "mainParallax"},
+                {label: "Czerwony, obraz po lewej", value: "mainRedLeft"},
+                {label: "Czerwony, obraz po prawej", value: "mainRedRight"}
+            ]
+        }    },
+    order:{
+        type:Number.decimal
+    },
+    title:{
         type:String,
         optional:true
     },
-    sectionTwo:{
-        type:String,
-        optional:true
-    },
-    parallaxImage:{
-        type:String,
-        optional:true
-    },
-    sectionThree:{
-        type:String,
-        optional:true
-    },
-    sectionThreeImageOne:{
-        type:String,
-        optional:true
-    },
-    sectionThreeImageTwo:{
-        type:String,
-        optional:true
-    },
-    sectionThreeImageThree:{
-        type:String,
-        optional:true
+    visible:{
+        type:Boolean
     }
 
 })
@@ -46,12 +46,21 @@ MainPage.attachSchema(Schemas.MainPage);
 
 MainPage.allow({
     insert: function () {
-        return true;
+        if(Roles.userIsInRole(Meteor.userId(),['admin'])||Roles.userIsInRole(Meteor.userId(),['editor']))
+            return true;
+        else
+            return false;
     },
     update: function () {
-        return true;
+        if(Roles.userIsInRole(Meteor.userId(),['admin'])||Roles.userIsInRole(Meteor.userId(),['editor']))
+            return true;
+        else
+            return false;
     },
     remove: function () {
-        return true;
+        if(Roles.userIsInRole(Meteor.userId(),['admin'])||Roles.userIsInRole(Meteor.userId(),['editor']))
+            return true;
+        else
+            return false;
     }
 })

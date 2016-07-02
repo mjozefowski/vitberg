@@ -6,3 +6,12 @@
  */
 
 Schemas = {};
+
+Schemas.LinkSchema = new SimpleSchema({
+    text:{
+        type:String
+    },
+    url:{
+        type:String
+    }
+})

@@ -11,7 +11,7 @@ Router.map(function () {
     this.route('/',{
 
         waitOn: function () {
-            return [Meteor.subscribe("Categories")];
+            return [Meteor.subscribe("Categories"), Meteor.subscribe("MainPage"), Meteor.subscribe("news")];
         },
         action: function () {
             if (this.ready()) {

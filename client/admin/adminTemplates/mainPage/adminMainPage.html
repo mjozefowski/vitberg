@@ -1,25 +1,55 @@
 <template name="adminMainPage">
+    <div id="addNewMainPage">Dodaj nowy</div>
+    {{#if addNewBar}}
+        <center>
+    <form id="selectTemplate">
+        <fieldset>
+        <input id="1" type="radio" name="type"  group="group1" value="mainRedRight"> <label for="1">Czerwony, obraz po prawej</label>
+        <input id="2" type="radio" name="type" group="group1" value="mainRedLeft"><label for="2">Czerwony, obraz po lewej</label>
+        <input id="3" type="radio" name="type" group="group1" value="mainParallax"> <label for="3">Paralaksa</label>
 
-        {{#autoForm collection="MainPage" id="editMainPage" doc=doc type="update"}}
-            <fieldset>
-                <legend>Edycja - Strona główna</legend>
-                {{> afQuickField name='sectionOne' type="textarea" rows=10}}
-                <div class="hiddendiv">{{> afQuickField name='sectionOneImage' type="textarea" rows=10}}</div>
-                {{> afQuickField name='sectionTwo' type="textarea" rows=10}}
-                <div class="hiddendiv"> {{> afQuickField name='sectionTwoImage' type="textarea" rows=10}}</div>
-                {{> afQuickField name='sectionThree' type="textarea" rows=10}}
-               <div class="hiddendiv">{{> afQuickField name='sectionThreeImageOne' }}</div>
-               <div class="hiddendiv">{{> afQuickField name='sectionThreeImageTwo' }}</div>
-               <div class="hiddendiv">{{> afQuickField name='sectionThreeImageThree'}}</div>
-            </fieldset>
-            <button type="submit" class="btn-red update-main-page-btn">Aktualizuj</button>
-        {{/autoForm}}
+        </fieldset>
+            <input type="submit">
+    </form>
+        </center>
 
-        {{#if isImage}}
+
+
+        {{#if parallax}}
+            {{#autoForm collection="MainPage" id="updateParallax" type="update" doc=selectedDoc}}
+                {{> afQuickField name='title'}}
+                <button type="submit" class="btn btn-primary">Insert</button>
+            {{/autoForm}}
+            {{> editableText context=selectedDoc collection="MainPage" field="text"}}
+            <div id="submitParallax">Zapisz</div>
 
         {{else}}
 
+            {{#if redLeft}}
+                {{#autoForm collection="MainPage" id="updateRedLeft" type="update" doc=selectedDoc}}
+                    {{> afQuickField name='title'}}
+                    <button type="submit" class="btn btn-primary">Insert</button>
+                {{/autoForm}}
+                {{> editableText context=selectedDoc collection="MainPage" field="text"}}
+                <div id="submitRedLeft">Zapisz</div>
+
+
+            {{else}}
+
+                {{#if redRight}}
+                    {{#autoForm collection="MainPage" id="updateRedRight" type="update" doc=selectedDoc}}
+
+                    {{> afQuickField name='title'}}
+                        <button type="submit" class="btn btn-primary">Insert</button>
+                    {{/autoForm}}
+                    {{> editableText context=selectedDoc collection="MainPage" field="text"}}
+                    <div id="submitRedRight">Zapisz</div>
+
+
+                {{/if}}
+            {{/if}}
         {{/if}}
+    {{/if}}
 
 
 

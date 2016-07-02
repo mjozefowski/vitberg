@@ -1,5 +1,26 @@
 <template name="Home">
 
+{{#each blocks}}
+    {{#if isRedRight type}}
+    redRight
+        {{else}}
+
+        {{#if isRedLeft type}}
+
+            redLeft
+            {{else}}
+            {{#if isParallax type}}
+                Parallax
+            {{/if}}
+        {{/if}}
+    {{/if}}
+{{/each}}
+
+
+
+
+
+
     <div class="slider">
         <ul class="slides" style="background-color:#fff;">
             <li>
