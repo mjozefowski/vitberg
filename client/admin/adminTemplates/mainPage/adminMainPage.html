@@ -20,7 +20,7 @@
                 {{> afQuickField name='title'}}
                 <button type="submit" class="btn btn-primary">Insert</button>
             {{/autoForm}}
-            {{> editableText context=selectedDoc collection="MainPage" field="text"}}
+            {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
             <div id="submitParallax">Zapisz</div>
 
         {{else}}
@@ -30,7 +30,7 @@
                     {{> afQuickField name='title'}}
                     <button type="submit" class="btn btn-primary">Insert</button>
                 {{/autoForm}}
-                {{> editableText context=selectedDoc collection="MainPage" field="text"}}
+                {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
                 <div id="submitRedLeft">Zapisz</div>
 
 
@@ -40,9 +40,10 @@
                     {{#autoForm collection="MainPage" id="updateRedRight" type="update" doc=selectedDoc}}
 
                     {{> afQuickField name='title'}}
+                    {{> afQuickField name='visible'}}
                         <button type="submit" class="btn btn-primary">Insert</button>
                     {{/autoForm}}
-                    {{> editableText context=selectedDoc collection="MainPage" field="text"}}
+                    {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
                     <div id="submitRedRight">Zapisz</div>
 
 

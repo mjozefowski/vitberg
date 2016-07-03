@@ -3,14 +3,16 @@
 {{#each blocks}}
     {{#if isRedRight type}}
     redRight
-        {{else}}
+        {{>mainRedRight this}}
 
+    {{else}}
         {{#if isRedLeft type}}
-
+        {{>mainRedLeft this}}
             redLeft
             {{else}}
             {{#if isParallax type}}
-                Parallax
+                mainParallax
+                {{>mainParalax this}}
             {{/if}}
         {{/if}}
     {{/if}}

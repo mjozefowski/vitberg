@@ -92,7 +92,20 @@ Router.map(function () {
                 this.render('dropzone')
             }
         }
-    })
+    });
+    this.route('/static/forgot-password', {
+        name: 'forgotpassword',
+        template: 'ForgotPassword'
+    });
+
+    this.route('/static/reset-password/:token', {
+        name: 'ResetPassword',
+        template: 'ResetPassword',
+        onBeforeAction: function() {
+            Accounts._resetPasswordToken = this.params.token;
+            this.next();
+        },
+    });
 
     //this.route('/diplomaInfo/:_id', {
     //    waitOn: function () {

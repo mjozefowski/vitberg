@@ -34,14 +34,14 @@ Template.adminMainPage.helpers({
     },
     redLeft: function () {
         var ti = Template.instance();
-        if(ti.selectedTheme.get() == "mainRedRight")
+        if(ti.selectedTheme.get() == "mainRedLeft")
             return true;
 
         return false;
     },
     redRight: function () {
         var ti = Template.instance();
-        if(ti.selectedTheme.get() == "mainRedLeft")
+        if(ti.selectedTheme.get() == "mainRedRight")
             return true;
 
         return false;

@@ -15,7 +15,7 @@ Template.mainParalax.onRendered(function () {
 
 Template.mainParalax.helpers({
 
-    imageParalax: function () {
+    imageParallax: function () {
         var ti = Template.instance();
         return ti.data.images[0]
     },

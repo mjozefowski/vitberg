@@ -20,6 +20,11 @@
                     {{#if currentUser}}
                         {{#if isInRole 'admin,editor'}}
                             <li id="admin-panel">Panel administratora</li>
+                        {{else}}
+                            {{#if isInRole 'contractor'}}
+                            <li id="admin-panel">Panel kontrahenta</li>
+                             {{/if}}
+
                         {{/if}}
                         <li id="logout">Wyloguj</li>
                     {{/if}}

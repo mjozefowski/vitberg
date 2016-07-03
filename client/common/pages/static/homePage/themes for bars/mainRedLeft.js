@@ -17,7 +17,7 @@ Template.mainRedLeft.helpers({
 
     imageLeft : function () {
         var ti = Template.instance();
-        return ti.data.images[1]
+        return ti.data.images[0]
     },
     linkUrl: function () {
         var ti = Template.instance();
@@ -39,4 +39,6 @@ Template.mainRedLeft.helpers({
 
 })
 
-Template.mainRedLeft.events({})
+Template.mainRedLeft.events({
+
+})
