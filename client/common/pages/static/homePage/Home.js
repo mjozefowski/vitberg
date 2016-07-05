@@ -53,6 +53,9 @@ Template.Home.helpers({
     isMainClickable: function (type) {
         return type == "mainClickable"
     },
+    isMainOpinion: function (type) {
+        return type == "mainOpinion"
+    }
 })
 
 Template.Home.events({

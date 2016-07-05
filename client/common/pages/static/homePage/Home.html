@@ -16,6 +16,10 @@
                 {{else}}
                 {{#if isMainClickable type}}
                     {{> mainClickable this}}
+                    {{else}}
+                    {{#if isMainOpinion type}}
+                        {{>mainOpinions}}
+                    {{/if}}
                 {{/if}}
             {{/if}}
         {{/if}}
