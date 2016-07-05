@@ -26,7 +26,8 @@ Schemas.MainPage = new SimpleSchema({
             options: [
                 {label: "Paralaxa", value: "mainParallax"},
                 {label: "Czerwony, obraz po lewej", value: "mainRedLeft"},
-                {label: "Czerwony, obraz po prawej", value: "mainRedRight"}
+                {label: "Czerwony, obraz po prawej", value: "mainRedRight"},
+                {label: "Kafelek z ikonami do klikania", value: "mainClickable"}
             ]
         }    },
     order:{
