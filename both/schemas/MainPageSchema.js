@@ -21,12 +21,13 @@ Schemas.MainPage = new SimpleSchema({
     },
     type:{
         type:String,
-        allowedValues: ['mainParallax', 'mainRedLeft', 'mainRedRight'],
+        allowedValues: ['mainParallax', 'mainRedLeft', 'mainRedRight','mainClickable'],
         autoform: {
             options: [
                 {label: "Paralaxa", value: "mainParallax"},
                 {label: "Czerwony, obraz po lewej", value: "mainRedLeft"},
-                {label: "Czerwony, obraz po prawej", value: "mainRedRight"}
+                {label: "Czerwony, obraz po prawej", value: "mainRedRight"},
+                {label: "Kafelek z ikonami do klikania", value: "mainClickable"}
             ]
         }    },
     order:{

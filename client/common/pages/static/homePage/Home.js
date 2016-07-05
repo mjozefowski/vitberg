@@ -50,6 +50,9 @@ Template.Home.helpers({
     isRedRight: function (type) {
         return type == "mainRedRight"
     },
+    isMainClickable: function (type) {
+        return type == "mainClickable"
+    },
 })
 
 Template.Home.events({
