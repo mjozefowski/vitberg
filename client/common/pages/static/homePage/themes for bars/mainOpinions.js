@@ -11,8 +11,16 @@ Template.mainOpinions.onCreated(function () {
 
 Template.mainOpinions.onRendered(function () {
 
+    $('.slider').slider({
+        full_width: true,
+        indicators: true,
+        height: 400,
+        transition: 300
+    });
+
 })
 
 Template.mainOpinions.helpers({})
 
 Template.mainOpinions.events({})
+
