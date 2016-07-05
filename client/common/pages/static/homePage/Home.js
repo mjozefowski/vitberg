@@ -14,7 +14,7 @@ Template.Home.onRendered(function () {
     $('.slider').slider({
         full_width: true,
         indicators: false,
-        height: 600,
+        height: 500,
         transition: 300
     });
     $('.materialboxed').materialbox();
