@@ -6,7 +6,11 @@
  */
 
 Template.mainClickable.onCreated(function () {
+    this.data = Template.currentData();
     this.selectedItem = new ReactiveVar("")
+    this.templateId = new ReactiveVar();
+
+
 })
 
 Template.mainClickable.onRendered(function () {
@@ -20,7 +24,14 @@ Template.mainClickable.helpers({
     templateData: function () {
         var ti = Template.instance();
         return ti.selectedItem.get();
+    },
+    icons: function () {
+        var ti = Template.instance();
+        var id = ti.data._id;
+        return ClickableItemsTemplate.findOne({mainTemplate:id}).icons
     }
+
+
 
 
 })

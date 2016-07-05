@@ -13,6 +13,10 @@
             {{#if isParallax type}}
                 mainParallax
                 {{>mainParalax this}}
+                {{else}}
+                {{#if isMainClickable type}}
+                    {{> mainClickable this}}
+                {{/if}}
             {{/if}}
         {{/if}}
     {{/if}}

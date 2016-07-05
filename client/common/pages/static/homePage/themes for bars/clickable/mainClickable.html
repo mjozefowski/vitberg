@@ -1,5 +1,12 @@
 <template name="mainClickable">
 
+    mainClickable
+
+    {{#each icons}}
+
+        <img id="{{this.templateId}}" src="{{this.image}}" class="iconClickable">
+
+    {{/each}}
 
 
     {{> UI.dynamic template=myTemplate data=templateData}}

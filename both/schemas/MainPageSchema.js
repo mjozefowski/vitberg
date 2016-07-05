@@ -21,7 +21,7 @@ Schemas.MainPage = new SimpleSchema({
     },
     type:{
         type:String,
-        allowedValues: ['mainParallax', 'mainRedLeft', 'mainRedRight'],
+        allowedValues: ['mainParallax', 'mainRedLeft', 'mainRedRight','mainClickable'],
         autoform: {
             options: [
                 {label: "Paralaxa", value: "mainParallax"},

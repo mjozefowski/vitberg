@@ -16,6 +16,9 @@ Schemas.ClickableIcons = new SimpleSchema({
 
 Schemas.ClickbableItemsTemplateSchema = new SimpleSchema({
 
+    mainTemplateId:{
+      type:String
+    },
     icons:{
         type:[Schemas.ClickableIcons],
         optional:true
