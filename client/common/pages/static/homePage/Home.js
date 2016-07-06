@@ -10,14 +10,7 @@ Template.Home.onCreated(function () {
 })
 
 Template.Home.onRendered(function () {
-    $('.collapsible').collapsible();
-    $('.slider').slider({
-        full_width: true,
-        indicators: false,
-        height: 500,
-        transition: 300
-    });
-    $('.materialboxed').materialbox();
+
 
     $('.parallax').parallax();
 
