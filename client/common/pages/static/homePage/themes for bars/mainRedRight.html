@@ -2,17 +2,23 @@
 
     <div class="main-red-right">
         <div class="text-content">
-            <div class="header">AKCJA NA ZDROWIE</div>
-            <div class="simple-text-content">Ut a nisl id ante tempus hendrerit. Curabitur turpis. Phasellus dolor.
+            <div class="header">AKCJA NA ZDROWIE {{title}}</div>
+            <div class="simple-text-content">{{text}}
+                Ut a nisl id ante tempus hendrerit. Curabitur turpis. Phasellus dolor.
                 Quisque id mi. Praesent ac sem eget est egestas volutpat. Pellentesque habitant morbi tristique senectus et
                 netus et malesuada fames ac turpis egestas.estibulum volutpat pretium liberoCurabitur turpis. Phasellus dolor.
                 Quisque id mi. Praesent ac sem eget est egestas volutpat. Pellentesque habitant morbi tristique senectus et
-                netus et malesuada fames ac turpis egestas.estibulum volutpat pretium libero.</div>
-            <button class="read-more-btn left"><i class="material-icons">add</i> Dowiedz się więcej</button>
+                netus et malesuada fames ac turpis egestas.estibulum volutpat pretium libero.
+            </div>
+            <a href="{{linkUrl}}">
+                <button class="read-more-btn left">
+                    <i class="material-icons">add</i> Dowiedz się więcej {{linkText}}
+                </button>
+            </a>
 
         </div>
         <div class="image-content">
-            <img src="/temp/akcjaNaZdrowie.png" width="100%">
+            {{imageLeft}}<img src="/temp/akcjaNaZdrowie.png" width="100%">
         </div>
     </div>
 

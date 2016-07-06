@@ -15,8 +15,17 @@ Template.mainOpinions.onRendered(function () {
         full_width: true,
         indicators: true,
         height: 400,
-        transition: 300
+        transition: 300,
+        //interval:12000
     });
+    $('.slider').slider('pause');
+
+    // Start slider
+//    $('.slider').slider('start');
+//// Next slide
+//    $('.slider').slider('next');
+//// Previous slide
+//    $('.slider').slider('prev');
 
 })
 
