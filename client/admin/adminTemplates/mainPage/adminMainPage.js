@@ -46,6 +46,13 @@ Template.adminMainPage.helpers({
 
         return false;
     },
+    clickable: function () {
+        var ti = Template.instance();
+        if(ti.selectedTheme.get() == "mainClickable")
+            return true;
+
+        return false;
+    },
     selectedDoc: function () {
         var ti = Template.instance();
         return MainPage.findOne(ti.selectedDocument.get())

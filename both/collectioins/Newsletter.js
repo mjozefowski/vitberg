@@ -5,4 +5,4 @@
  * Created by Maciej Józefowski, 05.07.16
  */
 
-Newsletter = new Meteor.Collection();
+Newsletter = new Meteor.Collection("Newsletter");

@@ -7,14 +7,15 @@
 
 Meteor.startup(function () {
 
-    var main = MainPage.insert({type:'mainClickable',visible:true, order:30});
-    var subClickable = TemplatesForMainClickable.insert({text:"subClickable"})
-    var icons = {
-        image:"asdasdasd",
-        templateId:subClickable
-    }
-    var clickable = ClickableItemsTemplate.insert({mainTemplate:main});
-    ClickableItemsTemplate.update(clickable,{$addToSet:icons});
+    //var main = MainPage.insert({type:'mainClickable',visible:true, order:30});
+    //var clickable = ClickableItemsTemplate.insert({mainTemplate:main});
+    //var subClickable = TemplatesForMainClickable.insert({text:"subClickable"})
+    //
+    //var icons = {
+    //    image:"asdasdasd",
+    //    templateId:subClickable
+    //}
+    //ClickableItemsTemplate.update(clickable,{$addToSet:icons});
 
     Categories.remove({});
     SubCategories.remove({});
