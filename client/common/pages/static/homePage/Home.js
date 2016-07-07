@@ -11,23 +11,6 @@ Template.Home.onCreated(function () {
 
 Template.Home.onRendered(function () {
 
-
-    $('.parallax').parallax();
-
-    window.sr = ScrollReveal();
-    sr.reveal('#first-image-o-firmie',
-        {viewOffset:{top:250}, origin:'right',duration:1000, distance:'100px'}
-    );
-    sr.reveal('#third-first-photo',
-        {viewOffset:{top:200}, origin:'left',duration:1000, distance:'100px'}
-    );
-    sr.reveal('#third-second-photo',
-        {viewOffset:{top:200}, origin:'left',duration:1000, distance:'100px', delay:100}
-    );
-    sr.reveal('#third-third-photo',
-        {viewOffset:{top:200}, origin:'left',duration:1000, distance:'100px', delay:200}
-    );
-
 })
 
 Template.Home.helpers({
