@@ -10,7 +10,7 @@ Template.mainParalax.onCreated(function () {
 })
 
 Template.mainParalax.onRendered(function () {
-
+    $('.parallax').parallax();
 })
 
 Template.mainParalax.helpers({
