@@ -4,6 +4,7 @@
  * Proprietary and confidential
  * Created by Karol Liszka, 06.07.16
  */
+ 
 Template.footer.onCreated(function () {
 
 })
