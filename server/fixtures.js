@@ -16,7 +16,9 @@ Meteor.startup(function () {
     //    templateId:subClickable
     //}
     //ClickableItemsTemplate.update(clickable,{$addToSet:icons});
-
+    TemplatesForMainClickable.remove({})
+    MainPage.remove({})
+    ClickableItemsTemplate.remove({})
     Categories.remove({});
     SubCategories.remove({});
     News.remove({});

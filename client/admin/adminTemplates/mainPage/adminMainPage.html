@@ -1,4 +1,11 @@
 <template name="adminMainPage">
+
+    <div>Lista klocków:</div>
+    {{#each listOfBlocks}}
+        <div id="{{this.id}}" block-type="{{this.type}}">{{this.type}}<span class="editBlock">Edytuj</span><span class="deleteBlock">Usuń</span></div>
+    {{/each}}
+
+
     <div id="addNewMainPage">Dodaj nowy</div>
     {{#if addNewBar}}
         <center>

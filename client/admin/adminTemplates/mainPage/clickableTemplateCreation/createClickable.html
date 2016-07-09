@@ -2,12 +2,11 @@
 creating clickable
 
 
-    <button id="addNew">Dodaj nowy</button>
+    <button id="addNew">Dodaj nowy element</button>
 
     {{#if addNew}}
 
             <!--{{#if isFileNewElementLoaded}}-->
-                <button id="newElementFileAccept">Dodaj</button>
 
                 <!--{{else}}-->
 
@@ -17,13 +16,24 @@ creating clickable
                         Upuść tutaj aby dodać
                     </div>
                 </div>
+                {{#each array}}
 
-            <!--{{/if}}-->
+                    <div id="{{data.blob.name}}">{{data.blob.name}} <span class="removeImage">XXXXX</span></div>
 
+                {{/each}}
+                    <!--{{/if}}-->
+
+                <button id="newElementFileAccept">Dodaj</button>
 
     {{/if}}
 
+Lista kafelków:
 
+    {{#each templatesForMainClickableList}}
+
+        <div id="{{_id}}">{{text}} <span class="editElement">Edytuj</span><span class="removeElement">XXXX</span></div>
+
+    {{/each}}
 
 
 </template>
