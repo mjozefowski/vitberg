@@ -1,0 +1,39 @@
+<template name="createClickable">
+creating clickable
+
+
+    <button id="addNew">Dodaj nowy element</button>
+
+    {{#if addNew}}
+
+            <!--{{#if isFileNewElementLoaded}}-->
+
+                <!--{{else}}-->
+
+                <div>Dodaj ikonę:</div>
+                <div id="dropzone" class="dropzone  drop-zone-box">
+                    <div class="well well-drop-zone">
+                        Upuść tutaj aby dodać
+                    </div>
+                </div>
+                {{#each array}}
+
+                    <div id="{{data.blob.name}}">{{data.blob.name}} <span class="removeImage">XXXXX</span></div>
+
+                {{/each}}
+                    <!--{{/if}}-->
+
+                <button id="newElementFileAccept">Dodaj</button>
+
+    {{/if}}
+
+Lista kafelków:
+
+    {{#each templatesForMainClickableList}}
+
+        <div id="{{_id}}">{{text}} <span class="editElement">Edytuj</span><span class="removeElement">XXXX</span></div>
+
+    {{/each}}
+
+
+</template>

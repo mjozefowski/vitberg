@@ -1,4 +1,11 @@
 <template name="adminMainPage">
+
+    <div>Lista klocków:</div>
+    {{#each listOfBlocks}}
+        <div id="{{this.id}}" block-type="{{this.type}}">{{this.type}}<span class="editBlock">Edytuj</span><span class="deleteBlock">Usuń</span></div>
+    {{/each}}
+
+
     <div id="addNewMainPage">Dodaj nowy</div>
     {{#if addNewBar}}
         <center>
@@ -8,6 +15,7 @@
         <input id="2" type="radio" name="type" group="group1" value="mainRedLeft"><label for="2">Czerwony, obraz po lewej</label>
         <input id="3" type="radio" name="type" group="group1" value="mainParallax"> <label for="3">Paralaksa</label>
         <input id="4" type="radio" name="type" group="group1" value="mainOpinion"> <label for="4">Opinie klientów</label>
+        <input id="5" type="radio" name="type" group="group1" value="mainClickable"> <label for="5">Kafelek z ikonami do klikania</label>
 
         </fieldset>
             <input type="submit">
@@ -47,7 +55,10 @@
                     {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
                     <div id="submitRedRight">Zapisz</div>
 
-
+                {{else}}
+                    {{#if clickable}}
+                        {{> createClickable selectedDoc}}
+                    {{/if}}
                 {{/if}}
             {{/if}}
         {{/if}}

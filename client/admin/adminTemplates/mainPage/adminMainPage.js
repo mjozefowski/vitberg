@@ -46,9 +46,19 @@ Template.adminMainPage.helpers({
 
         return false;
     },
+    clickable: function () {
+        var ti = Template.instance();
+        if(ti.selectedTheme.get() == "mainClickable")
+            return true;
+
+        return false;
+    },
     selectedDoc: function () {
         var ti = Template.instance();
         return MainPage.findOne(ti.selectedDocument.get())
+    },
+    listOfBlocks: function () {
+        return MainPage.find({},{sort:{order:1}});
     }
 
 
@@ -67,6 +77,13 @@ Template.adminMainPage.events({
     },
     "click #addNewMainPage": function (e,t) {
         t.addNewBar.set(true);
+    },
+    "click deleteBlock": function (e, t) {
+        var id = $(e.target).parent().attr('id');
+        var type = $(e.target).parent().attr('block-type');
+
+        console.log(type)
+
     }
 
 })

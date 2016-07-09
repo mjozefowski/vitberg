@@ -100,24 +100,6 @@ Template.dropzone.events({
 
     },
 
-    //'submit #newsForm': function (e,t) {
-    //    e.preventDefault();
-    //    var array = t.imagesArray.get();
-    //    array.forEach(function (e) {
-    //        //var newFile = new FS.File(e)
-    //        Images.insert(e, function (error, fileObj) {
-    //            if (error) {
-    //                alert("fail")
-    //            } else {
-    //                alert("success");
-    //                console.log(fileObj)
-    //                //t.imagesArray.push(fileObj.path)
-    //            }
-    //        });
-    //    })
-    //
-    //},
-
     'dropped #dropzone': function(e,t) {
 
 
