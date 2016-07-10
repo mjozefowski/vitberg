@@ -119,7 +119,13 @@ Template.createClickable.events({
     },
     'click .editElement': function (e,t) {
         var id = $(e.target).parent().attr('id')
-        //Meteor.call('deleteTemplatesForMailClickable',id)
+        Session.set('selectedId',id)
+        Modal.show('editWhiteBox', function () {
+            var id2 = Session.get('selectedId')
+            return id2;
+        });
+
+
     },
     'click .removeImage': function (e,t) {
         var name = $(e.target).parent().attr('id');

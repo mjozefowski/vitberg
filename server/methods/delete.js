@@ -6,23 +6,40 @@
  */
 
 Meteor.methods({
-    'deleteTemplatesForMailClickable':function (id) {
-        if(this.userId){
-            if(Roles.userIsInRole(this.userId,['admin','editor'])){
+    'deleteTemplatesForMailClickable': function (id) {
+        if (this.userId) {
+            if (Roles.userIsInRole(this.userId, ['admin', 'editor'])) {
 
-                var clickableTemplate = ClickableItemsTemplate.findOne({"icons.templateId":id})
+                var clickableTemplate = ClickableItemsTemplate.findOne({"icons.templateId": id})
                 var icons = clickableTemplate.icons;
 
                 icons.forEach(function (e) {
-                    if(e.templateId == id){
+                    if (e.templateId == id) {
                         Icons.remove(e.image);
-                        ClickableItemsTemplate.update(clickableTemplate,{$pull:{icons:e}})
+                        ClickableItemsTemplate.update(clickableTemplate, {$pull: {icons: e}})
                     }
                 })
 
                 TemplatesForMainClickable.remove(id);
             }
         }
-    }
+    },
 
-})
+
+    'deletemainOpinion': function (id){
+        MainPage.remove(id);
+    },
+    'deletemainParallax': function (id){
+        MainPage.remove(id);
+    },
+    'deletemainRedLeft': function (id){
+        MainPage.remove(id);
+    },
+    'deletemainRedRight': function (id){
+        MainPage.remove(id);
+    },
+    'deletemainClickable': function (id){
+        //TODO:Dodać usuwanie podelementów
+        MainPage.remove(id);
+    },
+});

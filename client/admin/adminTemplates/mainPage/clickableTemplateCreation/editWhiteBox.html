@@ -1,0 +1,35 @@
+<template name="editWhiteBox">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <h1>Edycja kafelka</h1>
+                {{#autoForm collection="TemplatesForMainClickable" id="i20up9oj3eq9" doc=formData type="update"}}
+                        {{> afQuickField name='title'}}
+                        {{> afQuickField name='text' rows="6"}}
+                        {{> afQuickField name='link'}}
+                        {{> afQuickField name='useCase'}}
+
+                    <button type="submit" class="btn btn-primary updateBtn hidden">Aktualizuj</button>
+                {{/autoForm}}
+
+
+                {{#if isImage}}
+                    <img src="/cfs/files/images/{{formData.image}}">
+                    {{else}}
+                    Dodaj obraz:
+                    <div id="dropzone" class="dropzone drop-zone-box">
+                        <div class="well well-drop-zone">
+                            Upuść tutaj aby dodać
+                        </div>
+                    </div>
+
+                {{/if}}
+
+                <button id="save">Aktualizuj</button>
+
+
+
+            </div>
+        </div>
+    </div>
+</template>

@@ -7,29 +7,29 @@
     {{>mainParalax}}
     {{>mainClickable}}
 
-    <!--{{#each blocks}}-->
-        <!--{{#if isRedRight type}}-->
-            <!--{{>mainRedRight this}}-->
-        <!--{{else}}-->
-            <!--{{#if isRedLeft type}}-->
-            <!--{{>mainRedLeft this}}-->
-                <!--redLeft-->
-                <!--{{else}}-->
-                <!--{{#if isParallax type}}-->
-                    <!--mainParallax-->
-                    <!--{{>mainParalax this}}-->
-                    <!--{{else}}-->
-                    <!--{{#if isMainClickable type}}-->
-                        <!--{{> mainClickable this}}-->
-                        <!--{{else}}-->
-                        <!--{{#if isMainOpinion type}}-->
-                            <!--{{>mainOpinions}}-->
-                        <!--{{/if}}-->
-                    <!--{{/if}}-->
-                <!--{{/if}}-->
-            <!--{{/if}}-->
-        <!--{{/if}}-->
-    <!--{{/each}}-->
+    {{#each blocks}}
+        {{#if isRedRight type}}
+            {{>mainRedRight this}}
+        {{else}}
+            {{#if isRedLeft type}}
+            {{>mainRedLeft this}}
+
+                {{else}}
+                {{#if isParallax type}}
+
+                    {{>mainParalax this}}
+                    {{else}}
+                    {{#if isMainClickable type}}
+                        {{> mainClickable this}}
+                        {{else}}
+                        {{#if isMainOpinion type}}
+                            {{>mainOpinions}}
+                        {{/if}}
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+        {{/if}}
+    {{/each}}
 
     {{>footer}}
 
