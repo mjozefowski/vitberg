@@ -6,8 +6,6 @@
  */
 
 Schemas.TemplatesForMainClickableSchema = new SimpleSchema({
-
-
     title:{
         type:String,
         optional:true
@@ -30,6 +28,8 @@ Schemas.TemplatesForMainClickableSchema = new SimpleSchema({
     }
 
 })
+
+TemplatesForMainClickable.attachSchema(Schemas.TemplatesForMainClickableSchema);
 
 TemplatesForMainClickable.allow({
     insert: function () {

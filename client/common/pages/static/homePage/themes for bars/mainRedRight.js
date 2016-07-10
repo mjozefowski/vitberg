@@ -17,7 +17,7 @@ Template.mainRedRight.helpers({
 
     imageRight : function () {
         var ti = Template.instance();
-        return ti.data.images[0]
+        return "/cfs/files/images/" + ti.data.images[0]
     },
     linkUrl: function () {
         var ti = Template.instance();

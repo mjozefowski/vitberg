@@ -23,25 +23,32 @@
         </center>
 
 
-
         {{#if parallax}}
             {{#autoForm collection="MainPage" id="updateParallax" type="update" doc=selectedDoc}}
                 {{> afQuickField name='title'}}
-                <button type="submit" class="btn btn-primary">Insert</button>
+                <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
             {{/autoForm}}
             {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
-            <div id="submitParallax">Zapisz</div>
-
+            <div id="dropzone" class="dropzone" style="background-color: black;height: 100px; width: 100px">
+                <div class="well well-drop-zone">
+                    Upuść tutaj aby wysłać
+                </div>
+            </div>
+            <button id="save">Zapisz</button>
         {{else}}
 
             {{#if redLeft}}
                 {{#autoForm collection="MainPage" id="updateRedLeft" type="update" doc=selectedDoc}}
                     {{> afQuickField name='title'}}
-                    <button type="submit" class="btn btn-primary">Insert</button>
+                    <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
                 {{/autoForm}}
                 {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
-                <div id="submitRedLeft">Zapisz</div>
-
+                <div id="dropzone" class="dropzone" style="background-color: black;height: 100px; width: 100px">
+                    <div class="well well-drop-zone">
+                        Upuść tutaj aby wysłać
+                    </div>
+                </div>
+                <button id="save">Zapisz</button>
 
             {{else}}
 
@@ -50,11 +57,15 @@
 
                     {{> afQuickField name='title'}}
                     {{> afQuickField name='visible'}}
-                        <button type="submit" class="btn btn-primary">Insert</button>
+                        <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
                     {{/autoForm}}
                     {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
-                    <div id="submitRedRight">Zapisz</div>
-
+                    <div id="dropzone" class="dropzone" style="background-color: black;height: 100px; width: 100px">
+                        <div class="well well-drop-zone">
+                            Upuść tutaj aby wysłać
+                        </div>
+                    </div>
+                    <button id="save">Zapisz</button>
                 {{else}}
                     {{#if clickable}}
                         {{> createClickable selectedDoc}}

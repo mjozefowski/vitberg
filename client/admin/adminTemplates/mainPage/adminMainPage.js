@@ -9,7 +9,8 @@ Template.adminMainPage.onCreated(function () {
     this.selectedTheme = new ReactiveVar("")
     this.insert = new ReactiveVar(false);
     this.addNewBar = new ReactiveVar(false)
-    this.selectedDocument = new ReactiveVar()
+    this.selectedDocument = new ReactiveVar();
+    this.imagesArray = new ReactiveArray();
 })
 
 Template.adminMainPage.onRendered(function () {
@@ -78,12 +79,48 @@ Template.adminMainPage.events({
     "click #addNewMainPage": function (e,t) {
         t.addNewBar.set(true);
     },
-    "click deleteBlock": function (e, t) {
+    "click .deleteBlock": function (e, t) {
         var id = $(e.target).parent().attr('id');
         var type = $(e.target).parent().attr('block-type');
 
-        console.log(type)
+        Meteor.call('delete'+type,id);
 
-    }
+        console.log(type)
+    },
+    'click #save': function (e,t) {
+        $('.saveButton').click();
+                var array = t.imagesArray.get();
+                array.forEach(function (e) {
+                    Images.insert(e, function (error, fileObj) {
+                        if (error) {
+                            alert("fail")
+                        } else {
+                            MainPage.update(t.selectedDocument.get(),{$addToSet:{images:fileObj._id}}, function (e,r) {
+                                if(e){
+                                    console.log("update failed")
+                                }else {
+                                    t.imagesArray.set([]);
+                                }
+                            })
+                        }
+                    });
+                })
+    },
+
+    'dropped #dropzone': function(e,t) {
+
+
+        FS.Utility.eachFile(e, function(file) {
+            var newFile = new FS.File(file);
+
+            console.log(newFile)
+            //t.imagesArray.push(newFile);
+            var ti = Template.instance();
+
+            ti.imagesArray.push(newFile)
+            console.log("pushed")
+
+        });
+    },
 
 })
