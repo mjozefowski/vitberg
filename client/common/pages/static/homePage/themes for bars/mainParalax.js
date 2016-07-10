@@ -10,7 +10,7 @@ Template.mainParalax.onCreated(function () {
 })
 
 Template.mainParalax.onRendered(function () {
-    $('.parallax').parallax();
+
 })
 
 Template.mainParalax.helpers({
@@ -44,3 +44,5 @@ Template.mainParalax.helpers({
 })
 
 Template.mainParalax.events({})
+
+$('.main-parallax').stellar();

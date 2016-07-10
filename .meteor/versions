@@ -95,7 +95,6 @@ livedata@1.0.18
 localstorage@1.0.9
 logging@1.0.12
 matb33:collection-hooks@0.8.1
-materialize:materialize@0.97.5
 mdg:validation-error@0.2.0
 meteor@1.1.14
 meteor-base@1.0.4
@@ -112,6 +111,7 @@ mongo-id@1.0.4
 mongo-livedata@1.0.12
 mpowaga:jquery-fileupload@9.11.2
 mpowaga:jquery-ui-widget@1.11.4
+noorderstorm:stellar@0.1.0
 npm-bcrypt@0.8.6_1
 npm-mongo@1.4.43
 observe-sequence@1.0.11
@@ -217,6 +217,7 @@ templates:array@1.0.3
 templating@1.1.9
 templating-tools@1.0.4
 tracker@1.0.13
+twbs:bootstrap@3.3.6
 ui@1.0.11
 underscore@1.0.8
 url@1.0.9
