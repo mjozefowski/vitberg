@@ -1,13 +1,10 @@
 <template name="subClickable">
-{{data._id}}
     <div class="sub-clickable row">
         <div class="description col-lg-4 col-md-4">
 
             <div class="top-title" >zagłówek</div>
             <div class="bottom-title" >SZYJA</div>
-            <div class="text-content"> Praesent turpis. Sed fringilla mauris sit amet nibh. Fusce convallis metus id felis luctus adipiscing.
-
-                Nullam tincidunt adipiscing enim. Ut a nisl id ante tempus hendrerit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+            <div class="text-content"> {{data.text}}</div>
             <button class="read-more-btn left"><i class="material-icons">add</i> Dowiedz się więcej</button>
 
         </div>
@@ -16,11 +13,9 @@
             <div class="header-smaller">ZASTOSOWANIE</div>
 
             <ul>
-                <li><i class="material-icons">add</i> <span> Aenean imperdiet phasellus </span>  </li>
-                <li><i class="material-icons">add</i> <span>Sed fringilla mauris sit.</span> </li>
-                <li><i class="material-icons">add</i> <span>Phasellus imperdiet accumsan </span> </li>
-                <li><i class="material-icons">add</i> <span> Aenean impehasellus accumsan</span>  </li>
-                <li><i class="material-icons">add</i> <span>Sed fringilla amet nibh.</span> </li>
+                {{#each useCase}}
+                <li><i class="material-icons">add</i> <span> {{this}}</span>  </li>
+                {{/each}}
             </ul>
 
         </div>

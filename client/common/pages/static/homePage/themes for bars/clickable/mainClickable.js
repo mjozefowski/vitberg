@@ -14,7 +14,7 @@ Template.mainClickable.onCreated(function () {
 })
 
 Template.mainClickable.onRendered(function () {
-
+    $('.iconClickable').first().click();
 })
 
 Template.mainClickable.helpers({

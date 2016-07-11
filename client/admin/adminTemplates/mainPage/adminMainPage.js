@@ -72,7 +72,7 @@ Template.adminMainPage.events({
         var value = $("input[type='radio'][name='type']:checked").val();
 
         console.log(value)
-        t.selectedDocument.set(MainPage.insert({order:10,type:value, visible:false, text:"Wpisz treść ..."}));
+        t.selectedDocument.set(MainPage.insert({order:10,type:value, visible:true, text:"Wpisz treść ..."}));
         t.selectedTheme.set(value);
         t.insert.set(true)
     },

@@ -10,7 +10,6 @@ Template.subClickable.onCreated(function () {
 })
 
 Template.subClickable.onRendered(function () {
-
 })
 
 Template.subClickable.helpers({
@@ -19,6 +18,13 @@ Template.subClickable.helpers({
         var ti = Template.instance();
         var id = ti.data;
         return TemplatesForMainClickable.findOne(id);
+    },
+    useCase: function () {
+        var ti = Template.instance();
+        var id = ti.data;
+        var obj = TemplatesForMainClickable.findOne(id);
+        var usecase = obj.useCase;
+        return usecase
     }
 
 })
