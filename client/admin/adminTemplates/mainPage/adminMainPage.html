@@ -26,6 +26,8 @@
         {{#if parallax}}
             {{#autoForm collection="MainPage" id="updateParallax" type="update" doc=selectedDoc}}
                 {{> afQuickField name='title'}}
+                {{> afQuickField name='visible'}}
+                {{> afQuickField name='link'}}
                 <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
             {{/autoForm}}
             {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
@@ -40,6 +42,8 @@
             {{#if redLeft}}
                 {{#autoForm collection="MainPage" id="updateRedLeft" type="update" doc=selectedDoc}}
                     {{> afQuickField name='title'}}
+                    {{> afQuickField name='visible'}}
+                    {{> afQuickField name='link'}}
                     <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
                 {{/autoForm}}
                 {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
@@ -57,6 +61,7 @@
 
                     {{> afQuickField name='title'}}
                     {{> afQuickField name='visible'}}
+                    {{> afQuickField name='link'}}
                         <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
                     {{/autoForm}}
                     {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}

@@ -28,7 +28,10 @@ Template.mainClickable.helpers({
     icons: function () {
         var ti = Template.instance();
         var id = ti.data._id;
-        return ClickableItemsTemplate.findOne({mainTemplate:id}).icons
+        var clickable = ClickableItemsTemplate.findOne({mainTemplate:id});
+        var icons = clickable.icons
+        console.log(icons)
+        return icons;
     }
 
 

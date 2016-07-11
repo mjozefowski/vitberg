@@ -7,15 +7,7 @@
 
 Meteor.startup(function () {
 
-    //var main = MainPage.insert({type:'mainClickable',visible:true, order:30});
-    //var clickable = ClickableItemsTemplate.insert({mainTemplate:main});
-    //var subClickable = TemplatesForMainClickable.insert({text:"subClickable"})
-    //
-    //var icons = {
-    //    image:"asdasdasd",
-    //    templateId:subClickable
-    //}
-    //ClickableItemsTemplate.update(clickable,{$addToSet:icons});
+
     TemplatesForMainClickable.remove({})
     MainPage.remove({})
     ClickableItemsTemplate.remove({})
@@ -24,6 +16,33 @@ Meteor.startup(function () {
     News.remove({});
     Meteor.users.remove({})
     Markers.remove({})
+
+    var main = MainPage.insert({type:'mainClickable',visible:true, order:30});
+    var clickable = ClickableItemsTemplate.insert({mainTemplate:main});
+    var subClickable = TemplatesForMainClickable.insert({text:"subClickable"})
+    var subClickable2 = TemplatesForMainClickable.insert({text:"subClickable"})
+    var subClickable3 = TemplatesForMainClickable.insert({text:"subClickable"})
+
+    var icon = {
+        image:"/temp/clickable1.png",
+        templateId:subClickable
+    }
+    var icon2 = {
+        image:"/temp/clickable2.png",
+        templateId:subClickable2
+    }
+    var icon3 = {
+        image:"/temp/clickable3.png",
+        templateId:subClickable3
+    }
+    var icon4 = {
+        image:"/temp/clickable3.png",
+        templateId:""
+    }
+    ClickableItemsTemplate.update(clickable,{$addToSet:{icons:icon}});
+    ClickableItemsTemplate.update(clickable,{$addToSet:{icons:icon2}});
+    ClickableItemsTemplate.update(clickable,{$addToSet:{icons:icon3}});
+    ClickableItemsTemplate.update(clickable,{$addToSet:{icons:icon4}});
 
 
     for(var i=0;i<3;i++){

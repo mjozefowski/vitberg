@@ -6,41 +6,54 @@
         <div class="header-smaller">ELEMENTY RAM VITBERG+</div>
         <div class="blocks-container">
 
-            <div class="single-block">
-                <div class="block-ico"> <img src="/temp/clickable1.png" height="100%"></div>
-                <div class="description">ZAGŁOWEK PLUS</div>
-            </div>
-            <div class="single-block">
-                <div class="block-ico"> <img src="/temp/clickable2.png" height="100%"></div>
-                <div class="description">MODUŁ SZYJA</div>
-            </div>
-            <div class="single-block">
-                <div class="block-ico"> <img src="/temp/clickable3.png" height="100%"></div>
-                <div class="description">MODUŁ NOGI</div>
-            </div>
-            <div class="single-block">
-                <div class="block-ico"> <img src="/temp/clickable1.png" height="100%"></div>
-                <div class="description">MODUŁ BIODRA</div>
-            </div>
-            <div class="single-block">
-                <div class="block-ico"> <img src="/temp/clickable2.png" height="100%"></div>
-                <div class="description">ZAGŁOWEK SZYJA</div>
-            </div>
-            <div class="single-block">
-                <div class="block-ico"> <img src="/temp/clickable3.png" height="100%"></div>
-                <div class="description">MODUŁ KOLANA</div>
-            </div>
-            <div class="single-block">
-                <div class="block-ico"> <img src="/temp/clickable1.png" height="100%"></div>
-                <div class="description">MODUŁ METABOLIZM</div>
-            </div>
+            {{#each icons}}
+
+                <div class="single-block">
+                    <div class="block-ico"> <img id="{{this.templateId}}" src="{{this.image}}" height="100%" class="iconClickable"></div>
+                    <div class="description">MODUŁ METABOLIZM</div>
+                </div>
+                <!--<img id="{{this.templateId}}" src="{{this.image}}" class="iconClickable">-->
+
+            {{/each}}
+            <!--<div class="single-block">-->
+                <!--<div class="block-ico"> <img src="/temp/clickable1.png" height="100%"></div>-->
+                <!--<div class="description">ZAGŁOWEK PLUS</div>-->
+            <!--</div>-->
+            <!--<div class="single-block">-->
+                <!--<div class="block-ico"> <img src="/temp/clickable2.png" height="100%"></div>-->
+                <!--<div class="description">MODUŁ SZYJA</div>-->
+            <!--</div>-->
+            <!--<div class="single-block">-->
+                <!--<div class="block-ico"> <img src="/temp/clickable3.png" height="100%"></div>-->
+                <!--<div class="description">MODUŁ NOGI</div>-->
+            <!--</div>-->
+            <!--<div class="single-block">-->
+                <!--<div class="block-ico"> <img src="/temp/clickable1.png" height="100%"></div>-->
+                <!--<div class="description">MODUŁ BIODRA</div>-->
+            <!--</div>-->
+            <!--<div class="single-block">-->
+                <!--<div class="block-ico"> <img src="/temp/clickable2.png" height="100%"></div>-->
+                <!--<div class="description">ZAGŁOWEK SZYJA</div>-->
+            <!--</div>-->
+            <!--<div class="single-block">-->
+                <!--<div class="block-ico"> <img src="/temp/clickable3.png" height="100%"></div>-->
+                <!--<div class="description">MODUŁ KOLANA</div>-->
+            <!--</div>-->
+            <!--<div class="single-block">-->
+                <!--<div class="block-ico"> <img src="/temp/clickable1.png" height="100%"></div>-->
+                <!--<div class="description">MODUŁ METABOLIZM</div>-->
+            <!--</div>-->
 
         </div>
     </div>
 
     <!--{{#each icons}}-->
 
-        <!--<img id="{{this.templateId}}" src="{{this.image}}" class="iconClickable">-->
+        <!--<div class="single-block">-->
+            <!--<div class="block-ico"> <img id="{{this.templateId}}" src="{{this.image}}" height="100%" class="iconClickable"></div>-->
+            <!--<div class="description">MODUŁ METABOLIZM</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;<img id="{{this.templateId}}" src="{{this.image}}" class="iconClickable">&ndash;&gt;-->
 
     <!--{{/each}}-->
 

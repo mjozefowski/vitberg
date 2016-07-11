@@ -15,7 +15,7 @@ Template.Home.onRendered(function () {
 
 Template.Home.helpers({
     blocks: function () {
-        return MainPage.find();
+        return MainPage.find({visible:true},{sort:{order:1}});
     },
     isParallax: function (type) {
         return type == "mainParallax"
