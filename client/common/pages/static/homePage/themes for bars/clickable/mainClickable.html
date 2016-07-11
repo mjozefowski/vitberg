@@ -1,7 +1,9 @@
 <template name="mainClickable">
 
     <div class="main-clickable">
-        <div class="middle-top-block"> </div>
+
+        <div class="top-clip top-clip-clickable-blocks"><img src="/temp/clickable2.png" width="80px;"></div>
+
         <div class="header">POZNAJ SYSTEM S.K.O.T.</div>
         <div class="header-smaller">ELEMENTY RAM VITBERG+</div>
         <div class="blocks-container">
@@ -15,6 +17,7 @@
                 <!--<img id="{{this.templateId}}" src="{{this.image}}" class="iconClickable">-->
 
             {{/each}}
+
             <!--<div class="single-block">-->
                 <!--<div class="block-ico"> <img src="/temp/clickable1.png" height="100%"></div>-->
                 <!--<div class="description">ZAGŁOWEK PLUS</div>-->
@@ -56,7 +59,6 @@
         <!--&lt;!&ndash;<img id="{{this.templateId}}" src="{{this.image}}" class="iconClickable">&ndash;&gt;-->
 
     <!--{{/each}}-->
-
 
     {{> UI.dynamic template=myTemplate data=templateData}}
 
