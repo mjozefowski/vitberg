@@ -42,5 +42,16 @@ Template.menu.events({
     'click #logout': function () {
         Meteor.logout()
         Router.go("/")
-    }
+    },
+    'click #menu-hamburger-btn':function(){
+      $('.whole-hamburger-container').toggleClass('show-hamburger-menu');
+        $('.hamburger-menu-ico').toggleClass('move-hamburger-ico');
+    },
+
+    'click .dropdown-hamburger':function(e){
+        $(e.target).children("ul").toggleClass('unrolled');
+    },
+
+
+
 })

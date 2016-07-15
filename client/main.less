@@ -1,6 +1,8 @@
-@font-face { font-family: Avenir-Light; src: url('/fonts/AvenirLTStd-Light.otf');}
-@font-face { font-family: Avenir-Black; src: url('/fonts/AvenirLTStd-Black.otf');}
-@font-face { font-family: Avenir-Heavy; src: url('/fonts/AvenirLTStd-Heavy.otf');}
+@font-face { font-family: Avenir-Regular; src: url('/fonts/Avenir.ttc');}
+@font-face { font-family: Avenir-Bold-Condensed; src: url('/fonts/Avenir Next Condensed.ttc');}
+@font-face { font-family: Avenir-Black; src: url('/fonts/Avenir Next.ttc');}
+
+
 @red-vitberg:#DE0029;
 @real-red-vitberg:#FF0103;
 @lighter-red-vitberg:#F2353B;
@@ -8,11 +10,11 @@
 
 //WHOLE PROJECT STYLES
 html{
-  font-family:Avenir-light;
+  font-family:Avenir-Regular;
   body{
     color:#333;
     overflow-x:hidden;
-    font-family:Avenir-light;
+    font-family:Avenir-Regular;
   }
 }
 
@@ -102,6 +104,18 @@ body {
     display:none;
     opacity:0;
   }
+
+  //ITEM IS 0PX HEIGHT (MAX HEIGHT 0, OPACITY 0, OVERFLOW HIDDEN)
+  .rolled{
+    max-height:0;
+    overflow:hidden;
+    transition:opacity .2s, max-height .6s;
+  }
+
+  //ITEM IS AT MAX 100VH HEIGHT (MAX HEIGHT 100, OPACITY 1)
+  .unrolled{
+    max-height:500PX;
+  }
 }
 
 //TOP MENU STYLES
@@ -122,6 +136,10 @@ body {
       .navbar-header{
         height:70px;
       }
+
+      .hamburger-menu-ico{
+        display:none;
+      }
     }
 
     .right-top-menu-btns{
@@ -138,7 +156,7 @@ body {
           padding-top: 8px;
           padding-bottom: 12px;
           cursor: pointer;
-          font-family:Avenir-Heavy;
+          font-family:Avenir-Black;
           text-transform: uppercase;
           color:@real-red-vitberg;
           font-size:12px;
@@ -161,7 +179,7 @@ body {
               padding-top: 10px;
               padding-bottom: 10px;
               cursor: pointer;
-              font-family:Avenir-Heavy;
+              font-family:Avenir-Black;
               text-transform: uppercase;
               color:#3E4E5D;
               font-size:12px;
@@ -206,7 +224,7 @@ body {
 
     }
 
-    .brand-logo{
+    .brand-logo-big{
       margin-top: 20px;
       z-index: 3;
       margin-left: 8.3333333333%;
@@ -217,6 +235,10 @@ body {
         z-index: 1;
       }
 
+    }
+
+    .brand-logo-small{
+      display:none;
     }
 
   }
@@ -240,6 +262,10 @@ body {
       .navbar-header{
         height:70px;
       }
+
+      .hamburger-menu-ico{
+        display:none;
+      }
     }
 
     .right-top-menu-btns{
@@ -256,7 +282,7 @@ body {
           padding-top: 8px;
           padding-bottom: 12px;
           cursor: pointer;
-          font-family:Avenir-Heavy;
+          font-family:Avenir-Black;
           text-transform: uppercase;
           color:@real-red-vitberg;
           font-size:12px;
@@ -279,7 +305,7 @@ body {
               padding-top: 10px;
               padding-bottom: 10px;
               cursor: pointer;
-              font-family:Avenir-Heavy;
+              font-family:Avenir-Black;
               text-transform: uppercase;
               color:#3E4E5D;
               font-size:12px;
@@ -324,7 +350,7 @@ body {
 
     }
 
-    .brand-logo{
+    .brand-logo-small{
       margin-top: 20px;
       z-index: 3;
       margin-left: 8.3333333333%;
@@ -337,9 +363,157 @@ body {
 
     }
 
+    .brand-logo-big{
+      display:none;
+    }
+
   }
 
 }
+
+@media only screen and (min-width:768px) and (max-width:991px){
+
+  .top-menu{
+
+    display:none;
+  }
+
+}
+
+//HAMBURGER MENY STYLES
+@media only screen and (min-width:1200px){
+
+  .hamburger-menu{
+
+    display:none;
+
+  }
+}
+
+@media only screen and (min-width:992px) and (max-width:1199px){
+
+  .hamburger-menu{
+
+   display:none;
+
+  }
+
+}
+
+@media only screen and (min-width:768px) and (max-width:991px){
+
+  .hamburger-menu{
+    height:40px;
+    width:100%;
+    position: relative;
+
+    .hamburger-menu-ico{
+      position: absolute;
+      right: 30px;
+      font-size: 48px;
+      top: 8px;
+      z-index: 1000;
+      background-color: #d30f13;
+      padding: 7px;
+      border: 3px solid white;
+      border-radius: 5px;
+      color: #ffffff;
+      transition:all .4s;
+    }
+    .hamburger-menu-ico:hover{
+      background-color: #fff;
+      border: 3px solid #d30f13;
+      color: #d30f13;
+      cursor:pointer;
+    }
+
+    .brand-logo-small{
+      position: absolute;
+      left:30px;
+      top: -10px;
+      padding-left:0px;
+      z-index: 1000;
+    }
+
+    .whole-hamburger-container{
+      background-color:rgba(55,55,55,.9);
+      height:100vh;
+      position: absolute;
+      width:50%;
+      z-index:500;
+      right:-50%;
+      opacity:0;
+      text-align: right;
+      padding-right: 25px;
+      transition:all 0.2s;
+    }
+
+    .show-hamburger-menu{
+      right:0;
+      opacity:1;
+      transition:all 0.4s ease-out;
+    }
+
+    .move-hamburger-ico{
+      transition-delay: 3s;
+      background-color: #fff;
+      border: 3px solid #d30f13;
+      color: #d30f13;
+      transition:all 0.5s;
+      right:~"calc(50% - 82px)";
+    }
+
+    .hamburger-ul{
+      margin-top: 90px;
+      list-style: none;
+      padding-left:30px;
+      padding-right:30px;
+
+      a{
+        font-family: Avenir-Regular;
+        color:white;
+        font-size: 3rem;
+        cursor:pointer;
+
+        li{
+          width:100%;
+          margin:10px 0;
+        }
+      }
+
+      a:hover{
+        text-decoration: none;
+        color:@red-vitberg;
+      }
+
+      .dropdown-menu-hamburger{
+        margin-right:15px;
+      }
+
+      .dropdown-hamburger{
+        font-family: Avenir-Regular;
+        color: white;
+        font-size: 3rem;
+        cursor: pointer;
+        width:100%;
+        margin:10px 0;
+
+        ul{
+          list-style-type: none;
+        }
+      }
+
+      .dropdown-hamburger:hover{
+        color:@red-vitberg;
+      }
+    }
+
+
+
+  }
+
+}
+
 
 
 //LOG IN STYLES
@@ -2056,7 +2230,7 @@ body {
       .header-smaller{
         text-transform: uppercase;
         color: #de0029;
-        font-family: Avenir-light;
+        font-family: Avenir-Regular;
         font-weight: bold;
         margin-bottom: 50px;
         margin-top:10px;
@@ -2143,7 +2317,7 @@ body {
       .header-smaller{
         text-transform: uppercase;
         color: #de0029;
-        font-family: Avenir-light;
+        font-family: Avenir-Regular;
         font-weight: bold;
         margin-bottom: 50px;
         margin-top:10px;
@@ -2230,7 +2404,7 @@ body {
       .header-smaller{
         text-transform: uppercase;
         color: #de0029;
-        font-family: Avenir-light;
+        font-family: Avenir-Regular;
         font-weight: bold;
         margin-bottom: 50px;
         margin-top:10px;
@@ -2295,7 +2469,7 @@ body {
         .header{
           font-size: 18px;
           text-transform: uppercase;
-          font-family:Avenir-Heavy;
+          font-family:Avenir-Black;
           margin-top: 20px;
         }
 
@@ -2422,7 +2596,7 @@ body {
         .header{
           font-size: 18px;
           text-transform: uppercase;
-          font-family:Avenir-Heavy;
+          font-family:Avenir-Black;
           margin-top: 20px;
         }
 
@@ -2549,7 +2723,7 @@ body {
         .header{
           font-size: 18px;
           text-transform: uppercase;
-          font-family:Avenir-Heavy;
+          font-family:Avenir-Black;
           margin-top: 20px;
         }
 
@@ -2725,7 +2899,7 @@ body {
 
     .news-title{
       display:inline;
-      font-family: Avenir-Heavy;
+      font-family: Avenir-Black;
       color:@lighter-red-vitberg;
       font-size:18px;
       float:left;
@@ -2783,7 +2957,7 @@ body {
 
     :first-child{
       margin-right:5px;
-      font-family: Avenir-Heavy;
+      font-family: Avenir-Black;
     }
   }
 
@@ -2823,7 +2997,7 @@ body {
 
     .news-title{
       display:inline;
-      font-family: Avenir-Heavy;
+      font-family: Avenir-Black;
       color:@lighter-red-vitberg;
       font-size:18px;
       float:left;
