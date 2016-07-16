@@ -1,10 +1,11 @@
 <template name="adminMainPage">
 
     <div>Lista klocków:</div>
+    <div class="blockDragItem">
     {{#each listOfBlocks}}
         <div id="{{this.id}}" block-type="{{this.type}}">{{this.type}}<span class="editBlock">Edytuj</span><span class="deleteBlock">Usuń</span></div>
     {{/each}}
-
+    </div>
 
     <div id="addNewMainPage">Dodaj nowy</div>
     {{#if addNewBar}}
@@ -27,6 +28,7 @@
             {{#autoForm collection="MainPage" id="updateParallax" type="update" doc=selectedDoc}}
                 {{> afQuickField name='title'}}
                 {{> afQuickField name='visible'}}
+                {{> afQuickField name='showIcon'}}
                 {{> afQuickField name='link'}}
                 <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
             {{/autoForm}}
@@ -43,6 +45,7 @@
                 {{#autoForm collection="MainPage" id="updateRedLeft" type="update" doc=selectedDoc}}
                     {{> afQuickField name='title'}}
                     {{> afQuickField name='visible'}}
+                    {{> afQuickField name='showIcon'}}
                     {{> afQuickField name='link'}}
                     <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
                 {{/autoForm}}

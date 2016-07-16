@@ -1,5 +1,12 @@
 <template name="createClickable">
 creating clickable
+    {{#autoForm collection="MainPage" id="updateRedRight" type="update" doc=selectedDoc}}
+
+        {{> afQuickField name='visible'}}
+        {{> afQuickField name='showIcon'}}
+        <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
+    {{/autoForm}}
+    {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
 
 
     <button id="addNew">Dodaj nowy element</button>

@@ -19,6 +19,10 @@ Template.createClickable.onRendered(function () {
 })
 
 Template.createClickable.helpers({
+    selectedDoc: function () {
+      var ti = Template.instance();
+        return ti.mainTemplateId;
+    },
     thisTemplate: function () {
         var ti = Template.instance();
         return ClickableItemsTemplate.findOne(ti.masterTemplate)

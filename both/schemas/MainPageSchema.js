@@ -21,7 +21,7 @@ Schemas.MainPage = new SimpleSchema({
     },
     type:{
         type:String,
-        allowedValues: ['mainParallax', 'mainRedLeft', 'mainRedRight','mainClickable','mainOpinion'],
+        allowedValues: ['mainParallax', 'mainRedLeft', 'mainRedRight','mainClickable','mainOpinion','mainNews'],
         autoform: {
             options: [
                 {label: "Paralaxa", value: "mainParallax"},
@@ -29,6 +29,7 @@ Schemas.MainPage = new SimpleSchema({
                 {label: "Czerwony, obraz po prawej", value: "mainRedRight"},
                 {label: "Kafelek z ikonami do klikania", value: "mainClickable"},
                 {label: "Opinie klientów", value: "mainOpinion"},
+                {label: "Aktualności", value: "mainNews"},
             ]
         }    },
     order:{
@@ -39,6 +40,13 @@ Schemas.MainPage = new SimpleSchema({
         optional:true
     },
     visible:{
+        type:Boolean
+    },
+    icon:{
+        type:String,
+        optional:true
+    },
+    showIcon:{
         type:Boolean
     }
 

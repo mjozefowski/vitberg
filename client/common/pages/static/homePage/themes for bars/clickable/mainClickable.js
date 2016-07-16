@@ -32,11 +32,11 @@ Template.mainClickable.helpers({
         var icons = clickable.icons
         console.log(icons)
         return icons;
+    },
+    showIcon: function () {
+        var ti = Template.instance();
+        return ti.data.showIcon;
     }
-
-
-
-
 })
 
 Template.mainClickable.events({

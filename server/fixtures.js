@@ -17,7 +17,7 @@ Meteor.startup(function () {
     Meteor.users.remove({})
     Markers.remove({})
 
-    var main = MainPage.insert({type:'mainClickable',visible:true, order:30});
+    var main = MainPage.insert({type:'mainClickable',visible:true, showIcon:false, order:30});
     var clickable = ClickableItemsTemplate.insert({mainTemplate:main});
     var subClickable = TemplatesForMainClickable.insert({text:"Praesent turpis. Sed fringilla mauris sit amet nibh. Fusce convallis metus id felis luctus adipiscing.   Nullam tincidunt adipiscing enim. Ut a nisl id ante tempus hendrerit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.", useCase:['Lorem ipsum','Dolor amet','Labore dolore','Tempor insididunt']})
     var subClickable2 = TemplatesForMainClickable.insert({text:"Nullam tincidunt adipiscing enim. Ut a nisl id ante tempus hendrerit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent turpis. Sed fringilla mauris sit amet nibh. Fusce convallis metus id felis luctus adipiscing", useCase:['Dolor amet','Lorem ipsum','Tempor insididunt','Labore dolore','Labore dolore']})
@@ -44,7 +44,6 @@ Meteor.startup(function () {
     ClickableItemsTemplate.update(clickable,{$addToSet:{icons:icon2}});
     ClickableItemsTemplate.update(clickable,{$addToSet:{icons:icon3}});
 
-
     for(var i=0;i<3;i++){
         var text = "Kategoria" + ' ' + i;
         var id = Categories.insert({name:text});
@@ -62,7 +61,7 @@ Meteor.startup(function () {
     Roles.addUsersToRoles(user, "admin");
 
     for(var i=0;i<10;i++){
-        News.insert({text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:false})
+        News.insert({title:"Aenean imperdiet. Phasellus accumsan cursus.", text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:false})
 
     }
     for(var i=0;i<4;i++){

@@ -3,24 +3,17 @@
     <div class="main-news-container">
         <div class="main-news-content" style="background-image:url(/temp/newsBg.jpg);">
             <div class="o-firmie">
-                <div class="header">O FIRMIE</div>
-                <div class="o-firmie-content simple-text-content"> Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Fusce fermentum odio nec arcu. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla.
-
-                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Sed augue ipsum, egestas nec, vestibulum et, malesuada adipiscing, dui. Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis ante odio sit amet eros. Suspendisse feugiat.
-
-                    nibh at velit scelerisque suscipit. </div>
+                <div class="header">{{title}}</div>
+                <div class="o-firmie-content simple-text-content"> {{text}} </div>
                 <button class="read-more-btn right"><i class="material-icons">add</i> Dowiedz się więcej</button>
             </div>
             <div class="news-list">
                 <div class="header">AKTUALNOSCI</div>
                 <div class="news-list-content simple-text-content">
                     <!--TODO LOREM IPSUM DO USUNIECIA I UZUPELNIENIA Z HELPERA-->
-                    <div><a class="single-news-item"> <i class="material-icons">add</i> Aenean imperdiet. Phasellus accumsan cursus. </a></div>
-                    <div><a class="single-news-item"> <i class="material-icons">add</i> Morbi vestibulum volutpat enim. eu odio. </a></div>
-                    <div><a class="single-news-item"> <i class="material-icons">add</i> Aenean imperdiet. Quisque malesuada placerat. </a></div>
-                    <div><a class="single-news-item"> <i class="material-icons">add</i> Aenean imperdiet. Phasellus accumsan cursus. </a></div>
-                    <div><a class="single-news-item"> <i class="material-icons">add</i> Morbi vestibulum volutpat enim. eu odio. </a></div>
-                    <div><a class="single-news-item"> <i class="material-icons">add</i> Aenean imperdiet. Quisque placerat nisl. </a></div>
+                    {{#each news}}
+                    <div><a id="{{this._id}}" class="single-news-item"> <i class="material-icons">add</i> {{this.title}} </a></div>
+                    {{/each}}
                 </div>
             </div>
         </div>
