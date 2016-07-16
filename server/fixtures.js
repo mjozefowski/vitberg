@@ -52,13 +52,31 @@ Meteor.startup(function () {
             SubCategories.insert({categoryId:id,name:text2});
         }
     }
+    var user;
     user = Accounts.createUser({
-        username: 'user',
-        email: 'user@onebi.eu',
-        password: 'useronebi'
+        username: 'admin',
+        email: 'admin@onebi.eu',
+        password: 'adminonebi'
     })
 
     Roles.addUsersToRoles(user, "admin");
+
+
+    user = Accounts.createUser({
+        username: 'editor',
+        email: 'editor@onebi.eu',
+        password: 'editoronebi'
+    })
+
+    Roles.addUsersToRoles(user, "editor");
+
+    user = Accounts.createUser({
+        username: 'contractor',
+        email: 'contractor@onebi.eu',
+        password: 'contractoronebi'
+    })
+
+    Roles.addUsersToRoles(user, "contractor");
 
     for(var i=0;i<10;i++){
         News.insert({title:"Aenean imperdiet. Phasellus accumsan cursus.", text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:false})

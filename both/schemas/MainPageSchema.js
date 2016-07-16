@@ -48,6 +48,10 @@ Schemas.MainPage = new SimpleSchema({
     },
     showIcon:{
         type:Boolean
+    },
+    parallax:{
+        type:String,
+        optional:true
     }
 
 })
