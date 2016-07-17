@@ -8,9 +8,14 @@
 
         {{this.date}}
         {{this.text}}
+    <div id="{{this._id}}">
         {{#if isNotRead this._id}}
-            <button id="{{this._id}}"  class="markAsRead">Oznacz jako przeczytane</button>
+            <button   class="markAsRead">Oznacz jako przeczytane</button>
         {{/if}}
+        {{#if isInRole 'admin,editor'}}
+            <button  class="editNotification">Edytuj</button>
+        {{/if}}
+    </div>
     {{/each}}
 
 </template>

@@ -17,10 +17,6 @@ Schemas.notificationSchema = new SimpleSchema({
     date:{
         type:Date
     },
-    whoRead:{
-        type:String,
-        optional:true
-    },
     visible:{
         type:Boolean
     }

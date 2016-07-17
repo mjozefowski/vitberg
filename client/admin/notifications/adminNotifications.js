@@ -41,16 +41,24 @@ Template.adminNotifications.events({
     },
 
     'click .markAsRead': function (e,t) {
-        var id = $(e.target).attr('id');
+        var id = $(e.target).parent().attr('id');
 
         Meteor.call('markAsRead',id, function (e,r) {
             if(!e){
-                if(r){
-                    alert("oznaczono jako przeczytaną")
-                }else{
+                if(!r){
                     alert("wystąpił błąd")
                 }
             }
+        });
+    },
+
+    'click .editNotification': function (e, t) {
+        var id = $(e.target).parent().attr('id');
+
+        Session.set('notificationId',id)
+        Modal.show('addNotificationModal', function () {
+            var id2  = Session.get('notificationId')
+            return id2;
         });
     }
 
