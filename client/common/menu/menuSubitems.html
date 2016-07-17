@@ -1,9 +1,15 @@
 <template name="menuSubitems">
 
-    <ul class="dropdown-menu-hamburger rolled">
+    <ul class="dropdown-menu hide-to-md">
     {{#each items}}
         <li id="{{this._id}}" class="menu-item"><a>{{this.name}}</a></li>
     {{/each}}
+    </ul>
+
+    <ul class="dropdown-menu-hamburger rolled hide-from-md">
+        {{#each items}}
+            <li id="{{this._id}}" class="menu-item"><a>{{this.name}}</a></li>
+        {{/each}}
     </ul>
 
 </template>

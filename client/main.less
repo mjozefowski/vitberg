@@ -116,6 +116,42 @@ body {
   .unrolled{
     max-height:500PX;
   }
+
+  //HIDE FROM SM, MD, LG (768, 992, 1200 - display:none)
+  //hide-from-sm hide-from-md hide-from-lg
+  @media only screen and (min-width:768px){
+    .hide-from-sm{
+      display:none;
+    }
+  }
+  @media only screen and (min-width:992px){
+    .hide-from-md{
+      display:none;
+    }
+  }
+  @media only screen and (min-width:1200px){
+    .hide-from-lg{
+      display:none;
+    }
+  }
+
+  //HIDE TO SM, MD, LG (767, 991, 1199 - display:none)
+  //hide-to-sm hide-to-md hide-to-lg
+  @media only screen and (max-width:767px){
+    .hide-to-sm{
+      display:none;
+    }
+  }
+  @media only screen and (max-width:991px){
+    .hide-to-md{
+      display:none;
+    }
+  }
+  @media only screen and (max-width:1199px){
+    .hide-to-lg{
+      display:none;
+    }
+  }
 }
 
 //TOP MENU STYLES
@@ -279,8 +315,7 @@ body {
         transition:0.4s;
 
         >a{
-          padding-top: 8px;
-          padding-bottom: 12px;
+          padding:8px 8px 12px;
           cursor: pointer;
           font-family:Avenir-Black;
           text-transform: uppercase;
