@@ -1,6 +1,6 @@
 <template name="menu">
 
-    <nav class="navbar navbar-default top-menu">
+    <nav class="navbar navbar-default top-menu hide-to-md">
 
         <div class="container-fluid">
 
@@ -51,15 +51,15 @@
 
     <div class="hamburger-menu">
 
-        <a class="navbar-brand brand-logo-small" id="strona_glowna"><img src="\logos\logo-mini.png"  height="70px"></a>
+        <a class="navbar-brand brand-logo-small" id="strona_glowna"><img src="\logos\logo-mini.png"></a>
         <span id="menu-hamburger-btn" class="glyphicon glyphicon-menu-hamburger hamburger-menu-ico" aria-hidden="true"></span>
 
         <div class="whole-hamburger-container">
 
             <ul class="hamburger-ul">
-                <a><li id="strona_glowna">Strona główna</li></a>
-                <a><li id="news">Aktualności</li></a>
-                <a><li id="map">Mapa</li></a>
+                <a><li id="strona_glowna" class="hamburger-roll-button">Strona główna</li></a>
+                <a><li id="news" class="hamburger-roll-button">Aktualności</li></a>
+                <a><li id="map" class="hamburger-roll-button">Mapa</li></a>
 
                 {{#each categories}}
                     <!--TODO DOROBIC WARUNEK ZEBY NIE W KAZDYM  li BYLA KLASA DROPDOWN DLA POPRAWNOSCI KODU (obecnie wszystko dobrze działa)-->
@@ -70,14 +70,14 @@
 
                 {{#if currentUser}}
                     {{#if isInRole 'admin,editor'}}
-                        <a><li id="admin-panel">Panel administratora</li></a>
+                        <a><li id="admin-panel" class="hamburger-roll-button">Panel administratora</li></a>
                     {{else}}
                         {{#if isInRole 'contractor'}}
-                            <a> <li id="admin-panel">Panel kontrahenta</li></a>
+                            <a> <li id="admin-panel" class="hamburger-roll-button">Panel kontrahenta</li></a>
                         {{/if}}
 
                     {{/if}}
-                    <a> <li id="logout">Wyloguj</li></a>
+                    <a> <li id="logout" class="hamburger-roll-button">Wyloguj</li></a>
                 {{/if}}
 
             </ul>
