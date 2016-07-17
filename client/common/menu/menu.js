@@ -49,7 +49,17 @@ Template.menu.events({
     },
 
     'click .dropdown-hamburger':function(e){
-        $(e.target).children("ul").toggleClass('unrolled');
+        var ulLength = $(e.target).children("ul").children('li').length; //Number of li in ul
+        var liHeight = $(e.target).children("ul").children('li').height();  //Height of single li
+        var totalHeight = ulLength * (liHeight + 20);   //Height of whole ul (liHeight + 20px margin)
+
+        if ($(e.target).children("ul").attr('style')) {
+            $(e.target).children("ul").removeAttr('style');
+        } else {
+            $(e.target).children("ul").css('max-height', totalHeight);
+        }
+
+
     },
 
 
