@@ -559,6 +559,130 @@ body {
 
 }
 
+@media only screen and (max-width:767px){
+
+  .hamburger-menu{
+    height:40px;
+    width:100%;
+    position: relative;
+
+    .hamburger-menu-ico{
+      position: absolute;
+      right: 30px;
+      font-size: 48px;
+      top: 8px;
+      z-index: 1000;
+      background-color: #d30f13;
+      padding: 7px;
+      border: 3px solid white;
+      border-radius: 5px;
+      color: #ffffff;
+      transition:all .4s;
+    }
+    .hamburger-menu-ico:hover{
+      background-color: #fff;
+      border: 3px solid #d30f13;
+      color: #d30f13;
+      cursor:pointer;
+    }
+
+    .brand-logo-small{
+      position: absolute;
+      left:30px;
+      top: -10px;
+      padding-left:0px;
+      z-index: 1000;
+    }
+
+    .whole-hamburger-container{
+      background-color:rgba(55,55,55,.9);
+      height:100vh;
+      position: absolute;
+      width:50%;
+      z-index:500;
+      right:-50%;
+      opacity:0;
+      text-align: right;
+      transition:all 0.2s;
+    }
+
+    .show-hamburger-menu{
+      right:0;
+      opacity:1;
+      transition:all 0.4s ease-out;
+    }
+
+    .move-hamburger-ico{
+      transition-delay: 3s;
+      background-color: #fff;
+      border: 3px solid #d30f13;
+      color: #d30f13;
+      transition:all 0.5s;
+      right:~"calc(50% - 82px)";
+    }
+
+    .hamburger-ul{
+      margin-top: 90px;
+      list-style: none;
+      padding-left:0px;
+
+      a{
+        font-family: Avenir-Regular;
+        color:white;
+        font-size: 3rem;
+        cursor:pointer;
+
+        li{
+          width:100%;
+          margin:10px 0;
+          width: 100%;
+          margin: 10px 0;
+          padding: 0px 30px 8px 15px;
+          border-bottom: 2px solid rgba(255,255,255,.5);
+        }
+      }
+
+      a:hover{
+        text-decoration: none;
+        color:@red-vitberg;
+      }
+
+      .dropdown-menu-hamburger{
+        margin-right:15px;
+      }
+
+      .dropdown-hamburger{
+        font-family: Avenir-Regular;
+        color: white;
+        font-size: 3rem;
+        cursor: pointer;
+        width:100%;
+        margin:10px 0;
+        width: 100%;
+        margin: 10px 0;
+        padding: 0px 30px 8px 15px;
+        border-bottom: 2px solid rgba(255,255,255,.5);
+
+        ul{
+          list-style-type: none;
+
+          li{
+            margin: 10px 0;
+          }
+        }
+      }
+
+      .dropdown-hamburger:hover{
+        color:@red-vitberg;
+      }
+    }
+
+
+
+  }
+
+}
+
 
 
 //LOG IN STYLES
