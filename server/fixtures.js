@@ -15,7 +15,9 @@ Meteor.startup(function () {
     SubCategories.remove({});
     News.remove({});
     Meteor.users.remove({})
-    Markers.remove({})
+    Markers.remove({});
+    Notifications.remove({})
+    NotificationsUser.remove({})
 
     var main = MainPage.insert({type:'mainClickable',visible:true, showIcon:false, order:30});
     var clickable = ClickableItemsTemplate.insert({mainTemplate:main});

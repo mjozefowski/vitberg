@@ -19,6 +19,17 @@ Template.adminPanel.helpers({
         var ti = Template.instance();
 
         return ti.template.get();
+    },
+    unreadNotifications: function () {
+        var visibleNotes = Notifications.find({visible:true});
+        var ids = [];
+
+        visibleNotes.forEach(function (e) {
+            ids.push(e._id)
+        })
+
+        return NotificationsUser.find({notificationId:{$in:ids},userId:Meteor.userId(),read:false}).count();
+
     }
 
 })

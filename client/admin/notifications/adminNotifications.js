@@ -17,6 +17,11 @@ Template.adminNotifications.helpers({
 
     notifications: function () {
         return Notifications.find({visible:true},{sort:{date:1}})
+    },
+    isNotRead: function (id) {
+        var notification = NotificationsUser.findOne({notificationId:id,userId:Meteor.userId()});
+        console.log(!notification.read);
+        return !notification.read;
     }
 
 })

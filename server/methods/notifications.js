@@ -8,8 +8,9 @@
 Meteor.methods({
 
     markAsRead: function (id) {
-        if(this.userId && Roles.userIsInRole(this.userId,['admin,editor'])){
+        if(this.userId && Roles.userIsInRole(this.userId,['admin','editor','contractor'])){
             var notificationUser = NotificationsUser.findOne({userId:this.userId,notificationId:id});
+            console.log(notificationUser)
             NotificationsUser.update(notificationUser._id,{$set:{read:true}})
             return true;
         }else{
@@ -18,7 +19,7 @@ Meteor.methods({
 
     },
     addUnreadNotification: function (id) {
-        if(this.userId && Roles.userIsInRole(this.userId,['admin,editor'])){
+        if(this.userId && Roles.userIsInRole(this.userId,['admin','editor'])){
             var users = Meteor.users.find({});
             console.log("addNotificationUnreadpasfpa")
             users.forEach(function (e) {
