@@ -1,0 +1,52 @@
+/**
+ * Copyright (C) OneBi Sp. z o.o. All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Created by Maciej Józefowski, 16.07.16
+ */
+
+Template.adminNotifications.onCreated(function () {
+
+})
+
+Template.adminNotifications.onRendered(function () {
+
+})
+
+Template.adminNotifications.helpers({
+
+    notifications: function () {
+        return Notifications.find({visible:true},{sort:{date:1}})
+    }
+
+})
+
+Template.adminNotifications.events({
+
+    "click #addNotification":function(){
+        var id = Notifications.insert({title:"Nowe powiadomienie", date:new Date(),visible:false})
+
+        Meteor.call('addUnreadNotification',id);
+
+        Session.set('notificationId',id)
+        Modal.show('addNotificationModal', function () {
+            var id2  = Session.get('notificationId')
+            return id2;
+        });
+    },
+
+    'click .markAsRead': function (e,t) {
+        var id = $(e.target).attr('id');
+
+        Meteor.call('markAsRead',id, function (e,r) {
+            if(!e){
+                if(r){
+                    alert("oznaczono jako przeczytaną")
+                }else{
+                    alert("wystąpił błąd")
+                }
+            }
+        });
+    }
+
+})

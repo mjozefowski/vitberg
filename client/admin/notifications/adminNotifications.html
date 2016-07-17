@@ -1,0 +1,14 @@
+<template name="adminNotifications">
+
+    {{#if isInRole 'admin,editor'}}
+        <div id="addNotification"><span>+ Dodaj nową informację dla kontrahentów</span></div>
+    {{/if}}
+
+    {{#each notifications}}
+
+        {{this.date}}
+        {{this.text}}
+        <button id="{{this._id}}"  class="markAsRead">Oznacz jako przeczytane</button>
+    {{/each}}
+
+</template>
