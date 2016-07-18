@@ -56,31 +56,30 @@
 
         <div class="whole-hamburger-container">
 
-            <ul class="hamburger-ul">
-                <a><li id="strona_glowna" class="hamburger-roll-button">Strona główna</li></a>
-                <a><li id="news" class="hamburger-roll-button">Aktualności</li></a>
-                <a><li id="map" class="hamburger-roll-button">Mapa</li></a>
+                <ul class="hamburger-ul">
+                    <a><li id="strona_glowna" class="hamburger-roll-button">Strona główna</li></a>
+                    <a><li id="news" class="hamburger-roll-button">Aktualności</li></a>
+                    <a><li id="map" class="hamburger-roll-button">Mapa</li></a>
 
-                {{#each categories}}
-                    <!--TODO DOROBIC WARUNEK ZEBY NIE W KAZDYM  li BYLA KLASA DROPDOWN DLA POPRAWNOSCI KODU (obecnie wszystko dobrze działa)-->
-                    <li class="dropdown dropdown-hamburger">{{this.name}}
-                        {{>menuSubitems this._id}}
-                    </li>
-                {{/each}}
+                    {{#each categories}}
+                        <!--TODO DOROBIC WARUNEK ZEBY NIE W KAZDYM  li BYLA KLASA DROPDOWN DLA POPRAWNOSCI KODU (obecnie wszystko dobrze działa)-->
+                        <li class="dropdown dropdown-hamburger">{{this.name}}
+                            {{>menuSubitems this._id}}
+                        </li>
+                    {{/each}}
 
-                {{#if currentUser}}
-                    {{#if isInRole 'admin,editor'}}
-                        <a><li id="admin-panel" class="hamburger-roll-button">Panel administratora</li></a>
-                    {{else}}
-                        {{#if isInRole 'contractor'}}
-                            <a> <li id="admin-panel" class="hamburger-roll-button">Panel kontrahenta</li></a>
+                    {{#if currentUser}}
+                        {{#if isInRole 'admin,editor'}}
+                            <a><li id="admin-panel" class="hamburger-roll-button">Panel administratora</li></a>
+                        {{else}}
+                            {{#if isInRole 'contractor'}}
+                                <a> <li id="admin-panel" class="hamburger-roll-button">Panel kontrahenta</li></a>
+                            {{/if}}
+
                         {{/if}}
-
+                        <a> <li id="logout" class="hamburger-roll-button">Wyloguj</li></a>
                     {{/if}}
-                    <a> <li id="logout" class="hamburger-roll-button">Wyloguj</li></a>
-                {{/if}}
-
-            </ul>
+                </ul>
 
         </div>
     </div>

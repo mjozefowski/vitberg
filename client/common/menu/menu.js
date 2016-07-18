@@ -47,12 +47,15 @@ Template.menu.events({
       $('.whole-hamburger-container').toggleClass('show-hamburger-menu');
         $('.hamburger-menu-ico').toggleClass('move-hamburger-ico');
         $(".dropdown-menu-hamburger").removeAttr('style');
+        $(".hamburger-content-container").delay(5000).toggleClass('behind');
+
     },
 
     'click .hamburger-roll-button':function(){
         $('.whole-hamburger-container').toggleClass('show-hamburger-menu');
         $('.hamburger-menu-ico').toggleClass('move-hamburger-ico');
         $(".dropdown-menu-hamburger").removeAttr('style');
+        $(".hamburger-content-container").delay(5000).toggleClass('behind');
     },
 
 
