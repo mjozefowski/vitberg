@@ -31,6 +31,9 @@ Template.Home.helpers({
     },
     isMainOpinion: function (type) {
         return type == "mainOpinion"
+    },
+    isMainNews: function (type) {
+        return type == "mainNews"
     }
 })
 

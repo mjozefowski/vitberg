@@ -6,7 +6,7 @@
  */
 
 Template.mainOpinions.onCreated(function () {
-
+    this.data = Template.currentData();
 })
 
 Template.mainOpinions.onRendered(function () {
@@ -16,7 +16,7 @@ Template.mainOpinions.onRendered(function () {
         indicators: true,
         height: 400,
         transition: 300,
-        //interval:12000
+        interval:12000
     });
     $('.slider').slider('pause');
 
@@ -29,7 +29,14 @@ Template.mainOpinions.onRendered(function () {
 
 })
 
-Template.mainOpinions.helpers({})
+Template.mainOpinions.helpers({
+
+    showIcon: function () {
+        var ti = Template.instance();
+        return ti.data.showIcon
+    }
+
+})
 
 Template.mainOpinions.events({})
 

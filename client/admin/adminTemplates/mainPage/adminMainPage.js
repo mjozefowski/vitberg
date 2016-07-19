@@ -72,6 +72,20 @@ Template.adminMainPage.helpers({
 
         return false;
     },
+    news: function () {
+        var ti = Template.instance();
+        if(ti.selectedTheme.get() == "mainNews")
+            return true;
+
+        return false;
+    },
+    opinion: function () {
+        var ti = Template.instance();
+        if(ti.selectedTheme.get() == "mainOpinion")
+            return true;
+
+        return false;
+    },
     selectedDoc: function () {
         var ti = Template.instance();
         return MainPage.findOne(ti.selectedDocument.get())
@@ -102,8 +116,6 @@ Template.adminMainPage.events({
         var type = $(e.target).parent().attr('block-type');
 
         Meteor.call('delete'+type,id);
-
-        console.log(type)
     },
     'click #save': function (e,t) {
         $('.saveButton').click();
@@ -113,13 +125,16 @@ Template.adminMainPage.events({
                         if (error) {
                             alert("fail")
                         } else {
-                            MainPage.update(t.selectedDocument.get(),{$addToSet:{images:fileObj._id}}, function (e,r) {
-                                if(e){
-                                    console.log("update failed")
-                                }else {
-                                    t.imagesArray.set([]);
-                                }
-                            })
+                            setTimeout(function(){
+                                MainPage.update(t.selectedDocument.get(),{$addToSet:{images:fileObj._id}}, function (e,r) {
+                                    if(e){
+                                        console.log("update failed")
+                                    }else {
+                                        t.imagesArray.set([]);
+                                    }
+                                })
+                            }, 2000);
+
                         }
                     });
                 })

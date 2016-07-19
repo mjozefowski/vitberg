@@ -2,7 +2,6 @@
 
     {{>slider}}
 
-    {{>mainNews}}
     <!--{{>mainRedRight}}-->
 
 
@@ -15,19 +14,23 @@
 
                 {{else}}
                 {{#if isParallax type}}
-
                     {{>mainParalax this}}
                     {{else}}
                     {{#if isMainClickable type}}
                         {{> mainClickable this}}
                         {{else}}
                         {{#if isMainOpinion type}}
-                            {{>mainOpinions}}
+                            {{>mainOpinions this}}
+                            {{else}}
+                            {{#if isMainNews type}}
+                                {{>mainNews this}}
+                            {{/if}}
                         {{/if}}
                     {{/if}}
                 {{/if}}
             {{/if}}
         {{/if}}
+
     {{/each}}
 
     <!--{{>mainOpinions}}-->

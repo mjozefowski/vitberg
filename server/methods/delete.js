@@ -42,4 +42,7 @@ Meteor.methods({
         //TODO:Dodać usuwanie podelementów
         MainPage.remove(id);
     },
+    'deletemainNews': function (id) {
+        MainPage.remove(id)
+    }
 });

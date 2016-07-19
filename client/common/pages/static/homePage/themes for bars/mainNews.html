@@ -5,12 +5,11 @@
             <div class="o-firmie">
                 <div class="header">{{title}}</div>
                 <div class="o-firmie-content simple-text-content"> {{text}} </div>
-                <button class="read-more-btn right"><i class="material-icons">add</i> Dowiedz się więcej</button>
+                <button class="read-more-btn right" onclick="{{linkUrl}}"><i class="material-icons">add</i> {{linkText}}</button>
             </div>
             <div class="news-list">
                 <div class="header">AKTUALNOŚCI</div>
                 <div class="news-list-content simple-text-content">
-                    <!--TODO LOREM IPSUM DO USUNIECIA I UZUPELNIENIA Z HELPERA-->
                     {{#each news}}
                     <div><a id="{{this._id}}" class="single-news-item"> <i class="material-icons">add</i> {{this.title}} </a></div>
                     {{/each}}
