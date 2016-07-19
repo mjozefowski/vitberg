@@ -46,17 +46,30 @@ Template.menu.events({
     'click #menu-hamburger-btn':function(){
       $('.whole-hamburger-container').toggleClass('show-hamburger-menu');
         $('.hamburger-menu-ico').toggleClass('move-hamburger-ico');
+        $(".dropdown-menu-hamburger").removeAttr('style');
+        $(".hamburger-content-container").delay(5000).toggleClass('behind');
+
     },
 
+    'click .hamburger-roll-button':function(){
+        $('.whole-hamburger-container').toggleClass('show-hamburger-menu');
+        $('.hamburger-menu-ico').toggleClass('move-hamburger-ico');
+        $(".dropdown-menu-hamburger").removeAttr('style');
+        $(".hamburger-content-container").delay(5000).toggleClass('behind');
+    },
+
+
     'click .dropdown-hamburger':function(e){
-        var ulLength = $(e.target).children("ul").children('li').length; //Number of li in ul
-        var liHeight = $(e.target).children("ul").children('li').height();  //Height of single li
+        var ulLength = $(e.target).children(".dropdown-menu-hamburger").children('li').length; //Number of li in ul
+        var liHeight = $(e.target).children(".dropdown-menu-hamburger").children('li').height();  //Height of single li
         var totalHeight = ulLength * (liHeight + 20);   //Height of whole ul (liHeight + 20px margin)
 
-        if ($(e.target).children("ul").attr('style')) {
-            $(e.target).children("ul").removeAttr('style');
+        if ($(e.target).children(".dropdown-menu-hamburger").attr('style')) {
+
+            $(e.target).children(".dropdown-menu-hamburger").removeAttr('style');
         } else {
-            $(e.target).children("ul").css('max-height', totalHeight);
+            $(".dropdown-menu-hamburger").removeAttr('style');
+            $(e.target).children(".dropdown-menu-hamburger").css('max-height', totalHeight);
         }
 
 
