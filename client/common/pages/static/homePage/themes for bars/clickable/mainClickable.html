@@ -13,11 +13,16 @@
             {{#each icons}}
 
                 <div class="single-block">
-                    <div class="block-ico iconClickable" id="{{this.templateId}}" style="background:url({{this.image}})"></div>
+                    <div class="block-ico iconClickable" id="{{this.templateId}}" style="background:url({{this.image}}); background-size: contain; background-repeat: no-repeat;"></div>
                     <!--<div class="description">MODUŁ METABOLIZM</div>-->
                 </div>
 
             {{/each}}
+
+            <!--TODO DO USUNIECIA (TYLKO NA CZAS TESTOW I POKAZYWANIA KLIENTOWI)-->
+            <div class="single-block">
+                <div class="block-ico iconClickable" id="" style="background:url(/temp/clickable1.png); background-size: contain; background-repeat: no-repeat;"></div>
+            </div>
 
             <!--<div class="single-block">-->
                 <!--<div class="block-ico"> <img src="/temp/clickable1.png" height="100%"></div>-->

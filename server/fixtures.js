@@ -39,12 +39,24 @@ Meteor.startup(function () {
         templateId:subClickable3
     }
     var icon4 = {
+        image:"/temp/clickable1.png",
+        templateId:""
+    }
+    var icon5 = {
+        image:"/temp/clickable2.png",
+        templateId:""
+    }
+    var icon6 = {
         image:"/temp/clickable3.png",
         templateId:""
     }
+
     ClickableItemsTemplate.update(clickable,{$addToSet:{icons:icon}});
     ClickableItemsTemplate.update(clickable,{$addToSet:{icons:icon2}});
     ClickableItemsTemplate.update(clickable,{$addToSet:{icons:icon3}});
+    ClickableItemsTemplate.update(clickable,{$addToSet:{icons:icon4}});
+    ClickableItemsTemplate.update(clickable,{$addToSet:{icons:icon5}});
+    ClickableItemsTemplate.update(clickable,{$addToSet:{icons:icon6}});
 
     for(var i=0;i<3;i++){
         var text = "Kategoria" + ' ' + i;

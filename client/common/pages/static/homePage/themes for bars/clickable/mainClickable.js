@@ -44,6 +44,10 @@ Template.mainClickable.events({
     "click .iconClickable": function (e,t) {
         var id = $(e.target).attr('id')
         t.selectedItem.set(id)
-    }
+    },
+    "click .single-block": function (e) {
+        $('.single-block').removeClass('active-element');
+        $(e.target).addClass('active-element');
+    },
     
 })
