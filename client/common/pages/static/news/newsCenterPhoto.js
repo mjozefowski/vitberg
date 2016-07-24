@@ -10,6 +10,8 @@ Template.newsCenterPhoto.onCreated(function () {
 
 Template.newsCenterPhoto.onRendered(function () {
 
+    var quadrantPhoto = $(".news-wide-photo").width()/3 +"px";
+    $('.news-wide-photo').css('height',quadrantPhoto);
 
 })
 
@@ -21,3 +23,7 @@ Template.newsCenterPhoto.events({
 
 })
 
+$(window).resize(function(){
+    var quadrantPhoto = $(".news-wide-photo").width()/3 +"px";
+    $('.news-wide-photo').css('height',quadrantPhoto);
+});

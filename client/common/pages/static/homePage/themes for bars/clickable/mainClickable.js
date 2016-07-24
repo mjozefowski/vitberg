@@ -47,7 +47,7 @@ Template.mainClickable.events({
     },
     "click .single-block": function (e) {
         $('.single-block').removeClass('active-element');
-        $(e.target).addClass('active-element');
+        $(e.target).parent('div').addClass('active-element');
     },
     
 })
