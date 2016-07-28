@@ -123,6 +123,11 @@ Router.map(function () {
     //    }
     //});
 
+    this.route('/static/programs', {
+        name: 'Programs',
+        template: 'Programs'
+    });
+
 });
 
 
