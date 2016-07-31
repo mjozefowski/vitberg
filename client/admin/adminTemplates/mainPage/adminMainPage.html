@@ -1,49 +1,35 @@
 <template name="adminMainPage">
 
-    <div>Lista klocków:</div>
-    <div class="blockDragItem">
-    {{#each listOfBlocks}}
-        <div id="{{this._id}}" block-type="{{this.type}}">{{this.type}}<span class="editBlock">Edytuj</span><span class="deleteBlock">Usuń</span></div>
-    {{/each}}
-    </div>
+    <div class="edit-main-page-container">
+        <div class="elements-list-title">Lista klocków:</div>
 
-    <div id="addNewMainPage">Dodaj nowy</div>
-    {{#if addNewBar}}
-        <center>
-    <form id="selectTemplate">
-        <fieldset>
-        <input id="1" type="radio" name="type"  group="group1" value="mainRedRight"> <label for="1">Czerwony, obraz po prawej</label>
-        <input id="2" type="radio" name="type" group="group1" value="mainRedLeft"><label for="2">Czerwony, obraz po lewej</label>
-        <input id="3" type="radio" name="type" group="group1" value="mainParallax"> <label for="3">Paralaksa</label>
-        <input id="4" type="radio" name="type" group="group1" value="mainOpinion"> <label for="4">Opinie klientów</label>
-        <input id="5" type="radio" name="type" group="group1" value="mainClickable"> <label for="5">Kafelek z ikonami do klikania</label>
-        <input id="6" type="radio" name="type" group="group1" value="mainNews"> <label for="6">Aktualności</label>
+        <div class="blockDragItem drag-elements-container">
+        {{#each listOfBlocks}}
+            <div id="{{this._id}}" block-type="{{this.type}}" class="drag-elements">{{this.type}}<span class="editBlock">Edytuj</span><span class="deleteBlock">Usuń</span></div>
+        {{/each}}
+        </div>
 
-        </fieldset>
-            <input type="submit">
-    </form>
-        </center>
+        <div id="addNewMainPage" class="add-new-element">Dodaj nowy</div>
+
+        {{#if addNewBar}}
+            <center>
+        <form id="selectTemplate">
+            <fieldset>
+            <input id="1" type="radio" name="type" group="group1" value="mainRedRight"> <label for="1">Czerwony, obraz po prawej</label>
+            <input id="2" type="radio" name="type" group="group1" value="mainRedLeft"><label for="2">Czerwony, obraz po lewej</label>
+            <input id="3" type="radio" name="type" group="group1" value="mainParallax"> <label for="3">Paralaksa</label>
+            <input id="4" type="radio" name="type" group="group1" value="mainOpinion"> <label for="4">Opinie klientów</label>
+            <input id="5" type="radio" name="type" group="group1" value="mainClickable"> <label for="5">Kafelek z ikonami do klikania</label>
+            <input id="6" type="radio" name="type" group="group1" value="mainNews"> <label for="6">Aktualności</label>
+
+            </fieldset>
+                <input type="submit">
+        </form>
+            </center>
 
 
-        {{#if parallax}}
-            {{#autoForm collection="MainPage" id="updateParallax" type="update" doc=selectedDoc}}
-                {{> afQuickField name='title'}}
-                {{> afQuickField name='visible'}}
-                {{> afQuickField name='showIcon'}}
-                {{> afQuickField name='link'}}
-                <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
-            {{/autoForm}}
-            {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
-            <div id="dropzone" class="dropzone" style="background-color: white;">
-                <div class="well well-drop-zone drop-zone-box">
-                    Upuść tutaj aby wysłać
-                </div>
-            </div>
-            <button id="save">Zapisz</button>
-        {{else}}
-
-            {{#if redLeft}}
-                {{#autoForm collection="MainPage" id="updateRedLeft" type="update" doc=selectedDoc}}
+            {{#if parallax}}
+                {{#autoForm collection="MainPage" id="updateParallax" type="update" doc=selectedDoc}}
                     {{> afQuickField name='title'}}
                     {{> afQuickField name='visible'}}
                     {{> afQuickField name='showIcon'}}
@@ -57,16 +43,13 @@
                     </div>
                 </div>
                 <button id="save">Zapisz</button>
-
             {{else}}
 
-                {{#if redRight}}
-                    {{#autoForm collection="MainPage" id="updateRedRight" type="update" doc=selectedDoc}}
-
-                    {{> afQuickField name='title'}}
-                    {{> afQuickField name='visible'}}
+                {{#if redLeft}}
+                    {{#autoForm collection="MainPage" id="updateRedLeft" type="update" doc=selectedDoc}}
+                        {{> afQuickField name='title'}}
+                        {{> afQuickField name='visible'}}
                         {{> afQuickField name='showIcon'}}
-
                         {{> afQuickField name='link'}}
                         <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
                     {{/autoForm}}
@@ -77,37 +60,57 @@
                         </div>
                     </div>
                     <button id="save">Zapisz</button>
+
                 {{else}}
-                    {{#if clickable}}
-                        {{> createClickable selectedDoc}}
-                        {{else}}
-                            {{#if news}}
-                                {{#autoForm collection="MainPage" id="updateNewsMainPage" type="update" doc=selectedDoc}}
 
-                                    {{> afQuickField name='title'}}
-                                    {{> afQuickField name='visible'}}
+                    {{#if redRight}}
+                        {{#autoForm collection="MainPage" id="updateRedRight" type="update" doc=selectedDoc}}
 
-                                    {{> afQuickField name='link'}}
-                                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
-                                {{/autoForm}}
-                                {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
-                                {{else}}
-                                {{#if opinion}}
-                                    {{#autoForm collection="MainPage" id="updateOpinionsMainPage" type="update" doc=selectedDoc}}
+                        {{> afQuickField name='title'}}
+                        {{> afQuickField name='visible'}}
+                            {{> afQuickField name='showIcon'}}
 
+                            {{> afQuickField name='link'}}
+                            <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
+                        {{/autoForm}}
+                        {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
+                        <div id="dropzone" class="dropzone" style="background-color: white;">
+                            <div class="well well-drop-zone drop-zone-box">
+                                Upuść tutaj aby wysłać
+                            </div>
+                        </div>
+                        <button id="save">Zapisz</button>
+                    {{else}}
+                        {{#if clickable}}
+                            {{> createClickable selectedDoc}}
+                            {{else}}
+                                {{#if news}}
+                                    {{#autoForm collection="MainPage" id="updateNewsMainPage" type="update" doc=selectedDoc}}
+
+                                        {{> afQuickField name='title'}}
                                         {{> afQuickField name='visible'}}
-                                        {{> afQuickField name='showIcon'}}
 
+                                        {{> afQuickField name='link'}}
                                         <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
                                     {{/autoForm}}
+                                    {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
+                                    {{else}}
+                                    {{#if opinion}}
+                                        {{#autoForm collection="MainPage" id="updateOpinionsMainPage" type="update" doc=selectedDoc}}
+
+                                            {{> afQuickField name='visible'}}
+                                            {{> afQuickField name='showIcon'}}
+
+                                            <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                                        {{/autoForm}}
+                                    {{/if}}
                                 {{/if}}
-                            {{/if}}
+                        {{/if}}
                     {{/if}}
                 {{/if}}
             {{/if}}
         {{/if}}
-    {{/if}}
-
+    </div>
 
 
 </template>

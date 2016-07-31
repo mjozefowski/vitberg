@@ -37,9 +37,12 @@ Template.adminPanel.helpers({
 Template.adminPanel.events({
 
     'click .admin-navigation-item': function (e,t) {
+        $('.admin-nav-box').removeClass('bigger-box');
         e.preventDefault();
         var id = $(e.target).attr("id");
         t.template.set(id)
     }
+
+
 
 })

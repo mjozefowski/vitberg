@@ -6091,25 +6091,24 @@ body {
 }
 
 
-
-
-
 /*ADMIN NAVIGATION STYLES
 *********************************************************************/
 .admin-panel-container {
   min-height:~"calc(100vh - 64px)";
   background-image:url("/photos/news_bg.jpg");
   background-attachment: fixed;
+  padding:0 30px;
 
   .admin-nav-container {
     text-align: left;
+    margin-bottom:40px;
 
     .admin-nav-box {
       display: inline-block;
-      width: 150px;
-      height: 100px;
+      padding:5px 40px 0 10px;
+      width: 180px;
+      height: 35px;
       margin-top:50px;
-      line-height: 100px;
       position: relative;
       background: rgba(248, 80, 50, 1);
       background: -moz-linear-gradient(top, #e81212 0%, #f16f5c 50%, #ff604a 51%, #fb3131 71%, #e81212 100%);
@@ -6120,19 +6119,29 @@ body {
       background: linear-gradient(to bottom, #e81212 0%, #f16f5c 50%, #ff604a 51%, #fb3131 71%, #e81212 100%);
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f85032', endColorstr='#e73827', GradientType=0);
       color: white;
-      font-size: 1.2rem;
-      text-align: center;
-      padding-left: 0;
-      margin-left: 30px;
+      font-size: 16px;
+      text-align: left;
+      margin-right: 15px;
       box-shadow: 2px 2px 3px rgba(0, 0, 0, .6);
       cursor: pointer;
-      transition: box-shadow .3s ease-out;
+      transition:all .4s, box-shadow .3s ease-out;
 
       i {
         position: absolute;
         top: 5px;
         right: 5px;
       }
+    }
+
+    .bigger-box{
+      padding-top: 80px;
+      width: 180px;
+      font-size: 18px;
+      padding-left: 0;
+      padding-right: 0;
+      height: 180px;
+      text-align: center;
+      transition:0.4s;
     }
 
     .admin-nav-box:hover {
@@ -6176,18 +6185,46 @@ body {
 
 /*ADMIN MAIN PAGE STYLES
 *********************************************************************/
-
-.wysiwyg-content{
-  .editable-text{
-    min-height:20px;
-    background-color:rgba(0,0,0,.2);
-    margin-bottom:20px;
+.edit-main-page-container{
+  .elements-list-title{
+    height:25px;
+    padding-left:15px;
+    margin-bottom:5px;
   }
-}
 
-.update-main-page-btn{
-  padding: 5px 20px;
-  margin: 15px 25px;
+  .drag-elements-container{
+    padding:10px 15px;
+    border:1px dashed #333;
+
+    .drag-elements{
+      padding:0 0 0 10px;
+      height:25px;
+      margin:5px 0;
+      border:1px solid red;
+      cursor:crosshair;
+    }
+  }
+
+  .add-new-element{
+    height:25px;
+    padding-left:15px;
+    margin-top:5px;
+    margin-bottom:20px;
+    cursor:pointer;
+  }
+
+  .wysiwyg-content{
+    .editable-text{
+      min-height:20px;
+      background-color:rgba(0,0,0,.2);
+      margin-bottom:20px;
+    }
+  }
+
+  .update-main-page-btn{
+    padding: 5px 20px;
+    margin: 15px 25px;
+  }
 }
 
 /*ADMIN MAP MARKERS STYLES
