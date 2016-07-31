@@ -1,34 +1,42 @@
 <template name="Programs">
 
-    {{>slider}}
+    <div class="zoomed-container">
 
+        <span class="vertical-center-helper"></span>
+        <img class="zoomed-image" src="">
+
+    </div>
+
+    {{>slider}}
 
     <div class="program-blocks">
 
-        <div class="single-block" style="background-image: url(/temp/clickable3.png);"> NOGI </div>
-        <div class="single-block" style="background-image: url(/temp/clickable1.png);"> PLECY </div>
-        <div class="single-block" style="background-image: url(/temp/clickable3.png);"> KARK </div>
-        <div class="single-block" style="background-image: url(/temp/clickable1.png);"> RĘCE </div>
-        <div class="single-block" style="background-image: url(/temp/clickable3.png);"> BIODRA </div>
+        <div class="header">PROGRAMY DO WYBORU</div>
+
+        <div class="single-block-scroll" style="background-image: url(/temp/clickable3.png);"> NOGI </div>
+        <div class="single-block-scroll" style="background-image: url(/temp/clickable1.png);"> PLECY </div>
+        <div class="single-block-scroll" style="background-image: url(/temp/clickable3.png);"> KARK </div>
+        <div class="single-block-scroll" style="background-image: url(/temp/clickable1.png);"> RĘCE </div>
+        <div class="single-block-scroll" style="background-image: url(/temp/clickable3.png);"> BIODRA </div>
 
 
     </div>
 
-    <div class="programs-main-container">
+    <div id="programs-main-container" class="programs-main-container">
 
         <div class="header">PROBLEMY Z NOGAMI </div>
 
         <div class="specialist">
 
-            <img class="photo" src="/temp/woman.jpg">
+            <img class="photo image-top-maximize" src="/temp/woman.jpg">
 
             <span class="description">
 
                 <span class="name">
                     <span class="header-smaller">Jessica Lynch</span>
                     <span class="header-smaller">mgr rehabilitacji</span>
-                </span> <br>
-                <span class="studies simple-text-content">absolwentka AWF w Karowicach</span> <br> <br>
+                </span>
+                <span class="studies simple-text-content">absolwentka AWF w Katowicach</span> <br> <br>
                 <span class="quotes simple-smaller-text-content">" Kiedy krew z okolic stóp nie może odpłynąć do serca, to sygnał, że mamy problemy z jej krążeniem. Zaczynają pojawiać się pajączki, żylaki czy obrzęki. Po całym dniu nogi są ociężałe, a buty stają się za ciasne. To znak, że trzeba poważnie zająć się swoimi żyłami. Ale po co to robić? Niestety, nieleczone żylaki mogą doprowadzić do ciężkich powikłań, niekiedy nawet zagrażających życiu (...) Masaż na materacu Enabio2 wpływa nie tylko na naczynia żylne i chłonne, przyspieszając powrót krwi do serca, wpływa także na pracę naczyń tętniczych, gdyż serce napełnione krwią, wydatniej niż przed masażem lepiej jest odżywione, lepiej pracuje, dostarczając tym samym większą ilość krwi do płuc i do układu tętniczego obwodowego. Systematycznie stosowane zabiegi w pozycji A-1, w programie A, w istotny sposób likwidują objawy zastoinowe, a także przyspieszają wchłanianie obrzęków. Stanowią doskonałe uzupełnienie terapii przeciwzakrzepowej.... Kiedy krew z okolic stóp nie może odpłynąć do serca, to sygnał, że mamy problemy z jej krążeniem. Zaczynają pojawiać się pajączki, żylaki czy obrzęki. Po całym dniu nogi są ociężałe, a buty stają się za ciasne. To znak, że trzeba poważnie zająć się swoimi żyłami. Ale po co to robić? Niestety, nieleczone żylaki mogą doprowadzić do ciężkich powikłań, niekiedy nawet zagrażających życiu (...) Masaż na materacu Enabio2 wpływa nie tylko na naczynia żylne i chłonne, przyspieszając powrót krwi do serca, wpływa także na pracę naczyń tętniczych, gdyż serce napełnione krwią, wydatniej niż przed masażem lepiej jest odżywione, lepiej pracuje, dostarczając tym samym większą ilość krwi do płuc i do układu tętniczego obwodowego. Systematycznie stosowane zabiegi w pozycji A-1, w programie A, w istotny sposób likwidują objawy zastoinowe, a także przyspieszają wchłanianie obrzęków. Stanowią doskonałe uzupełnienie terapii przeciwzakrzepowej.... "</span>
 
             </span>
@@ -39,10 +47,51 @@
 
         <div class="descr-position">
 
-            <div class="single-block">
-               <div class="image-photo">
-                   <img src="/photos/akcja1.jpg">
-               </div>
+            <div class="up-to-three-photos">
+
+                <div class="photo-block zoom-image">
+                    <span class="glyphicon glyphicon-zoom-in zoom-ico"></span>
+                    <img class="image-to-maximize" src="/temp/stats.jpg" width="100%" height="100%">
+                </div>
+
+                <div class="photo-block zoom-image">
+                    <span class="glyphicon glyphicon-zoom-in zoom-ico"></span>
+                    <img class="image-to-maximize" src="/temp/stats.jpg" width="100%" height="100%">
+                </div>
+
+                <div class="photo-block zoom-image">
+                    <span class="glyphicon glyphicon-zoom-in zoom-ico"></span>
+                    <img class="image-to-maximize" src="/temp/stats.jpg" width="100%" height="100%">
+                </div>
+
+            </div>
+
+            <div class="big-single-block">
+                <div class="image-photo-16-9 zoom-image">
+                    <span class="glyphicon glyphicon-zoom-in zoom-ico"></span>
+                    <img class="image-to-maximize" src="/temp/rehabilitation.jpg">
+                </div>
+
+                <div class="description">
+                    <div>Pozycja A-1 <span>siedząca</span></div>
+                    <div>
+                        W przypadku braku możliwości położenia pacjenta, istnieje możliwośc wykonania zabiegów masażu nóg w pozycji siedzącej. Do tego celu można wykorzystać z relugowanym oparciem i dociskiem na wysokości łydek.
+                        W przypadku braku możliwości położenia pacjenta, istnieje możliwośc wykonania zabiegów masażu nóg w pozycji siedzącej. Do tego celu można wykorzystać z relugowanym oparciem i dociskiem na wysokości łydek.
+                       </div>
+                    <div>Do wygodnego ułożenia stóp n Module 1 można wykorzystać Klin ENA-2 </div>
+                    <div>Pozycja w rehabiliacji</div>
+                </div>
+
+            </div>
+
+            <div class="smaller-blocks">
+
+                <div class="single-block">
+
+                <div class="image-photo zoom-image">
+                    <span class="glyphicon glyphicon-zoom-in zoom-ico"></span>
+                    <img class="image-to-maximize" src="/photos/akcja2.jpg">
+                </div>
 
                 <div class="description">
                     <div>Pozycja A-1 <span>siedząca</span></div>
@@ -53,8 +102,12 @@
 
             </div>
 
-            <div class="single-block">
-                <img src="/photos/akcja2.jpg">
+                <div class="single-block">
+
+                <div class="image-photo zoom-image">
+                    <span class="glyphicon glyphicon-zoom-in zoom-ico"></span>
+                    <img class="image-to-maximize" src="/photos/akcja2.jpg">
+                </div>
 
                 <div class="description">
                     <div>Pozycja A-1 <span>siedząca</span></div>
@@ -65,50 +118,68 @@
 
             </div>
 
-            <div class="single-block">
-                <img src="/photos/akcja3.jpg">
+                <div class="single-block">
+
+                <div class="image-photo zoom-image">
+                    <span class="glyphicon glyphicon-zoom-in zoom-ico"></span>
+                    <img class="image-to-maximize" src="/photos/akcja2.jpg">
+                </div>
 
                 <div class="description">
                     <div>Pozycja A-1 <span>siedząca</span></div>
-                    <div>W przypadku braku możliwości położenia pacjenta, istnieje możliwośc wykonania zabiegów masażu nóg w pozycji siedzącej. Do tego celu można wykorzystać z relugowanym oparciem i dociskiem na wysokości łydek.</div>
+                    <div>W przypadku braku możliwości położenia pacjenta, istnieje możliwośc wykonania zabiegów masażu nóg w pozycji siedzącej. Do tego celu można wykorzystać z relugowanym oparciem i dociskiem na wysokości łydek.W przypadku braku możliwości położenia pacjenta, istnieje możliwośc wykonania zabiegów masażu nóg w pozycji siedzącej. Do tego celu można wykorzystać z relugowanym oparciem i dociskiem na wysokości łydek.</div>
                     <div>Do wygodnego ułożenia stóp n Module 1 można wykorzystać Klin ENA-2 </div>
                     <div>Pozycja w rehabiliacji</div>
                 </div>
 
             </div>
 
-            <div class="single-block">
-                <img src="/photos/akcja1.jpg">
+                <div class="single-block">
 
-                <div class="description">
-                    <div>Pozycja A-1 <span>siedząca</span></div>
-                    <div>W przypadku braku możliwości położenia pacjenta, istnieje możliwośc wykonania zabiegów masażu nóg w pozycji siedzącej. Do tego celu można wykorzystać z relugowanym oparciem i dociskiem na wysokości łydek.</div>
-                    <div>Do wygodnego ułożenia stóp n Module 1 można wykorzystać Klin ENA-2 </div>
-                    <div>Pozycja w rehabiliacji</div>
+                    <div class="image-photo zoom-image">
+                        <span class="glyphicon glyphicon-zoom-in zoom-ico"></span>
+                        <img class="image-to-maximize" src="/photos/akcja2.jpg">
+                    </div>
+
+                    <div class="description">
+                        <div>Pozycja A-1 <span>siedząca</span></div>
+                        <div>W przypadku braku możliwości położenia pacjenta, istnieje możliwośc wykonania zabiegów masażu nóg w pozycji siedzącej. Do tego celu można wykorzystać z relugowanym oparciem i dociskiem na wysokości łydek.W przypadku braku możliwości położenia pacjenta, istnieje możliwośc wykonania zabiegów masażu nóg w pozycji siedzącej. Do tego celu można wykorzystać z relugowanym oparciem i dociskiem na wysokości łydek.</div>
+                        <div>Do wygodnego ułożenia stóp n Module 1 można wykorzystać Klin ENA-2 </div>
+                        <div>Pozycja w rehabiliacji</div>
+                    </div>
+
                 </div>
 
-            </div>
+                <div class="single-block">
 
-            <div class="single-block">
-                <img src="/photos/akcja2.jpg">
+                    <div class="image-photo zoom-image">
+                        <span class="glyphicon glyphicon-zoom-in zoom-ico"></span>
+                        <img class="image-to-maximize" src="/photos/akcja2.jpg">
+                    </div>
 
-                <div class="description">
-                    <div>Pozycja A-1 <span>siedząca</span></div>
-                    <div>W przypadku braku możliwości położenia pacjenta, istnieje możliwośc wykonania zabiegów masażu nóg w pozycji siedzącej. Do tego celu można wykorzystać z relugowanym oparciem i dociskiem na wysokości łydek.</div>
-                    <div>Do wygodnego ułożenia stóp n Module 1 można wykorzystać Klin ENA-2 </div>
-                    <div>Pozycja w rehabiliacji</div>
+                    <div class="description">
+                        <div>Pozycja A-1 <span>siedząca</span></div>
+                        <div>W przypadku braku możliwości położenia pacjenta, istnieje możliwośc wykonania zabiegów masażu nóg w pozycji siedzącej. Do tego celu można wykorzystać z relugowanym oparciem i dociskiem na wysokości łydek.</div>
+                        <div>Do wygodnego ułożenia stóp n Module 1 można wykorzystać Klin ENA-2 </div>
+                        <div>Pozycja w rehabiliacji</div>
+                    </div>
+
                 </div>
 
-            </div>
+                <div class="single-block">
 
-            <div class="single-block">
-                <img src="/photos/akcja3.jpg">
+                    <div class="image-photo zoom-image">
+                        <span class="glyphicon glyphicon-zoom-in zoom-ico"></span>
+                        <img class="image-to-maximize" src="/photos/akcja2.jpg">
+                    </div>
 
-                <div class="description">
-                    <div>Pozycja A-1 <span>siedząca</span></div>
-                    <div>W przypadku braku możliwości położenia pacjenta, istnieje możliwośc wykonania zabiegów masażu nóg w pozycji siedzącej. Do tego celu można wykorzystać z relugowanym oparciem i dociskiem na wysokości łydek.</div>
-                    <div>Do wygodnego ułożenia stóp n Module 1 można wykorzystać Klin ENA-2 </div>
-                    <div>Pozycja w rehabiliacji</div>
+                    <div class="description">
+                        <div>Pozycja A-1 <span>siedząca</span></div>
+                        <div>W przypadku braku możliwości położenia pacjenta, istnieje możliwośc wykonania zabiegów masażu nóg w pozycji siedzącej. Do tego celu można wykorzystać z relugowanym oparciem i dociskiem na wysokości łydek.</div>
+                        <div>Do wygodnego ułożenia stóp n Module 1 można wykorzystać Klin ENA-2 </div>
+                        <div>Pozycja w rehabiliacji</div>
+                    </div>
+
                 </div>
 
             </div>
