@@ -128,6 +128,11 @@ Router.map(function () {
         template: 'Programs'
     });
 
+    this.route('/universal/rightPhotos', {
+        name: 'rightPhotos',
+        template: 'rightPhotos'
+    });
+
 });
 
 
