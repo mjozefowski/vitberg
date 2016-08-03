@@ -1,0 +1,20 @@
+<template name="adminmainNewsModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                {{#autoForm collection="MainPage" id="updateNewsMainPage" type="update" doc=selectedDoc}}
+
+                    {{> afQuickField name='title'}}
+                    {{> afQuickField name='visible'}}
+
+                    {{> afQuickField name='link'}}
+                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                {{/autoForm}}
+                {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
+
+
+            </div>
+        </div>
+    </div>
+</template>

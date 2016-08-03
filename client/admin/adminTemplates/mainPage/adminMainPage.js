@@ -101,12 +101,18 @@ Template.adminMainPage.events({
 
     "submit #selectTemplate": function (e, t) {
         e.preventDefault();
+        t.imagesArray.set([]);
+
         var value = $("input[type='radio'][name='type']:checked").val();
 
-        console.log(value)
-        t.selectedDocument.set(MainPage.insert({order:10,type:value, visible:false, showIcon:false, text:"Wpisz treść ..."}));
-        t.selectedTheme.set(value);
-        t.insert.set(true)
+        //t.selectedDocument.set(MainPage.insert({order:10,type:value, visible:false, showIcon:false, text:"Wpisz treść ..."}));
+        Session.set('adminInsertDocument',MainPage.insert({order:10,type:value, visible:false, showIcon:false, text:"Wpisz treść ..."}));
+        //t.selectedTheme.set(value);
+        //t.insert.set(true);
+
+        Modal.show('admin'+value+'Modal', function () {
+            return MainPage.findOne({"_id":Session.get('adminInsertDocument')});
+        });
     },
     "click #addNewMainPage": function (e,t) {
         t.addNewBar.set(true);
@@ -138,10 +144,24 @@ Template.adminMainPage.events({
                         }
                     });
                 })
+        //t.insert.set(false);
+    },
+    'click .editBlock': function (e, t) {
+      var id = $(e.target).parent().attr('id');
+      var value =   $(e.target).parent().attr('block-type');
+        console.log(id);
+        console.log(value);
+        Session.set('adminInsertDocument',MainPage.findOne(id)._id);
+        //t.selectedTheme.set(value);
+        //t.insert.set(true);
+
+        Modal.show('admin'+value+'Modal', function () {
+            return MainPage.findOne({"_id":Session.get('adminInsertDocument')});
+        });
+
     },
 
     'dropped #dropzone': function(e,t) {
-
 
         FS.Utility.eachFile(e, function(file) {
             var newFile = new FS.File(file);
