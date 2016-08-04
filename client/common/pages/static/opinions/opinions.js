@@ -29,6 +29,7 @@ Template.dropzone.helpers({
 
     //temp
     opinions: function () {
+        //TODO: dodać warunek na zatwierdzone opinie
         return Opinions.find()
     },
 
@@ -51,18 +52,31 @@ Template.dropzone.events({
         e.preventDefault();
         var target = e.target;
 
-        if(target.text.value.length < 200){
+        //if(target.text.value.length < 200){
+        //
+        //    sAlert.info('Opinia musi zawierać min. 200 znaków', {effect: 'slide', position: 'top-right', timeout: '2000', onRouteClose: true, stack: true, offset: '80px'});
+        //    return;
+        //}
 
-            sAlert.info('Opinia musi zawierać min. 200 znaków', {effect: 'slide', position: 'top-right', timeout: '2000', onRouteClose: true, stack: true, offset: '80px'});
-            return;
-        }
+        if(target.firstName.value.length<3 || target.firstName.value.length<3 || target.age.value == '' || target.city.value.length<3 || target.sex.value == '' || target.phone.value.length<7 || target.phone.value.length > 15 || target.email.value.length < 8)
+            sAlert.info('Wprowadzone dane nie są poprawne', {effect: 'slide', position: 'top-right', timeout: '2000', onRouteClose: true, stack: true, offset: '80px'});
+        return;
 
         var formData = {
             message:target.text.value,
+            firstName:target.firstName.value,
+            lastName:target.lastName.value,
+            age:target.age.value,
+            city:target.city.value,
+            sex:target.sex.value,
+            phone:target.phone.value,
+            email:target.email.value,
+
         };
 
         //get the captcha data
         var captchaData = grecaptcha.getResponse();
+
 
         Meteor.call('formSubmissionMethod', captchaData, function(error, result) {
             // reset the captcha

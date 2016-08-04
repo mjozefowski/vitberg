@@ -11,6 +11,12 @@ Template.opinionsGalleryModal.onCreated(function () {
 
 Template.opinionsGalleryModal.onRendered(function () {
 
+    setTimeout(function(){
+        $('.item').first().addClass('active')
+    }, 500);
+
+
+
 })
 
 Template.opinionsGalleryModal.helpers({
@@ -22,7 +28,7 @@ console.log(ti.data);
 
     },
     singleImage: function (sliderObject) {
-        return "<img src=\"/cfs/files/imagesFromClient/"+sliderObject+"\" class=\"image-bnr\">"
+        return "<img src=\"/cfs/files/imagesFromClient/"+sliderObject+"\" class=\"image-bnr\" width=\"100%\">"
     }
 
 })
