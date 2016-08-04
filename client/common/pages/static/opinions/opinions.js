@@ -58,9 +58,17 @@ Template.dropzone.events({
         //    return;
         //}
 
-        if(target.firstName.value.length<3 || target.firstName.value.length<3 || target.age.value == '' || target.city.value.length<3 || target.sex.value == '' || target.phone.value.length<7 || target.phone.value.length > 15 || target.email.value.length < 8)
-            sAlert.info('Wprowadzone dane nie są poprawne', {effect: 'slide', position: 'top-right', timeout: '2000', onRouteClose: true, stack: true, offset: '80px'});
-        return;
+        if(target.firstName.value.length<3 || target.firstName.value.length<3 || target.age.value == '' || target.city.value.length<3 || target.sex.value == '' || target.phone.value.length<7 || target.phone.value.length > 15 || target.email.value.length < 8) {
+            sAlert.info('Wprowadzone dane nie są poprawne', {
+                effect: 'slide',
+                position: 'top-right',
+                timeout: '2000',
+                onRouteClose: true,
+                stack: true,
+                offset: '80px'
+            });
+            return;
+        }
 
         var formData = {
             message:target.text.value,
@@ -71,8 +79,11 @@ Template.dropzone.events({
             sex:target.sex.value,
             phone:target.phone.value,
             email:target.email.value,
+            approved:false
 
         };
+
+        console.log(formData)
 
         //get the captcha data
         var captchaData = grecaptcha.getResponse();
@@ -88,7 +99,19 @@ Template.dropzone.events({
             }else {
 
                 console.log("no error in captcha")
-                var opinion = Opinions.insert({"opinionText": formData.message, "approved": false}, function (e, r) {
+                var opinion = Opinions.insert({
+
+                    "opinionText":formData.message,
+                    "firstName":formData.firstName,
+                    "lastName":formData.lastName,
+                    "age":formData.age,
+                    "city":formData.city,
+                    "sex":formData.sex,
+                    "phone":formData.phone,
+                    "email":formData.email,
+                    "approved":formData.approved,
+
+                    }, function (e, r) {
                     if (!e) {
                         var array = t.imagesArray.get();
                         array.forEach(function (e) {
@@ -117,6 +140,8 @@ Template.dropzone.events({
                             });
                         })
 
+                    }else{
+                        console.log("insert failed")
                     }
                 });
             }
