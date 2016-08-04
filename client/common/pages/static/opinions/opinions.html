@@ -9,9 +9,22 @@
 <br>
 <br>
 <br>
-    <textarea id="text" rows="4" cols="50" name="text" form="clientOpinionForm">
+    <textarea id="text" rows="4" name="text" form="clientOpinionForm">
         </textarea>
     <form id="clientOpinionForm">
+        <legend>imię:<input type="text" id="clientFirstName"></legend>
+        <legend>nazwisko:<input type="text" id="clientLastName"></legend>
+        <legend>wiek:<input type="number" id="clientAge"></legend>
+        <legend>miasto:<input type="text" id="clientCity"></legend>
+        <legend>płeć:<select id="clientSex">
+            <option value="volvo">Kobieta</option>
+            <option value="volvo">Mężczyzna</option>
+            <option value="volvo">Niekonwencjonalna</option>
+        </select>
+            </legend>
+        <legend>nr telefonu<input type="number" id="clientPhone"></legend>
+        <legend>email<input type="email" id="clientEmail"></legend>
+        <legend>numer seryjny materaca:<input type="number" id="clientProductSerial"></legend>
         <input type="submit">
     </form>
 

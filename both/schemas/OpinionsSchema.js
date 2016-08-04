@@ -20,6 +20,31 @@ Schemas.OpinionsSchema = new SimpleSchema({
     opinionText:{
         type:String
     },
+    firstName:{
+        type:String
+    },
+    lastName:{
+        type:String
+    },
+    age:{
+        type:Number
+    },
+    city:{
+        type:String
+    },
+    sex:{
+        type:String,
+        allowedValues: ['female', 'male','unconventional']
+    },
+    phone:{
+        type:Number,
+        regEx: SimpleSchema.RegEx.Phone
+    },
+    email:{
+        type:String,
+        optional:true,
+        regEx: SimpleSchema.RegEx.Email
+    },
     images:{
         type:[Schemas.OpinionImagesSchema],
         optional:true

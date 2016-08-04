@@ -51,9 +51,9 @@ Template.dropzone.events({
         e.preventDefault();
         var target = e.target;
 
-        if(target.text.value == ''){
+        if(target.text.value.length < 200){
 
-            sAlert.info('Prosze wpisać opinię', {effect: 'slide', position: 'top-right', timeout: '2000', onRouteClose: true, stack: true, offset: '80px'});
+            sAlert.info('Opinia musi zawierać min. 200 znaków', {effect: 'slide', position: 'top-right', timeout: '2000', onRouteClose: true, stack: true, offset: '80px'});
             return;
         }
 
@@ -95,7 +95,7 @@ Template.dropzone.events({
 
                                             }, 3000);
 
-
+                                            t.imagesArray.set([])
                                         }
                                     });
 
@@ -113,11 +113,11 @@ Template.dropzone.events({
     'dropped #dropzone': function(e,t) {
 
         var tiTmp = Template.instance();
-        var arrayTmp = ti.imagesArray.get();
+        var arrayTmp = tiTmp.imagesArray.get();
 
         console.log(arrayTmp.length);
 
-        if(arrayTmp.length<5){
+        if(arrayTmp.length<=3){
             FS.Utility.eachFile(e, function(file) {
                 var newFile = new FS.File(file);
 
