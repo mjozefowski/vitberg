@@ -133,6 +133,10 @@ Router.map(function () {
         template: 'rightPhotos'
     });
 
+    this.route('/universal/centerPhoto', {
+        name: 'centerPhoto',
+        template: 'centerPhoto'
+    });
 });
 
 

@@ -6332,7 +6332,7 @@ body {
         -ms-flex-item-align: center;
         align-self: center;
 
-        .image-div {
+        .image-div-right {
           height: 100%;
         }
       }
@@ -6374,7 +6374,7 @@ body {
           width:100%;
           padding:0 10px 0 30px;
 
-          .image-div {
+          .image-div-right {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: 50%;
@@ -6419,7 +6419,7 @@ body {
           width:100%;
           padding:0 10px 0 30px;
 
-          .image-div {
+          .image-div-right {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: 50%;
@@ -6464,7 +6464,7 @@ body {
           width:100%;
           padding:0 10px 0 30px;
 
-          .image-div {
+          .image-div-right {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: 50%;
@@ -6508,7 +6508,7 @@ body {
           width:50%;
           padding:0 10px 0 30px;
 
-          .image-div {
+          .image-div-right {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: 50%;
@@ -6528,6 +6528,249 @@ body {
 @media only screen and (min-width:1600px){
 
   .main-container-rightPhoto{
+
+  }
+}
+
+//centerPhoto - Photos centered on top or bottom and text in 3 columns
+.main-container-centerPhoto{
+
+  .header{
+
+  }
+
+  .whole-content {
+
+    .text-container {
+
+    }
+
+    .image-container {
+      text-align:center;
+
+      .image-div-center {
+        max-width:1600px;
+        background-size: cover;
+        background-position: 50%;
+      }
+    }
+
+
+    .summary-text{
+
+      .header-smaller{
+        color:@real-red-vitberg;
+        font-weight:bold;
+        margin-bottom:15px;
+      }
+
+      .text-column{
+        color:#333;
+      }
+
+    }
+  }
+
+}
+
+@media only screen and (max-width:767px){
+
+  .main-container-centerPhoto{
+
+    .header{
+
+    }
+
+    .whole-content {
+
+
+      .text-container {
+
+      }
+
+      .image-container {
+
+
+        .image-div {
+
+        }
+      }
+
+
+      .summary-text{
+
+      }
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:768px) and (max-width:991px){
+
+  .main-container-centerPhoto{
+    padding:20px 30px 50px;
+
+
+    .header{
+      padding:0 10px;
+    }
+
+    .whole-content {
+      padding:0 10px;
+
+      .text-container {
+
+      }
+
+      .image-container {
+        margin:30px 0;
+
+        .image-div-center {
+
+
+        }
+      }
+
+
+      .summary-text{
+
+
+        >:nth-child(1){
+          padding-right:20px
+        }
+
+        >:nth-child(2){
+          padding:0 10px;
+        }
+
+        >:nth-child(3){
+          padding-left:20px;
+        }
+
+        .header-smaller{
+          display: flex;
+          align-items: center;
+        }
+
+      }
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:992px) and (max-width:1199px){
+
+  .main-container-centerPhoto{
+    padding:20px 30px 50px;
+
+
+    .header{
+      padding:0 10px;
+    }
+
+    .whole-content {
+      padding:0 10px;
+
+      .text-container {
+
+      }
+
+      .image-container {
+        margin:30px 0;
+
+        .image-div-center {
+
+
+        }
+      }
+
+
+      .summary-text{
+
+
+        >:nth-child(1){
+          padding-right:20px
+        }
+
+        >:nth-child(2){
+          padding:0 10px;
+        }
+
+        >:nth-child(3){
+          padding-left:20px;
+        }
+
+        .header-smaller{
+          display: flex;
+          align-items: center;
+        }
+
+      }
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:1200px){
+
+  .main-container-centerPhoto{
+    padding:20px 8.33333% 50px;
+
+
+    .header{
+      padding:0 10px;
+    }
+
+    .whole-content {
+      padding:0 10px;
+
+      .text-container {
+
+      }
+
+      .image-container {
+        margin:30px 0;
+
+        .image-div-center {
+
+
+        }
+      }
+
+
+      .summary-text{
+
+
+        >:nth-child(1){
+          padding-right:20px
+        }
+
+        >:nth-child(2){
+          padding:0 10px;
+        }
+
+        >:nth-child(3){
+          padding-left:20px;
+        }
+
+        .header-smaller{
+          display: flex;
+          align-items: center;
+        }
+
+      }
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:1600px){
+
+  .main-container-centerPhoto{
 
   }
 }
