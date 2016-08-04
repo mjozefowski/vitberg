@@ -6,14 +6,26 @@
 
         <div class="regular-news">
 
-            {{>newsSmallPhoto}} {{>newsCenterPhoto}} {{>newsSmallPhoto}}
+
+            {{#each news}}
+
+                {{#if this.isSmall}}
+                    {{>newsSmallPhoto this}}
+                {{else}}
+                    {{>newsCenterPhoto this}}
+                {{/if}}
+
+            {{/each}}
+
+
 
         </div>
 
         <div class="important-news">
 
-            {{>newsRightImportant}}
-
+            {{#each newsImportant}}
+                {{>newsRightImportant this}}
+            {{/each}}
         </div>
 
     </div>

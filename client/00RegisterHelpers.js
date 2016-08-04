@@ -5,3 +5,7 @@
  * Created by Maciej Józefowski, 02.07.16
  */
 
+
+Template.registerHelper('dateFix',function(date, locale) {
+    return moment(date).locale(locale).format('ll');
+});

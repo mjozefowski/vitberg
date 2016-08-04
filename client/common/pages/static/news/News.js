@@ -16,7 +16,7 @@ Template.News.onRendered(function () {
 Template.News.helpers({
 
     news: function () {
-        return News.find();
+        return News.find({},{limit:30});
     },
     author:function(authorId){
         return Meteor.users.findOne(authorId).username;
@@ -31,4 +31,14 @@ Template.News.helpers({
 
 })
 
-Template.News.events({})
+Template.News.events({
+
+    'click .read-more-news': function (e, t) {
+        e.preventDefault()
+        var id = $(e.target).attr("id")
+        //console.log(id)
+        Router.go('/static/news/full/'+id);
+
+    }
+
+})

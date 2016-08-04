@@ -2,11 +2,11 @@
  * Created by SkylinR on 05.07.2016.
  */
 
-Template.mainRedRight.onCreated(function () {
+Template.slider.onCreated(function () {
 
 })
 
-Template.mainRedRight.onRendered(function () {
+Template.slider.onRendered(function () {
 
     $('.slider').slider({
         full_width: true,
@@ -17,10 +17,13 @@ Template.mainRedRight.onRendered(function () {
 
 })
 
-Template.mainRedRight.helpers({
+Template.slider.helpers({
 
 })
 
-Template.mainRedRight.events({
+Template.slider.events({
 
+    'click #opinions': function () {
+        Router.go('/static/addOpinion')
+    }
 })
