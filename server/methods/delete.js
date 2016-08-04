@@ -45,5 +45,15 @@ Meteor.methods({
     },
     'deletemainNews': function (id) {
         MainPage.remove(id)
+    },
+
+
+
+    //delete opinii
+    //TODO:Dodać usuwanie podelementów
+    'deleteOpinion': function (id) {
+        Opinions.remove(id)
     }
+
+
 });

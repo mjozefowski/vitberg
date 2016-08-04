@@ -17,7 +17,7 @@ ImagesFromClient = new FS.Collection("imagesFromClient", {
     stores: [
         new FS.Store.GridFS("imagesFromClient", {
         path: "~/uploads",
-        maxTries: 1,
+        maxTries: 5,
         chunkSize: 640*640
 
     })]
