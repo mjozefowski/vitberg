@@ -97,8 +97,8 @@ Meteor.startup(function () {
 
     }
     for(var i=0;i<4;i++){
-        News.insert({title:"Aenean imperdiet. Phasellus accumsan cursus.",text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:true, isSmall: i%2!=0, media:["/photos/galeria1.jpg"]});
-        News.insert({title:"Aenean imperdiet. Phasellus accumsan cursus.",text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:true, isSmall: i%2!=0, video:"https://www.youtube.com/embed/H_1eii4RngI"});
+        News.insert({title:"Aenean imperdiet. Phasellus accumsan cursus.",text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:true, isSmall: i%2!=0, media:["/photos/galeria1.jpg"], additionalText:"Lorem ipsum dolor fajny mamy kolor"});
+        News.insert({title:"Aenean imperdiet. Phasellus accumsan cursus.",text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:true, isSmall: i%2!=0, video:"https://www.youtube.com/embed/H_1eii4RngI", additionalText:"Lorem ipsum dolor fajny mamy kolor"});
 
     }
 
