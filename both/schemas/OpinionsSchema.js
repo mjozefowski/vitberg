@@ -33,12 +33,10 @@ Schemas.OpinionsSchema = new SimpleSchema({
         type:String
     },
     sex:{
-        type:String,
-        allowedValues: ['female', 'male','unconventional']
+        type:String
     },
     phone:{
-        type:Number,
-        regEx: SimpleSchema.RegEx.Phone
+        type:Number
     },
     email:{
         type:String,
