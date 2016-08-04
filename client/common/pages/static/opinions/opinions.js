@@ -35,6 +35,10 @@ Template.dropzone.helpers({
     thumbs: function (id) {
         return Thumbs.find({_id:id})
 
+    },
+    img: function (images) {
+        console.log(images)
+        return images[0].thumb
     }
 
 
@@ -81,11 +85,17 @@ Template.dropzone.events({
                                     Thumbs.insert(e, function (err, file) {
                                         if(!err){
                                             console.log("addClientOpinion ImagesFromClient.insert passed: ")
-                                            Opinions.update(opinion, {$addToSet: {images: {img:fileObj._id,thumb:file._id}}}, function (e, r) {
-                                                if (e) {
-                                                    console.log("update failed")
-                                                }
-                                            })
+                                            setTimeout(function(){
+
+                                                Opinions.update(opinion, {$addToSet: {images: {img:fileObj._id,thumb:file._id}}}, function (e, r) {
+                                                    if (e) {
+                                                        console.log("update failed")
+                                                    }
+                                                })
+
+                                            }, 3000);
+
+
                                         }
                                     });
 
@@ -138,6 +148,12 @@ Template.dropzone.events({
             t.imagesArray.splice(file,1)
         }
 
+    },
+    'click .opinionThumb': function (e, t) {
+        Session.set('selectedOpinion', $(e.target).parent().attr('id'));
+        Modal.show('opinionsGalleryModal', function () {
+            return Opinions.findOne({_id:Session.get('selectedOpinion')})
+        })
     }
 
 })

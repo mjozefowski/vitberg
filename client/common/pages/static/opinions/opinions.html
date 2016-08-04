@@ -44,11 +44,9 @@
     {{#each opinions}}
 
         {{this.opinionText}}
-        {{#each images}}
-            <img src="/cfs/files/imagesFromClient/{{this.img}}">
-            <img src="/cfs/files/thumbs/{{this.thumb}}">
-        {{/each}}
-
+    <div id="{{this._id}}">
+            <img id="{{this._id}}" class="opinionThumb" src="/cfs/files/thumbs/{{img images}}">
+    </div>
     {{/each}}
 
 </template>

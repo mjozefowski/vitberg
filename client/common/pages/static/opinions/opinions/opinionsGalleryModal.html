@@ -1,0 +1,15 @@
+<template name="opinionsGalleryModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                {{#each imagesForSlider}}
+
+                    {{{singleImage this.img}}}
+
+                {{/each}}
+
+            </div>
+        </div>
+    </div>
+</template>
