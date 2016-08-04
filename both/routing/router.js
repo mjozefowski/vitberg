@@ -50,6 +50,13 @@ Router.map(function () {
         }
     });
 
+
+    this.route('/static/news/newsFull', {
+        name: 'newsFull',
+        template: 'newsFull'
+    });
+
+
     this.route('/static/map',{
         waitOn:function(){
             return Meteor.subscribe("markers")
@@ -137,6 +144,7 @@ Router.map(function () {
         name: 'centerPhoto',
         template: 'centerPhoto'
     });
+
 });
 
 
