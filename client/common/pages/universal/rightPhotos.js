@@ -8,7 +8,7 @@ Template.rightPhotos.onCreated(function () {
 
 Template.rightPhotos.onRendered(function () {
 
-    calcHeight($('.image-div'));
+    calcHeight($('.image-div-right'));
 
 })
 
@@ -28,5 +28,5 @@ function calcHeight(elem){
 }
 
 $( window ).resize(function() {
-    calcHeight($('.image-div'));
+    calcHeight($('.image-div-right'));
 });
