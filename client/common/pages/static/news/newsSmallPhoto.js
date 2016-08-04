@@ -38,13 +38,6 @@ Template.newsSmallPhoto.helpers({
 
 Template.newsSmallPhoto.events({
 
-    'click .read-more': function (e, t) {
-        var id = $(e.target).attr("id")
-
-        Router.go('/static/news/full/'+id);
-
-    }
-
 })
 
 $(window).resize(function(){

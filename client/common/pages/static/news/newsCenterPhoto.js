@@ -5,7 +5,7 @@
  * Created by Karol Liszka, 06.07.16
  */
 Template.newsCenterPhoto.onCreated(function () {
-
+    this.data = Template.currentData()
 })
 
 Template.newsCenterPhoto.onRendered(function () {
@@ -16,7 +16,22 @@ Template.newsCenterPhoto.onRendered(function () {
 })
 
 Template.newsCenterPhoto.helpers({
+    newsDoc: function () {
+        var ti = Template.instance();
 
+        return ti.data;
+    },
+    image: function (obj) {
+        return obj.media[0]
+    },
+    isVideo: function (obj) {
+        try{
+            if(obj.video)
+                return obj.video
+        }catch (e){
+            return false;
+        }
+    }
 })
 
 Template.newsCenterPhoto.events({

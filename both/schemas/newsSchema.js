@@ -37,6 +37,10 @@ Schemas.newsSchema = new SimpleSchema({
     },
     isSmall:{
         type:Boolean
+    },
+    additionalText:{
+        type:String,
+        optional:true
     }
 
 });

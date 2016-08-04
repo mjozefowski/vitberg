@@ -97,10 +97,9 @@ Meteor.startup(function () {
 
     }
     for(var i=0;i<4;i++){
-        News.insert({text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:true, isSmall: i%2!=0})
+        News.insert({text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:true, isSmall: i%2!=0, media:["/photos/galeria1.jpg"]});
+        News.insert({text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:true, isSmall: i%2!=0, video:"https://www.youtube.com/embed/H_1eii4RngI"});
 
     }
-
-
 
 })

@@ -31,4 +31,14 @@ Template.News.helpers({
 
 })
 
-Template.News.events({})
+Template.News.events({
+
+    'click .read-more-news': function (e, t) {
+        e.preventDefault()
+        var id = $(e.target).attr("id")
+        //console.log(id)
+        Router.go('/static/news/full/'+id);
+
+    }
+
+})
