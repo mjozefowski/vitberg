@@ -9,54 +9,56 @@
 <br>
 <br>
 <br>
-    <textarea id="text" rows="4" name="text" form="clientOpinionForm">
-        </textarea>
-    <form id="clientOpinionForm">
-        <legend>imię:<input type="text" name="firstName" id="clientFirstName"></legend>
-        <legend>nazwisko:<input type="text" name="lastName" id="clientLastName"></legend>
-        <legend>wiek:<input type="number" name="age" id="clientAge"></legend>
-        <legend>miasto:<input type="text" name="city" id="clientCity"></legend>
-        <legend>płeć:<select name="sex" id="clientSex">
-            <option value="female">Kobieta</option>
-            <option value="male">Mężczyzna</option>
-            <option value="unconventional">Niekonwencjonalna</option>
-        </select>
-            </legend>
-        <legend>nr telefonu<input type="number" name="phone" id="clientPhone"></legend>
-        <legend>email<input type="email" name="email" id="clientEmail"></legend>
-        <legend>numer seryjny materaca:<input type="number" name="serial" id="clientProductSerial"></legend>
-        <input type="submit">
-    </form>
+    <div class="header-smaller" style="margin-left:40px">Dodaj opinię </div>
+    <div style="    padding: 25px 40px 80px;  margin: 0 40px;  border: 1px solid #e6e6e6; font-family:Avenir-Regular; position:relative;">
+        <div class="header-smaller">Opinia</div>
+            <textarea id="text" rows="4" name="text" form="clientOpinionForm" placeholder="Kliknij aby napisać opinię (minimum 200 znaków)" style="width:100%; height:75px; max-height:400px; resize:vertical; margin-bottom:25px;">
+                </textarea>
 
-    <br>
-    <br>
+            <form id="clientOpinionForm">
+                <legend><div>Imię</div><input type="text" name="firstName" id="clientFirstName"></legend>
+                <legend><div>Nazwisko</div><input type="text" name="lastName" id="clientLastName"></legend>
+                <legend><div>Wiek</div><input type="number" name="age" id="clientAge"></legend>
+                <legend><div>Miasto</div><input type="text" name="city" id="clientCity"></legend>
+                <legend><div>Płeć</div><select name="sex" id="clientSex">
+                    <option value="female">Kobieta</option>
+                    <option value="male">Mężczyzna</option>
+                    <option value="unconventional">Niekonwencjonalna</option>
+                </select>
+                    </legend>
+                <legend><div>Telefon</div><input type="number" name="phone" id="clientPhone"></legend>
+                <legend><div>Email</div><input type="email" name="email" id="clientEmail"></legend>
+                <legend><div>Numer seryjny materaca <span class="glyphicon glyphicon-question-sign"></span></div><input type="number" name="serial" id="clientProductSerial"></legend>
+                <input type="submit" style="border: 1px solid #333;  background-color: white;  color: #333;  display: block;  margin-right: auto; width: 300px; height: 36px; margin-left: auto; position:absolute; bottom:-16px; left:calc(50% - 180px);">
+            </form>
 
-    {{>reCAPTCHA}}
+            <br>
+            <br>
 
-    <br>
-    <br>
+            {{>reCAPTCHA}}
+
+            <br>
+            <br>
 
 
+            <div class="row">
+                    <div id="dropzone" class="dropzone" style="background-color: #f5f5f5; width: 80%; margin-left:10%;">
+                        <div class="well well-drop-zone drop-zone-box">
+                            Upuść tutaj aby wysłać (Max 4)
+                        </div>
+                    </div>
 
-
-
-
-    <div class="row">
-            <div id="dropzone" class="dropzone" style="background-color: black;height: 100px; width: 100px">
-                <div class="well well-drop-zone">
-                    Upuść tutaj aby wysłać
-                    <br>
-                    Limit: 4
-
-                </div>
             </div>
 
+
+
+        <div>
+            {{#each array}}
+                <div style="margin:10px; border:1px solid #333; padding:15px">{{this.data.blob.name}}<span id="{{this.data.blob.name}}" class="remove-image" style="color:red; crusro:pointer;"> x </span></div>
+            {{/each}}
+        </div>
+
     </div>
-<div>
-    {{#each array}}
-        <div>{{this.data.blob.name}}<div><span id="{{this.data.blob.name}}" class="remove-image"> x </span></div></div>
-    {{/each}}
-</div>
 
 
     <br>
@@ -65,12 +67,17 @@
     <br>
     <br>
 
-    {{#each opinions}}
 
-        {{this.opinionText}}
-    <div id="{{this._id}}">
-            <img id="{{this._id}}" class="opinionThumb" src="/cfs/files/thumbs/{{img images}}">
+    <div>
+        {{#each opinions}}
+            <div style="margin:15px 40px; border:1px solid #333; padding:15px">
+                {{this.opinionText}}
+
+                    <div id="{{this._id}}" >
+                            <img id="{{this._id}}" class="opinionThumb" src="/cfs/files/thumbs/{{img images}}">
+                    </div>
+            </div>
+        {{/each}}
     </div>
-    {{/each}}
 
 </template>
