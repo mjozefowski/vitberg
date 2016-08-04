@@ -3,11 +3,44 @@
         <div class="modal-dialog">
             <div class="modal-content">
 
-                {{#each imagesForSlider}}
+                <div class="container" style="width:100%; padding-bottom:20px;">
+                    <br>
+                    <div id="myCarousel5" class="carousel slide" data-ride="carousel">
 
-                    {{{singleImage this.img}}}
 
-                {{/each}}
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="http://www.hdwallpapers.in/walls/2017_lamborghini_centenario-wide.jpg" alt="Chania" width="100%">
+                            </div>
+
+                            {{#each imagesForSlider}}
+
+                                <div class="item">
+                                    {{singleImage this.img}}
+                                </div>
+
+
+                            {{/each}}
+
+                            <div class="item">
+                                <img src="http://www.hdwallpapers.in/walls/2017_lamborghini_centenario-wide.jpg" alt="Chania" width="100%">
+                            </div>
+
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel5" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel5" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
 
             </div>
         </div>

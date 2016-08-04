@@ -33,7 +33,7 @@ ImagesFromClient.allow({
 Thumbs = new FS.Collection("thumbs", {
     stores: [
         new FS.Store.GridFS("thumbs", {
-            transformWrite: createThumb,
+            // transformWrite: createThumb,
             path: "~/uploads"
         })
        ]
