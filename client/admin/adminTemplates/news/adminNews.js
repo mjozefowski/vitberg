@@ -38,9 +38,10 @@ Template.adminNews.events({
         var isImportant = $('#important').is(':checked');
         var isSmall= $('#small').is(':checked');
         var video= $('#videoLink').val();
+        var additionalInfo = $('additionalInfo').val()
         console.log(isImportant)
         console.log(text)
-        var newsId = News.insert({authorId:Meteor.userId(),text:text, title:title, isImportant:isImportant, isSmall:isSmall, video:video.trim() }, function (e,r) {
+        var newsId = News.insert({authorId:Meteor.userId(),text:text, title:title, isImportant:isImportant, isSmall:isSmall, video:video.trim(),additionalText:additionalInfo.trim() }, function (e,r) {
             if(!e){
                 $('#text').val("")
                 var newsId = r;
