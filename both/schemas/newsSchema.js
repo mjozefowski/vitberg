@@ -28,8 +28,15 @@ Schemas.newsSchema = new SimpleSchema({
         type:String,
         optional:true
     },
+    video:{
+        type:String,
+        optional:true
+    },
     isImportant:{
        type:Boolean
+    },
+    isSmall:{
+        type:Boolean
     }
 
 });

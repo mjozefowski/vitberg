@@ -16,7 +16,7 @@ Template.News.onRendered(function () {
 Template.News.helpers({
 
     news: function () {
-        return News.find();
+        return News.find({},{limit:30});
     },
     author:function(authorId){
         return Meteor.users.findOne(authorId).username;

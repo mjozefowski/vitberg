@@ -109,8 +109,13 @@ Template.dropzone.events({
             //t.imagesArray.push(newFile);
             var ti = Template.instance();
 
+            var tmpTab = ti.imagesArray.get();
+            if(tmpTab.length<=4){
                 ti.imagesArray.push(newFile);
                 console.log(ti.imagesArray.get())
+            }
+
+
 
 
 

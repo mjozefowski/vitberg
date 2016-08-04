@@ -93,17 +93,14 @@ Meteor.startup(function () {
     Roles.addUsersToRoles(user, "contractor");
 
     for(var i=0;i<10;i++){
-        News.insert({title:"Aenean imperdiet. Phasellus accumsan cursus.", text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:false})
+        News.insert({title:"Aenean imperdiet. Phasellus accumsan cursus.", text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:false, isSmall: i%2!=0, media:["/photos/galeria1.jpg"], video:"https://www.youtube.com/embed/H_1eii4RngI"})
 
     }
     for(var i=0;i<4;i++){
-        News.insert({text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:true})
+        News.insert({text:'Tekst aktualności ' + i, authorId:user, date:new Date(), isImportant:true, isSmall: i%2!=0})
 
     }
 
 
-    Markers.insert({lat:51.7166067570067, lng:19.461936959683, header:"Mark 10", main:"Lorem ipsum dolor"})
-    Markers.insert({lat:51.7166067570067, lng:18.461936959683, header:"Mark 9", main:"Lorem ipsum dolor"})
-    Markers.insert({lat:51.7166067570067, lng:17.461936959683, header:"Mark 8", main:"Lorem ipsum dolor"})
 
 })
