@@ -112,24 +112,26 @@ Template.dropzone.events({
 
     'dropped #dropzone': function(e,t) {
 
+        var tiTmp = Template.instance();
+        var arrayTmp = ti.imagesArray.get();
 
-        FS.Utility.eachFile(e, function(file) {
-            var newFile = new FS.File(file);
+        console.log(arrayTmp.length);
 
-            //t.imagesArray.push(newFile);
-            var ti = Template.instance();
+        if(arrayTmp.length<5){
+            FS.Utility.eachFile(e, function(file) {
+                var newFile = new FS.File(file);
 
-            var tmpTab = ti.imagesArray.get();
-            if(tmpTab.length<=4){
-                ti.imagesArray.push(newFile);
-                console.log(ti.imagesArray.get())
-            }
+                //t.imagesArray.push(newFile);
+                var ti = Template.instance();
 
+                var tmpTab = ti.imagesArray.get();
+                if(tmpTab.length<=4){
+                    ti.imagesArray.push(newFile);
+                    console.log(ti.imagesArray.get())
+                }
+            });
+        }
 
-
-
-
-        });
     },
     'click .remove-image': function (e,t) {
         var name = $(e.target).attr('id');
