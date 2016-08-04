@@ -10,8 +10,8 @@ Template.newsSmallPhoto.onCreated(function () {
 
 Template.newsSmallPhoto.onRendered(function () {
 
-    var ratioPhoto = $(".small-news-media").width()*9/16 +"px";
-    $('.small-news-media').css('height',ratioPhoto);
+    var ratioPhoto = $(".media-news").width()*9/16 +"px";
+    $('.media-news').css('height',ratioPhoto);
 
 })
 
@@ -41,6 +41,6 @@ Template.newsSmallPhoto.events({
 })
 
 $(window).resize(function(){
-    var ratioPhoto = $(".small-news-media").width()*9/16 +"px";
-    $('.small-news-media').css('height',ratioPhoto);
+    var ratioPhoto = $(".media-news").width()*9/16 +"px";
+    $('.media-news').css('height',ratioPhoto);
 });
