@@ -9,58 +9,60 @@
 
     {{>slider}}
 
+
         <div class="full-news-container">
 
             <div class="newsFull-content-container">
 
                 <div class="newsFull-top">
 
-                    <div class="header">Sit nam urna voluptatibus faucibus delectus</div>
-                    <div class="news-date-big">04.08.2016</div>
+                    <div class="header">{{newsDoc.title}}</div>
+                    <div class="news-date-big">{{dateFix newsDoc.date 'pl'}}</div>
 
                 </div>
 
                 <div class="newsFull-content simple-text-content">
-                    Justo voluptate deserunt aliquam officia excepteur? Augue optio exercitation morbi? Ipsum primis, wisi mollit nostrud, delectus. Pariatur quae felis dolore, magnis corporis rem nam! Eleifend praesent, numquam nulla consectetur, fugiat cumque magnis, quod praesent natus aliquid, condimentum lacinia bibendum. Congue, excepteur montes! Fusce habitasse proin orci. Luctus senectus. Qui laborum. Malesuada quam pulvinar sint esse metus. Cubilia ipsam commodo anim! Morbi mattis quae magna, euismod elementum! Mattis sapien nunc ac, lectus aliquam urna laoreet est, quos.
-                    Justo voluptate deserunt aliquam officia excepteur? Augue optio exercitation morbi? Ipsum primis, wisi mollit nostrud, delectus. Pariatur quae felis dolore, magnis corporis rem nam! Eleifend praesent, numquam nulla consectetur, fugiat cumque magnis, quod praesent natus aliquid, condimentum lacinia bibendum. Congue, excepteur montes! Fusce habitasse proin orci. Luctus senectus. Qui laborum. Malesuada quam pulvinar sint esse metus. Cubilia ipsam commodo anim! Morbi mattis quae magna, euismod elementum! Mattis sapien nunc ac, lectus aliquam urna laoreet est, quos.
-                    <br>
-                    Justo voluptate deserunt aliquam officia excepteur? Augue optio exercitation morbi? Ipsum primis, wisi mollit nostrud, delectus. Pariatur quae felis dolore, magnis corporis rem nam! Eleifend praesent, numquam nulla consectetur, fugiat cumque magnis, quod praesent natus aliquid, condimentum lacinia bibendum. Congue, excepteur montes! Fusce habitasse proin orci. Luctus senectus. Qui laborum. Malesuada quam pulvinar sint esse metus. Cubilia ipsam commodo anim! Morbi mattis quae magna, euismod elementum! Mattis sapien nunc ac, lectus aliquam urna laoreet est, quos.
-                    Justo voluptate deserunt aliquam officia excepteur? Augue optio exercitation morbi? Ipsum primis, wisi mollit nostrud, delectus. Pariatur quae felis dolore, magnis corporis rem nam! Eleifend praesent, numquam nulla consectetur, fugiat cumque magnis, quod praesent natus aliquid, condimentum lacinia bibendum. Congue, excepteur montes! Fusce habitasse proin orci. Luctus senectus. Qui laborum. Malesuada quam pulvinar sint esse metus. Cubilia ipsam commodo anim! Morbi mattis quae magna, euismod elementum! Mattis sapien nunc ac, lectus aliquam urna laoreet est, quos.
+
+                    {{newsDoc.text}}
+
                 </div>
             </div>
 
             <div class="newsFull-media-container">
 
+                {{#each newsDoc.images}}
+                <div class="single-media-container">
+                    <img class="single-media-newsFull image-to-maximize" src="{{img}}">
+                </div>
+                {{/each}}
+                <div class="single-media-container">
+                    <img class="single-media-newsFull image-to-maximize" src="/photos/galeria2.jpg">
+                </div>
+                <div class="single-media-container">
+                    <img class="single-media-newsFull image-to-maximize" src="/photos/galeria2.jpg">
+                </div>
+                <div class="single-media-container">
+                    <img class="single-media-newsFull image-to-maximize" src="/photos/galeria2.jpg">
+                </div>
+                <div class="single-media-container">
+                    <img class="single-media-newsFull image-to-maximize" src="/photos/galeria2.jpg">
+                </div>
+                <div class="single-media-container">
+                    <img class="single-media-newsFull image-to-maximize" src="/photos/galeria2.jpg">
+                </div>
+                <div class="single-media-container">
+                    <img class="single-media-newsFull image-to-maximize" src="/photos/galeria2.jpg">
+                </div>
                 <div class="single-media-container">
                     <img class="single-media-newsFull image-to-maximize" src="/photos/galeria2.jpg">
                 </div>
 
-                <div class="single-media-container">
-                    <img class="single-media-newsFull image-to-maximize" src="/photos/galeria1.jpg">
-                </div>
-
-                <div class="single-media-container">
-                <img class="single-media-newsFull image-to-maximize" src="/photos/galeria3.jpg">
             </div>
-
-                <div class="single-media-container">
-                    <img class="single-media-newsFull image-to-maximize" src="/photos/galeria2.jpg">
-                </div>
-
-                <div class="single-media-container">
-                    <img class="single-media-newsFull image-to-maximize" src="/photos/galeria3.jpg">
-                </div>
-
-                <div class="single-media-container">
-                    <img class="single-media-newsFull image-to-maximize" src="/photos/galeria2.jpg">
-                </div>
-
-            </div>
-
+            {{#if newsDoc.video}}
             <div class="newsFull-movie-container">
-                <iframe class="media-newsFull" src="https://www.youtube.com/embed/H_1eii4RngI"></iframe>
+                <iframe class="media-newsFull" src="{{newsDoc.video}}"></iframe>
             </div>
-
+            {{/if}}
         </div>
 
 

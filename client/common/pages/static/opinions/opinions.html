@@ -71,6 +71,13 @@
     <div>
         {{#each opinions}}
             <div style="margin:15px 40px; border:1px solid #333; padding:15px">
+
+
+                {{sex this.sex}} {{this.firstName}} ({{this.age}}) z {{this.city}}
+
+                <br>
+                <br>
+
                 {{this.opinionText}}
 
                     <div id="{{this._id}}" >

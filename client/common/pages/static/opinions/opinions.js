@@ -30,7 +30,7 @@ Template.dropzone.helpers({
     //temp
     opinions: function () {
         //TODO: dodać warunek na zatwierdzone opinie
-        return Opinions.find()
+        return Opinions.find({},{sort:-1})
     },
 
     thumbs: function (id) {
@@ -40,6 +40,13 @@ Template.dropzone.helpers({
     img: function (images) {
         console.log(images)
         return images[0].thumb
+    },
+    sex: function (param) {
+        if(param == "female"){
+            return "PANI"
+        }else if(param == "male"){
+            return "PAN"
+        }
     }
 
 
@@ -52,11 +59,11 @@ Template.dropzone.events({
         e.preventDefault();
         var target = e.target;
 
-        //if(target.text.value.length < 200){
-        //
-        //    sAlert.info('Opinia musi zawierać min. 200 znaków', {effect: 'slide', position: 'top-right', timeout: '2000', onRouteClose: true, stack: true, offset: '80px'});
-        //    return;
-        //}
+        if(target.text.value.length < 200){
+
+            sAlert.info('Opinia musi zawierać min. 200 znaków', {effect: 'slide', position: 'top-right', timeout: '2000', onRouteClose: true, stack: true, offset: '80px'});
+            return;
+        }
 
         if(target.firstName.value.length<3 || target.firstName.value.length<3 || target.age.value == '' || target.city.value.length<3 || target.sex.value == '' || target.phone.value.length<7 || target.phone.value.length > 15 || target.email.value.length < 8) {
             sAlert.info('Wprowadzone dane nie są poprawne', {

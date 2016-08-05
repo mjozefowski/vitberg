@@ -5,7 +5,7 @@
  * Created by Karol Liszka, 06.07.16
  */
 Template.newsFull.onCreated(function () {
-
+    this.data = Template.currentData()
 })
 
 Template.newsFull.onRendered(function () {
@@ -17,7 +17,13 @@ Template.newsFull.onRendered(function () {
 })
 
 Template.newsFull.helpers({
+    newsDoc: function () {
+        var ti = Template.instance();
+        console.log("data");
+        console.log(ti.data);
 
+        return News.findOne({_id:ti.data})
+    }
 })
 
 Template.newsFull.events({

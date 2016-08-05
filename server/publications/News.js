@@ -17,4 +17,8 @@ Meteor.publishComposite('news', {
         }
     ]
 
+});
+
+Meteor.publish('news2', function () {
+    return News.find()
 })

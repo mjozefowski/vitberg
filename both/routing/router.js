@@ -51,9 +51,17 @@ Router.map(function () {
     });
 
 
-    this.route('/static/news/newsFull', {
-        name: 'newsFull',
-        template: 'newsFull'
+    this.route('/static/news/full/:_id', {
+        waitOn:function(){
+            return [Meteor.subscribe("news2")]
+        },
+        action:function(){
+            if (this.ready()) {
+                this.render('newsFull', {
+                    data:this.params._id
+                });
+            }
+        }
     });
 
 
