@@ -30,7 +30,7 @@ Template.dropzone.helpers({
     //temp
     opinions: function () {
         //TODO: dodać warunek na zatwierdzone opinie
-        return Opinions.find({},{sort:-1})
+        return Opinions.find()
     },
 
     thumbs: function (id) {
@@ -43,9 +43,9 @@ Template.dropzone.helpers({
     },
     sex: function (param) {
         if(param == "female"){
-            return "PANI"
+            return "Pani"
         }else if(param == "male"){
-            return "PAN"
+            return "Pan"
         }
     }
 

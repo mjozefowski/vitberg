@@ -9,6 +9,9 @@
 <br>
 <br>
 <br>
+    <button class="btn btn-info" data-toggle="collapse" data-target="#collapse"> + Dodaj opinię</button>
+
+    <div id="collapse" class="collapse">
     <div class="header-smaller" style="margin-left:40px">Dodaj opinię </div>
     <div style="    padding: 25px 40px 80px;  margin: 0 40px;  border: 1px solid #e6e6e6; font-family:Avenir-Regular; position:relative;">
         <div class="header-smaller">Opinia</div>
@@ -59,7 +62,7 @@
         </div>
 
     </div>
-
+    </div>
 
     <br>
     <br>
@@ -72,17 +75,16 @@
         {{#each opinions}}
             <div style="margin:15px 40px; border:1px solid #333; padding:15px">
 
+                <div id="{{this._id}}" >
+                    <img id="{{this._id}}" class="opinionThumb gray-scale maxImageSize" src="/cfs/files/thumbs/{{img images}}">
+                </div>
+                <div>{{sex this.sex}} {{this.firstName}} ({{this.age}}) z {{this.city}}</div>
 
-                {{sex this.sex}} {{this.firstName}} ({{this.age}}) z {{this.city}}
-
-                <br>
                 <br>
 
                 {{this.opinionText}}
 
-                    <div id="{{this._id}}" >
-                            <img id="{{this._id}}" class="opinionThumb" src="/cfs/files/thumbs/{{img images}}">
-                    </div>
+
             </div>
         {{/each}}
     </div>
