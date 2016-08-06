@@ -1,0 +1,23 @@
+<template name="adminCategoryEditModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                {{#autoForm collection="Categories" id="updateCategory" type="update" doc=selectedDoc}}
+
+
+                    {{> afQuickField name='name'}}
+
+                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                {{/autoForm}}
+
+                <button id="addNewSubCategory">+ Dodaj nową podkategorię</button>
+
+
+                {{> tabular table=TabularTables.AdminSubCategories selector=selector class="table table-striped table-bordered table-condensed"}}
+
+
+            </div>
+        </div>
+    </div>
+</template>
