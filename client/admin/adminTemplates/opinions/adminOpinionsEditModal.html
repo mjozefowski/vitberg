@@ -1,0 +1,35 @@
+<template name="adminOpinionsEditModal">
+
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                {{#autoForm collection="Opinions" id="updateOpinion" type="update" doc=selectedDoc}}
+
+
+                    {{> afQuickField name='opinionText'}}
+                    {{> afQuickField name='firstName'}}
+                    {{> afQuickField name='lastName'}}
+                    {{> afQuickField name='age'}}
+                    {{> afQuickField name='city'}}
+                    {{> afQuickField name='sex'}}
+                    {{> afQuickField name='phone'}}
+                    {{> afQuickField name='email'}}
+                    {{> afQuickField name='approved'}}
+
+                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                {{/autoForm}}
+
+                {{#each images selectedDoc}}
+
+
+                    <img src="/cfs/files/imagesFromClient/{{this}}" style="max-width:300px; max-height:300px">
+                    <span id="{{this}}" class="glyphicon glyphicon-remove remove-image"></span>
+
+                {{/each}}
+
+            </div>
+        </div>
+    </div>
+
+</template>

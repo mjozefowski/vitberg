@@ -53,6 +53,30 @@ Meteor.methods({
     //TODO:Dodać usuwanie podelementów
     'deleteOpinion': function (id) {
         Opinions.remove(id)
+    },
+
+
+    //obrazy
+    'deleteOpinionImage': function (opinionId,imageId) {
+
+        var opinion = Opinions.findOne(opinionId);
+        var thumb;
+        opinion.images.forEach(function (e) {
+            if(e.img == imageId){
+                thumb = e.thumb
+            }
+        })
+
+        Opinions.update(opinionId, {$pull:{images:{img:imageId}}}, function (e, r) {
+            if(!e){
+                ImagesFromClient.remove(imageId)
+                if(thumb.length>0){
+                    Thumbs.remove(thumb)
+                }
+            }
+        });
+
+
     }
 
 

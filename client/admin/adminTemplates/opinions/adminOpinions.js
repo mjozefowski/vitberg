@@ -21,4 +21,13 @@ Template.adminOpinions.helpers({
 
 })
 
-Template.adminOpinions.events({})
+Template.adminOpinions.events({
+
+    'click .table-edit-button': function (e) {
+        Session.set('adminOpinionsPick',$(e.target).attr('id'))
+        Modal.show('adminOpinionsEditModal', function () {
+            return Session.get('adminOpinionsPick')
+        })
+    }
+
+})

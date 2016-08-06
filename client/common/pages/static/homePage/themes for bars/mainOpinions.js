@@ -34,6 +34,10 @@ Template.mainOpinions.helpers({
     showIcon: function () {
         var ti = Template.instance();
         return ti.data.showIcon
+    },
+
+    opinions: function () {
+        return Opinions.find({approved:4},{limit:4})
     }
 
 })
