@@ -13,7 +13,7 @@
                 <li data-target="#myCarousel2" data-slide-to="3"></li>
             </ol>
 
-            <a href="{{linkUrl}}" class="read-more-a">
+            <a href="/static/addOpinion" class="read-more-a">
                 <button class="read-more-btn right">
                     <i class="material-icons">add</i> Wszystkie opinie
                     <!--{{linkText}}-->
@@ -24,140 +24,30 @@
 
                 <div class="header-smaller hide-from-sm">OPINIE NASZYCH PACJENTÓW</div>
 
-                <div class="item active">
+                {{#each opinions}}
+
+                <div class="item opinion-main-item">
                     <div class="image-content">
-                        <img src="/temp/opinion.jpg">
+                        <img src="/cfs/files/thumbs/{{image this}}" class="gray-scale">
                     </div>
                     <div class="text-content">
                         <div class="header hide-to-sm">OPINIE NASZYCH PACJENTÓW</div>
-                        <div class="author-of-opinion"> Pani EWELINA z Rzeszowa lat 37 </div>
+                        <div class="author-of-opinion"> {{sex this.sex}} {{this.firstName}} z {{this.city}} lat {{this.age}} </div>
                         <div class="simple-text-content">
-                            eget, semper nec, quam. libero tortor, tincidunt et, tincidunt eget, semper nec, quam Nulla sit amet est. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Nunc interdum lacus sit amet orci. Phasellus a est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Nulla sit amet est. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam.
+                            {{text this.opinionText}}
                         </div>
                     </div>
                 </div>
 
-                <div class="item">
-                    <div class="image-content">
-                        <img src="/temp/opinion.jpg">
-                    </div>
-                    <div class="text-content">
-                        <div class="header hide-to-sm">OPINIE NASZYCH PACJENTÓW</div>
-                        <div class="author-of-opinion"> Pani MAŁGORZATA z Krakowa lat 51 </div>
-                        <div class="simple-text-content">
-                            eget, semper nec, quam. libero tortor, tincidunt et, tincidunt eget, semper nec, quamNulla sit amet est. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Nunc interdum lacus sit amet orci. Phasellus a est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Nulla sit amet est. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam.
-                        </div>
-                    </div>
-                </div>
+                {{/each}}
 
-                <div class="item">
-                    <div class="image-content">
-                        <img src="/temp/opinion.jpg">
-                    </div>
-                    <div class="text-content">
-                        <div class="header hide-to-sm">OPINIE NASZYCH PACJENTÓW</div>
-                        <div class="author-of-opinion"> Pani EWELINA z Rzeszowa lat 37 </div>
-                        <div class="simple-text-content">
-                            eget, semper nec, quam. libero tortor, tincidunt et, tincidunt eget, semper nec, quamNulla sit amet est. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Nunc interdum lacus sit amet orci. Phasellus a est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Nulla sit amet est. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="image-content">
-                        <img src="/temp/opinion.jpg">
-                    </div>
-                    <div class="text-content">
-                        <div class="header hide-to-sm">OPINIE NASZYCH PACJENTÓW</div>
-                        <div class="author-of-opinion"> Pani MAŁGORZATA z Krakowa lat 51 </div>
-                        <div class="simple-text-content">
-                            eget, semper nec, quam. libero tortor, tincidunt et, tincidunt eget, semper nec, quamNulla sit amet est. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam. Nunc interdum lacus sit amet orci. Phasellus a est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus elit id tortor. Nulla sit amet est. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam.
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
-            <!-- Left and right controls -->
-               <!--<a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">-->
-                <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
-                <!--<span class="sr-only">Previous</span>-->
-            <!--</a>-->
-            <!--<a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">-->
-                <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
-                <!--<span class="sr-only">Next</span>-->
-            <!--</a>-->
+
         </div>
 
-        <!--<div class="slider">-->
-            <!--<ul class="slides">-->
 
-                <!--<li>-->
-                    <!--<div class="image-content">-->
-                        <!--<img src="/temp/opinion.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="text-content">-->
-                        <!--<div class="header">OPINIE NASZYCH PACJENTÓW</div>-->
-                        <!--<div class="author-of-opinion"> Pani EWELINA z Rzeszowa </div>-->
-                        <!--<div class="simple-text-content">Ut a nisl id ante tempus hendrerit. Curabitur turpis. Phasellus dolor.-->
-                            <!--Quisque id mi. Praesent ac sem eget est egestas volutpat. Pellentesque habitant morbi tristique senectus et-->
-                            <!--netus et malesuada fames ac turpis egestas.estibulum. Ut a nisl id ante tempus hendrerit. Curabitur turpis. Phasellus dolor.-->
-                            <!--Quisque id mi. Praesent ac sem eget est egestas volutpat. Pellentesque habitant morbi tristique senectus et-->
-                            <!--netus et malesuada fames ac turpis egestas.estibulum  </div>-->
-                    <!--</div>-->
-
-                <!--</li>-->
-
-                <!--<li>-->
-                    <!--<div class="image-content">-->
-                        <!--<img src="/temp/opinion.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="text-content">-->
-                        <!--<div class="header">OPINIE NASZYCH PACJENTÓW</div>-->
-                        <!--<div class="author-of-opinion"> Pani HELENA z Nowego Sącza </div>-->
-                        <!--<div class="simple-text-content">Pellentesque habitant morbi tristique senectus et-->
-                            <!--netus et malesuada fames ac turpis egestas.estibulum. Ut a nisl id ante tempus hendrerit. Curabitur turpis. Phasellus dolor.-->
-                            <!--Quisque id mi. Praesent ac sem eget est egestas volutpat. Pellentesque Ut a nisl id ante tempus hendrerit. Curabitur turpis. Phasellus dolor.-->
-                            <!--Quisque id mi. Praesent ac sem eget est egestas volutpat. hab </div>-->
-                    <!--</div>-->
-
-                <!--</li>-->
-
-                <!--<li>-->
-                    <!--<div class="image-content">-->
-                        <!--<img src="/temp/opinion.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="text-content">-->
-                        <!--<div class="header">OPINIE NASZYCH PACJENTÓW</div>-->
-                        <!--<div class="author-of-opinion"> Pani KRYSTYNA z Krakowa </div>-->
-                        <!--<div class="simple-text-content">Ut a nisl id ante tempus hendrerit. Curabitur turpis. Phasellus dolor.-->
-                            <!--Quisque id mi. Praesent ac sem eget est egestas volutpat. Pellentesque habitant morbi tristique senectus et-->
-                            <!--netus et malesuada fames ac turpis egestas.estibulum. Ut a nisl id ante tempus hendrerit. Curabitur turpis. Phasellus dolor.-->
-                            <!--Quisque id mi. Praesent ac sem eget est egestas volutpat. Pellentesque habitant morbi tristique senectus et-->
-                            <!--netus et malesuada fames ac turpis egestas.estibulum  </div>-->
-                    <!--</div>-->
-
-                <!--</li>-->
-
-                <!--<li>-->
-                    <!--<div class="image-content">-->
-                        <!--<img src="/temp/opinion.jpg">-->
-                    <!--</div>-->
-                    <!--<div class="text-content">-->
-                        <!--<div class="header">OPINIE NASZYCH PACJENTÓW</div>-->
-                        <!--<div class="author-of-opinion"> Pani JADWIGA z Warszawy </div>-->
-                        <!--<div class="simple-text-content">Pellentesque habitant morbi tristique senectus et-->
-                            <!--netus et malesuada fames ac turpis egestas.estibulum. Ut a nisl id ante tempus hendrerit. Curabitur turpis. Phasellus dolor.-->
-                            <!--Quisque id mi. Praesent ac sem eget est egestas volutpat. Pellentesque Ut a nisl id ante tempus hendrerit. Curabitur turpis. Phasellus dolor.-->
-                            <!--Quisque id mi. Praesent ac sem eget est egestas volutpat. hab </div>-->
-                    <!--</div>-->
-
-                <!--</li>-->
-
-            <!--</ul>-->
-
-            <!--<button class="read-more-btn left"><i class="material-icons">add</i> Wszystkie opinie</button>-->
-        <!--</div>-->
 
     </div>
 

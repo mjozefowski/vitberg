@@ -11,6 +11,9 @@ Template.mainOpinions.onCreated(function () {
 
 Template.mainOpinions.onRendered(function () {
 
+    $('.opinion-main-item').first().addClass('active')
+
+
     $('.slider').slider({
         full_width: true,
         indicators: true,
@@ -20,12 +23,6 @@ Template.mainOpinions.onRendered(function () {
     });
     $('.slider').slider('pause');
 
-    // Start slider
-//    $('.slider').slider('start');
-//// Next slide
-//    $('.slider').slider('next');
-//// Previous slide
-//    $('.slider').slider('prev');
 
 })
 
@@ -37,7 +34,19 @@ Template.mainOpinions.helpers({
     },
 
     opinions: function () {
-        return Opinions.find({approved:4},{limit:4})
+        console.log(Opinions.find({approved:true},{limit:4}).fetch())
+        return Opinions.find({approved:true},{limit:4})
+    },
+    image: function (obj) {
+
+        return obj.images[0].thumb
+
+    },
+    sex: function (sex) {
+        if(sex=='male')
+        return 'Pan'
+        else if(sex=='female')
+        return 'Pani'
     }
 
 })

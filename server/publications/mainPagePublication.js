@@ -6,5 +6,5 @@
  */
 
 Meteor.publish('MainPage', function () {
-    return [MainPage.find(), ClickableItemsTemplate.find(), TemplatesForMainClickable.find(), Images.find()]
+    return [MainPage.find(), ClickableItemsTemplate.find(), TemplatesForMainClickable.find(), Images.find(), Opinions.find()]
 })
