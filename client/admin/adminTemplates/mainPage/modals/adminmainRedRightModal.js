@@ -7,6 +7,8 @@
 
 Template.adminmainRedRightModal.onCreated(function () {
     this.data = Template.currentData();
+    this.imagesArray = new ReactiveArray();
+
 })
 
 Template.adminmainRedRightModal.onRendered(function () {
@@ -31,7 +33,7 @@ Template.adminmainRedRightModal.events({
                     alert("fail")
                 } else {
                     setTimeout(function(){
-                        MainPage.update(t.selectedDocument.get(),{$addToSet:{images:fileObj._id}}, function (e,r) {
+                        MainPage.update(t.data._id,{$addToSet:{images:fileObj._id}}, function (e,r) {
                             if(e){
                                 console.log("update failed")
                             }else {

@@ -7,6 +7,8 @@
 
 Template.adminmainNewsModal.onCreated(function () {
     this.data = Template.currentData();
+    this.imagesArray = new ReactiveArray();
+
 })
 
 Template.adminmainNewsModal.onRendered(function () {
@@ -30,7 +32,7 @@ Template.adminmainNewsModal.events({
                     alert("fail")
                 } else {
                     setTimeout(function(){
-                        MainPage.update(t.selectedDocument.get(),{$addToSet:{images:fileObj._id}}, function (e,r) {
+                        MainPage.update(t.data._id,{$addToSet:{images:fileObj._id}}, function (e,r) {
                             if(e){
                                 console.log("update failed")
                             }else {
@@ -43,5 +45,19 @@ Template.adminmainNewsModal.events({
             });
         })
         //t.insert.set(false);
-    }
+    },
+    'dropped #dropzone': function(e,t) {
+
+        FS.Utility.eachFile(e, function(file) {
+            var newFile = new FS.File(file);
+
+            console.log(newFile)
+            //t.imagesArray.push(newFile);
+            var ti = Template.instance();
+
+            ti.imagesArray.push(newFile)
+            console.log("pushed")
+
+        });
+    },
 })

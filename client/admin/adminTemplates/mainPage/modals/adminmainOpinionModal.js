@@ -21,27 +21,27 @@ Template.adminmainOpinionModal.helpers({
 })
 
 Template.adminmainOpinionModal.events({
-    'click #save': function (e,t) {
-        $('.saveButton').click();
-        var array = t.imagesArray.get();
-        array.forEach(function (e) {
-            Images.insert(e, function (error, fileObj) {
-                if (error) {
-                    alert("fail")
-                } else {
-                    setTimeout(function(){
-                        MainPage.update(t.selectedDocument.get(),{$addToSet:{images:fileObj._id}}, function (e,r) {
-                            if(e){
-                                console.log("update failed")
-                            }else {
-                                t.imagesArray.set([]);
-                            }
-                        })
-                    }, 2000);
-
-                }
-            });
-        })
-        //t.insert.set(false);
-    }
+    //'click #save': function (e,t) {
+    //    $('.saveButton').click();
+    //    var array = t.imagesArray.get();
+    //    array.forEach(function (e) {
+    //        Images.insert(e, function (error, fileObj) {
+    //            if (error) {
+    //                alert("fail")
+    //            } else {
+    //                setTimeout(function(){
+    //                    MainPage.update(t.selectedDocument.get(),{$addToSet:{images:fileObj._id}}, function (e,r) {
+    //                        if(e){
+    //                            console.log("update failed")
+    //                        }else {
+    //                            t.imagesArray.set([]);
+    //                        }
+    //                    })
+    //                }, 2000);
+    //
+    //            }
+    //        });
+    //    })
+    //    //t.insert.set(false);
+    //}
 })
