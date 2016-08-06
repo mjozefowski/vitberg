@@ -5,23 +5,27 @@
             <div class="modal-content">
 
 
-                <div class="modal fade">
-                    <div class="modal-dialog">
+
                         <div class="modal-content">
 
 
                                 <form id="registerUser">
 
-                                    <label>Email:<input type="email" name="email"></label>
-                                    <label>Hasło:<input type="text" name="password"></label>
-                                    <label>Potwierdzenie hasła:<input type="text" name="passwordConfirm"></label>
-
+                                    <label>Email:<input id="email" type="email" name="email"></label>
+                                    <label>Rola:<select id="role" name="role">
+                                        <option value="admin">Administrator</option>
+                                        <option value="editor">Edytor</option>
+                                        <option value="contractor">Kontrahent</option>
+                                    </select></label>
+                                    <label>Hasło:<input id="password" type="text" name="password"></label>
+                                    <label>Potwierdzenie hasła:<input id="passwordConfirmation" type="text" name="passwordconfirm"></label>
+                                    <label>Imię:<input id="firstName" type="text" name="firstName"></label>
+                                    <label>Nazwisko:<input id="lastName" type="text" name="lastName"></label>
+                                    <input type="submit">
                                 </form>
 
 
                         </div>
-                    </div>
-                </div>
 
             </div>
         </div>

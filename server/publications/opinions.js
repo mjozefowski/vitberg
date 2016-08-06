@@ -8,7 +8,7 @@
 Meteor.publishComposite('opinions', {
 
     find: function () {
-        return Opinions.find();
+        return Opinions.find({approved:true},{fields:{firstName:1,age:1,sex:1,opinionText:1,images:1,approved:1,city:1}});
     },
     children:[
         {

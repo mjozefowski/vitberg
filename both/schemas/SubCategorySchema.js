@@ -12,6 +12,14 @@ Schemas.SubCategoriesSchema = new SimpleSchema({
     },
     categoryId:{
         type:String
+    },
+    selectedTemplate:{
+        type:String,
+        optional:true
+    },
+    visible:{
+        type:Boolean,
+        optional:true
     }
 
 })
