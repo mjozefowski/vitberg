@@ -143,14 +143,29 @@ Router.map(function () {
         template: 'Programs'
     });
 
-    this.route('/universal/rightPhotos', {
-        name: 'rightPhotos',
-        template: 'rightPhotos'
+    this.route('/universal/rightPhoto', {
+        name: 'rightPhoto',
+        template: 'rightPhoto'
+    });
+
+    this.route('/universal/leftPhoto', {
+        name: 'leftPhoto',
+        template: 'leftPhoto'
     });
 
     this.route('/universal/centerPhoto', {
         name: 'centerPhoto',
         template: 'centerPhoto'
+    });
+
+    this.route('/universal/centerPhotoColumns', {
+        name: 'centerPhotoColumns',
+        template: 'centerPhotoColumns'
+    });
+
+    this.route('/universal/universalProgram', {
+        name: 'universalProgram',
+        template: 'universalProgram'
     });
 
 });

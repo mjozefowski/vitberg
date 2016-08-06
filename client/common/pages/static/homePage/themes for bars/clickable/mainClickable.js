@@ -66,17 +66,13 @@ Template.mainClickable.events({
     
 })
 
-$( window ).resize(function() {
-    howManyBlocks($('.blocks-container'),0,$('.single-block'),63.25);
-    hideOrShowArrows($('.left-arrow-blocks'),$('.right-arrow-blocks'),$('.blocks-container'),$('.blocks-inner-container'));
-});
 
 //OBLICZA ILE BLOKÓW MIEŚCI SIĘ W KONTENERZE
 //IN container - obiekt jquery np $('.container'), kontener wewnątrz którego jest slider | containerBorder - suma paddingów i marginów konteneru |
 //   block - obiekt jquery np. $('.single-block') | blockBorer suma paddingów i marginów pojedyńczego bloku
 function howManyBlocks(container, containerBorder, block, blockBorder){
 
-    var contenerWidth = container.width() - containerBorder;
+    var contenerWidth = $('.main-clickable').width() - 100;
     var blockWidth = block.width() + blockBorder;
 
     var howManyBlocks =parseInt(contenerWidth/blockWidth) * blockWidth;
@@ -90,45 +86,40 @@ INNERCONTAINER - OBIEKT JQUERY, WEWNĘTRZNY KONTENER BLOKÓW
  */
 function divSliderArrow(side, container, innerContainer){
 
+    var containerWidth = container.width();
+
+    var allBlocksWidth = innerContainer.width();
+
+    var currentTransform = '"' + innerContainer.css("transform").split(',')[4] + '"';
+    currentTransform = parseInt(currentTransform.substring(2, currentTransform.length - 1));
+
     if(side=="right") {
-        var containerWidth = container.width();
 
-        var allBlocksWidth = innerContainer.width();
-
-        var currentTransform = '"' + innerContainer.css("transform").split(',')[4] + '"';
-        currentTransform = parseInt(currentTransform.substring(2, currentTransform.length - 1));
-
-        var increasedWidth = containerWidth - currentTransform;
+        var increasedWidth = 163.25 - currentTransform;
 
         var widthContainer = "translate(-" + increasedWidth + "px)";
 
-        if (allBlocksWidth - containerWidth > increasedWidth + 150)
+        if (allBlocksWidth - containerWidth > increasedWidth + 163.25)
             innerContainer.css('transform', widthContainer);
 
         else {
             var restBlocks = "translate(-" + (allBlocksWidth - increasedWidth + increasedWidth - containerWidth) + "px)";
             innerContainer.css('transform', restBlocks);
         }
+        console.log(currentTransform);
     }
     else if (side=="left"){
 
-        var containerWidth = container.width();
 
-        var allBlocksWidth = innerContainer.width();
-
-        var currentTransform ='"' + innerContainer.css( "transform" ).split(',')[4] + '"'
-        currentTransform = parseInt(currentTransform.substring(2, currentTransform.length-1));
-
-        var increasedWidth = containerWidth + currentTransform;
+        var increasedWidth = 163.25 + currentTransform;
 
         var widthContainer = "translate(" + increasedWidth + "px)";
 
-        if(currentTransform +150 <= -containerWidth)
+        if(currentTransform < -163.25)
             innerContainer.css('transform',widthContainer);
 
         else{
-            var restBlocks = "translate(" + 0 + "px)";
-            innerContainer.css('transform',restBlocks);
+            innerContainer.css('transform','translate(0)');
         }
 
     }
@@ -144,7 +135,7 @@ innerContainer - obiekt jquery, wewnętrzny kontener clidera
  */
 function hideOrShowArrows(leftArrow, rightArrow, container, innerContainer){
 
-    if(container.width() >= innerContainer.width() + 150){
+    if(container.width() + 150 >= innerContainer.width()){
         leftArrow.hide();
         rightArrow.hide();
     }
@@ -155,3 +146,14 @@ function hideOrShowArrows(leftArrow, rightArrow, container, innerContainer){
     }
 
 }
+
+
+$(window).on('resize', function() {
+
+        howManyBlocks($('.blocks-container'),0,$('.single-block'),63.25);
+
+        $('.blocks-inner-container').css('transform','translate(0)');
+
+        hideOrShowArrows($('.left-arrow-blocks'),$('.right-arrow-blocks'),$('.blocks-container'),$('.blocks-inner-container'));
+
+});
