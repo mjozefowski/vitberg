@@ -29,5 +29,8 @@ Template.adminCategories.events({
         Modal.show('adminCategoryEditModal', function () {
             return Session.get('adminSelectedCategory')
         })
+    },
+    'click #addNewCategory': function (e, t) {
+        Modal.show('adminAddCategoryModal')
     }
 })

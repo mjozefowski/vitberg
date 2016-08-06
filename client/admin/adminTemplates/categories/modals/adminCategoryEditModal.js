@@ -35,6 +35,13 @@ Template.adminCategoryEditModal.events({
         Modal.show('adminAddSubCategory', function () {
             return Session.get('adminSelectedSubCategory')
         })
+    },
+
+    'click .table-edit-button-sub': function (e,t) {
+        Session.set('adminSelectedSubCategoryEdit', $(e.target).attr('id'));
+        Modal.show('adminEditSubCategoryModal', function () {
+            return Session.get('adminSelectedSubCategoryEdit')
+        })
     }
 
 })

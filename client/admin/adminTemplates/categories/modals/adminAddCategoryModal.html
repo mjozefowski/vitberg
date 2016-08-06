@@ -1,16 +1,17 @@
-<template name="adminAddSubCategory">
+<template name="adminAddCategoryModal">
+
     <div class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
 
-                {{#autoForm collection="SubCategories" id="insertSubcategory" type="insert"}}
+                {{#autoForm collection="Categories" id="insertCategory" type="insert"}}
 
 
                     {{> afQuickField name='name'}}
-                    {{> afQuickField name='visible'}}
+                    <!--{{> afQuickField name='visible'}}-->
 
 
-                    {{> afQuickField name='categoryId' class='categoryIdInput'}}
+                    <!--{{> afQuickField name='categoryId' class='categoryIdInput'}}-->
 
                     <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
                 {{/autoForm}}
@@ -19,4 +20,5 @@
             </div>
         </div>
     </div>
+
 </template>

@@ -11,7 +11,7 @@ TabularTables.AdminSubCategories = new Tabular.Table({
 
     columns: [
         {data: "name", title: "nazwa"},
-        {data: "selectedTemplate", title: "nazwa"},
+        {data: "selectedTemplate", title: "szablon"},
         {data: "visible", title: "widoczny",
         render: function (visible) {
             if(visible)
@@ -22,8 +22,8 @@ TabularTables.AdminSubCategories = new Tabular.Table({
         {   data: "_id",
             title: "akcje",
             render: function (id) {
-                return  "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-warning table-edit-button\">edytuj</button>" +
-                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\">usuń</button>"
+                return  "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-warning table-edit-button-sub\">edytuj</button>" +
+                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button-sub\">usuń</button>"
             }
         }
 

@@ -1,9 +1,9 @@
-<template name="adminAddSubCategory">
+<template name="adminEditSubCategoryModal">
     <div class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
 
-                {{#autoForm collection="SubCategories" id="insertSubcategory" type="insert"}}
+                {{#autoForm collection="SubCategories" id="adminEditSubcategory" doc=selectedDoc type="update"}}
 
 
                     {{> afQuickField name='name'}}
