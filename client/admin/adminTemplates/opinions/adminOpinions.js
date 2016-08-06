@@ -13,6 +13,12 @@ Template.adminOpinions.onRendered(function () {
 
 })
 
-Template.adminOpinions.helpers({})
+Template.adminOpinions.helpers({
+
+    waitingCounter:function(){
+        return Opinions.find({approved:false}).count();
+    }
+
+})
 
 Template.adminOpinions.events({})
