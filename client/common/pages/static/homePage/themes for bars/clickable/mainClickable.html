@@ -8,52 +8,25 @@
 
         <div class="header">POZNAJ SYSTEM S.K.O.T.</div>
         <div class="header-smaller">ELEMENTY RAM VITBERG+</div>
+
+        <button class="arrow-blocks left-arrow-blocks"> <span class="glyphicon glyphicon-chevron-left"></span> </button>
+
         <div class="blocks-container">
 
-            {{#each icons}}
+            <div class="blocks-inner-container" style="transform:translate(0px);">
+                {{#each icons}}
 
-                <div class="single-block">
-                    <div class="block-ico iconClickable" id="{{this.templateId}}" style="background:url({{this.image}}); background-size: contain; background-repeat: no-repeat;"></div>
-                    <!--<div class="description">MODUŁ METABOLIZM</div>-->
-                </div>
+                    <div class="single-block">
+                        <div class="block-ico iconClickable" id="{{this.templateId}}" style="background:url({{this.image}}); background-size: contain; background-repeat: no-repeat;"></div>
+                    </div>
 
-            {{/each}}
-
-            <!--TODO DO USUNIECIA (TYLKO NA CZAS TESTOW I POKAZYWANIA KLIENTOWI)-->
-            <div class="single-block">
-                <div class="block-ico iconClickable" id="" style="background:url(/temp/clickable1.png); background-size: contain; background-repeat: no-repeat;"></div>
+                {{/each}}
             </div>
 
-            <!--<div class="single-block">-->
-                <!--<div class="block-ico"> <img src="/temp/clickable1.png" height="100%"></div>-->
-                <!--&lt;!&ndash;<div class="description">ZAGŁOWEK PLUS</div>&ndash;&gt;-->
-            <!--</div>-->
-            <!--<div class="single-block">-->
-                <!--<div class="block-ico"> <img src="/temp/clickable2.png" height="100%"></div>-->
-                <!--&lt;!&ndash;<div class="description">MODUŁ SZYJA</div>&ndash;&gt;-->
-            <!--</div>-->
-            <!--<div class="single-block">-->
-                <!--<div class="block-ico"> <img src="/temp/clickable3.png" height="100%"></div>-->
-                <!--&lt;!&ndash;<div class="description">MODUŁ NOGI</div>&ndash;&gt;-->
-            <!--</div>-->
-            <!--<div class="single-block">-->
-                <!--<div class="block-ico"> <img src="/temp/clickable1.png" height="100%"></div>-->
-                <!--&lt;!&ndash;<div class="description">MODUŁ BIODRA</div>&ndash;&gt;-->
-            <!--</div>-->
-            <!--<div class="single-block">-->
-                <!--<div class="block-ico"> <img src="/temp/clickable1.png" height="100%"></div>-->
-                <!--&lt;!&ndash;<div class="description">ZAGŁOWEK PLUS</div>&ndash;&gt;-->
-            <!--</div>-->
-            <!--<div class="single-block">-->
-                <!--<div class="block-ico"> <img src="/temp/clickable2.png" height="100%"></div>-->
-                <!--&lt;!&ndash;<div class="description">MODUŁ SZYJA</div>&ndash;&gt;-->
-            <!--</div>-->
-            <!--<div class="single-block">-->
-                <!--<div class="block-ico"> <img src="/temp/clickable3.png" height="100%"></div>-->
-                <!--&lt;!&ndash;<div class="description">MODUŁ NOGI</div>&ndash;&gt;-->
-            <!--</div>-->
-
         </div>
+
+        <button class="arrow-blocks right-arrow-blocks"> <span class="glyphicon glyphicon-chevron-right"></span> </button>
+
     </div>
 
     <!--{{#each icons}}-->
