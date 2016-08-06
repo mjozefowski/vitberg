@@ -14,7 +14,13 @@ Template.mainClickable.onCreated(function () {
 })
 
 Template.mainClickable.onRendered(function () {
+
     $('.iconClickable').first().click();
+
+    howManyBlocks($('.blocks-container'),0,$('.single-block'),63.25);
+
+    hideOrShowArrows($('.left-arrow-blocks'),$('.right-arrow-blocks'),$('.blocks-container'),$('.blocks-inner-container'));
+
 })
 
 Template.mainClickable.helpers({
@@ -49,5 +55,103 @@ Template.mainClickable.events({
         $('.single-block').removeClass('active-element');
         $(e.target).parent('div').addClass('active-element');
     },
+
+    "click .right-arrow-blocks": function (){
+        divSliderArrow("right",$('.blocks-container'),$('.blocks-inner-container'));
+    },
+
+    "click .left-arrow-blocks": function (){
+        divSliderArrow("left",$('.blocks-container'),$('.blocks-inner-container'));
+    },
     
 })
+
+$( window ).resize(function() {
+    howManyBlocks($('.blocks-container'),0,$('.single-block'),63.25);
+    hideOrShowArrows($('.left-arrow-blocks'),$('.right-arrow-blocks'),$('.blocks-container'),$('.blocks-inner-container'));
+});
+
+//OBLICZA ILE BLOKÓW MIEŚCI SIĘ W KONTENERZE
+//IN container - obiekt jquery np $('.container'), kontener wewnątrz którego jest slider | containerBorder - suma paddingów i marginów konteneru |
+//   block - obiekt jquery np. $('.single-block') | blockBorer suma paddingów i marginów pojedyńczego bloku
+function howManyBlocks(container, containerBorder, block, blockBorder){
+
+    var contenerWidth = container.width() - containerBorder;
+    var blockWidth = block.width() + blockBorder;
+
+    var howManyBlocks =parseInt(contenerWidth/blockWidth) * blockWidth;
+
+    container.css('width', howManyBlocks);
+}
+
+/* PRZEŁĄCZANIE SLIDE'ÓW Z DIVAMI
+IN SIDE: "LEFT" or "RIGHT" - W KTÓRĄ STRONĘ MAJĄ BYĆ PRZEŁĄCZONE SLIDE'Y | CONTAINER - OBIEKT JQUERY. GŁÓWNY KONTENER BLOKÓW |
+INNERCONTAINER - OBIEKT JQUERY, WEWNĘTRZNY KONTENER BLOKÓW
+ */
+function divSliderArrow(side, container, innerContainer){
+
+    if(side=="right") {
+        var containerWidth = container.width();
+
+        var allBlocksWidth = innerContainer.width();
+
+        var currentTransform = '"' + innerContainer.css("transform").split(',')[4] + '"';
+        currentTransform = parseInt(currentTransform.substring(2, currentTransform.length - 1));
+
+        var increasedWidth = containerWidth - currentTransform;
+
+        var widthContainer = "translate(-" + increasedWidth + "px)";
+
+        if (allBlocksWidth - containerWidth > increasedWidth + 150)
+            innerContainer.css('transform', widthContainer);
+
+        else {
+            var restBlocks = "translate(-" + (allBlocksWidth - increasedWidth + increasedWidth - containerWidth) + "px)";
+            innerContainer.css('transform', restBlocks);
+        }
+    }
+    else if (side=="left"){
+
+        var containerWidth = container.width();
+
+        var allBlocksWidth = innerContainer.width();
+
+        var currentTransform ='"' + innerContainer.css( "transform" ).split(',')[4] + '"'
+        currentTransform = parseInt(currentTransform.substring(2, currentTransform.length-1));
+
+        var increasedWidth = containerWidth + currentTransform;
+
+        var widthContainer = "translate(" + increasedWidth + "px)";
+
+        if(currentTransform +150 <= -containerWidth)
+            innerContainer.css('transform',widthContainer);
+
+        else{
+            var restBlocks = "translate(" + 0 + "px)";
+            innerContainer.css('transform',restBlocks);
+        }
+
+    }
+    else {
+        console.log("WRONG SIDE PROPERTY IN sliderArrow FUNCTION. POSSIBLE OPTIONS: LEFT / RIGHT (AS STRING TYPE)");
+    }
+}
+
+/*FUNKCJA SPRAWDZA CZY WYSWIETLAC STRZALKI DO SLIDERA BLOCZKÓW
+IN leftArrow/rightArrow - obiekty jquery, buttony do przełączania slide'ów |
+container - obiekt jquery, główny kontener slider'a |
+innerContainer - obiekt jquery, wewnętrzny kontener clidera
+ */
+function hideOrShowArrows(leftArrow, rightArrow, container, innerContainer){
+
+    if(container.width() >= innerContainer.width() + 150){
+        leftArrow.hide();
+        rightArrow.hide();
+    }
+    else
+    {
+        leftArrow.show();
+        rightArrow.show();
+    }
+
+}
