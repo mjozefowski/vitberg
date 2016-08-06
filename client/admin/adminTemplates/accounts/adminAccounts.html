@@ -1,4 +1,8 @@
 <template name="adminAccounts">
+    {{> sAlert}}
 
     <div id="addNewUser">Dodaj nowego uzytkownika + </div>
+
+    {{> tabular table=TabularTables.UsersAdmin class="table table-striped table-bordered table-condensed"}}
+
 </template>

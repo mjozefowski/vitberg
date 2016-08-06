@@ -1,5 +1,4 @@
 <template name="adminPanel">
-
 <!--menu-->
     <div class="admin-panel-container">
         {{#if isInRole 'admin'}}
@@ -16,7 +15,14 @@
 
             </div>
         {{/if}}
-        {{#if isInRole 'contractor'}}
+    {{#if isInRole 'admin'}}
+        <div class="admin-nav-container">
+
+           <ol id="adminAccounts" class="admin-navigation-item admin-nav-box bigger-box">Użytkownicy  <i class="material-icons">drafts</i></ol>
+
+        </div>
+    {{/if}}
+    {{#if isInRole 'contractor'}}
             <div class="admin-nav-container">
 
                 <ol id="contractor-link-1" class="admin-navigation-item admin-nav-box bigger-box">Link 1<i class="material-icons">home</i></ol>
