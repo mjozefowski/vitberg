@@ -122,6 +122,11 @@ Router.map(function () {
         },
     });
 
+    this.route('/static/contact/contact', {
+        name: 'contact',
+        template: 'contact'
+    });
+
     //this.route('/diplomaInfo/:_id', {
     //    waitOn: function () {
     //        return Meteor.subscribe("diploma", this.params._id);
