@@ -1,0 +1,37 @@
+<template name="adminContactEditModal">
+
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                {{#autoForm collection="Contact" id="adminEditContact" doc=selectedDoc type="update"}}
+
+
+                    {{> afQuickField name='firstName'}}
+                    {{> afQuickField name='lastName'}}
+                    {{> afQuickField name='position'}}
+
+                    {{> afQuickField name='phone'}}
+                    {{> afQuickField name='cellPhone'}}
+
+                    {{> afQuickField name='email'}}
+                    {{> afQuickField name='skype'}}
+
+
+                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                {{/autoForm}}
+
+                {{#if selectedDoc.image}}
+                    Obrazy:
+                    <img id="{{selectedDoc.image}}" src="{{selectedDoc.image}}" class="tabular-image">
+                    <span class="glyphicon glyphicon-remove remove-image"></span>
+                {{else}}
+                    <input type="file" name="…" class="myFileInput">
+                    {{> FS.UploadProgressBar bootstrap=true}}
+                {{/if}}
+
+            </div>
+        </div>
+    </div>
+
+</template>

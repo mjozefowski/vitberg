@@ -23,7 +23,16 @@ Template.slider.helpers({
 
 Template.slider.events({
 
-    'click #opinions': function () {
+    'click #addOpinion': function (e,t) {
+
         Router.go('/static/addOpinion')
+    },
+    'click #contact': function (e,t) {
+
+        Router.go('/static/contact')
+    },
+    'click #map': function (e,t) {
+
+        Router.go('/static/map')
     }
 })

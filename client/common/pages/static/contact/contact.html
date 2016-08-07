@@ -4,108 +4,27 @@
 
         <div class="main-container-contact">
 
+            {{#each contacts}}
+                {{#if this.image}}
             <div class="single-card">
-                <div class="worker-role">Dyrektor finansów</div>
+                <div class="worker-role">{{position}}</div>
 
-                <img class="worker-photo" src="/temp/woman.jpg">
+                <img class="worker-photo" src="{{image}}">
 
                 <div class="worker-info">
-                    <div class="worker-name-lastname">Jessica Lynch</div>
+                    <div class="worker-name-lastname">{{firstName}} {{lastName}}</div>
 
                     <div class="worker-contact-info">
-                        <div class="worker-tel">tel. +485020323</div>
-                        <div class="worker-tel-kom">kom. 508203293</div>
-                        <div class="worker-mail"><a>e-mail</a></div>
-                        <div class="worker-skype"><a>skype</a></div>
+                        <div class="worker-tel">tel. {{phone}}</div>
+                        <div class="worker-tel-kom">kom. {{cellPhone}}</div>
+                        <div class="worker-mail"><a href="mailto:{{email}}"> e-mail </a></div>
+                        <div class="worker-skype"><a href="skype:{{skype}}">skype</a></div>
                     </div>
                 </div>
 
             </div>
-            <div class="single-card">
-                <div class="worker-role">Dyrektor finansów</div>
-
-                <img class="worker-photo" src="/temp/woman.jpg">
-
-                <div class="worker-info">
-                    <div class="worker-name-lastname">Jessica Lynch</div>
-
-                    <div class="worker-contact-info">
-                        <div class="worker-tel">tel. +485020323</div>
-                        <div class="worker-tel-kom">kom. 508203293</div>
-                        <div class="worker-mail"><a>e-mail</a></div>
-                        <div class="worker-skype"><a>skype</a></div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="single-card">
-                <div class="worker-role">Dyrektor finansów</div>
-
-                <img class="worker-photo" src="/temp/woman.jpg">
-
-                <div class="worker-info">
-                    <div class="worker-name-lastname">Jessica Lynch</div>
-
-                    <div class="worker-contact-info">
-                        <div class="worker-tel">tel. +485020323</div>
-                        <div class="worker-tel-kom">kom. 508203293</div>
-                        <div class="worker-mail"><a>e-mail</a></div>
-                        <div class="worker-skype"><a>skype</a></div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="single-card">
-                <div class="worker-role">Dyrektor finansów</div>
-
-                <img class="worker-photo" src="/temp/woman.jpg">
-
-                <div class="worker-info">
-                    <div class="worker-name-lastname">Jessica Lynch</div>
-
-                    <div class="worker-contact-info">
-                        <div class="worker-tel">tel. +485020323</div>
-                        <div class="worker-tel-kom">kom. 508203293</div>
-                        <div class="worker-mail"><a>e-mail</a></div>
-                        <div class="worker-skype"><a>skype</a></div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="single-card">
-                <div class="worker-role">Dyrektor finansów</div>
-
-                <img class="worker-photo" src="/temp/woman.jpg">
-
-                <div class="worker-info">
-                    <div class="worker-name-lastname">Jessica Lynch</div>
-
-                    <div class="worker-contact-info">
-                        <div class="worker-tel">tel. +485020323</div>
-                        <div class="worker-tel-kom">kom. 508203293</div>
-                        <div class="worker-mail"><a>e-mail</a></div>
-                        <div class="worker-skype"><a>skype</a></div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="single-card">
-                <div class="worker-role">Dyrektor finansów</div>
-
-                <img class="worker-photo" src="/temp/woman.jpg">
-
-                <div class="worker-info">
-                    <div class="worker-name-lastname">Jessica Lynch</div>
-
-                    <div class="worker-contact-info">
-                        <div class="worker-tel">tel. +485020323</div>
-                        <div class="worker-tel-kom">kom. 508203293</div>
-                        <div class="worker-mail"><a>e-mail</a></div>
-                        <div class="worker-skype"><a>skype</a></div>
-                    </div>
-                </div>
-
-            </div>
+                    {{/if}}
+            {{/each}}
 
 
             <div class="general-contact">

@@ -5,25 +5,24 @@
  * Created by Maciej Józefowski, 07.08.16
  */
 
-Template.adminEditSubCategoryModal.onCreated(function () {
-    this.data = Template.currentData();
+Template.adminContactEditModal.onCreated(function () {
+    this.data = Template.currentData()
 })
 
-Template.adminEditSubCategoryModal.onRendered(function () {
+Template.adminContactEditModal.onRendered(function () {
 
 })
 
-Template.adminEditSubCategoryModal.helpers({
+Template.adminContactEditModal.helpers({
 
     selectedDoc: function () {
         var ti = Template.instance();
-
-        return SubCategories.findOne({_id:ti.data});
+        return Contact.findOne(ti.data)
     }
 
 })
 
-Template.adminEditSubCategoryModal.events({
+Template.adminContactEditModal.events({
 
     'change .myFileInput': function(event, t) {
         FS.Utility.eachFile(event, function (file) {
@@ -34,7 +33,7 @@ Template.adminEditSubCategoryModal.events({
 
                     setTimeout(function(){
 
-                        SubCategories.update(t.data,{$set:{image:"/cfs/files/images/"+fileObj._id}})
+                        Contact.update(t.data,{$set:{image:"/cfs/files/images/"+fileObj._id}})
 
                     }, 3000);
 
@@ -55,7 +54,7 @@ Template.adminEditSubCategoryModal.events({
 
         Images.remove(id.replace("/cfs/files/images/",""), function (e, r) {
             if(!e){
-                SubCategories.update(t.data,{$set:{image:""}});
+                Contact.update(t.data,{$set:{image:""}});
             }
         })
 

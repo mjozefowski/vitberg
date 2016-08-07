@@ -127,9 +127,20 @@ Router.map(function () {
         },
     });
 
-    this.route('/static/contact/contact', {
+    this.route('/static/contact', {
         name: 'contact',
-        template: 'contact'
+        template: 'contact',
+        loadingTemplate: 'loading',
+        waitOn:function(){
+            return [Meteor.subscribe("contacts")]
+        },
+
+        action:function(){
+            if(this.ready()){
+                this.render('contact')
+            }
+        }
+
     });
 
     //this.route('/diplomaInfo/:_id', {
