@@ -23,4 +23,30 @@ Template.adminEditSubCategoryModal.helpers({
 
 })
 
-Template.adminEditSubCategoryModal.events({})
+Template.adminEditSubCategoryModal.events({
+
+    'change .myFileInput': function(event, t) {
+        FS.Utility.eachFile(event, function (file) {
+            Images.insert(file, function (err, fileObj) {
+                if (err) {
+                    // handle error
+                } else {
+
+                    setTimeout(function(){
+
+                        SubCategories.update(t.data,{$set:{image:"/cfs/files/images/"+fileObj._id}})
+
+                    }, 3000);
+
+                    //var userId = Meteor.userId();
+                    //var imagesURL = {
+                    //    "link": "/cfs/files/pdfs/" + fileObj._id,
+                    //    "name":"item"
+                    //};
+                    //Lesson.update({_id:t.selectedDoc.get()}, {addToSet:{download:imagesURL} });
+                }
+            });
+        });
+    }
+
+})

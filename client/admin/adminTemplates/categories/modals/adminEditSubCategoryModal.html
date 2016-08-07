@@ -9,21 +9,28 @@
                     {{> afQuickField name='name'}}
                     {{> afQuickField name='visible'}}
 
+                    {{> afQuickField name='selectedTemplate' class='selectedTemplate'}}
+
                     {{> afQuickField name='title'}}
                     {{> afQuickField name='text'}}
 
-                    {{> afQuickField name='selectedTemplate' class='selectedTemplate'}}
 
-                    {{> afQuickField name='col1'}}
-                    {{> afQuickField name='col2'}}
-                    {{> afQuickField name='col3'}}
-
-
+                          {{> afQuickField name='col1'}}
+                          {{> afQuickField name='col2'}}
+                          {{> afQuickField name='col3'}}
 
 
                     <div class="hidden">{{> afQuickField name='categoryId' class='categoryIdInput'}}</div>
                     <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
                 {{/autoForm}}
+
+                {{#if selectedDoc.image}}
+                Obrazy:
+                <img src="{{selectedDoc.image}}" class="tabular-image">
+                {{else}}
+                <input type="file" name="…" class="myFileInput">
+                {{> FS.UploadProgressBar bootstrap=true}}
+                {{/if}}
 
 
             </div>

@@ -31,8 +31,8 @@ Template.adminCategoryEditModal.helpers({
 Template.adminCategoryEditModal.events({
 
     'click #addNewSubCategory': function (e,t) {
-        Session.set('adminSelectedSubCategory', t.data);
-        Modal.show('adminAddSubCategory', function () {
+        Session.set('adminSelectedSubCategory', SubCategories.insert({categoryId:t.data,visible:false, name:"Nowa kategoria"}));
+        Modal.show('adminEditSubCategoryModal', function () {
             return Session.get('adminSelectedSubCategory')
         })
     },
