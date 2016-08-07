@@ -35,7 +35,6 @@ Template.universalProgram.events({
 //   block - obiekt jquery np. $('.single-block') | blockBorer suma paddingów i marginów pojedyńczego bloku
 function howManyBlocksProgram(container, containerBorder, block, blockBorder){
 
-    console.log($('.program-blocks-slider-container').width());
     var contenerWidth = $('.program-blocks-slider-container').width();
     var blockWidth = block.width() + blockBorder;
 
