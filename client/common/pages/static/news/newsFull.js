@@ -11,7 +11,7 @@ Template.newsFull.onCreated(function () {
 Template.newsFull.onRendered(function () {
 
     calcHeight($('.single-media-container'));
-    setTimeout(function() { calcHeight($('.single-media-container')); }, 100);
+    setTimeout(function() { calcHeight($('.single-media-container')); }, 200);
 
 })
 
