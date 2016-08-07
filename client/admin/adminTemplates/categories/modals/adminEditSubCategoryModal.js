@@ -47,6 +47,19 @@ Template.adminEditSubCategoryModal.events({
                 }
             });
         });
+    },
+
+    'click .remove-image': function (e, t) {
+        var id = $(e.target).prev().attr("id")
+        console.log(id)
+
+        Images.remove(id.replace("/cfs/files/images/",""), function (e, r) {
+            if(!e){
+                SubCategories.update(t.data,{$set:{image:""}});
+            }
+        })
+
+
     }
 
 })

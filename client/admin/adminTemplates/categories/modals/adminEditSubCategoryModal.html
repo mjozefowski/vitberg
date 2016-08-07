@@ -26,7 +26,8 @@
 
                 {{#if selectedDoc.image}}
                 Obrazy:
-                <img src="{{selectedDoc.image}}" class="tabular-image">
+                <img id="{{selectedDoc.image}}" src="{{selectedDoc.image}}" class="tabular-image">
+                    <span class="glyphicon glyphicon-remove remove-image"></span>
                 {{else}}
                 <input type="file" name="…" class="myFileInput">
                 {{> FS.UploadProgressBar bootstrap=true}}

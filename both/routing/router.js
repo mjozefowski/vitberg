@@ -127,7 +127,7 @@ Router.map(function () {
         },
     });
 
-    this.route('/static/contact/contact', {
+    this.route('/static/contact', {
         name: 'contact',
         template: 'contact'
     });
