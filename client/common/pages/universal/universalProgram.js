@@ -8,7 +8,7 @@ Template.universalProgram.onCreated(function () {
 
 Template.universalProgram.onRendered(function () {
 
-    howManyBlocksProgram($('.slider-blocks-program'),$('.program-blocks-slider-container').css('padding-left'),$('.single-block'),63.25);
+    howManyBlocksProgram($('.slider-blocks-program'),$('.program-blocks-slider-container').css('padding-left'),$('.single-program-block'),63.25);
 
     hideOrShowArrowsProgram($('.left-arrow-programs'),$('.right-arrow-programs'),$('.slider-blocks-program'),$('.slider-blocks-inner-program'));
 
@@ -34,17 +34,13 @@ Template.universalProgram.events({
 //IN container - obiekt jquery np $('.container'), kontener wewnątrz którego jest slider | containerBorder - suma paddingów i marginów konteneru |
 //   block - obiekt jquery np. $('.single-block') | blockBorer suma paddingów i marginów pojedyńczego bloku
 function howManyBlocksProgram(container, containerBorder, block, blockBorder){
-    console.log($('.program-blocks-slider-container').css('padding-left'));
-    console.log($('.program-blocks-slider-container').width());
 
     var contenerWidth = $('.program-blocks-slider-container').width();
     var blockWidth = block.width() + blockBorder;
-    console.log(blockWidth);
-    console.log(contenerWidth);
-    var howManyBlocks = parseInt(contenerWidth/blockWidth) * blockWidth;
-    console.log(howManyBlocks);
 
-    container.css('width', howManyBlocks);
+    var howManyBlocksProgram = parseInt(contenerWidth/blockWidth) * blockWidth;
+
+    container.css('width', howManyBlocksProgram);
 }
 
 /* PRZEŁĄCZANIE SLIDE'ÓW Z DIVAMI
@@ -117,7 +113,7 @@ function hideOrShowArrowsProgram(leftArrow, rightArrow, container, innerContaine
 
 $(window).on('resize', function() {
 
-    howManyBlocksProgram($('.slider-blocks-program'),0,$('.single-block'),63.25);
+    howManyBlocksProgram($('.slider-blocks-program'),0,$('.single-program-block'),63.25);
 
     $('.slider-blocks-inner-program').css('transform','translate(0)');
 

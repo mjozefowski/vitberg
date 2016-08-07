@@ -21,7 +21,6 @@ Template.mainClickable.onRendered(function () {
 
     hideOrShowArrows($('.left-arrow-blocks'),$('.right-arrow-blocks'),$('.blocks-container'),$('.blocks-inner-container'));
 
-    console.log("ASDASDA SDADS" + $('.main-clickable').css('paddingLeft'));
 
 })
 
@@ -74,7 +73,7 @@ Template.mainClickable.events({
 //   block - obiekt jquery np. $('.single-block') | blockBorer suma paddingów i marginów pojedyńczego bloku
 function howManyBlocks(container, containerBorder, block, blockBorder){
 
-    var contenerWidth = $('.main-clickable').width() - containerBorder*2;
+    var contenerWidth = $('.main-clickable').width();
     var blockWidth = block.width() + blockBorder;
 
     var howManyBlocks =parseInt(contenerWidth/blockWidth) * blockWidth;
