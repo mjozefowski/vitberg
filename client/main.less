@@ -1358,6 +1358,7 @@ body {
 @media only screen and (max-width:767px){
 
   .four-blocks{
+
     min-height:200px;
     position: absolute;
     width: 100%;
@@ -5045,14 +5046,15 @@ body {
 @media only screen and (min-width:768px) and (max-width:991px){
 
   .full-news-container{
-    padding:25px 8.3333% 50px;
+    padding:25px 30px 50px;
 
     .newsFull-content-container{
-      padding:0 15px;
+      padding:0;
 
 
       .newsFull-top{
         position: relative;
+        min-height:60px;
 
         .header{
           width:~"calc(100% - 200px)";
@@ -5074,7 +5076,7 @@ body {
     }
 
     .newsFull-movie-container{
-      width: 50%;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
@@ -5088,20 +5090,17 @@ body {
     .newsFull-media-container{
       padding:0 10px;
 
-      >:nth-child(3n+1){
-        padding-right:15px;
-      }
-
-      >:nth-child(3n+2){
-        padding:0 7.5px;
-      }
-
-      >:nth-child(3n+3){
+      >:nth-child(even){
         padding-left:15px;
       }
 
+      >:nth-child(odd){
+        padding-right:15px;
+      }
+
+
       .single-media-container{
-        width:33.3333%;
+        width:50%;
         float:left;
         display:inline-block;
         margin-bottom:22.5px;
@@ -5123,14 +5122,15 @@ body {
 @media only screen and (min-width:992px) and (max-width:1199px){
 
   .full-news-container{
-    padding:25px 8.3333% 50px;
+    padding:25px 30px 50px;
 
     .newsFull-content-container{
-      padding:0 15px;
+      padding:0;
 
 
       .newsFull-top{
         position: relative;
+        min-height:60px;
 
         .header{
           width:~"calc(100% - 200px)";
@@ -5152,7 +5152,7 @@ body {
     }
 
     .newsFull-movie-container{
-      width: 50%;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
@@ -5230,10 +5230,9 @@ body {
     }
 
     .newsFull-movie-container{
-      width: 50%;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
+      width:33.3333%;
+      float:left;
+      display:inline-block;
       margin-bottom:22.5px;
 
       .media-newsFull{
@@ -7968,7 +7967,7 @@ body {
     .single-card{
       height:210px;
       width:80%;
-      margin:30px;
+      margin:30px auto;
 
       .worker-role{
         font-size:24px;
@@ -8049,8 +8048,8 @@ body {
 
     .single-card{
       height:210px;
-      width:430px;
-      margin:30px;
+      width: 450px;
+      margin: 15px;
 
       .worker-role{
         font-size:24px;
@@ -8131,7 +8130,7 @@ body {
 
     .single-card{
       height:210px;
-      width:430px;
+      width:450px;
       margin:30px;
 
       .worker-role{
