@@ -240,6 +240,7 @@ body {
     line-height: 116px;
     font-size: 32px;
     color: #b6b6b6;
+    overflow: hidden;
   }
 
   //MODAL CONTENT
@@ -364,21 +365,6 @@ body {
   .maxImageSize{
     max-height: 200px;
     max-width: 200px;
-  }
-
-  .btn-add-opinion{
-    width: 30%;
-    margin-left: 35%;
-    border: 1px solid red;
-    background: white;
-    color: #333;
-    outline:none;
-    box-shadow:none;
-    transition:0.3s;
-  }
-  .btn-add-opinion:hover{
-    background: red;
-    color: #fff;
   }
 
   .editable-text {
@@ -8331,6 +8317,519 @@ body {
 
 }
 
+
+//OPINIONS
+//*****************************************************************************************************************
+
+.opinions-main-container{
+  margin-bottom:50px;
+  text-align:center;
+
+  .collapse-write-opinion{
+    text-align:left;
+
+    .header-smaller{
+      margin-top:20px;
+    }
+
+    .add-opinion-form-container{
+      padding: 25px 40px 80px;
+      margin: 0 40px;
+      border: 1px solid #e6e6e6;
+      font-family:Avenir-Regular;
+      position:relative;
+
+      .textarea-opinion{
+        width:100%;
+        height:75px;
+        max-height:400px;
+        resize:vertical;
+        margin-bottom:25px;
+      }
+
+      .captcha-container{
+        width:100%;
+        overflow:hidden;
+      }
+
+    }
+
+    .opinion-uploaded-image{
+      margin:10px;
+      border:1px solid #737373;
+      padding:15px;
+
+
+      .remove-image{
+        color: @red-logo-vitberg;
+        font-weight:bold;
+        float: right;
+        cursor: pointer;
+      }
+    }
+
+  }
+
+
+  .btn-add-opinion{
+    width: 30%;
+    min-width:200px;
+    border: 1px solid red;
+    background: white;
+    color: #333;
+    outline:none;
+    box-shadow:none;
+    transition:0.3s;
+  }
+  .btn-add-opinion:hover{
+    background: red;
+    color: #fff;
+  }
+
+  .btn-send-opinion{
+    width: 300px;
+    height: 36px;
+    position:absolute;
+    bottom:-16px;
+    left:~"calc(50% - 150px)";
+    border: 1px solid red;
+    background: white;
+    color: #333;
+    outline:none;
+    box-shadow:none;
+    transition:0.3s;
+  }
+  .btn-send-opinion:hover{
+    background: red;
+    color: #fff;
+  }
+
+  .each-opinions-container{
+    text-align: left;
+
+    .single-opinion-container{
+      margin:15px 40px;
+      border:1px solid rgba(51, 51, 51, 0.46);
+      padding:15px 15px 20px;
+      position: relative;
+
+      .opinion-personal-info{
+        position: absolute;
+        top: 10px;
+        left: 200px;
+        font-size:16px;
+        color:@red-logo-vitberg;
+
+        span{
+          font-family:Avenir-Black;
+        }
+      }
+
+
+      .opinion-content-container{
+        height: 120px;
+        overflow: hidden;
+        display: inline-block;
+        transition:0.4s;
+
+        .opinion-image-container{
+          display:inline;
+          vertical-align: top;
+          float:left;
+          margin-right:15px;
+
+          img{
+            width:170px;
+            cursor:pointer;
+          }
+        }
+
+        .opinion-text{
+
+        }
+
+      }
+
+      .read-more-opinion-btn{
+        position: absolute;
+        bottom:5px;
+        right:10px;
+        color:@red-logo-vitberg;
+        cursor:pointer;
+      }
+
+      .read-less-opinion-btn{
+        position: absolute;
+        bottom:5px;
+        right:10px;
+        color:#333;
+        cursor:pointer;
+      }
+
+      .read-more-opinion-btn:hover{
+        text-decoration: underline;
+      }
+
+      .read-less-opinion-btn:hover{
+        text-decoration: underline;
+      }
+
+      .collapsed{
+
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width:767px){
+
+  .opinions-main-container{
+
+    .btn-add-opinion{
+
+
+    }
+
+    .each-opinions-container{
+      text-align:left;
+
+      .single-opinion-container{
+        margin:15px 40px;
+        border:1px solid rgba(51, 51, 51, 0.46);
+        padding:15px 15px 20px;
+        position: relative;
+
+        .opinion-personal-info{
+          position: relative;
+          font-size: 16px;
+          color: #d30f13;
+          top: -5px;
+          left: 0px;
+
+          span{
+            font-family:Avenir-Black;
+          }
+        }
+
+
+        .opinion-content-container{
+          height: 120px;
+          overflow: hidden;
+          display: inline-block;
+          transition:0.4s;
+
+          .opinion-image-container{
+            display:inline;
+            vertical-align: top;
+            float:left;
+            margin-right:15px;
+
+            img{
+              width:100px;
+              cursor:pointer;
+            }
+          }
+
+          .opinion-text{
+
+          }
+
+        }
+
+        .read-more-opinion-btn{
+          position: absolute;
+          bottom:5px;
+          right:10px;
+          color:@red-logo-vitberg;
+          cursor:pointer;
+        }
+
+        .read-less-opinion-btn{
+          position: absolute;
+          bottom:5px;
+          right:10px;
+          color:#333;
+          cursor:pointer;
+        }
+
+        .read-more-opinion-btn:hover{
+          text-decoration: underline;
+        }
+
+        .read-less-opinion-btn:hover{
+          text-decoration: underline;
+        }
+
+        .collapsed{
+
+        }
+      }
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:768px) and (max-width:991px){
+
+  .opinions-main-container{
+    padding:0 30px;
+
+    .each-opinions-container{
+
+      .single-opinion-container{
+        margin:15px 40px;
+        border:1px solid rgba(51, 51, 51, 0.46);
+        padding:15px 15px 20px;
+        position: relative;
+
+        .opinion-personal-info{
+          position: absolute;
+          top: 10px;
+          left: 200px;
+          font-size:16px;
+          color:@red-logo-vitberg;
+
+          span{
+            font-family:Avenir-Black;
+          }
+        }
+
+
+        .opinion-content-container{
+          height: 120px;
+          overflow: hidden;
+          display: inline-block;
+          transition:0.4s;
+
+          .opinion-image-container{
+            display:inline;
+            vertical-align: top;
+            float:left;
+            margin-right:15px;
+
+            img{
+              width:170px;
+              cursor:pointer;
+            }
+          }
+
+          .opinion-text{
+
+          }
+
+        }
+
+        .read-more-opinion-btn{
+          position: absolute;
+          bottom:5px;
+          right:10px;
+          color:@red-logo-vitberg;
+          cursor:pointer;
+        }
+
+        .read-less-opinion-btn{
+          position: absolute;
+          bottom:5px;
+          right:10px;
+          color:#333;
+          cursor:pointer;
+        }
+
+        .read-more-opinion-btn:hover{
+          text-decoration: underline;
+        }
+
+        .read-less-opinion-btn:hover{
+          text-decoration: underline;
+        }
+
+        .collapsed{
+
+        }
+      }
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:992px) and (max-width:1199px){
+
+  .opinions-main-container{
+    padding:0 30px;
+
+
+    .each-opinions-container{
+
+      .single-opinion-container{
+        margin:15px 40px;
+        border:1px solid rgba(51, 51, 51, 0.46);
+        padding:15px 15px 20px;
+        position: relative;
+
+        .opinion-personal-info{
+          position: absolute;
+          top: 10px;
+          left: 200px;
+          font-size:16px;
+          color:@red-logo-vitberg;
+
+          span{
+            font-family:Avenir-Black;
+          }
+        }
+
+
+        .opinion-content-container{
+          height: 120px;
+          overflow: hidden;
+          display: inline-block;
+          transition:0.4s;
+
+          .opinion-image-container{
+            display:inline;
+            vertical-align: top;
+            float:left;
+            margin-right:15px;
+
+            img{
+              width:170px;
+              cursor:pointer;
+            }
+          }
+
+          .opinion-text{
+
+          }
+
+        }
+
+        .read-more-opinion-btn{
+          position: absolute;
+          bottom:5px;
+          right:10px;
+          color:@red-logo-vitberg;
+          cursor:pointer;
+        }
+
+        .read-less-opinion-btn{
+          position: absolute;
+          bottom:5px;
+          right:10px;
+          color:#333;
+          cursor:pointer;
+        }
+
+        .read-more-opinion-btn:hover{
+          text-decoration: underline;
+        }
+
+        .read-less-opinion-btn:hover{
+          text-decoration: underline;
+        }
+
+        .collapsed{
+
+        }
+      }
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:1200px){
+
+  .opinions-main-container{
+    padding:0 8.3333%;
+
+
+    .each-opinions-container{
+
+      .single-opinion-container{
+        margin:15px 40px;
+        border:1px solid rgba(51, 51, 51, 0.46);
+        padding:15px 15px 20px;
+        position: relative;
+
+        .opinion-personal-info{
+          position: absolute;
+          top: 10px;
+          left: 200px;
+          font-size:16px;
+          color:@red-logo-vitberg;
+
+          span{
+            font-family:Avenir-Black;
+          }
+        }
+
+
+        .opinion-content-container{
+          height: 120px;
+          overflow: hidden;
+          display: inline-block;
+          transition:0.4s;
+
+          .opinion-image-container{
+            display:inline;
+            vertical-align: top;
+            float:left;
+            margin-right:15px;
+
+            img{
+              width:170px;
+              cursor:pointer;
+            }
+          }
+
+          .opinion-text{
+
+          }
+
+        }
+
+        .read-more-opinion-btn{
+          position: absolute;
+          bottom:5px;
+          right:10px;
+          color:@red-logo-vitberg;
+          cursor:pointer;
+        }
+
+        .read-less-opinion-btn{
+          position: absolute;
+          bottom:5px;
+          right:10px;
+          color:#333;
+          cursor:pointer;
+        }
+
+        .read-more-opinion-btn:hover{
+          text-decoration: underline;
+        }
+
+        .read-less-opinion-btn:hover{
+          text-decoration: underline;
+        }
+
+        .collapsed{
+
+        }
+      }
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:1600px){
+
+
+
+}
 
 .tabular-image{
   max-width: 400px;

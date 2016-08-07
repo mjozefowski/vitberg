@@ -1,91 +1,90 @@
 <template name="dropzone">
     {{> sAlert}}
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-    <button class="btn btn-add-opinion" data-toggle="collapse" data-target="#collapse">Dodaj opinię +</button>
 
-    <div id="collapse" class="collapse">
-    <div class="header-smaller" style="margin-left:40px">Dodaj opinię </div>
-    <div style="    padding: 25px 40px 80px;  margin: 0 40px;  border: 1px solid #e6e6e6; font-family:Avenir-Regular; position:relative;">
-        <div class="header-smaller">Opinia</div>
-            <textarea id="text" rows="4" name="text" form="clientOpinionForm" placeholder="Kliknij aby napisać opinię (minimum 200 znaków)" style="width:100%; height:75px; max-height:400px; resize:vertical; margin-bottom:25px;">
-                </textarea>
+    {{>slider}}
 
-            <form id="clientOpinionForm">
-                <legend><div>Imię</div><input type="text" name="firstName" id="clientFirstName"></legend>
-                <legend><div>Nazwisko</div><input type="text" name="lastName" id="clientLastName"></legend>
-                <legend><div>Wiek</div><input type="number" name="age" id="clientAge"></legend>
-                <legend><div>Miasto</div><input type="text" name="city" id="clientCity"></legend>
-                <legend><div>Płeć</div><select name="sex" id="clientSex">
-                    <option value="female">Kobieta</option>
-                    <option value="male">Mężczyzna</option>
-                    <option value="unconventional">Niekonwencjonalna</option>
-                </select>
-                    </legend>
-                <legend><div>Telefon</div><input type="number" name="phone" id="clientPhone"></legend>
-                <legend><div>Email</div><input type="email" name="email" id="clientEmail"></legend>
-                <legend><div>Numer seryjny materaca <span class="glyphicon glyphicon-question-sign"></span></div><input type="number" name="serial" id="clientProductSerial"></legend>
-                <input type="submit" style="border: 1px solid #333;  background-color: white;  color: #333;  display: block;  margin-right: auto; width: 300px; height: 36px; margin-left: auto; position:absolute; bottom:-16px; left:calc(50% - 180px);">
-            </form>
+    <div class="opinions-main-container">
 
-            <br>
-            <br>
+        <button class="btn btn-add-opinion" data-toggle="collapse" data-target="#collapse">Dodaj opinię +</button>
 
-            {{>reCAPTCHA}}
+        <div id="collapse" class="collapse collapse-write-opinion">
+            <div class="header-smaller" style="margin-left:40px">Dodaj opinię </div>
 
-            <br>
-            <br>
+            <div class="add-opinion-form-container">
+                <div class="header-smaller">Opinia</div>
+                    <textarea class="textarea-opinion" id="text" rows="4" name="text" form="clientOpinionForm" placeholder="Kliknij aby napisać opinię (minimum 200 znaków)">
+                        </textarea>
 
+                    <form id="clientOpinionForm">
+                        <legend><div>Imię</div><input type="text" name="firstName" id="clientFirstName"></legend>
+                        <legend><div>Nazwisko</div><input type="text" name="lastName" id="clientLastName"></legend>
+                        <legend><div>Wiek</div><input type="number" name="age" id="clientAge"></legend>
+                        <legend><div>Miasto</div><input type="text" name="city" id="clientCity"></legend>
+                        <legend><div>Płeć</div><select name="sex" id="clientSex">
+                            <option value="female">Kobieta</option>
+                            <option value="male">Mężczyzna</option>
+                            <option value="unconventional">Niekonwencjonalna</option>
+                        </select>
+                            </legend>
+                        <legend><div>Telefon</div><input type="number" name="phone" id="clientPhone"></legend>
+                        <legend><div>Email</div><input type="email" name="email" id="clientEmail"></legend>
+                        <legend><div>Numer seryjny materaca <span class="glyphicon glyphicon-question-sign"></span></div><input type="number" name="serial" id="clientProductSerial"></legend>
+                        <input class="btn btn-send-opinion" type="submit">
+                    </form>
 
-            <div class="row">
-                    <div id="dropzone" class="dropzone" style="background-color: #f5f5f5; width: 80%; margin-left:10%;">
-                        <div class="well well-drop-zone drop-zone-box">
-                            Upuść tutaj aby wysłać (Max 4)
-                        </div>
+                    <div class="captcha-container">
+                    {{>reCAPTCHA}}
                     </div>
 
+                    <div class="row">
+                            <div id="dropzone" class="dropzone" style="background-color: #f5f5f5; width: 80%; margin-left:10%;">
+                                <div class="well well-drop-zone drop-zone-box">
+                                    Upuść tutaj aby wysłać (Max 4)
+                                </div>
+                            </div>
+
+                    </div>
+
+
+
+                <div>
+                    {{#each array}}
+                        <div class="opinion-uploaded-image">{{this.data.blob.name}}<span id="{{this.data.blob.name}}" class="remove-image"> x </span></div>
+                    {{/each}}
+                </div>
+
             </div>
+        </div>
+
+        <br>
+        <br>
 
 
+        <div class="each-opinions-container">
+            {{#each opinions}}
+                <div class="single-opinion-container">
 
-        <div>
-            {{#each array}}
-                <div style="margin:10px; border:1px solid #333; padding:15px">{{this.data.blob.name}}<span id="{{this.data.blob.name}}" class="remove-image" style="color:red; crusro:pointer;"> x </span></div>
+                    <div class="opinion-personal-info">{{sex this.sex}} <span>{{this.firstName}} ({{this.age}})</span> z <span>{{this.city}}</span></div>
+
+                    <div class="opinion-content-container">
+
+                    <div id="{{this._id}}" class="opinion-image-container" >
+                        <img id="{{this._id}}" class="opinionThumb gray-scale maxImageSize" src="/cfs/files/thumbs/{{img images}}">
+                    </div>
+
+                        <br class="hide-to-sm">
+                        <span class="opinion-text">{{this.opinionText}}</span>
+                    </div>
+
+                    <div class="read-more-opinion-btn">Czytaj więcej</div>
+                    <div class="read-less-opinion-btn hide">Zwiń opinię</div>
+
+                </div>
             {{/each}}
         </div>
 
     </div>
-    </div>
 
-    <br>
-    <br>
-    <br>
-
-
-    <div>
-        {{#each opinions}}
-            <div style="margin:15px 40px; border:1px solid #333; padding:15px">
-
-                <div id="{{this._id}}" style=" width:200px; display:inline-block; vertical-align: top;" >
-                    <img id="{{this._id}}" class="opinionThumb gray-scale maxImageSize" src="/cfs/files/thumbs/{{img images}}">
-
-                </div>
-                <div style="display:inline-block; padding-left:30px; position:relative; width:calc(100% - 220px);">
-                <div style="position:absolute; top:0; ">{{sex this.sex}} {{this.firstName}} ({{this.age}}) z {{this.city}}</div>
-
-                <div style="display:inline-block; padding-top:30px;">{{this.opinionText}}</div>
-                </div>
-
-
-            </div>
-        {{/each}}
-    </div>
+    {{>footer}}
 
 </template>

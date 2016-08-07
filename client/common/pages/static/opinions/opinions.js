@@ -202,6 +202,20 @@ Template.dropzone.events({
         Modal.show('opinionsGalleryModal', function () {
             return Opinions.findOne({_id:Session.get('selectedOpinion')})
         })
+    },
+
+    'click .read-more-opinion-btn':function(e){
+        var heightText=  $(e.target).prev().children('.opinion-text').height();
+        $(e.target).prev().css('height',heightText);
+        $(e.target).addClass('hide');
+        $(e.target).next().removeClass('hide');
+    },
+
+    'click .read-less-opinion-btn':function(e){
+        $(e.target).prev().prev().css('height',120);
+        $(e.target).addClass('hide');
+        $(e.target).prev().removeClass('hide');
     }
+
 
 })
