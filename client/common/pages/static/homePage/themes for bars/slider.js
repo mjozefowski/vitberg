@@ -3,10 +3,12 @@
  */
 
 Template.slider.onCreated(function () {
-
+    Meteor.subscribe('carousel')
 })
 
 Template.slider.onRendered(function () {
+
+    $('.item').first().addClass('active')
 
     $('.slider').slider({
         full_width: true,
@@ -18,6 +20,10 @@ Template.slider.onRendered(function () {
 })
 
 Template.slider.helpers({
+
+    sliderItems: function () {
+        return Carousel.find()
+    }
 
 })
 

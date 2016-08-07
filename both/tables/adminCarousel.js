@@ -13,7 +13,7 @@ TabularTables.AdminCarousel = new Tabular.Table({
         {   data: "image",
             title: "obraz",
             render: function (image) {
-                return  "<img src=\"/cfs/files/images/"+image+"\" class=\"tabular-image\">";
+                return  "<img src=\""+image+"\" class=\"tabular-image\">";
 
             }
         },

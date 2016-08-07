@@ -1,5 +1,10 @@
 <template name="adminCarouselAddModal">
-
-    <label>Obraz:<input id="image" class="myFileInput" type="file"></label>
-
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <input type="file" name="…" class="myFileInput">
+            {{> FS.UploadProgressBar bootstrap=true}}
+            </div>
+        </div>
+    </div>
 </template>
