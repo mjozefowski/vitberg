@@ -9,7 +9,7 @@ Router.map(function () {
 
 
     this.route('/',{
-
+        loadingTemplate: 'loading',
         waitOn: function () {
             return [Meteor.subscribe("Categories"), Meteor.subscribe("MainPage"), Meteor.subscribe("news")];
         },
@@ -22,7 +22,7 @@ Router.map(function () {
         }
     });
     this.route('/:_id',{
-
+        loadingTemplate: 'loading',
         waitOn: function () {
             return [Meteor.subscribe("Categories"),Meteor.subscribe("SubCategories")];
         },
@@ -37,7 +37,7 @@ Router.map(function () {
         }
     });
     this.route('/static/news',{
-
+        loadingTemplate: 'loading',
         waitOn: function () {
             return [Meteor.subscribe("news"),Meteor.subscribe('images')];
         },
@@ -52,6 +52,7 @@ Router.map(function () {
 
 
     this.route('/static/news/full/:_id', {
+        loadingTemplate: 'loading',
         waitOn:function(){
             return [Meteor.subscribe("news2")]
         },
@@ -66,6 +67,7 @@ Router.map(function () {
 
 
     this.route('/static/map',{
+        loadingTemplate: 'loading',
         waitOn:function(){
             return Meteor.subscribe("markers")
         },
@@ -78,6 +80,7 @@ Router.map(function () {
 
 
     this.route('/static/admin',{
+        loadingTemplate: 'loading',
         waitOn:function(){
             return Meteor.subscribe("adminPublication")
         },
@@ -89,7 +92,7 @@ Router.map(function () {
     }),
 
         this.route('/static/login',{
-
+            loadingTemplate: 'loading',
         action:function(){
             if(this.ready()){
                 this.render('login')
@@ -97,6 +100,7 @@ Router.map(function () {
         }
     })
         this.route('/static/addOpinion',{
+            loadingTemplate: 'loading',
             waitOn:function(){
                 return [Meteor.subscribe("opinions"),Meteor.subscribe('images')]
             },
@@ -116,6 +120,7 @@ Router.map(function () {
     this.route('/static/reset-password/:token', {
         name: 'ResetPassword',
         template: 'ResetPassword',
+        loadingTemplate: 'loading',
         onBeforeAction: function() {
             Accounts._resetPasswordToken = this.params.token;
             this.next();
