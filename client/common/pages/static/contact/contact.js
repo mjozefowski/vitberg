@@ -11,7 +11,9 @@ Template.contact.onRendered(function () {
 })
 
 Template.contact.helpers({
-
+    contacts: function () {
+        return Contact.find();
+    }
 })
 
 Template.contact.events({

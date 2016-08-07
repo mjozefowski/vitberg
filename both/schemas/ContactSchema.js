@@ -8,19 +8,35 @@
 Schemas.ContactSchema = new SimpleSchema({
 
     firstName:{
-        type:String
+        type:String,
+        optional:true
+    },
+    position:{
+        type:String,
+        optional:true
     },
     lastName:{
-        type:String
+        type:String,
+        optional:true
     },
     phone:{
-        type:String
+        type:String,
+        optional:true
+    },
+    cellPhone:{
+        type:String,
+        optional:true
     },
     email:{
         type:String,
-        regEx:SimpleSchema.RegEx.Email
+        regEx:SimpleSchema.RegEx.Email,
+        optional:true
     },
     skype:{
+        type:String,
+        optional:true
+    },
+    image:{
         type:String,
         optional:true
     }

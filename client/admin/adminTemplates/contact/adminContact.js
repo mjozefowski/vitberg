@@ -15,4 +15,19 @@ Template.adminContact.onRendered(function () {
 
 Template.adminContact.helpers({})
 
-Template.adminContact.events({})
+Template.adminContact.events({
+
+    'click #addNewContact': function (e, t) {
+        Session.set('selectedContact',Contact.insert({}));
+        Modal.show('adminContactEditModal', function () {
+            return Session.get('selectedContact')
+        })
+    },
+    'click .table-edit-button': function (e, t) {
+        Session.set('selectedContact',$(e.target).attr('id'));
+        Modal.show('adminContactEditModal', function () {
+            return Session.get('selectedContact')
+        })
+    }
+
+})
