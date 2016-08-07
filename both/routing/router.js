@@ -11,7 +11,7 @@ Router.map(function () {
     this.route('/',{
         loadingTemplate: 'loading',
         waitOn: function () {
-            return [Meteor.subscribe("Categories"), Meteor.subscribe("MainPage"), Meteor.subscribe("news")];
+            return [Meteor.subscribe("Categories"), Meteor.subscribe("MainPage"), Meteor.subscribe("news"),Meteor.subscribe("carousel")];
         },
         action: function () {
             if (this.ready()) {
@@ -24,7 +24,7 @@ Router.map(function () {
     this.route('/:_id',{
         loadingTemplate: 'loading',
         waitOn: function () {
-            return [Meteor.subscribe("Categories"),Meteor.subscribe("SubCategories")];
+            return [Meteor.subscribe("Categories"),Meteor.subscribe("SubCategories"),Meteor.subscribe("carousel")];
         },
         action: function () {
             if (this.ready()) {
@@ -39,7 +39,7 @@ Router.map(function () {
     this.route('/static/news',{
         loadingTemplate: 'loading',
         waitOn: function () {
-            return [Meteor.subscribe("news"),Meteor.subscribe('images')];
+            return [Meteor.subscribe("news"),Meteor.subscribe('images'),Meteor.subscribe("carousel")];
         },
         action: function () {
             if (this.ready()) {
@@ -54,7 +54,7 @@ Router.map(function () {
     this.route('/static/news/full/:_id', {
         loadingTemplate: 'loading',
         waitOn:function(){
-            return [Meteor.subscribe("news2")]
+            return [Meteor.subscribe("news2"),Meteor.subscribe("carousel")]
         },
         action:function(){
             if (this.ready()) {
@@ -69,7 +69,7 @@ Router.map(function () {
     this.route('/static/map',{
         loadingTemplate: 'loading',
         waitOn:function(){
-            return Meteor.subscribe("markers")
+            return [Meteor.subscribe("markers"),Meteor.subscribe("carousel")]
         },
         action:function(){
             if(this.ready()){
@@ -102,7 +102,7 @@ Router.map(function () {
         this.route('/static/addOpinion',{
             loadingTemplate: 'loading',
             waitOn:function(){
-                return [Meteor.subscribe("opinions"),Meteor.subscribe('images')]
+                return [Meteor.subscribe("opinions"),Meteor.subscribe('images'),Meteor.subscribe("carousel")]
             },
 
 
@@ -132,7 +132,7 @@ Router.map(function () {
         template: 'contact',
         loadingTemplate: 'loading',
         waitOn:function(){
-            return [Meteor.subscribe("contacts")]
+            return [Meteor.subscribe("contacts"),Meteor.subscribe("carousel")]
         },
 
         action:function(){

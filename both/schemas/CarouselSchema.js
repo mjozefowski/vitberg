@@ -11,4 +11,18 @@ Schemas.CarouselSchema = new SimpleSchema({
         type:String
     }
 
+});
+
+Carousel.attachSchema(Schemas.CarouselSchema);
+
+Carousel.allow({
+    insert: function () {
+        return true
+    },
+    remove: function () {
+        return true
+    },
+    update: function () {
+        return true
+    }
 })
