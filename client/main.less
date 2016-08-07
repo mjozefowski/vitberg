@@ -5,6 +5,7 @@
 
 @red-vitberg:#DE0029;
 @real-red-vitberg:#FF0103;
+@red-logo-vitberg:#d30f13;
 @lighter-red-vitberg:#F2353B;
 @black-transparent: rgba(0,0,0,0.4);
 @news-font-color: #52596A;
@@ -1456,7 +1457,7 @@ body {
     }
 
     .block-icon{
-      width:45px;
+      height:40px;
     }
 
   }
@@ -1572,7 +1573,7 @@ body {
     }
 
     .block-icon{
-      width:60px;
+      height:65px;
     }
 
   }
@@ -1687,7 +1688,7 @@ body {
     }
 
     .block-icon{
-      width:60px;
+      height:65px;
     }
 
   }
@@ -1798,7 +1799,7 @@ body {
     }
 
     .block-icon{
-      width:65px;
+      height:70px;
     }
 
   }
@@ -7634,8 +7635,11 @@ body {
 
   .program-blocks-slider-container{
 
+    .header{
+      height:70px;
+    }
+
     .slider-blocks-program{
-      padding:0 10px;
       margin:0 auto;
 
       .slider-blocks-inner-program{
@@ -7772,3 +7776,485 @@ body {
   }
 }
 
+//CONTACT STYLES
+//*****************************************************************************************************************
+
+.main-container-contact{
+  text-align: center;
+
+  .single-card{
+    text-align: left;
+    display:inline-block;
+    position: relative;
+    border:1px solid @red-logo-vitberg;
+    box-shadow: 2px 3px 2px rgba(0,0,0,.4);
+
+    .worker-role{
+      position: absolute;
+      background-color:white;
+      padding:0 10px;
+      color:@red-logo-vitberg;
+    }
+
+    .worker-photo{
+      object-fit:cover;
+      box-shadow:2px 1px 2px rgba(0,0,0,.4);
+      display:inline-block;
+      float:left;
+
+    }
+
+    .worker-info{
+      display:inline-block;
+      float:left;
+
+      .worker-name-lastname{
+
+      }
+
+      .worker-contact-info{
+
+        .worker-tel{
+
+        }
+
+        .worker-tel-kom{
+
+        }
+
+        .worker-mail{
+          cursor:pointer;
+          color:#333;
+
+          a{
+            color:#333;
+          }
+
+          a:hover{
+            color:@red-logo-vitberg;
+          }
+        }
+
+        .worker-skype{
+          cursor:pointer;
+
+          a{
+            color:#333;
+          }
+
+          a:hover{
+            color:@red-logo-vitberg;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+  .general-contact{
+    width: 100vw;
+    background-color:@red-logo-vitberg;
+    color:white;
+
+
+    .logo-mini-contact{
+      margin-bottom:15px;
+    }
+
+    .general-contact-info{
+
+    }
+
+  }
+
+}
+
+@media only screen and (max-width:767px){
+
+  .main-container-contact{
+    padding:0 10px 50px;
+
+    .single-card{
+      width:80vw;
+      padding:20px;
+      margin:30px 0;
+      text-align: center;
+
+      .worker-role{
+        font-size:20px;
+        left:5px;
+        top:-15px;
+      }
+
+      .worker-photo{
+        width:~"calc(70vw - 40px)";
+        height:~"calc(70vw - 40px)";
+        max-width:200px;
+        max-height: 200px;
+        float:none;
+
+      }
+
+      .worker-info{
+        margin: 25px 5vw 0px;
+        font-size: 18px;
+        width: 100%;
+        text-align: left;
+
+        .worker-name-lastname{
+          overflow-wrap: break-word;
+          font-size:24px;
+          font-weight:bold;
+        }
+
+        .worker-contact-info{
+          overflow-wrap: break-word;
+          vertical-align: bottom;
+
+          .worker-tel{
+
+          }
+
+          .worker-tel-kom{
+
+          }
+
+          .worker-mail{
+
+          }
+
+          .worker-skype{
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .general-contact{
+      margin: 20px 0 10px -10px;
+      padding: 30px 10px 20px;
+      min-height: 160px;
+
+      .logo-mini-contact{
+        width:60px;
+      }
+
+      .general-contact-info{
+        font-size:24px;
+      }
+
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:768px) and (max-width:991px){
+
+  .main-container-contact{
+    padding:0 30px 50px;
+
+    .single-card{
+      height:210px;
+      width:80%;
+      margin:30px;
+
+      .worker-role{
+        font-size:24px;
+        left:5px;
+        top:-20px;
+      }
+
+      .worker-photo{
+        width:180px;
+        height:180px;
+        margin-top:15px;
+        margin-left:15px;
+
+      }
+
+      .worker-info{
+        display:inline-block;
+        height:180px;
+        margin:15px;
+        font-size: 18px;
+        width: ~"calc(100% - 225px)";
+
+        .worker-name-lastname{
+          overflow-wrap: break-word;
+          font-size:24px;
+          font-weight:bold;
+        }
+
+        .worker-contact-info{
+          overflow-wrap: break-word;
+          vertical-align: bottom;
+
+          .worker-tel{
+
+          }
+
+          .worker-tel-kom{
+
+          }
+
+          .worker-mail{
+
+          }
+
+          .worker-skype{
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .general-contact{
+      margin: 20px 0 10px -30px;
+      padding:30px;
+      height:160px;
+
+      .logo-mini-contact{
+        width:60px;
+      }
+
+      .general-contact-info{
+        font-size:24px;
+      }
+
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:992px) and (max-width:1199px){
+
+  .main-container-contact{
+    padding:0 10px 50px;
+
+    .single-card{
+      height:210px;
+      width:430px;
+      margin:30px;
+
+      .worker-role{
+        font-size:24px;
+        left:5px;
+        top:-20px;
+      }
+
+      .worker-photo{
+        width:180px;
+        height:180px;
+        margin-top:15px;
+        margin-left:15px;
+
+      }
+
+      .worker-info{
+        display:inline-block;
+        height:180px;
+        margin:15px;
+        font-size: 18px;
+        width: ~"calc(100% - 225px)";
+
+        .worker-name-lastname{
+          overflow-wrap: break-word;
+          font-size:24px;
+          font-weight:bold;
+        }
+
+        .worker-contact-info{
+          overflow-wrap: break-word;
+          vertical-align: bottom;
+
+          .worker-tel{
+
+          }
+
+          .worker-tel-kom{
+
+          }
+
+          .worker-mail{
+
+          }
+
+          .worker-skype{
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .general-contact{
+      margin: 20px 0 10px -10px;
+      padding:30px;
+      height:160px;
+
+      .logo-mini-contact{
+        width:60px;
+      }
+
+      .general-contact-info{
+        font-size:24px;
+      }
+
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:1200px){
+
+  .main-container-contact{
+    padding:0 8.33333% 50px;
+
+    .single-card{
+      height:210px;
+      width:430px;
+      margin:30px;
+
+      .worker-role{
+        font-size:24px;
+        left:5px;
+        top:-20px;
+      }
+
+      .worker-photo{
+        width:180px;
+        height:180px;
+        margin-top:15px;
+        margin-left:15px;
+
+      }
+
+      .worker-info{
+        display:inline-block;
+        height:180px;
+        margin:15px;
+        font-size: 18px;
+        width: ~"calc(100% - 225px)";
+
+        .worker-name-lastname{
+          overflow-wrap: break-word;
+          font-size:24px;
+          font-weight:bold;
+        }
+
+        .worker-contact-info{
+          overflow-wrap: break-word;
+          vertical-align: bottom;
+
+          .worker-tel{
+
+          }
+
+          .worker-tel-kom{
+
+          }
+
+          .worker-mail{
+
+          }
+
+          .worker-skype{
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .general-contact{
+      margin: 20px 0 10px ~"calc(-8.33333% - 25px)" ;
+      padding:30px 8.3333%;
+      height:160px;
+
+      .logo-mini-contact{
+        width:60px;
+      }
+
+      .general-contact-info{
+        font-size:24px;
+      }
+
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:1600px){
+
+  .main-container-contact{
+
+    .single-card{
+      .worker-role{
+
+      }
+
+      .worker-photo{
+
+      }
+
+      .worker-info{
+
+        .worker-name-lastname{
+
+        }
+
+        .worker-contact-info{
+
+          .worker-tel{
+
+          }
+
+          .worker-tel-kom{
+
+          }
+
+          .worker-mail{
+
+          }
+
+          .worker-skype{
+
+          }
+
+        }
+
+      }
+
+    }
+
+    .general-contact{
+
+      .logo-mini-contact{
+
+      }
+
+      .general-contact-info{
+
+      }
+
+    }
+
+  }
+
+}

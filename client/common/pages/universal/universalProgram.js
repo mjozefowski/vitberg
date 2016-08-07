@@ -8,9 +8,9 @@ Template.universalProgram.onCreated(function () {
 
 Template.universalProgram.onRendered(function () {
 
-    howManyBlocks($('.slider-blocks-program'),0,$('.single-block'),63.25);
+    howManyBlocksProgram($('.slider-blocks-program'),$('.program-blocks-slider-container').css('padding-left'),$('.single-block'),63.25);
 
-    hideOrShowArrows($('.left-arrow-programs'),$('.right-arrow-programs'),$('.slider-blocks-program'),$('.slider-blocks-inner-program'));
+    hideOrShowArrowsProgram($('.left-arrow-programs'),$('.right-arrow-programs'),$('.slider-blocks-program'),$('.slider-blocks-inner-program'));
 
 })
 
@@ -21,11 +21,11 @@ Template.universalProgram.helpers({
 Template.universalProgram.events({
 
     "click .right-arrow-programs": function (){
-        divSliderArrow("right",$('.slider-blocks-program'),$('.slider-blocks-inner-program'));
+        divSliderArrowProgram("right",$('.slider-blocks-program'),$('.slider-blocks-inner-program'));
     },
 
     "click .left-arrow-programs": function (){
-        divSliderArrow("left",$('.slider-blocks-program'),$('.slider-blocks-inner-program'));
+        divSliderArrowProgram("left",$('.slider-blocks-program'),$('.slider-blocks-inner-program'));
     },
 
 })
@@ -33,12 +33,16 @@ Template.universalProgram.events({
 //OBLICZA ILE BLOKÓW MIEŚCI SIĘ W KONTENERZE
 //IN container - obiekt jquery np $('.container'), kontener wewnątrz którego jest slider | containerBorder - suma paddingów i marginów konteneru |
 //   block - obiekt jquery np. $('.single-block') | blockBorer suma paddingów i marginów pojedyńczego bloku
-function howManyBlocks(container, containerBorder, block, blockBorder){
+function howManyBlocksProgram(container, containerBorder, block, blockBorder){
+    console.log($('.program-blocks-slider-container').css('padding-left'));
+    console.log($('.program-blocks-slider-container').width());
 
-    var contenerWidth = $('.program-blocks-slider-container').width() - 100;
+    var contenerWidth = $('.program-blocks-slider-container').width();
     var blockWidth = block.width() + blockBorder;
-
-    var howManyBlocks =parseInt(contenerWidth/blockWidth) * blockWidth;
+    console.log(blockWidth);
+    console.log(contenerWidth);
+    var howManyBlocks = parseInt(contenerWidth/blockWidth) * blockWidth;
+    console.log(howManyBlocks);
 
     container.css('width', howManyBlocks);
 }
@@ -47,7 +51,7 @@ function howManyBlocks(container, containerBorder, block, blockBorder){
  IN SIDE: "LEFT" or "RIGHT" - W KTÓRĄ STRONĘ MAJĄ BYĆ PRZEŁĄCZONE SLIDE'Y | CONTAINER - OBIEKT JQUERY. GŁÓWNY KONTENER BLOKÓW |
  INNERCONTAINER - OBIEKT JQUERY, WEWNĘTRZNY KONTENER BLOKÓW
  */
-function divSliderArrow(side, container, innerContainer){
+function divSliderArrowProgram(side, container, innerContainer){
 
     var containerWidth = container.width();
 
@@ -96,7 +100,7 @@ function divSliderArrow(side, container, innerContainer){
  container - obiekt jquery, główny kontener slider'a |
  innerContainer - obiekt jquery, wewnętrzny kontener clidera
  */
-function hideOrShowArrows(leftArrow, rightArrow, container, innerContainer){
+function hideOrShowArrowsProgram(leftArrow, rightArrow, container, innerContainer){
 
     if(container.width() + 150 >= innerContainer.width()){
         leftArrow.hide();
@@ -113,10 +117,10 @@ function hideOrShowArrows(leftArrow, rightArrow, container, innerContainer){
 
 $(window).on('resize', function() {
 
-    howManyBlocks($('.slider-blocks-program'),0,$('.single-block'),63.25);
+    howManyBlocksProgram($('.slider-blocks-program'),0,$('.single-block'),63.25);
 
     $('.slider-blocks-inner-program').css('transform','translate(0)');
 
-    hideOrShowArrows($('.left-arrow-programs'),$('.right-arrow-programs'),$('.slider-blocks-program'),$('.slider-blocks-inner-program'));
+    hideOrShowArrowsProgram($('.left-arrow-programs'),$('.right-arrow-programs'),$('.slider-blocks-program'),$('.slider-blocks-inner-program'));
 
 });
