@@ -24,7 +24,7 @@ Router.map(function () {
     this.route('/:_id',{
 
         waitOn: function () {
-            return [Meteor.subscribe("Categories")];
+            return [Meteor.subscribe("Categories"),Meteor.subscribe("SubCategories")];
         },
         action: function () {
             if (this.ready()) {

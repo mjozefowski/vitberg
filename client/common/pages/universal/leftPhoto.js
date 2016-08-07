@@ -4,6 +4,7 @@
 
 Template.leftPhoto.onCreated(function () {
 
+    this.data = Template.currentData();
 
 })
 
@@ -13,6 +14,11 @@ Template.leftPhoto.onRendered(function () {
 })
 
 Template.leftPhoto.helpers({
+
+    selectedData: function () {
+        var ti = Template.instance();
+        return ti.data
+    }
 
 })
 
