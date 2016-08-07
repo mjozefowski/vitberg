@@ -3,7 +3,7 @@
  */
 
 Template.rightPhoto.onCreated(function () {
-
+    this.data = Template.currentData()
 })
 
 Template.rightPhoto.onRendered(function () {
@@ -13,6 +13,11 @@ Template.rightPhoto.onRendered(function () {
 })
 
 Template.rightPhoto.helpers({
+
+    selectedData: function () {
+        var ti = Template.instance();
+        return ti.data
+    }
 
 })
 

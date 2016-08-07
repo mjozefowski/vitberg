@@ -3,17 +3,12 @@
     {{>slider}}
 
     <div class="main-container-centerPhotoColumns">
-
-        <div class="header">NOWA PODSTRONA O CZYMŚ</div>
+        {{#with selectedData}}
+        <div class="header">{{title}}</div>
 
         <div class="whole-content">
 
-            <div class="text-container simple-text-content"> Explicabo sollicitudin, urna qui, ipsam posuere fugiat tellus, vero perspiciatis ultricies turpis,
-                ducimus distinctio, nostrud tincidunt mauris taciti asperiores ultricies. Sociosqu corporis iure est! Bibendum eaque dolor tristique nascetur nullam,
-                tristique ab cubilia explicabo dictumst? Vivamus? Eget, maiores erat aut, senectus sunt tellus nihil augue, saepe magni eligendi sunt quasi
-                pulvinar quasi aperiam rutrum varius erat tortor illum sociosqu iure, molestie venenatis a varius. Mollit, unde? Tempus lacinia nisi qui!
-                tristique ab cubilia explicabo dictumst? Vivamus? Eget, maiores erat aut, senectus sunt tellus nihil augue, saepe magni eligendi sunt quasi
-                pulvinar quasi aperiam rutrum varius erat tortor illum sociosqu iure, molestie venenatis a varius. Mollit, unde? Tempus lacinia nisi qui!
+            <div class="text-container simple-text-content"> {{text}}
             </div>
 
             <div class="image-container"> <div class="image-div-center" style="background-image:url(/temp/businesBuilding.jpg)"> </div></div>
@@ -22,36 +17,32 @@
             <div class="summary-text simple-text-content row">
 
                 <div class="col col-sm-4 col-xs-12">
-                    <div class="header-smaller">Eligendi autem, nascetur</div>
+                    <div class="header-smaller">{{col1.title}}</div>
                     <div class="text-column">
-                        Eligendi autem, nascetur sociosqu, ab laboriosam dolore fuga tempora luctus cum lacus
-                        curabitur neque convallis voluptate adipiscing temporibus felis habitant inceptos, dolorem.
-                        Aenean iaculis magnam, elit justo sed eos litora? Magnis justo? Parturient tene
+                        {{col1.text}}
                     </div>
                 </div>
 
                 <div class="col col-sm-4 col-xs-12">
-                    <div class="header-smaller">Aenean iaculis magnam</div>
+                    <div class="header-smaller">{{col2.title}}</div>
                     <div class="text-column">
-                        Eligendi autem, nascetur sociosqu, ab laboriosam dolore fuga tempora luctus cum lacus
-                        curabitur neque convallis voluptate adipiscing temporibus felis habitant inceptos, dolorem.
-                        Aenean iaculis magnam, elit justo sed eos litora? Magnis justo? Parturient tene
+                        {{col2.text}}
+
+
                     </div>
                 </div>
 
                 <div class="col col-sm-4 col-xs-12">
-                    <div class="header-smaller">Temporibus felis habitant</div>
+                    <div class="header-smaller">{{col3.title}}</div>
                     <div class="text-column">
-                        Eligendi autem, nascetur sociosqu, ab laboriosam dolore fuga tempora luctus cum lacus
-                        curabitur neque convallis voluptate adipiscing temporibus felis habitant inceptos, dolorem.
-                        Aenean iaculis magnam, elit justo sed eos litora? Magnis justo? Parturient tene
+                       {{col3.text}}
                     </div>
                 </div>
 
             </div>
         </div>
 
-
+        {{/with}}
     </div>
 
     {{>footer}}

@@ -3,7 +3,7 @@
  */
 
 Template.centerPhoto.onCreated(function () {
-
+    this.data = Template.instance();
 })
 
 Template.centerPhoto.onRendered(function () {
@@ -13,7 +13,10 @@ Template.centerPhoto.onRendered(function () {
 })
 
 Template.centerPhoto.helpers({
-
+    selectedData: function () {
+        var ti = Template.instance();
+        return ti.data
+    }
 })
 
 Template.centerPhoto.events({

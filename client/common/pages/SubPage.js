@@ -18,6 +18,14 @@ Template.SubPage.helpers({
     id: function () {
         var ti = Template.instance();
         return ti.data;
+    },
+    selectedDoc: function () {
+        var ti = Template.instance();
+        return SubCategories.findOne(ti.data)
+    },
+    selectedTemplate: function () {
+        var ti = Template.instance();
+        return SubCategories.findOne(ti.data).selectedTemplate
     }
 
 })

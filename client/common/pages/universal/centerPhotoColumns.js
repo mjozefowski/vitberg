@@ -3,7 +3,7 @@
  */
 
 Template.centerPhotoColumns.onCreated(function () {
-
+    this.data = Template.currentData();
 })
 
 Template.centerPhotoColumns.onRendered(function () {
@@ -14,7 +14,10 @@ Template.centerPhotoColumns.onRendered(function () {
 })
 
 Template.centerPhotoColumns.helpers({
-
+    selectedData: function () {
+        var ti = Template.instance();
+        return ti.data
+    }
 })
 
 Template.centerPhotoColumns.events({

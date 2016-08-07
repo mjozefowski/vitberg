@@ -34,10 +34,12 @@ Template.menuSubitems.helpers({
 Template.menuSubitems.events({
 
     'click .menu-item': function (e,t) {
-        e.preventDefault();
-        var id = $(e.target).attr("id");
+        //e.preventDefault();
+        var id = $(e.target).parent().attr("id");
+        console.log(id)
         Router.go('/'+id);
-    }
+    },
+
 
 
 })

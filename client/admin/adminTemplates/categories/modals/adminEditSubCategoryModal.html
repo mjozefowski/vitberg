@@ -9,9 +9,19 @@
                     {{> afQuickField name='name'}}
                     {{> afQuickField name='visible'}}
 
+                    {{> afQuickField name='title'}}
+                    {{> afQuickField name='text'}}
 
-                    {{> afQuickField name='categoryId' class='categoryIdInput'}}
+                    {{> afQuickField name='selectedTemplate' class='selectedTemplate'}}
 
+                    {{> afQuickField name='col1'}}
+                    {{> afQuickField name='col2'}}
+                    {{> afQuickField name='col3'}}
+
+
+
+
+                    <div class="hidden">{{> afQuickField name='categoryId' class='categoryIdInput'}}</div>
                     <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
                 {{/autoForm}}
 
