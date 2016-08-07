@@ -39,7 +39,7 @@ Router.map(function () {
     this.route('/static/news',{
         loadingTemplate: 'loading',
         waitOn: function () {
-            return [Meteor.subscribe("news"),Meteor.subscribe('images'),Meteor.subscribe("carousel")];
+            return [Meteor.subscribe("news2"),Meteor.subscribe('images'),Meteor.subscribe("carousel")];
         },
         action: function () {
             if (this.ready()) {
