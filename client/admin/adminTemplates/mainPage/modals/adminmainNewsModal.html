@@ -12,7 +12,14 @@
                     <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
                 {{/autoForm}}
                 {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
-
+                {{#if selectedDoc.icon}}
+                    Ikona:
+                    <img id="{{selectedDoc.icon}}" src="{{selectedDoc.icon}}" class="tabular-image">
+                    <span class="glyphicon glyphicon-remove remove-image"></span>
+                {{else}}
+                    <input type="file" name="…" class="myFileInput">
+                    {{> FS.UploadProgressBar bootstrap=true}}
+                {{/if}}
 
             </div>
         </div>

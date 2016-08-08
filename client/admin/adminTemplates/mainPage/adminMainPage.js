@@ -104,7 +104,7 @@ Template.adminMainPage.events({
         t.imagesArray.set([]);
 
         var value = $("input[type='radio'][name='type']:checked").val();
-
+    console.log(value)
         //t.selectedDocument.set(MainPage.insert({order:10,type:value, visible:false, showIcon:false, text:"Wpisz treść ..."}));
         Session.set('adminInsertDocument',MainPage.insert({order:10,type:value, visible:false, showIcon:false, text:"Wpisz treść ..."}));
         //t.selectedTheme.set(value);
@@ -159,21 +159,6 @@ Template.adminMainPage.events({
             return MainPage.findOne({"_id":Session.get('adminInsertDocument')});
         });
 
-    },
-
-    'dropped #dropzone': function(e,t) {
-
-        FS.Utility.eachFile(e, function(file) {
-            var newFile = new FS.File(file);
-
-            console.log(newFile)
-            //t.imagesArray.push(newFile);
-            var ti = Template.instance();
-
-            ti.imagesArray.push(newFile)
-            console.log("pushed")
-
-        });
     },
 
 })

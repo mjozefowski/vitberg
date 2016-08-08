@@ -34,6 +34,14 @@ Template.mainRedRight.helpers({
     title: function () {
         var ti = Template.instance();
         return ti.data.title;
+    },
+    icon: function () {
+        var ti = Template.instance();
+        return ti.data.icon
+    },
+    showIcon: function () {
+        var ti = Template.instance();
+        return ti.data.icon
     }
 
 })

@@ -5,6 +5,8 @@
  * Created by Maciej Józefowski, 03.08.16
  */
 
+Modal.allowMultiple = true
+
 Template.adminmainClickableModal.onCreated(function () {
     this.data = Template.currentData();
     this.imagesArray = new ReactiveArray();
@@ -61,4 +63,40 @@ Template.adminmainClickableModal.events({
 
         });
     },
+    'change .myFileInput': function(event, t) {
+        FS.Utility.eachFile(event, function (file) {
+            Images.insert(file, function (err, fileObj) {
+                if (err) {
+                    // handle error
+                } else {
+
+                    setTimeout(function(){
+
+                        MainPage.update(t.data._id,{$set:{icon:"/cfs/files/images/"+fileObj._id}})
+
+                    }, 3000);
+
+                    //var userId = Meteor.userId();
+                    //var imagesURL = {
+                    //    "link": "/cfs/files/pdfs/" + fileObj._id,
+                    //    "name":"item"
+                    //};
+                    //Lesson.update({_id:t.selectedDoc.get()}, {addToSet:{download:imagesURL} });
+                }
+            });
+        });
+    },
+
+    'click .remove-image': function (e, t) {
+        var id = $(e.target).prev().attr("id")
+        console.log(id)
+
+        Images.remove(id.replace("/cfs/files/images/",""), function (e, r) {
+            if(!e){
+                MainPage.update(t.data._id,{$set:{icon:""}});
+            }
+        })
+
+
+    }
 })

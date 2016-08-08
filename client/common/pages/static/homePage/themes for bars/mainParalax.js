@@ -17,11 +17,11 @@ Template.mainParalax.helpers({
 
     imageParallax: function () {
         var ti = Template.instance();
-        return "/cfs/files/images/" + ti.data.images[0]
+        return ti.data.parallax
     },
     imageLeft : function () {
         var ti = Template.instance();
-        return "/cfs/files/images/" + ti.data.images[1]
+        return ti.data.images[0]
     },
     linkUrl: function () {
         var ti = Template.instance();

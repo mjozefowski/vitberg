@@ -36,7 +36,7 @@ Template.adminNewsAddModal.events({
         var isImportant = $('#important').is(':checked');
         var isSmall= $('#small').is(':checked');
         var video= $('#videoLink').val();
-        var additionalInfo = $('additionalInfo').val()
+        var additionalInfo = $('#additionalInfo').val()
         console.log(isImportant)
         console.log(text)
         var newsId = News.insert({authorId:Meteor.userId(),text:text, title:title, isImportant:isImportant, isSmall:isSmall, video:video,additionalText:additionalInfo,date:new Date()}, function (e,r) {
