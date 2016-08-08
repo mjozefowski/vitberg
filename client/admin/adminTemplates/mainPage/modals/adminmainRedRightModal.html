@@ -22,11 +22,14 @@
                     {{> FS.UploadProgressBar bootstrap=true}}
                 {{/if}}
 
-                <div id="dropzone" class="dropzone" style="background-color: white;">
-                    <div class="well well-drop-zone drop-zone-box">
-                        Upuść tutaj aby wysłać
-                    </div>
-                </div>
+                Obraz po prawej:
+                {{#if selectedDoc.images.[0]}}
+                    <img id="{{selectedDoc.images.[0]}}" src="{{selectedDoc.images.[0]}}" class="tabular-image">
+                    <span class="glyphicon glyphicon-remove remove-image-left"></span>
+                {{else}}
+                    <input type="file" name="…" class="myFileInput-left">
+                    {{> FS.UploadProgressBar bootstrap=true}}
+                {{/if}}
                 <button id="save">Zapisz</button>
 
             </div>

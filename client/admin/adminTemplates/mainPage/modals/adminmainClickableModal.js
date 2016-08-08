@@ -5,6 +5,8 @@
  * Created by Maciej Józefowski, 03.08.16
  */
 
+Modal.allowMultiple = true
+
 Template.adminmainClickableModal.onCreated(function () {
     this.data = Template.currentData();
     this.imagesArray = new ReactiveArray();
