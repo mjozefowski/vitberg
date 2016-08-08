@@ -47,6 +47,10 @@ Template.mainOpinions.helpers({
         return 'Pan'
         else if(sex=='female')
         return 'Pani'
+    },
+    icon: function () {
+        var ti = Template.instance();
+        return ti.data.icon
     }
 
 })
