@@ -10,6 +10,11 @@ Schemas.TemplatesForMainClickableSchema = new SimpleSchema({
         type:String,
         optional:true
     },
+    title2:{
+        type:String,
+        optional:true
+    },
+
     image:{
         type:String,
         optional:true

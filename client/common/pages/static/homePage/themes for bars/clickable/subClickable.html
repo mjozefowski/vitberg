@@ -2,8 +2,8 @@
     <div class="sub-clickable row">
         <div class="description col-lg-4 col-md-4 col-sm-6 col-xs-12">
 
-            <div class="top-title" >zagłówek</div>
-            <div class="bottom-title" >SZYJA</div>
+            <div class="top-title" >{{data.title}}</div>
+            <div class="bottom-title" >{{data.title2}}</div>
             <div class="text-content"> {{data.text}}</div>
             <button class="read-more-btn left"><i class="material-icons">add</i> Dowiedz się więcej</button>
 
@@ -20,7 +20,7 @@
 
         </div>
 
-        <div class="photo col-lg-4 col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-12"> <img src="/temp/product1.png" width="100%:"></div>
+        <div class="photo col-lg-4 col-md-3 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-12"> <img src="{{data.image}}" width="100%:"></div>
     </div>
 
 </template>
