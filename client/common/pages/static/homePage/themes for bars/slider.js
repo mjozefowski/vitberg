@@ -40,5 +40,12 @@ Template.slider.events({
     'click #map': function (e,t) {
 
         Router.go('/static/map')
+    },
+    'click .newsletter-accept': function (e,t) {
+        var val = $('.newsletter-inpt').val();
+
+        if(val.match(SimpleSchema.RegEx.email))
+            console.log('match')
+
     }
 })

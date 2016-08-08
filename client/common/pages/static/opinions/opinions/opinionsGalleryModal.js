@@ -12,7 +12,7 @@ Template.opinionsGalleryModal.onCreated(function () {
 Template.opinionsGalleryModal.onRendered(function () {
 
     setTimeout(function(){
-        $('.item').first().addClass('active')
+        $('.opinion-carousel-item').first().addClass('active')
     }, 500);
 
 
