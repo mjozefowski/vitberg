@@ -3,10 +3,35 @@
         <div class="modal-dialog">
             <div class="modal-content">
 
+            <button id="addNewClickableElement">+ Dodaj nowy</button>
+
+                {{#autoForm collection="MainPage" id="updateMainPage" type="update" doc=selectedDoc}}
+                    {{> afQuickField name='title'}}
+                    {{> afQuickField name='visible'}}
+                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                {{/autoForm}}
+
+
                 Lista elementów:
 
 
-                {{> createClickable selectedDoc._id}}
+                {{#each clickableMain.icons}}
+
+                    <div>
+                        <img src="{{image}}">
+                        {{#with subTemplate templateId}}
+                        <!--{{subTemplate.title templateId}}-->
+                        {{_id}}
+                            {{title}}
+                            {{text}}
+                            <button id="{{_id}}" class="btn btn-warning">edytuj</button>
+                            <button id="{{_id}}" class="btn btn-danger">usuń</button>
+                        {{/with}}
+                    </div>
+
+                {{/each}}
+
+                <!--{{> createClickable selectedDoc._id}}-->
 
 
             </div>

@@ -21,48 +21,41 @@ Template.adminmainClickableModal.helpers({
     selectedDoc: function () {
         var ti = Template.instance();
         return ti.data;
+    },
+    clickableMain: function () {
+        var ti = Template.instance();
+        //console.log(ti.data)
+        //console.log(ClickableItemsTemplate.findOne({mainTemplate:ti.data._id}))
+        return ClickableItemsTemplate.findOne({mainTemplate:ti.data._id})
+    },
+
+    subTemplate: function (id) {
+        return TemplatesForMainClickable.findOne(id)
     }
+
 })
 
 Template.adminmainClickableModal.events({
-    'click #save': function (e,t) {
-        $('.saveButton').click();
-        var array = t.imagesArray.get();
-        array.forEach(function (e) {
-            Images.insert(e, function (error, fileObj) {
-                if (error) {
-                    alert("fail")
-                } else {
-                    setTimeout(function(){
-                        MainPage.update(t.data._id,{$addToSet:{images:fileObj._id}}, function (e,r) {
-                            if(e){
-                                console.log("update failed")
-                            }else {
-                                t.imagesArray.set([]);
-                            }
-                        })
-                    }, 2000);
 
-                }
-            });
+    'click #addNewClickableElement': function (e,t) {
+        if(ClickableItemsTemplate.find({mainTemplate:t.data._id}).count()<=0){
+            ClickableItemsTemplate.insert({mainTemplate: t.data._id});
+        }
+
+        var id = ClickableItemsTemplate.findOne({mainTemplate: t.data._id})._id;
+
+        var id2 = TemplatesForMainClickable.insert({});
+        ClickableItemsTemplate.update(id,{$addToSet:{icons:{templateId:id2}}});
+
+        Session.set('editClickable',id2)
+
+        Modal.show('adminClickableTemplateCreatorModal', function () {
+            return TemplatesForMainClickable.findOne(Session.get('editClickable'));
         })
-        //t.insert.set(false);
+
+
     },
 
-    'dropped #dropzone': function(e,t) {
-
-        FS.Utility.eachFile(e, function(file) {
-            var newFile = new FS.File(file);
-
-            console.log(newFile)
-            //t.imagesArray.push(newFile);
-            var ti = Template.instance();
-
-            ti.imagesArray.push(newFile)
-            console.log("pushed")
-
-        });
-    },
     'change .myFileInput': function(event, t) {
         FS.Utility.eachFile(event, function (file) {
             Images.insert(file, function (err, fileObj) {

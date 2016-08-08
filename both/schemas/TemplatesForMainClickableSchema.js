@@ -16,7 +16,8 @@ Schemas.TemplatesForMainClickableSchema = new SimpleSchema({
     },
     text:{
         type:String,
-        optional:true
+        optional:true,
+
     },
     link:{
         type:Schemas.LinkSchema,

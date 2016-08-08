@@ -8,6 +8,7 @@
 Schemas.ClickableIcons = new SimpleSchema({
     image:{
         type:String,
+        optional:true
     },
     templateId:{
         type:String
