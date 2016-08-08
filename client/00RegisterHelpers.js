@@ -7,5 +7,5 @@
 
 
 Template.registerHelper('dateFix',function(date, locale) {
-    return moment(date).locale(locale).format('d.mm.YYYY');
+    return moment(date).locale(locale).format('D.M.YYYY');
 });

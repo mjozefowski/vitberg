@@ -16,7 +16,7 @@ Template.News.onRendered(function () {
 Template.News.helpers({
 
     news: function () {
-        return News.find({},{limit:30});
+        return News.find({},{sort: {_id: 1}, limit: 10})
     },
     author:function(authorId){
         return Meteor.users.findOne(authorId).username;
@@ -25,7 +25,7 @@ Template.News.helpers({
         return moment(date).locale('pl').format('ll')
     },
     newsImportant: function () {
-        return News.find({isImportant:true},{limit:4},{sort:{date:-1}})
+        return News.find({isImportant:true},{sort: {_id: 1}, limit: 4})
     }
 
 
