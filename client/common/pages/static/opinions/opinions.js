@@ -206,13 +206,19 @@ Template.dropzone.events({
 
     'click .read-more-opinion-btn':function(e){
         var heightText=  $(e.target).prev().children('.opinion-text').height();
-        $(e.target).prev().css('height',heightText);
-        $(e.target).addClass('hide');
-        $(e.target).next().removeClass('hide');
+        if(heightText>170){
+            $(e.target).prev().css('height',heightText);
+            $(e.target).addClass('hide');
+            $(e.target).next().removeClass('hide');
+        }
+        else{
+            $(e.target).addClass('hide');
+            $(e.target).next().removeClass('hide');
+        }
     },
 
     'click .read-less-opinion-btn':function(e){
-        $(e.target).prev().prev().css('height',128);
+        $(e.target).prev().prev().css('height',170);
         $(e.target).addClass('hide');
         $(e.target).prev().removeClass('hide');
     }

@@ -55,7 +55,7 @@ Template.mainClickable.events({
         t.selectedItem.set(id)
         if(clickedIco){
             $('html, body').animate({
-                scrollTop: $(".sub-clickable").offset().top
+                scrollTop: $(".sub-clickable").offset().top-150
             }, 800);
         }
         clickedIco=true;
