@@ -212,7 +212,7 @@ Template.dropzone.events({
     },
 
     'click .read-less-opinion-btn':function(e){
-        $(e.target).prev().prev().css('height',120);
+        $(e.target).prev().prev().css('height',128);
         $(e.target).addClass('hide');
         $(e.target).prev().removeClass('hide');
     }

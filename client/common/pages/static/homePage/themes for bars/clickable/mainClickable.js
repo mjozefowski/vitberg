@@ -15,6 +15,8 @@ Template.mainClickable.onCreated(function () {
 
 Template.mainClickable.onRendered(function () {
 
+    clickedIco = false;
+
     $('.iconClickable').first().click();
 
     howManyBlocks($('.blocks-container'), $('.main-clickable').css('paddingLeft'),$('.single-block'),63.25);
@@ -51,6 +53,13 @@ Template.mainClickable.events({
     "click .iconClickable": function (e,t) {
         var id = $(e.target).attr('id')
         t.selectedItem.set(id)
+        if(clickedIco){
+            $('html, body').animate({
+                scrollTop: $(".sub-clickable").offset().top
+            }, 800);
+        }
+        clickedIco=true;
+
     },
     "click .single-block": function (e) {
         $('.single-block').removeClass('active-element');

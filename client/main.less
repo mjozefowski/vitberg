@@ -372,6 +372,12 @@ body {
     background:rgba(0,0,0,.2);
   }
 
+  .tabular-image{
+    max-width: 400px;
+    max-height: 300px;
+  }
+
+
 }
 
 //TOP MENU STYLES
@@ -951,14 +957,14 @@ body {
 
 //LOG IN STYLES
 .log-in-container{
-  height: ~"calc(100vh - 64px)";
+  height: ~"calc(100vh - 75px)";
   padding-top: ~"calc(50vh - 230px)";
   margin-bottom: 0px;
   background-image:url("/photos/news_bg.jpg");
 
   .log-in-box{
     background-color: rgba(255,255,255,.4);
-    padding:25px !important;
+    padding:40px 25px 25px !important;
     text-align:center;
     border:1px solid @red-vitberg;
     max-width:450px;
@@ -7624,12 +7630,14 @@ body {
     margin:0;
     text-align:center;
     padding-top:5px;
+    margin-bottom:10px;
 
   }
 
   .slider-blocks-program{
     overflow:hidden;
     margin:0 auto;
+    text-align: center;
 
     .slider-blocks-inner-program{
       display: inline-block;
@@ -8330,6 +8338,11 @@ body {
 
     .header-smaller{
       margin-top:20px;
+      display:inline-block;
+    }
+
+    >.header-smaller{
+      margin-left:40px;
     }
 
     .add-opinion-form-container{
@@ -8344,6 +8357,8 @@ body {
         height:75px;
         max-height:400px;
         resize:vertical;
+        font-size: 18px;
+        padding: 5px;
         margin-bottom:25px;
       }
 
@@ -8371,22 +8386,25 @@ body {
   }
 
 
-  .btn-add-opinion{
+  .btn-add-opinion, .btn-add-opinion:focus{
     width: 30%;
     min-width:200px;
     border: 1px solid red;
     background: white;
+    border-radius:0;
     color: #333;
     outline:none;
     box-shadow:none;
     transition:0.3s;
   }
-  .btn-add-opinion:hover{
+  .btn-add-opinion:hover, .btn-add-opinion:active{
     background: red;
     color: #fff;
+    outline:none;
+    box-shadow:none;
   }
 
-  .btn-send-opinion{
+  .btn-send-opinion, .btn-send-opinion:focus{
     width: 300px;
     height: 36px;
     position:absolute;
@@ -8398,10 +8416,13 @@ body {
     outline:none;
     box-shadow:none;
     transition:0.3s;
+    border-radius:0;
   }
-  .btn-send-opinion:hover{
+  .btn-send-opinion:hover, .btn-send-opinion:active{
     background: red;
     color: #fff;
+    outline:none;
+    box-shadow:none;
   }
 
   .each-opinions-container{
@@ -8427,7 +8448,7 @@ body {
 
 
       .opinion-content-container{
-        height: 120px;
+        height: 128px;
         overflow: hidden;
         display: inline-block;
         transition:0.4s;
@@ -8445,7 +8466,7 @@ body {
         }
 
         .opinion-text{
-
+          line-height: 21px;
         }
 
       }
@@ -8491,6 +8512,13 @@ body {
 
     }
 
+    .add-opinion-form-container{
+
+      .drop-zone-box{
+        font-size:14px;
+      }
+    }
+
     .each-opinions-container{
       text-align:left;
 
@@ -8514,7 +8542,6 @@ body {
 
 
         .opinion-content-container{
-          height: 120px;
           overflow: hidden;
           display: inline-block;
           transition:0.4s;
@@ -8598,7 +8625,6 @@ body {
 
 
         .opinion-content-container{
-          height: 120px;
           overflow: hidden;
           display: inline-block;
           transition:0.4s;
@@ -8683,7 +8709,6 @@ body {
 
 
         .opinion-content-container{
-          height: 120px;
           overflow: hidden;
           display: inline-block;
           transition:0.4s;
@@ -8768,7 +8793,6 @@ body {
 
 
         .opinion-content-container{
-          height: 120px;
           overflow: hidden;
           display: inline-block;
           transition:0.4s;
@@ -8829,10 +8853,5 @@ body {
 
 
 
-}
-
-.tabular-image{
-  max-width: 400px;
-  max-height: 300px;
 }
 
