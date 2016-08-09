@@ -5,30 +5,38 @@
 
         <div class="blockDragItem drag-elements-container">
         {{#each listOfBlocks}}
-            <div id="{{this._id}}" block-type="{{this.type}}" class="drag-elements">{{this.type}}<span class="editBlock">Edytuj</span><span class="deleteBlock">Usuń</span></div>
+            <div id="{{this._id}}" block-type="{{this.type}}" class="drag-elements">
+                <div class="block-type-text">{{this.type}}</div>
+                <div class="deleteBlock delete-template-main-page btn-danger">Usuń</div>
+                <div class="editBlock edit-template-main-page btn-warning">Edytuj</div>
+            </div>
         {{/each}}
         </div>
 
-        <div id="addNewMainPage" class="add-new-element">Dodaj nowy</div>
-
-        {{#if addNewBar}}
-            <center>
-        <form id="selectTemplate">
-            <fieldset>
-            <input id="1" type="radio" name="type" group="group1" value="mainRedRight"> <label for="1">Czerwony, obraz po prawej</label>
-            <input id="2" type="radio" name="type" group="group1" value="mainRedLeft"><label for="2">Czerwony, obraz po lewej</label>
-            <input id="3" type="radio" name="type" group="group1" value="mainParallax"> <label for="3">Paralaksa</label>
-            <input id="4" type="radio" name="type" group="group1" value="mainOpinion"> <label for="4">Opinie klientów</label>
-            <input id="5" type="radio" name="type" group="group1" value="mainClickable"> <label for="5">Kafelek z ikonami do klikania</label>
-            <input id="6" type="radio" name="type" group="group1" value="mainNews"> <label for="6">Aktualności</label>
-
-            </fieldset>
-                <input type="submit">
-        </form>
-            </center>
+        <div id="addNewMainPage" class="btn-red add-new-element text-center">Dodaj nowy</div>
 
 
-        {{/if}}
+        <div class="add-new-block-main-page">
+            {{#if addNewBar}}
+                <center>
+            <form id="selectTemplate">
+                <fieldset>
+                <input id="1" type="radio" name="type" group="group1" value="mainRedRight"> <label for="1">Czerwony, obraz po prawej</label>
+                <input id="2" type="radio" name="type" group="group1" value="mainRedLeft"><label for="2">Czerwony, obraz po lewej</label>
+                <input id="3" type="radio" name="type" group="group1" value="mainParallax"> <label for="3">Paralaksa</label>
+                <input id="4" type="radio" name="type" group="group1" value="mainOpinion"> <label for="4">Opinie klientów</label>
+                <input id="5" type="radio" name="type" group="group1" value="mainClickable"> <label for="5">Kafelek z ikonami do klikania</label>
+                <input id="6" type="radio" name="type" group="group1" value="mainNews"> <label for="6">Aktualności</label>
+
+                </fieldset>
+                    <input type="submit" class="btn-red">
+            </form>
+                </center>
+
+
+            {{/if}}
+        </div>
+
     </div>
 
 

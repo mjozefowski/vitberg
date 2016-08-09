@@ -1,41 +1,44 @@
 <template name="adminPanel">
 <!--menu-->
     <div class="admin-panel-container">
+
+        <div class="admin-menu-blocks">
         {{#if isInRole 'admin'}}
 
         {{/if}}
         {{#if isInRole 'admin,editor'}}
             <div class="admin-nav-container">
 
-                <ol id="adminCarousel" class="admin-navigation-item admin-nav-box bigger-box">Karuzela <i class="material-icons">home</i></ol>
                 <ol id="adminMainPage" class="admin-navigation-item admin-nav-box bigger-box">Strona główna <i class="material-icons">home</i></ol>
+                <ol id="adminCarousel" class="admin-navigation-item admin-nav-box bigger-box">Karuzela <i class="material-icons">collections</i></ol>
                 <ol id="adminNews" class="admin-navigation-item admin-nav-box bigger-box">Aktualności <i class="material-icons">new_releases</i></ol>
                 <!--<ol id="adminMap" class="admin-navigation-item admin-nav-box bigger-box">Mapa <i class="material-icons">location_on</i></ol>-->
-                <ol id="adminOpinions" class="admin-navigation-item admin-nav-box bigger-box">Opinie klientów <i class="material-icons">drafts</i></ol>
-                <ol id="adminNotifications" class="admin-navigation-item admin-nav-box bigger-box">Powiadomienia  {{unreadNotifications}}<i class="material-icons">drafts</i></ol>
-                <ol id="adminCategories" class="admin-navigation-item admin-nav-box bigger-box">Kategorie<i class="material-icons">drafts</i></ol>
-                <ol id="adminContact" class="admin-navigation-item admin-nav-box bigger-box">Kontakt<i class="material-icons">drafts</i></ol>
+                <ol id="adminOpinions" class="admin-navigation-item admin-nav-box bigger-box">Opinie klientów <i class="material-icons">poll</i></ol>
+                <ol id="adminNotifications" class="admin-navigation-item admin-nav-box bigger-box">Powiadomienia  {{unreadNotifications}}<i class="material-icons">notifications</i></ol>
+                <ol id="adminCategories" class="admin-navigation-item admin-nav-box bigger-box">Kategorie<i class="material-icons">more</i></ol>
+                <ol id="adminContact" class="admin-navigation-item admin-nav-box bigger-box">Kontakt<i class="material-icons">phone_android</i></ol>
 
             </div>
         {{/if}}
-    {{#if isInRole 'admin'}}
+
+        {{#if isInRole 'admin'}}
         <div class="admin-nav-container">
 
-           <ol id="adminAccounts" class="admin-navigation-item admin-nav-box bigger-box">Użytkownicy  <i class="material-icons">drafts</i></ol>
+           <ol id="adminAccounts" class="admin-navigation-item admin-nav-box bigger-box">Użytkownicy  <i class="material-icons">person</i></ol>
 
         </div>
-    {{/if}}
-    {{#if isInRole 'contractor'}}
+        {{/if}}
+        {{#if isInRole 'contractor'}}
             <div class="admin-nav-container">
 
                 <ol id="contractor-link-1" class="admin-navigation-item admin-nav-box bigger-box">Link 1<i class="material-icons">home</i></ol>
                 <ol id="contractor-link-2" class="admin-navigation-item admin-nav-box bigger-box">Link 2<i class="material-icons">new_releases</i></ol>
                 <ol id="contractor-link-3" class="admin-navigation-item admin-nav-box bigger-box">Link 3<i class="material-icons">location_on</i></ol>
-                <ol id="contractor-link-4" class="admin-navigation-item admin-nav-box bigger-box">Powiadomienia  {{unreadNotifications}}<i class="material-icons">drafts</i></ol>
+                <ol id="contractor-link-4" class="admin-navigation-item admin-nav-box bigger-box">Powiadomienia  {{unreadNotifications}}<i class="material-icons">notifications</i></ol>
 
             </div>
         {{/if}}
-
+        </div>
         <!--content-->
         {{> UI.dynamic template=template}}
     </div>

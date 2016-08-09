@@ -1,8 +1,8 @@
 <template name="adminNews">
 
-    <button id="addNewNews">+ Dodaj nowy kontakt</button>
-
-
-{{> tabular table=TabularTables.AdminNews class="table table-striped table-bordered table-condensed"}}
+    <div class="admin-news-container">
+        <button id="addNewNews" class="btn-red">+ Dodaj nowy news</button>
+        {{> tabular table=TabularTables.AdminNews class="table table-striped table-bordered table-condensed"}}
+    </div>
 
 </template>
