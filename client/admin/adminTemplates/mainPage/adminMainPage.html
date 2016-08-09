@@ -1,6 +1,28 @@
 <template name="adminMainPage">
 
     <div class="edit-main-page-container">
+        <div id="addNewMainPage" class="add-new-element">Dodaj nowy</div>
+
+        {{#if addNewBar}}
+            <center>
+                <form id="selectTemplate">
+                    <fieldset>
+                        <input id="1" type="radio" name="type" group="group1" value="mainRedRight"> <label for="1">Czerwony, obraz po prawej</label>
+                        <input id="2" type="radio" name="type" group="group1" value="mainRedLeft"><label for="2">Czerwony, obraz po lewej</label>
+                        <input id="3" type="radio" name="type" group="group1" value="mainParallax"> <label for="3">Paralaksa</label>
+                        <input id="4" type="radio" name="type" group="group1" value="mainOpinion"> <label for="4">Opinie klientów</label>
+                        <input id="5" type="radio" name="type" group="group1" value="mainClickable"> <label for="5">Kafelek z ikonami do klikania</label>
+                        <input id="6" type="radio" name="type" group="group1" value="mainNews"> <label for="6">Aktualności</label>
+
+                    </fieldset>
+                    <input type="submit">
+                </form>
+            </center>
+
+
+        {{/if}}
+
+
         <div class="elements-list-title">Lista klocków:</div>
 
         <div class="blockDragItem drag-elements-container">
@@ -9,26 +31,7 @@
         {{/each}}
         </div>
 
-        <div id="addNewMainPage" class="add-new-element">Dodaj nowy</div>
 
-        {{#if addNewBar}}
-            <center>
-        <form id="selectTemplate">
-            <fieldset>
-            <input id="1" type="radio" name="type" group="group1" value="mainRedRight"> <label for="1">Czerwony, obraz po prawej</label>
-            <input id="2" type="radio" name="type" group="group1" value="mainRedLeft"><label for="2">Czerwony, obraz po lewej</label>
-            <input id="3" type="radio" name="type" group="group1" value="mainParallax"> <label for="3">Paralaksa</label>
-            <input id="4" type="radio" name="type" group="group1" value="mainOpinion"> <label for="4">Opinie klientów</label>
-            <input id="5" type="radio" name="type" group="group1" value="mainClickable"> <label for="5">Kafelek z ikonami do klikania</label>
-            <input id="6" type="radio" name="type" group="group1" value="mainNews"> <label for="6">Aktualności</label>
-
-            </fieldset>
-                <input type="submit">
-        </form>
-            </center>
-
-
-        {{/if}}
     </div>
 
 
