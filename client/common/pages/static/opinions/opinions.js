@@ -17,6 +17,11 @@ Template.dropzone.onCreated(function () {
 
 Template.dropzone.onRendered(function () {
 
+
+    $(".opinion-content-container").filter(function() {
+        return ($(this).children('.opinion-text').height()<=166)
+    }).next( ".read-more-opinion-btn").hide();
+
 })
 
 Template.dropzone.helpers({
@@ -214,7 +219,7 @@ Template.dropzone.events({
 
     'click .read-more-opinion-btn':function(e){
         var heightText=  $(e.target).prev().children('.opinion-text').height();
-        if(heightText>170){
+        if(heightText>166){
             $(e.target).prev().css('height',heightText);
             $(e.target).addClass('hide');
             $(e.target).next().removeClass('hide');
@@ -233,3 +238,4 @@ Template.dropzone.events({
 
 
 })
+
