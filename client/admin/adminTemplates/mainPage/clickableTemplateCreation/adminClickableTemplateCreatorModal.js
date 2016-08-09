@@ -25,7 +25,7 @@ Template.adminClickableTemplateCreatorModal.helpers({
         var ret = "";
         icons.forEach(function (e) {
             if(e.templateId==ti.data._id){
-                ret == e.image
+                ret = e.image
             }
         })
         return ret;
