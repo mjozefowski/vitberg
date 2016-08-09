@@ -11,7 +11,7 @@
                 <div class="header">AKTUALNOŚCI</div>
                 <div class="news-list-content simple-text-content">
                     {{#each news}}
-                    <div><a id="{{this._id}}" class="single-news-item"> <i class="material-icons">add</i> {{this.title}} </a></div>
+                    <div><a id="{{this._id}}" href="/static/news/full/{{this._id}}" class="single-news-item"> <i class="material-icons">add</i> {{this.title}} </a></div>
                     {{/each}}
                 </div>
             </div>

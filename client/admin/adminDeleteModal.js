@@ -5,8 +5,10 @@
  * Created by Maciej Józefowski, 09.08.16
  */
 
-Template.adminDeleteModal.onCreated(function () {
+Modal.allowMultiple = true
 
+Template.adminDeleteModal.onCreated(function () {
+    this.data = Template.currentData();
 })
 
 Template.adminDeleteModal.onRendered(function () {
@@ -15,4 +17,18 @@ Template.adminDeleteModal.onRendered(function () {
 
 Template.adminDeleteModal.helpers({})
 
-Template.adminDeleteModal.events({})
+Template.adminDeleteModal.events({
+
+    'click #remove': function (e,t) {
+
+        var id = t.data.id;
+        var method = t.data.method;
+
+        Meteor.call(method,id);
+
+    },
+    'click #cancel': function () {
+        Modal.hide();
+    }
+
+})
