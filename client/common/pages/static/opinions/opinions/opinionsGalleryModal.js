@@ -28,7 +28,7 @@ console.log(ti.data);
 
     },
     singleImage: function (sliderObject) {
-        return "<img src=\"/cfs/files/imagesFromClient/"+sliderObject+"\" class=\"image-bnr\" width=\"100%\">"
+        return "<img src=\""+sliderObject+"\" class=\"image-bnr\" width=\"100%\">"
     }
 
 })

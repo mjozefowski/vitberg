@@ -68,7 +68,7 @@
                     <div class="opinion-content-container">
 
                     <div id="{{this._id}}" class="opinion-image-container" >
-                        <img id="{{this._id}}" class="opinionThumb gray-scale maxImageSize" src="/cfs/files/thumbs/{{img images}}">
+                        {{#if img images}}<img id="{{this._id}}" class="opinionThumb gray-scale maxImageSize" src="{{img images}}">{{/if}}
                     </div>
 
                         <br class="hide-to-sm">

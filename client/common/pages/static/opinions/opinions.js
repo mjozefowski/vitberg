@@ -39,7 +39,11 @@ Template.dropzone.helpers({
     },
     img: function (images) {
         console.log(images)
-        return images[0].thumb
+        try{
+            return "/cfs/files/thumbs/" + images[0].thumb
+        }catch(e){
+            return "/logos/logo-mini.png"
+        }
     },
     sex: function (param) {
         if(param == "female"){
@@ -131,7 +135,7 @@ Template.dropzone.events({
                                             console.log("addClientOpinion ImagesFromClient.insert passed: ")
                                             setTimeout(function(){
 
-                                                Opinions.update(opinion, {$addToSet: {images: {img:fileObj._id,thumb:file._id}}}, function (e, r) {
+                                                Opinions.update(opinion, {$addToSet: {images: {img:"/cfs/files/imagesFromClient/"+fileObj._id,thumb:file._id}}}, function (e, r) {
                                                     if (e) {
                                                         console.log("update failed")
                                                     }
@@ -198,10 +202,14 @@ Template.dropzone.events({
 
     },
     'click .opinionThumb': function (e, t) {
-        Session.set('selectedOpinion', $(e.target).parent().attr('id'));
-        Modal.show('opinionsGalleryModal', function () {
-            return Opinions.findOne({_id:Session.get('selectedOpinion')})
-        })
+        //console.log($(e.target).attr('src'));
+        if($(e.target).attr('src') != "/logos/logo-mini.png"){
+
+            Session.set('selectedOpinion', $(e.target).parent().attr('id'));
+            Modal.show('opinionsGalleryModal', function () {
+                return Opinions.findOne({_id:Session.get('selectedOpinion')})
+            })
+        }
     },
 
     'click .read-more-opinion-btn':function(e){
