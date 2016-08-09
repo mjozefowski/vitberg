@@ -1,20 +1,8 @@
 <template name="adminMainPage">
 
     <div class="edit-main-page-container">
-        <div class="elements-list-title">Lista klocków:</div>
-
-        <div class="blockDragItem drag-elements-container">
-        {{#each listOfBlocks}}
-            <div id="{{this._id}}" block-type="{{this.type}}" class="drag-elements">
-                <div class="block-type-text">{{this.type}}</div>
-                <div class="deleteBlock delete-template-main-page btn-danger">Usuń</div>
-                <div class="editBlock edit-template-main-page btn-warning">Edytuj</div>
-            </div>
-        {{/each}}
-        </div>
 
         <div id="addNewMainPage" class="btn-red add-new-element text-center">Dodaj nowy</div>
-
 
         <div class="add-new-block-main-page">
             {{#if addNewBar}}
@@ -35,6 +23,18 @@
 
 
             {{/if}}
+        </div>
+
+        <div class="elements-list-title">Lista klocków:</div>
+
+        <div class="blockDragItem drag-elements-container">
+            {{#each listOfBlocks}}
+                <div id="{{this._id}}" block-type="{{this.type}}" class="drag-elements">
+                    <div class="block-type-text">{{this.type}}</div>
+                    <div class="deleteBlock delete-template-main-page btn-danger">Usuń</div>
+                    <div class="editBlock edit-template-main-page btn-warning">Edytuj</div>
+                </div>
+            {{/each}}
         </div>
 
     </div>

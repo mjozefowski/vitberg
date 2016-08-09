@@ -17,7 +17,7 @@ Template.mainRedLeft.helpers({
 
     imageLeft : function () {
         var ti = Template.instance();
-        return "/cfs/files/images/" + ti.data.images[0]
+        return ti.data.images[0]
     },
     linkUrl: function () {
         var ti = Template.instance();

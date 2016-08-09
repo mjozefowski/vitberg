@@ -56,6 +56,13 @@ Template.adminmainClickableModal.events({
 
     },
 
+    'click .btn-warning': function (e,t) {
+        Session.set('editClickable',$(e.target).attr('id'))
+
+        Modal.show('adminClickableTemplateCreatorModal', function () {
+            return TemplatesForMainClickable.findOne(Session.get('editClickable'));
+        })    },
+
     'change .myFileInput': function(event, t) {
         FS.Utility.eachFile(event, function (file) {
             Images.insert(file, function (err, fileObj) {
