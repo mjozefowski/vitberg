@@ -378,16 +378,29 @@ body {
   }
 
   .tabular-image{
-    max-width: 400px;
-    max-height: 300px;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .modal{
+    overflow-y: scroll;
+
+    img{
+      max-width:200px;
+      max-height:200px;
+      object-fit:cover;
+    }
   }
 
   .btn-red-thin-border,.btn-red-thin-border:focus{
     background-color:transparent;
     border:1px solid @red-logo-vitberg;
     padding:4px 10px;
-    color:#333;
+    color:@red-logo-vitberg;
     transition:0.4s;
+    min-width:100px;
+    margin-bottom:10px;
+    cursor:pointer;
   }
   .btn-red-thin-border:hover, .btn-red-thin-border:active{
     background-color:@red-logo-vitberg;
@@ -401,6 +414,7 @@ body {
     color:white;
     padding:4px 10px;
     transition:0.4s;
+    cursor:pointer;
   }
   .btn-red:hover, .btn-red:active{
     background-color:white;
@@ -6743,6 +6757,12 @@ body {
     }
 
   }
+
+  img{
+    max-width:200px;
+    max-height:200px;
+    object-fit:cover;
+  }
 }
 
 /*ADMIN NEWS STYLES
@@ -6923,6 +6943,82 @@ body {
     margin-bottom:20px;
   }
 }
+
+//ADMIN CREATE CLICKABLE BLOCK MODAL
+.modal-create-clickable-template{
+
+  .btn-red-thin-border{
+    border-radius:5px;
+  }
+
+  .modal-create-clickable-template-content{
+    position: relative;
+    padding-bottom:65px;
+
+    .visible-field-clickable-admin{
+      width: 60px;
+    }
+
+    .title-field-clickable-admin{
+      outline-color: red;
+    }
+
+    .clickable-blocks-container-admin{
+
+      .single-clickable-block-admin{
+        height: 100px;
+        overflow: hidden;
+        margin: 20px 0;
+        position: relative;
+
+        img{
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          float: left;
+        }
+
+        .container-short-info-single-clickable{
+          display: block;
+          width: ~"calc(100% - 250px)";
+          float: left;
+          margin-left: 15px;
+          height: 100px;
+
+          .title-clickable-list-modal-admin{
+            display: inline-block;
+            vertical-align: top;
+          }
+          .text-clickable-list-modal-admin{
+            display: inline-block;
+            vertical-align: top;
+          }
+        }
+
+        .btn-edit-clickable-in-modal{
+          position: absolute;
+          bottom:0;
+          right:60px;
+        }
+        .btn-delete-clickable-in-modal{
+          position: absolute;
+          bottom:0;
+          right:0px;
+        }
+      }
+    }
+
+    .btn-save-clickable-template{
+      position: absolute;
+      bottom: 20px;
+      padding: 4px 50px;
+      border-radius:5px;
+      margin-left: ~"calc(50% - 100px)";
+    }
+  }
+
+}
+
 
 
 //UNIVERSAL TEMPLATES
