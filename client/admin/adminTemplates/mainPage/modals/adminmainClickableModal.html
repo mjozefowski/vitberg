@@ -1,38 +1,41 @@
 <template name="adminmainClickableModal">
-    <div class="modal fade">
+    <div class="modal fade modal-create-clickable-template">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content modal-create-clickable-template-content">
 
-            <button id="addNewClickableElement">+ Dodaj nowy</button>
+            <button id="addNewClickableElement" class=" btn-red-thin-border pull-right">+ Dodaj nowy</button>
 
                 {{#autoForm collection="MainPage" id="updateMainPage" type="update" doc=selectedDoc}}
-                    {{> afQuickField name='title'}}
-                    {{> afQuickField name='visible'}}
-                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                    <div class="visible-field-clickable-admin">{{> afQuickField name='visible' value='Aktywny'}}</div>
+                    {{> afQuickField name='title' label='Tytuł' class="title-field-clickable-admin"}}
+                    <button type="submit" class="btn-red btn-save-clickable-template saveButton">Zapisz</button>
                 {{/autoForm}}
 
 
                 Lista elementów:
 
+                <div class="clickable-blocks-container-admin">
+                    {{#each clickableMain.icons}}
 
-                {{#each clickableMain.icons}}
+                        <div class="single-clickable-block-admin">
+                            <img src="{{image}}">
+                            <div class="container-short-info-single-clickable">
+                                {{#with subTemplate templateId}}
+                                <!--{{subTemplate.title templateId}}-->
+                                    <!--{{_id}}-->
+                                    <div class="title-clickable-list-modal-admin">{{title}}</div><br>
+                                    <div class="title-clickable-list-modal-admin">{{title2}}</div><br>
+                                    <div class="text-clickable-list-modal-admin">{{text}}</div>
+                                    <button id="{{_id}}" class="btn btn-warning btn-edit-clickable-in-modal">edytuj</button>
+                                    <button id="{{_id}}" class="btn btn-danger  btn-delete-clickable-in-modal">usuń</button>
+                                {{/with}}
+                            </div>
+                        </div>
 
-                    <div>
-                        <img src="{{image}}">
-                        {{#with subTemplate templateId}}
-                        <!--{{subTemplate.title templateId}}-->
-                        {{_id}}
-                            {{title}}
-                            {{text}}
-                            <button id="{{_id}}" class="btn btn-warning">edytuj</button>
-                            <button id="{{_id}}" class="btn btn-danger">usuń</button>
-                        {{/with}}
-                    </div>
-
-                {{/each}}
+                    {{/each}}
+                </div>
 
                 <!--{{> createClickable selectedDoc._id}}-->
-
 
             </div>
         </div>
