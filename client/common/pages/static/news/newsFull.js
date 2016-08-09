@@ -27,7 +27,7 @@ Template.newsFull.helpers({
 
 Template.newsFull.events({
 
-    'click img':function(e){
+    'click .image-to-maximize':function(e){
         var photo =$(e.target).attr('src');
 
         $('.zoomed-container').children('img').attr('src',photo);

@@ -69,7 +69,7 @@ Meteor.methods({
 
         Opinions.update(opinionId, {$pull:{images:{img:imageId}}}, function (e, r) {
             if(!e){
-                ImagesFromClient.remove(imageId)
+                ImagesFromClient.remove(imageId.replace('/cfs/files/imagesFromClient/',''))
                 if(thumb.length>0){
                     Thumbs.remove(thumb)
                 }
