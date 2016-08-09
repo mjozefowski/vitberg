@@ -143,6 +143,23 @@ Router.map(function () {
 
     });
 
+    this.route('/static/programs/:_id', {
+        name: 'program',
+        template: 'universalProgram',
+        loadingTemplate: 'loading',
+        waitOn:function(){
+            return [Meteor.subscribe("productsClickable"),Meteor.subscribe("productsClickableItems")]
+        },
+
+        action:function(){
+            if(this.ready()){
+                this.render('universalProgram',{
+                    data: this.params._id
+                })
+            }
+        }
+    });
+
     //this.route('/diplomaInfo/:_id', {
     //    waitOn: function () {
     //        return Meteor.subscribe("diploma", this.params._id);

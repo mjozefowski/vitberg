@@ -6,7 +6,7 @@
             <button id="addNewClickableElement" class=" btn-red-thin-border pull-right">+ Dodaj nowy</button>
 
                 {{#autoForm collection="MainPage" id="updateMainPage" type="update" doc=selectedDoc}}
-                    <div class="visible-field-clickable-admin">{{> afQuickField name='visible' value='Aktywny'}}</div>
+                    <div class="visible-field-clickable-admin">{{> afQuickField name='visible' label='Aktywny'}}</div>
                     {{> afQuickField name='title' label='Tytuł' class="title-field-clickable-admin"}}
                     <button type="submit" class="btn-red btn-save-clickable-template saveButton">Zapisz</button>
                 {{/autoForm}}

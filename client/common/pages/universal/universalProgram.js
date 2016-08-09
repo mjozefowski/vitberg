@@ -3,7 +3,8 @@
  */
 
 Template.universalProgram.onCreated(function () {
-
+    this.data = Template.currentData()
+    this.selectedChild = new ReactiveVar('')
 })
 
 Template.universalProgram.onRendered(function () {
@@ -15,6 +16,13 @@ Template.universalProgram.onRendered(function () {
 })
 
 Template.universalProgram.helpers({
+
+
+    selectedDoc: function () {
+        var ti = Template.instance();
+        return ProductsClickable.findOne(ti.data)
+    }
+
 
 })
 

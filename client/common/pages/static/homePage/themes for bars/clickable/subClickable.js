@@ -29,4 +29,11 @@ Template.subClickable.helpers({
 
 })
 
-Template.subClickable.events({})
+Template.subClickable.events({
+
+    'click .read-more-btn': function (e, t) {
+        var id = $(e.target).attr('id')
+        Router.go(id)
+    }
+
+})
