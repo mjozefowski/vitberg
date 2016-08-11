@@ -206,6 +206,11 @@ Router.map(function () {
         template: 'universalProgram'
     });
 
+    this.route('/static/gallery', {
+        name: 'gallery',
+        template: 'gallery'
+    });
+
 });
 
 

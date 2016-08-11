@@ -9451,3 +9451,163 @@ body {
 
 }
 
+
+//GALLERY TEMPLATE STYLES
+//*****************************************************************************************************************
+
+.gallery-main-container{
+  margin-bottom:100px;
+
+  .header-gallery{
+
+  }
+
+  .gallery-inner-container{
+
+    .single-gallery-element{
+
+      img{
+        cursor:pointer;
+      }
+
+      >:nth-child(1){
+
+      }
+
+      >:nth-child(2){
+
+      }
+
+      >:nth-child(2):hover{
+
+      }
+
+    }
+  }
+
+
+}
+
+@media only screen and (max-width:767px){
+
+  .gallery-main-container{
+    padding:0 30px;
+
+    .gallery-inner-container {
+
+
+      .single-gallery-element {
+
+        img {
+
+        }
+      }
+    }
+  }
+
+}
+
+@media only screen and (min-width:768px) and (max-width:991px){
+
+  .gallery-main-container{
+    padding:0 30px;
+
+    .gallery-inner-container {
+
+
+      .single-gallery-element {
+
+        img {
+
+        }
+      }
+    }
+  }
+
+}
+
+@media only screen and (min-width:992px) and (max-width:1199px){
+
+  .gallery-main-container{
+    padding:0 30px;
+
+  }
+
+}
+
+@media only screen and (min-width:1200px){
+
+  .gallery-main-container{
+    padding:0 8.3333%;
+
+    .header-gallery{
+      padding-bottom:10px;
+      margin-bottom:25px;
+      margin-top:-30px;
+      border-bottom:1px solid @red-logo-vitberg;
+      margin-left:10px;
+    }
+
+    .gallery-inner-container {
+      //padding:0 10px;
+
+      .single-gallery-element {
+        width:240px;
+        height:220px;
+        margin: 40px 19px;
+        position: relative;
+        display:inline-block;
+
+        img {
+          left:20px;
+          width:200px;
+          height:200px;
+          object-fit: cover;
+          position: absolute;
+          box-shadow:2px 2px 2px rgba(0,0,0,.4);
+          transition:transform 0.4s, height 0.4s, width 0.4s, left 0.4s, box-shadow 0.4s;
+        }
+
+        >:nth-child(1){
+          transform: rotate(-2deg);
+          opacity: 0.7;
+          margin-top:5px;
+
+        }
+
+        >:nth-child(2){
+          transform:rotate(7deg);
+        }
+        >:nth-child(2):hover{
+          width:220px;
+          height:220px;
+          left:10px;
+          transform:rotate(0);
+          box-shadow:4px 4px 4px rgba(0,0,0,.4);
+        }
+
+
+      }
+    }
+
+  }
+
+}
+
+@media only screen and (min-width:1600px){
+
+  .gallery-main-container{
+
+    .gallery-inner-container {
+
+
+      .single-gallery-element {
+
+        img {
+
+        }
+      }
+    }
+  }
+
+}
