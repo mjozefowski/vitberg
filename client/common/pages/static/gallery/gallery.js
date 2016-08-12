@@ -10,6 +10,7 @@ Template.gallery.onCreated(function () {
 
 Template.gallery.onRendered(function () {
 
+    howManyPhotos($('.gallery-inner-container'), $('.main-single-gallery'), 43);
 
 })
 
@@ -30,6 +31,25 @@ function calcHeight(elem){
     elem.css('height', elemWidth);
 }
 
+function howManyPhotos(container, elem, margin){
+
+    container.css('max-width','100%');
+    var singlePhoto = elem.width()+margin;
+    var count = parseInt(container.width()/singlePhoto);
+
+    if(count>=1){
+        container.css('max-width',count*singlePhoto);
+    }
+    else{
+        container.css('max-width',singlePhoto);
+    }
+
+
+}
+
 $( window ).resize(function() {
 
+    howManyPhotos($('.gallery-inner-container'), $('.main-single-gallery'), 43);
+
 });
+

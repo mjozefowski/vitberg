@@ -9460,28 +9460,102 @@ body {
 
   .header-gallery{
 
+    border-bottom:1px solid @red-logo-vitberg;
   }
 
   .gallery-inner-container{
+    margin-left: auto;
+    margin-right: auto;
 
-    .single-gallery-element{
+    .main-single-gallery{
+      cursor:pointer;
+      margin:20px;
+      position:relative;
+      width:300px;
+      height:200px;
+      overflow:hidden;
+      display:inline-block;
+    }
+    .photo{
+      width:300px;
+      height:200px;
+      background-size:cover;
+      background-position:center;
+      transition:0.4s;
+    }
+    .inside{
 
-      img{
-        cursor:pointer;
-      }
+    }
+    .header-photo{
+      position:absolute;
+      height:35px;
+      background-color:rgba(255,255,255,.7);
+      font-weight:bold;
+      top:0;
+      left:0px;
+      right:0;
+      padding:10px 5px 5px 10px;
+      transition:all 0.4s;
+    }
+    .date-place{
+      position:absolute;
+      opacity:0;
+      padding-top:10px;
+      height:25px;
+      font-weight:bold;
+      padding-left:5px;
+      left:5px;
+      right:10px;
+      top:0px;
+      border-top:2px solid #333;
+      transition:all 0.4s;
+    }
 
-      >:nth-child(1){
 
-      }
-
-      >:nth-child(2){
-
-      }
-
-      >:nth-child(2):hover{
-
-      }
-
+    .main-single-gallery:hover>.photo{
+      margin-left:-10px;
+      margin-top:-10px;
+      width:320px;
+      height:220px;
+    }
+    .main-single-gallery:hover>.photo:hover>.inside>.header-photo{
+      position:absolute;
+      background-color:rgba(255,255,255,.7);
+      height:200px;
+      top:0;
+      left:0px;
+      right:0;
+      bottom:0;
+    }
+    .main-single-gallery:hover>.photo:hover>.inside>.date-place{
+      position:absolute;
+      opacity:1;
+      padding-top:5px;
+      height:25px;
+      padding-left:5px;
+      left:5px;
+      right:10px;
+      top:35px;
+      border-top:2px solid #333;
+      transition-delay:0.1s;
+    }
+    .ico{
+      position: absolute;
+      top: 65px;
+      left: ~"calc(50% - 12PX)";
+      font-size: 24px;
+      transition:0.4s;
+    }
+    .ico:hover{
+      color:red;
+      animation-name: pulse;
+      animation-duration: .8s;
+      animation-iteration-count: infinite;
+    }
+    @keyframes pulse {
+      0% {font-size:24px; left: ~"calc(50% - 12PX)";top: 65px;}
+      50% {font-size:26px; left: ~"calc(50% - 13PX)";top: 64px;}
+      100% {font-size:24px; left: ~"calc(50% - 12PX)";top: 65px;}
     }
   }
 
@@ -9494,14 +9568,12 @@ body {
     padding:0 30px;
 
     .gallery-inner-container {
+      text-align: center;
 
-
-      .single-gallery-element {
-
-        img {
-
-        }
+      .main-single-gallery{
+        margin:20px 0;
       }
+
     }
   }
 
@@ -9515,12 +9587,6 @@ body {
     .gallery-inner-container {
 
 
-      .single-gallery-element {
-
-        img {
-
-        }
-      }
     }
   }
 
@@ -9544,50 +9610,13 @@ body {
       padding-bottom:10px;
       margin-bottom:25px;
       margin-top:-30px;
-      border-bottom:1px solid @red-logo-vitberg;
       margin-left:10px;
     }
 
     .gallery-inner-container {
       //padding:0 10px;
 
-      .single-gallery-element {
-        width:240px;
-        height:220px;
-        margin: 40px 19px;
-        position: relative;
-        display:inline-block;
 
-        img {
-          left:20px;
-          width:200px;
-          height:200px;
-          object-fit: cover;
-          position: absolute;
-          box-shadow:2px 2px 2px rgba(0,0,0,.4);
-          transition:transform 0.4s, height 0.4s, width 0.4s, left 0.4s, box-shadow 0.4s;
-        }
-
-        >:nth-child(1){
-          transform: rotate(-2deg);
-          opacity: 0.7;
-          margin-top:5px;
-
-        }
-
-        >:nth-child(2){
-          transform:rotate(7deg);
-        }
-        >:nth-child(2):hover{
-          width:220px;
-          height:220px;
-          left:10px;
-          transform:rotate(0);
-          box-shadow:4px 4px 4px rgba(0,0,0,.4);
-        }
-
-
-      }
     }
 
   }
