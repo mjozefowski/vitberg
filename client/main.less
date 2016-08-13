@@ -430,6 +430,10 @@ body {
     box-shadow:none;
   }
 
+  //LOADER STYLES
+  .cssload-main{
+    margin-top:150px;
+  }
 }
 
 //TOP MENU STYLES
@@ -9013,8 +9017,14 @@ body {
         max-height: 400px;
         resize: vertical;
         font-size: 18px;
-        padding: 5px;
+        padding: 10px;
         margin-bottom: 25px;
+      }
+
+      .textarea-opinion:focus{
+        outline:none;
+        box-shadow:none;
+        border: 1px solid @red-logo-vitberg;
       }
 
       .captcha-container{
@@ -9119,7 +9129,7 @@ body {
 
     .single-opinion-container{
       margin:15px 40px;
-      border:1px solid rgba(51, 51, 51, 0.46);
+      //border:1px solid rgba(51, 51, 51, 0.46);
       padding:15px 15px 20px;
       position: relative;
 
@@ -9149,6 +9159,7 @@ body {
           margin-right:15px;
 
           img{
+            border-radius:5px;
             width: 170px;
             height: 170px;
             cursor: pointer;
@@ -9164,16 +9175,16 @@ body {
 
       .read-more-opinion-btn{
         position: absolute;
-        bottom:5px;
-        right:10px;
+        bottom:0px;
+        right:30px;
         color:@red-logo-vitberg;
         cursor:pointer;
       }
 
       .read-less-opinion-btn{
         position: absolute;
-        bottom:5px;
-        right:10px;
+        bottom:0px;
+        right:30px;
         color:#333;
         cursor:pointer;
       }
@@ -9208,7 +9219,6 @@ body {
 
       .single-opinion-container{
         margin:15px 40px;
-        border:1px solid rgba(51, 51, 51, 0.46);
         padding:15px 15px 20px;
         position: relative;
 
@@ -9248,13 +9258,13 @@ body {
         }
 
         .read-more-opinion-btn{
-          bottom:5px;
-          right:10px;
+          bottom:0;
+          right:30px;
         }
 
         .read-less-opinion-btn{
-          bottom:5px;
-          right:10px;
+          bottom:0px;
+          right:30px;
         }
 
 
@@ -9301,7 +9311,6 @@ body {
 
       .single-opinion-container{
         margin:15px 40px;
-        border:1px solid rgba(51, 51, 51, 0.46);
         padding:15px 15px 20px;
         position: relative;
 
@@ -9339,13 +9348,11 @@ body {
 
         .read-more-opinion-btn{
           position: absolute;
-          bottom:5px;
           right:10px;
         }
 
         .read-less-opinion-btn{
           position: absolute;
-          bottom:5px;
           right:10px;
         }
 
@@ -9391,7 +9398,6 @@ body {
 
       .single-opinion-container{
         margin:15px 40px;
-        border:1px solid rgba(51, 51, 51, 0.46);
         padding:15px 15px 20px;
         position: relative;
 
@@ -9429,13 +9435,11 @@ body {
 
         .read-more-opinion-btn{
           position: absolute;
-          bottom:5px;
           right:10px;
         }
 
         .read-less-opinion-btn{
           position: absolute;
-          bottom:5px;
           right:10px;
         }
 
@@ -9459,7 +9463,6 @@ body {
 
       .single-opinion-container{
         margin:15px 40px;
-        border:1px solid rgba(51, 51, 51, 0.46);
         padding:15px 15px 20px;
         position: relative;
 
@@ -9497,7 +9500,6 @@ body {
 
         .read-more-opinion-btn{
           position: absolute;
-          bottom:5px;
           right:10px;
           color:@red-logo-vitberg;
           cursor:pointer;
@@ -9505,7 +9507,6 @@ body {
 
         .read-less-opinion-btn{
           position: absolute;
-          bottom:5px;
           right:10px;
           color:#333;
           cursor:pointer;
@@ -9540,8 +9541,11 @@ body {
 .modal-opinions-gallery{
 
   .modal-dialog{
-    max-width:65vw;
+    height:90vh;
     width:auto;
+    margin:0;
+    margin-top: 5vh;
+    position: relative;
   }
 
   .modal-content{
@@ -9549,24 +9553,145 @@ body {
     background: transparent;
     box-shadow:none;
     border:none;
+    height:100%;
+    position:initial;
   }
 
-  .opinion-carousel-item{
+  @media screen and (orientation:landscape) {
 
-    img{
-      max-height:90vh;
-      object-fit: contain;
+    .modal-dialog{
+      height:90vh;
+      width:auto;
+      margin:0;
+      margin-top: 5vh;
+      position: relative;
     }
+
+    .modal-content{
+      padding:0;
+      background: transparent;
+      box-shadow:none;
+      border:none;
+      height:100%;
+    }
+
+    .carousel-inner{
+
+    }
+
+    .opinion-carousel-item{
+      height:100%;
+
+      img{
+        height:100%;
+        max-height:initial;
+        object-fit: cover;
+        height: 90vh;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 95vw;
+      }
+    }
+
+    .carousel-control{
+      background:transparent !important;
+      top: 50%;
+      bottom: auto;
+    }
+
   }
 
-  .carousel-control{
-    background:transparent !important;
-    top: 50%;
-    bottom: auto;
+  @media screen and (orientation:portrait) {
+
+    .modal-dialog{
+      height:90vh;
+      width:auto;
+      margin:0;
+      margin-top: 0;
+      position: relative;
+    }
+
+    .modal-content{
+      padding:0;
+      background: transparent;
+      box-shadow:none;
+      border:none;
+      height:100%;
+    }
+
+    .container-opinion-slider-images{
+      position: relative;
+      margin-top: 5vh;
+      margin-bottom:5vh;
+
+      .carousel-opinion-images{
+        position: initial;
+
+        .carousel-inner{
+          height: 90vh;
+          display:table;
+          position: initial;
+        }
+
+        .opinion-carousel-item{
+          -webkit-transition-delay: 5s;
+          -moz-transition-delay: 5s;
+          -ms-transition-delay: 5s;
+          -o-transition-delay: 5s;
+          transition-delay: 5s;
+          transition:0.4s;
+          opacity:0;
+
+          img{
+
+            max-height:initial;
+            object-fit: cover;
+            height: 90vh;
+            width: 90vw;
+            margin-left: auto;
+            margin-right: auto;
+            //display: table-cell;
+            vertical-align: middle;
+          }
+        }
+
+        .carousel-control{
+          position: absolute;
+          background:transparent !important;
+          top: 50%;
+          bottom: auto;
+        }
+      }
+
+      .carousel-inner > .item.next.left, .carousel-inner > .item.prev.right, .carousel-inner > .item.active{
+        DISPLAY:TABLE-CELL;
+        VERTICAL-ALIGN:MIDDLE;
+        -webkit-transition-delay: 5s;
+        -moz-transition-delay: 5s;
+        -ms-transition-delay: 5s;
+        -o-transition-delay: 5s;
+        transition-delay: 5s;
+        opacity:1;
+        transition:0.4s;
+      }
+
+    }
+
+
   }
 
+  .glyphicon-remove{
+    color: rgba(255, 255, 255, 0.8);
+    z-index: 10000;
+    position: absolute;
+    top: ~"calc(15px - 5vh)";
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
 
 }
+
 
 
 //GALLERY TEMPLATE STYLES
@@ -9756,4 +9881,17 @@ body {
     }
   }
 
+}
+
+
+#owl-demo .owl-item div{
+  padding:5px;
+}
+#owl-demo .owl-item img{
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }

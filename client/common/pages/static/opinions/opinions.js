@@ -239,3 +239,13 @@ Template.dropzone.events({
 
 })
 
+ $(window).resize(function(){
+    $(".opinion-content-container").filter(function() {
+        return ($(this).children('.opinion-text').height()<=166)
+    }).next( ".read-more-opinion-btn").hide();
+
+     $(".opinion-content-container").filter(function() {
+         return ($(this).children('.opinion-text').height()>166)
+     }).next( ".read-more-opinion-btn").show();
+
+});

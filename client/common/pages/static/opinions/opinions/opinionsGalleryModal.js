@@ -28,9 +28,17 @@ console.log(ti.data);
 
     },
     singleImage: function (sliderObject) {
-        return "<img src=\""+sliderObject+"\" class=\"image-bnr\" width=\"100%\">"
+        return "<img src=\""+sliderObject+"\" class=\"image-bnr\">"
     }
 
 })
 
-Template.opinionsGalleryModal.events({})
+Template.opinionsGalleryModal.events({
+
+    'click .close-modal-cross':function(){
+
+        Modal.hide();
+
+    },
+
+})
