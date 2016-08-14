@@ -15,8 +15,6 @@ Template.opinionsGalleryModal.onRendered(function () {
         $('.opinion-carousel-item').first().addClass('active')
     }, 500);
 
-
-
 })
 
 Template.opinionsGalleryModal.helpers({
@@ -35,7 +33,7 @@ console.log(ti.data);
 
 Template.opinionsGalleryModal.events({
 
-    'click .close-modal-cross':function(){
+    'click .ico-close-modal-opinions':function(){
 
         Modal.hide();
 
