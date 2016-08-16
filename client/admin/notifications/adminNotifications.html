@@ -1,21 +1,26 @@
 <template name="adminNotifications">
 
     {{#if isInRole 'admin,editor'}}
-        <div id="addNotification" class="btn-red-thin-border "><span>+ Dodaj nową informację dla kontrahentów</span></div>
+        <div id="addNotification" class="btn-red-thin-border btn-add-notification-admin"><span>+ Dodaj nową informację dla kontrahentów</span></div>
     {{/if}}
 
+    <ul class="notification-admin-ul">
     {{#each notifications}}
+        <li class="notification-admin-li">
+                <div class="notification-admin-time">{{this.date}}</div>
+                <div class="notification-admin-text">{{this.text}}</div>
 
-        {{this.date}}
-        {{this.text}}
-    <div id="{{this._id}}">
-        {{#if isNotRead this._id}}
-            <button   class="markAsRead">Oznacz jako przeczytane</button>
-        {{/if}}
-        {{#if isInRole 'admin,editor'}}
-            <button  class="editNotification">Edytuj</button>
-        {{/if}}
-    </div>
+            <div id="{{this._id}}" class="notification-admin-btns">
+                {{#if isNotRead this._id}}
+                    <button   class="markAsRead btn-red-thin-border">Oznacz jako przeczytane</button>
+                {{/if}}
+                {{#if isInRole 'admin,editor'}}
+                    <button  class="editNotification btn-red-thin-border">Edytuj</button>
+                {{/if}}
+            </div>
+
+        </li>
     {{/each}}
+    </ul>
 
 </template>

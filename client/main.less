@@ -3557,6 +3557,7 @@ body {
     background-color: white;
     position: relative;
     padding: 40px 30px 100px;
+    margin:0;
 
     .description{
       display:inline-block;
@@ -7044,14 +7045,13 @@ body {
   }
 
   img{
-    max-width:200px;
-    max-height:200px;
+    max-width:100px;
+    max-height:100px;
     object-fit:cover;
   }
 }
 
-/*ADMIN NEWS STYLES
-*********************************************************************/
+//ADMIN NEWS STYLES
 .panel-admin-news-container{
     padding:20px 25px;
 
@@ -7082,8 +7082,7 @@ body {
 
 }
 
-/*ADMIN MAIN PAGE STYLES
-*********************************************************************/
+//ADMIN MAIN PAGE STYLES
 .edit-main-page-container{
 
   .elements-list-title{
@@ -7175,8 +7174,7 @@ body {
   }
 }
 
-/*ADMIN MAP MARKERS STYLES
-*********************************************************************/
+//ADMIN MAP MARKERS STYLES
 .map-markers-admin-panel{
   background: rgba(255, 255, 255, 0.66);
   padding: 25px;
@@ -7213,8 +7211,8 @@ body {
 
 }
 
-/*MAP PAGE STYLES
-*********************************************************************/
+//MAP PAGE STYLES
+
 .map-page{
   width: 100%;
   max-width: 100%;
@@ -7230,6 +7228,32 @@ body {
 
   .btn-red{
     margin-bottom:20px;
+  }
+}
+
+.news-add-admin-modal{
+
+  textarea{
+    width:100%;
+    padding:5px;
+    border-width: 1px;
+  }
+  textarea:focus{
+    outline:none;
+    box-shadow:none;
+    border:1px solid @red-logo-vitberg;
+
+  }
+
+  .input-type-text-admin{
+    width:100%;
+    padding:5px;
+    border-width: 1px;
+  }
+  .input-type-text-admin:focus{
+    outline:none;
+    box-shadow:none;
+    border:1px solid @red-logo-vitberg;
   }
 }
 
@@ -7308,6 +7332,84 @@ body {
 
 }
 
+//ADMIN USERS
+.admin-add-user{
+  display:inline-block;
+}
+
+.user-add-modal-form{
+  text-align: center;
+
+  div{
+    text-align:left;
+  }
+
+  >label{
+    display:block;
+
+    input{
+      width:100%;
+    }
+
+    select{
+      width:100%;
+    }
+  }
+  >label>input:focus{
+    outline:none;
+    box-shadow:none;
+    border:2px solid @red-logo-vitberg;
+  }
+  >label>select:focus{
+    outline:none;
+    box-shadow:none;
+    border:2px solid @red-logo-vitberg;
+  }
+
+  .btn-submit-new-account{
+    margin-top:20px;
+  }
+}
+
+.modal-dialog-add-user{
+  width:300px;
+}
+
+//ADMIN NOTIFICATION
+.btn-add-notification-admin{
+  display:inline-block;
+}
+.notification-admin-ul{
+  margin-top:25px;
+}
+
+.notification-admin-li{
+  list-style:none;
+  padding:5px 15px;
+  border:1px solid #333;
+  margin:10px 0;
+}
+
+.notification-admin-btns{
+  display:inline-block;
+  margin-left:auto;
+}
+
+.notification-admin-time{
+  padding-bottom:5px;
+  margin-top:10px;
+  font-weight:bold;
+
+}
+.notification-admin-text{
+  padding-bottom:10px;
+  margin-bottom:10px;
+}
+
+//ADMIN OPINIONS
+.add-opinion-text-modal{
+  resize:horizontal;
+}
 
 
 //UNIVERSAL TEMPLATES

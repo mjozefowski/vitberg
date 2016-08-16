@@ -4,25 +4,23 @@
             <div class="modal-content">
                 {{isUploadDone}}
                 <div class="panel-admin-news-container">
-                    <form id="newsForm">
+                    <form id="newsForm" class="news-add-admin-modal">
                         <div class="header-xsmall">Tytuł</div>
-                        <input class="padding-left:20px;" id="title" type="text" name="title" placeholder="tytuł">
+                        <input class="input-type-text-admin" id="title" type="text" name="title" placeholder="Tytuł newsa">
 
                         <br><br>
 
                         <div class="header-xsmall">Treść</div>
-        <textarea id="text" rows="4"  name="text" form="newsForm" class="news-create-textarea">
-            </textarea>
+                        <textarea id="text" rows="4"  name="text" form="newsForm" class="news-create-textarea" placeholder="Treść newsa"></textarea>
                         <br>
                         <br>
-
-            <textarea id="additionalInfo" rows="2"  name="additional" form="newsForm" class="news-create-textarea">
-            </textarea>
+                        <div class="header-xsmall">Tekst na czerwonym pasku</div>
+                        <textarea id="additionalInfo" rows="2"  name="additional" form="newsForm" class="news-create-textarea" placeholder="Tekst na czerwonym tle (tylko przy newsie z opcja szare tło)"></textarea>
                         <br>
                         <br>
 
                         <div class="header-xsmall">URL do video</div>
-                        <input id="videoLink" type="url" name="video">
+                        <input id="videoLink" class="input-type-text-admin" type="url" name="video">
 
                         <div class="row margin-0">
 

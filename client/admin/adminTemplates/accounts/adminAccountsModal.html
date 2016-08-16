@@ -1,31 +1,29 @@
 <template name="adminAccountsModal">
 
     <div class="modal fade">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-add-user">
             <div class="modal-content">
 
+                <form id="registerUser" class="user-add-modal-form">
 
-
-                        <div class="modal-content">
-
-
-                                <form id="registerUser">
-
-                                    <label>Email:<input id="email" type="email" name="email"></label>
-                                    <label>Rola:<select id="role" name="role">
-                                        <option value="admin">Administrator</option>
-                                        <option value="editor">Edytor</option>
-                                        <option value="contractor">Kontrahent</option>
-                                    </select></label>
-                                    <label>Hasło:<input id="password" type="text" name="password"></label>
-                                    <label>Potwierdzenie hasła:<input id="passwordConfirmation" type="text" name="passwordconfirm"></label>
-                                    <label>Imię:<input id="firstName" type="text" name="firstName"></label>
-                                    <label>Nazwisko:<input id="lastName" type="text" name="lastName"></label>
-                                    <input type="submit" class="btn-red-thin-border ">
-                                </form>
-
-
-                        </div>
+                    <div>Email:</div>
+                    <label><input id="email" type="email" name="email"></label>
+                    <div>Rola:</div>
+                    <label><select id="role" name="role">
+                        <option value="admin">Administrator</option>
+                        <option value="editor">Edytor</option>
+                        <option value="contractor">Kontrahent</option>
+                    </select></label>
+                    <div>Hasło:</div>
+                    <label><input id="password" type="text" name="password"></label>
+                    <div>Potwierdzenie hasła:</div>
+                    <label><input id="passwordConfirmation" type="text" name="passwordconfirm"></label>
+                    <div>Imię:</div>
+                    <label><input id="firstName" type="text" name="firstName"></label>
+                    <div>Nazwisko:</div>
+                    <label><input id="lastName" type="text" name="lastName"></label>
+                    <input type="submit" class="btn-red-thin-border btn-submit-new-account">
+                 </form>
 
             </div>
         </div>
