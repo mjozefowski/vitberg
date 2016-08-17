@@ -88,3 +88,24 @@ TabularTables.MenuResearch = new Tabular.Table({
 
     ]
 });
+
+TabularTables.MenuLastColumn= new Tabular.Table({
+    name: "MenuLastColumn",
+    collection: MenuLastColumn,
+    responsive: true,
+    autoWidth: false,
+    columns: [
+
+        {data: "order", title: "kolejność"},
+        {data: "name", title: "tytuł"},
+        {data: "url", title: "URL"},
+        {   data: "_id",
+            title: "akcje",
+            render: function (id) {
+                return  "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-warning table-edit-button\" collection-name=\"MenuLastColumn\">edytuj</button>" +
+                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\">usuń</button>"
+            }
+        }
+
+    ]
+});

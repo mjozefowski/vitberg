@@ -33,9 +33,9 @@ Template.menu.events({
     'click #news': function () {
         Router.go('/static/news')
     },
-    'click #map': function () {
-        Router.go('/static/map')
-    },
+    //'click #map': function () {
+    //    Router.go('/static/map')
+    //},
     'click #admin-panel': function () {
         Router.go('/static/admin')
     },

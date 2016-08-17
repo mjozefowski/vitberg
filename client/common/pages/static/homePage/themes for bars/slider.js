@@ -37,9 +37,9 @@ Template.slider.events({
 
         Router.go('/static/contact')
     },
-    'click #map': function (e,t) {
-
-        Router.go('/static/map')
+    'click #mapButton': function (e,t) {
+        $('#map:first-child').click()
+        //Router.go('https://mapsengine.google.com/map/edit?hl=pl&authuser=0&mid=zO9a_WUb-1sI.kN1KCwEwXRsA')
     },
     'click .newsletter-accept': function (e,t) {
         var val = $('.newsletter-inpt').val();

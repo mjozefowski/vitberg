@@ -26,7 +26,8 @@ Meteor.publish('adminPublication', function () {
             MenuProducts.find(),
             MenuContact.find(),
             MenuBottom.find(),
-            MenuResearch.find()
+            MenuResearch.find(),
+            MenuLastColumn.find()
         ]
     }
 

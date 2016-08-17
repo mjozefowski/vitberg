@@ -31,6 +31,9 @@ Template.adminFooterEditModal.helpers({
             case "MenuResearch":
                 return "Menu badania";
                 break;
+            case "MenuLastColumn":
+                return "Menu ostatnia kolumna";
+                break;
         }
 
     },
@@ -50,6 +53,9 @@ Template.adminFooterEditModal.helpers({
                 break;
             case "MenuResearch":
                 return MenuResearch.findOne(ti.data.id);
+                break;
+            case "MenuLastColumn":
+                return MenuLastColumn.findOne(ti.data.id);
                 break;
         }
     },

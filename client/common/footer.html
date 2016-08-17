@@ -25,9 +25,9 @@
             <div class="footer-col">
                 <div class="header">NASZE PRODUKTY</div>
                 <ul class="content">
-                    <li><a>Lorem ipsum</a></li>
-                    <li><a>Quis gravida magna</a></li>
-                    <li><a>Suspendisse enim</a></li>
+                    {{#each menuLastColumn}}
+                        <li><a href="{{url}}">{{name}}</a></li>
+                    {{/each}}
                 </ul>
             </div>
 

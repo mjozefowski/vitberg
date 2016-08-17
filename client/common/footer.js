@@ -26,6 +26,9 @@ Template.footer.helpers({
     },
     menuBottom: function () {
         return MenuBottom.find({},{sort:{order:1}})
+    },
+    menuLastColumn: function () {
+        return MenuLastColumn.find({},{sort:{order:1}})
     }
 })
 
