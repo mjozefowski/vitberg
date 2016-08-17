@@ -24,7 +24,7 @@ Router.map(function () {
     this.route('/:_id',{
         loadingTemplate: 'loading',
         waitOn: function () {
-            return [Meteor.subscribe("Categories"),Meteor.subscribe("SubCategories"),Meteor.subscribe("carousel")];
+            return [Meteor.subscribe("Categories"),Meteor.subscribe("SubCategories"),Meteor.subscribe("carousel"), Meteor.subscribe("footer")];
         },
         action: function () {
             if (this.ready()) {
@@ -39,7 +39,7 @@ Router.map(function () {
     this.route('/static/news',{
         loadingTemplate: 'loading',
         waitOn: function () {
-            return [Meteor.subscribe("news2"),Meteor.subscribe('images'),Meteor.subscribe("carousel")];
+            return [Meteor.subscribe("news2"),Meteor.subscribe('images'),Meteor.subscribe("carousel"), Meteor.subscribe("footer")];
         },
         action: function () {
             if (this.ready()) {
@@ -54,7 +54,7 @@ Router.map(function () {
     this.route('/static/news/full/:_id', {
         loadingTemplate: 'loading',
         waitOn:function(){
-            return [Meteor.subscribe("news2"),Meteor.subscribe("carousel")]
+            return [Meteor.subscribe("news2"),Meteor.subscribe("carousel"), Meteor.subscribe("footer")]
         },
         action:function(){
             if (this.ready()) {
@@ -102,7 +102,7 @@ Router.map(function () {
         this.route('/static/addOpinion',{
             loadingTemplate: 'loading',
             waitOn:function(){
-                return [Meteor.subscribe("opinions"),Meteor.subscribe('images'),Meteor.subscribe("carousel")]
+                return [Meteor.subscribe("opinions"),Meteor.subscribe('images'),Meteor.subscribe("carousel"), Meteor.subscribe("footer")]
             },
 
 
@@ -132,7 +132,7 @@ Router.map(function () {
         template: 'contact',
         loadingTemplate: 'loading',
         waitOn:function(){
-            return [Meteor.subscribe("contacts"),Meteor.subscribe("carousel")]
+            return [Meteor.subscribe("contacts"),Meteor.subscribe("carousel"), Meteor.subscribe("footer")]
         },
 
         action:function(){
@@ -148,7 +148,7 @@ Router.map(function () {
         template: 'universalProgram',
         loadingTemplate: 'loading',
         waitOn:function(){
-            return [Meteor.subscribe("productsClickable"),Meteor.subscribe("productsClickableItems")]
+            return [Meteor.subscribe("productsClickable"),Meteor.subscribe("productsClickableItems"), Meteor.subscribe("footer")]
         },
 
         action:function(){
