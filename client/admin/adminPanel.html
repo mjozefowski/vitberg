@@ -16,18 +16,16 @@
                 <ol id="adminOpinions" class="admin-navigation-item admin-nav-box bigger-box">Opinie klientów <i class="material-icons">poll</i></ol>
                 <ol id="adminNotifications" class="admin-navigation-item admin-nav-box bigger-box">Powiadomienia  {{unreadNotifications}}<i class="material-icons">notifications</i></ol>
                 <ol id="adminCategories" class="admin-navigation-item admin-nav-box bigger-box">Kategorie<i class="material-icons">more</i></ol>
+                <ol id="adminFooter" class="admin-navigation-item admin-nav-box bigger-box">Dolne menu<i class="material-icons">view_column</i></ol>
                 <ol id="adminContact" class="admin-navigation-item admin-nav-box bigger-box">Kontakt<i class="material-icons">phone_android</i></ol>
+                {{#if isInRole 'admin'}}
+                    <ol id="adminAccounts" class="admin-navigation-item admin-nav-box bigger-box">Użytkownicy  <i class="material-icons">person</i></ol>
+                {{/if}}
+
 
             </div>
         {{/if}}
 
-        {{#if isInRole 'admin'}}
-        <div class="admin-nav-container">
-
-           <ol id="adminAccounts" class="admin-navigation-item admin-nav-box bigger-box">Użytkownicy  <i class="material-icons">person</i></ol>
-
-        </div>
-        {{/if}}
         {{#if isInRole 'contractor'}}
             <div class="admin-nav-container">
 

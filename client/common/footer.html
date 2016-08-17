@@ -7,22 +7,18 @@
             <div class="footer-col">
                 <div class="header">NASZE PRODUKTY</div>
                 <ul class="content">
-                    <li><a>Lorem ipsum</a></li>
-                    <li><a>Quis gravida magna</a></li>
-                    <li><a>Vestibulum</a></li>
-                    <li><a>Suspendisse enim</a></li>
+                    {{#each menuProducts}}
+                    <li><a href="{{url}}">{{name}}</a></li>
+                    {{/each}}
                 </ul>
             </div>
 
             <div class="footer-col">
                 <div class="header">BADANIA NAUKOWE</div>
                 <ul class="content">
-                    <li><a>Quis gravida magna</a></li>
-                    <li><a>Vestibulum</a></li>
-                    <li><a>Lorem ipsum</a></li>
-                    <li><a>Quis gravida magna</a></li>
-                    <li><a>Vestibulum</a></li>
-                    <li><a>Suspendisse enim</a></li>
+                    {{#each menuResearch}}
+                        <li><a href="{{url}}">{{name}}</a></li>
+                    {{/each}}
                 </ul>
             </div>
 
@@ -38,10 +34,9 @@
             <div class="footer-col contact">
                 <div class="header">KONTAKT</div>
                 <ul class="content">
-                    <li><a>Quis gravida magna</a></li>
-                    <li><a>Vestibulum ipsum</a></li>
-                    <li><a>Lorem magna</a></li>
-                    <li><a>Quis gravida magna</a></li>
+                    {{#each menuContact}}
+                        <li><a href="{{url}}">{{name}}</a></li>
+                    {{/each}}
                 </ul>
             </div>
 
@@ -54,12 +49,9 @@
 				
                 <div class="fast-menu">
                     <ul>
-                        <li><a>MENU1</a></li>
-                        <li><a>MENU2</a></li>
-                        <li><a>MENU3</a></li>
-                        <li><a>MENU4</a></li>
-                        <li><a>MENU5</a></li>
-                        <li><a>MENU6</a></li>
+                        {{#each menuBottom}}
+                            <li><a href="{{url}}">{{name}}</a></li>
+                        {{/each}}
                     </ul>
                 </div>
 				

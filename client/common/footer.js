@@ -15,7 +15,18 @@ Template.footer.onRendered(function () {
 })
 
 Template.footer.helpers({
-
+    menuProducts: function () {
+        return MenuProducts.find({},{sort:{order:1}})
+    },
+    menuResearch: function () {
+        return MenuResearch.find({},{sort:{order:1}})
+    },
+    menuContact: function () {
+        return MenuContact.find({},{sort:{order:1}})
+    },
+    menuBottom: function () {
+        return MenuBottom.find({},{sort:{order:1}})
+    }
 })
 
 Template.footer.events({

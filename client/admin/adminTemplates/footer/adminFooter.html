@@ -1,0 +1,34 @@
+<template name="adminFooter">
+
+    <div class="col-lg-3">
+        <div class="text-center"><h2>Menu produkty</h2></div>
+        <button id="MenuProducts" class="btn-red-thin-border bottomMenu-add ">+ Dodaj element</button>
+        {{> tabular table=TabularTables.MenuProducts class="table table-striped table-bordered table-condensed"}}
+    </div>
+
+    <div class="col-lg-3">
+        <div class="text-center"><h2>Menu badania</h2></div>
+
+        <button id="MenuResearch" class="btn-red-thin-border bottomMenu-add ">+ Dodaj element</button>
+
+        {{> tabular table=TabularTables.MenuResearch class="table table-striped table-bordered table-condensed"}}
+    </div>
+
+    <div class="col-lg-3">
+        <div class="text-center"><h2>Menu kontakty</h2></div>
+
+        <button id="MenuContact" class="btn-red-thin-border bottomMenu-add">+ Dodaj element</button>
+
+        {{> tabular table=TabularTables.MenuContact class="table table-striped table-bordered table-condensed"}}
+    </div>
+
+    <div class="col-lg-3">
+        <div class="text-center"><h2>Menu dolne</h2></div>
+
+
+        <button id="MenuBottom" class="btn-red-thin-border bottomMenu-add">+ Dodaj element</button>
+
+        {{> tabular table=TabularTables.MenuBottom class="table table-striped table-bordered table-condensed"}}
+    </div>
+
+</template>

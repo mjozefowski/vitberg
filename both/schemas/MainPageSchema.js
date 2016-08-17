@@ -52,6 +52,10 @@ Schemas.MainPage = new SimpleSchema({
     parallax:{
         type:String,
         optional:true
+    },
+    hex:{
+        type:String,
+        optional:true
     }
 
 })

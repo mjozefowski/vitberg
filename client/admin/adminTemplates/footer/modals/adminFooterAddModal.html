@@ -1,0 +1,24 @@
+<template name="adminFooterAddModal">
+
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                Dodawanie elementu - {{title}}
+
+                {{#autoForm collection=selectedCollection id="addSelectedMenuItem" type="insert"}}
+
+
+                    {{> afQuickField name='name'}}
+                    {{> afQuickField name='url'}}
+                    {{> afQuickField name='order'}}
+
+                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                {{/autoForm}}
+
+
+            </div>
+        </div>
+    </div>
+
+</template>

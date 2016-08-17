@@ -24,7 +24,11 @@ Template.adminDeleteModal.events({
         var id = t.data.id;
         var method = t.data.method;
 
-        Meteor.call(method,id);
+        Meteor.call(method,id, function (e, r) {
+            if(!e)
+                Modal.hide();
+
+        });
 
     },
     'click #cancel': function () {
