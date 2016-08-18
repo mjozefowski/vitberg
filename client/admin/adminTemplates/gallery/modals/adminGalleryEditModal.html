@@ -16,9 +16,10 @@
                 Obrazy:
 
                 {{#each selectedDoc.images}}
-                    <img id="{{this}}" src="{{this}}" class="tabular-image">
-                    <span class="glyphicon glyphicon-remove remove-image"></span>
-
+                    <div class="flex-container edit-gallery-modal-items">
+                        <img id="{{this}}" src="{{this}}" class="tabular-image flex-item-big">
+                        <span class="glyphicon glyphicon-remove remove-image flex-item-small"></span>
+                    </div>
                 {{/each}}
                 <input type="file" name="…" class="myFileInput">
                 {{> FS.UploadProgressBar bootstrap=true}}

@@ -22,10 +22,13 @@
                         </div>
 
                         {{#each array}}
-                            <div>{{this.data.blob.name}}<div><span id="{{this.data.blob.name}}" class="fa fa-remove remove-image"></span></div></div>
+                            <div class="modal-gallery-image-link">
+                                <div class="modal-gallery-image-name">{{this.data.blob.name}}</div>
+                                <div id="{{this.data.blob.name}}" class="fa fa-remove remove-image modal-gallery-image-remove"> </div>
+                            </div>
                         {{/each}}
 
-                        <input class="btn-red submit-news" type="submit">
+                        <input class="btn-red" type="submit">
 
                     </form>
                 </div>
