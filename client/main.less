@@ -430,6 +430,35 @@ body {
     box-shadow:none;
   }
 
+  .flex-container{
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .flex-item-big{
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+  .flex-item-small{
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+  }
+  .flex-item-half{
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width:50%;
+  }
+
+  .glyphicon-remove{
+    transition:0.3s;
+  }
+  .glyphicon-remove:hover{
+    color:red;
+  }
+
   //LOADER STYLES
   .cssload-main{
     margin-top:150px;
@@ -7079,8 +7108,10 @@ body {
     margin-top: 20px;
     text-align: center;
     line-height: 116px;
-    font-size: 54px;
+    font-size: 36px;
     color: #b6b6b6;
+    overfllow:hidden;
+    text-overflow: ellipsis;
   }
 
   .submit-news{
@@ -7264,7 +7295,26 @@ body {
     box-shadow:none;
     border:1px solid @red-logo-vitberg;
   }
+
+  .glyphicon-remove{
+    transition:0.3s;
+  }
+  .glyphicon-remove:hover{
+    color:red;
+  }
 }
+
+.news-edit-modal-item{
+  margin-bottom:10px;
+
+  .glyphicon-remove{
+    transition:0.3s;
+  }
+  .glyphicon-remove:hover{
+    color:red;
+  }
+}
+
 
 //ADMIN CREATE CLICKABLE BLOCK MODAL
 .modal-create-clickable-template{
@@ -7420,6 +7470,70 @@ body {
   resize:horizontal;
 }
 
+//ADMIN GALLERY
+.modal-gallery-image-link{
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom:10px;
+}
+
+.modal-gallery-image-name{
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow:hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.modal-gallery-image-remove{
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  transition:0.3s;
+  cursor:pointer;
+}
+.modal-gallery-image-remove:hover{
+  color:red;
+}
+
+.edit-gallery-modal-items{
+  margin-bottom:10px;
+
+  .remove-image{
+    transition:0.3s;
+    cursor:pointer;
+  }
+  .remove-image:hover{
+    color:red;
+  }
+}
+
+//ADMIN MENU FOOTER
+.margin-left-20{
+  margin-left:20px;
+}
+.margin-right-20{
+  margin-right:20px;
+}
+
+.footer-menu-admin{
+
+  @media only screen and (max-width:1199px){
+    .flex-container{
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+      .flex-item-half{
+        width:100%;
+      }
+    }
+
+
+  }
+}
 
 //UNIVERSAL TEMPLATES
 //*******************************************************************/
@@ -9834,6 +9948,7 @@ body {
       height:200px;
       overflow:hidden;
       display:inline-block;
+      box-shadow: 1px 2px 2px rgba(0,0,0,.4);
     }
     .photo{
       width:300px;
@@ -9848,7 +9963,7 @@ body {
     .header-photo{
       position:absolute;
       height:35px;
-      background-color:rgba(255,255,255,.7);
+      background-color:rgba(255,255,255,.85);
       font-weight:bold;
       top:0;
       left:0px;

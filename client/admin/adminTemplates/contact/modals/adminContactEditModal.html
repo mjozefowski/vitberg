@@ -21,14 +21,20 @@
                     <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
                 {{/autoForm}}
 
+
+
                 {{#if selectedDoc.image}}
                     Obrazy:
-                    <img id="{{selectedDoc.image}}" src="{{selectedDoc.image}}" class="tabular-image">
-                    <span class="glyphicon glyphicon-remove remove-image"></span>
+                <div class="flex-container">
+                    <img id="{{selectedDoc.image}}" src="{{selectedDoc.image}}" class="tabular-image flex-item-big">
+                    <div class="glyphicon glyphicon-remove remove-image flex-item-small"></div>
+                </div>
                 {{else}}
+                    <br>
                     <input type="file" name="…" class="myFileInput">
                     {{> FS.UploadProgressBar bootstrap=true}}
                 {{/if}}
+
 
             </div>
         </div>

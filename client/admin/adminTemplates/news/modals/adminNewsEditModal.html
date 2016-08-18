@@ -13,14 +13,17 @@
                     {{> afQuickField name='isImportant'}}
                     {{> afQuickField name='isSmall'}}
 
-
+                    <br>
                     <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
                 {{/autoForm}}
+                <br><br>
                 Obrazy:
 
                 {{#each selectedDoc.media}}
-                    <img id="{{this}}" src="{{this}}" class="tabular-image">
-                    <span class="glyphicon glyphicon-remove remove-image"></span>
+                    <div class="flex-container news-edit-modal-item">
+                        <img id="{{this}}" src="{{this}}" class="tabular-image flex-item-big">
+                        <div class="glyphicon glyphicon-remove remove-image flex-item-small"></div>
+                    </div>
 
                 {{/each}}
                 <input type="file" name="…" class="myFileInput">
