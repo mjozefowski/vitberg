@@ -2,18 +2,23 @@
  * Copyright (C) OneBi Sp. z o.o. All Rights Reserved
  * Unauthorized copying of this file, via any medium is strictly prohibited
  * Proprietary and confidential
- * Created by Maciej Józefowski, 11.06.16
+ * Created by Maciej Józefowski, 18.08.16
  */
 
 
+Schemas.ProgramsSchema = new SimpleSchema({
 
-Schemas.SubCategoriesSchema = new SimpleSchema({
-
+    icon:{
+        type:String,
+        optional:true
+    },
     name:{
-        type:String
+        type:String,
+        optional:true
     },
     categoryId:{
-        type:String
+        type:String,
+        optional:true
     },
     selectedTemplate:{
         type:String,
@@ -74,10 +79,11 @@ Schemas.SubCategoriesSchema = new SimpleSchema({
 })
 
 
-SubCategories.attachSchema(Schemas.SubCategoriesSchema);
+Programs.attachSchema(Schemas.ProgramsSchema);
 
-SubCategories.allow({
+Programs.allow({
     insert: function () { return true; },
     update: function () { return true; },
     remove: function () { return true; }
 });
+

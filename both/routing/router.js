@@ -143,19 +143,17 @@ Router.map(function () {
 
     });
 
-    this.route('/static/programs/:_id', {
+    this.route('/static/programs/', {
         name: 'program',
         template: 'universalProgram',
         loadingTemplate: 'loading',
         waitOn:function(){
-            return [Meteor.subscribe("productsClickable"),Meteor.subscribe("productsClickableItems"), Meteor.subscribe("footer")]
+            return [Meteor.subscribe("footer"), Meteor.subscribe("programs"),Meteor.subscribe("carousel")]
         },
 
         action:function(){
             if(this.ready()){
-                this.render('universalProgram',{
-                    data: this.params._id
-                })
+                this.render('universalProgram')
             }
         }
     });

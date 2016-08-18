@@ -13,20 +13,54 @@ Template.universalProgram.onRendered(function () {
 
     hideOrShowArrowsProgram($('.left-arrow-programs'),$('.right-arrow-programs'),$('.slider-blocks-program'),$('.slider-blocks-inner-program'));
 
+    $('.iconClickable').first().click();
+
 })
 
 Template.universalProgram.helpers({
 
 
-    selectedDoc: function () {
+    programs: function () {
         var ti = Template.instance();
-        return ProductsClickable.findOne(ti.data)
+
+        return Programs.find()
+    },
+    //selectedItem: function () {
+    //    var ti = Template.instance();
+    //    return Programs.findOne(ti.selectedChild.get())
+    //},
+    temp: function (obj) {
+        var ti = Template.instance();
+
+        var prog = Programs.findOne(ti.selectedChild.get());
+
+        var selected = prog.selectedTemplate;
+        console.log(selected)
+        return selected
+    },
+    templateData: function () {
+        var ti = Template.instance();
+        return Programs.findOne(ti.selectedChild.get())
     }
+
 
 
 })
 
 Template.universalProgram.events({
+
+
+
+    'click .iconClickable': function (e, t) {
+
+        var id = $(e.target).attr('id');
+
+        t.selectedChild.set(id);
+    },
+
+
+
+
 
     "click .right-arrow-programs": function (){
         divSliderArrowProgram("right",$('.slider-blocks-program'),$('.slider-blocks-inner-program'));

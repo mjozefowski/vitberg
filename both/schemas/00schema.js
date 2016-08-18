@@ -15,3 +15,18 @@ Schemas.LinkSchema = new SimpleSchema({
         type:String
     }
 })
+
+Schemas.Cols = new SimpleSchema(({
+    title:{
+        type:String,
+        optional:true
+    },
+    text:{
+        type:String,
+        optional:true,
+        autoform:{
+            type:"textarea",
+            rows: 10
+        }
+    }
+}))
