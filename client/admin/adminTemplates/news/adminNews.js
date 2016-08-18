@@ -29,6 +29,10 @@ Template.adminNews.events({
         Modal.show('adminNewsEditModal', function () {
             return Session.get('adminNewsEdit')
         })
+    },
+    'click .table-delete-button': function (e,t) {
+        var id = $(e.target).attr('id');
+        News.remove(id)
     }
 
 

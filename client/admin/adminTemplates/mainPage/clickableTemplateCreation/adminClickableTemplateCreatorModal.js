@@ -111,6 +111,14 @@ Template.adminClickableTemplateCreatorModal.events({
         })
 
 
-    }
+    },
+    //'click .remove-image-icon': function (e, t) {
+    //    var id = $(e.target).prev().attr("id")
+    //    Images.remove(id.replace("/cfs/files/images/",""), function (e, r) {
+    //        if(!e){
+    //            TemplatesForMainClickable.update(t.data._id,{$set:{icon:""}});
+    //        }
+    //    })
+    //}
 
 })

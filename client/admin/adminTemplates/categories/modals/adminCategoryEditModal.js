@@ -42,6 +42,10 @@ Template.adminCategoryEditModal.events({
         Modal.show('adminEditSubCategoryModal', function () {
             return Session.get('adminSelectedSubCategoryEdit')
         })
+    },
+    'click .table-delete-button-sub': function (e,t) {
+         SubCategories.remove($(e.target).attr('id'));
+
     }
 
 })

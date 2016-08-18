@@ -23,6 +23,11 @@ Template.adminPrograms.events({
             return Session.get('adminPrograms')
         })
     },
+    'click .table-delete-button-sub': function (e, t) {
+        var id = $(e.target).attr('id')
+        Programs.remove(id)
+
+    },
     "click #addProgramItem": function (e,t) {
         var id = Programs.insert({name:"Nowy program"});
 

@@ -21,7 +21,7 @@ TabularTables.OpinionsAccepted = new Tabular.Table({
             title: "akcje",
             render: function (id) {
                 return  "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-warning table-edit-button\">edytuj</button>" +
-                        "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-edit-button\">usuń</button>"
+                        "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\">usuń</button>"
             }
         }
 

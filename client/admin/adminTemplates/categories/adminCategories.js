@@ -30,6 +30,14 @@ Template.adminCategories.events({
             return Session.get('adminSelectedCategory')
         })
     },
+    'click .table-delete-button': function (e, t) {
+        var id = $(e.target).attr('id')
+
+        //var cat = Categories.findOne(id);
+        Categories.remove(id)
+
+    },
+
     'click #addNewCategory': function (e, t) {
         Modal.show('adminAddCategoryModal')
     }

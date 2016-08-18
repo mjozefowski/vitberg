@@ -28,6 +28,10 @@ Template.adminContact.events({
         Modal.show('adminContactEditModal', function () {
             return Session.get('selectedContact')
         })
+    },
+    'click .table-delete-button': function (e, t) {
+        var id = $(e.target).attr('id');
+        Contact.remove(id)
     }
 
 })

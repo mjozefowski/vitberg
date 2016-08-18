@@ -19,7 +19,7 @@ TabularTables.MenuBottom = new Tabular.Table({
             title: "akcje",
             render: function (id) {
                 return  "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-warning table-edit-button\" collection-name=\"MenuBottom\">edytuj</button>" +
-                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\">usuń</button>"
+                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\" collection-name=\"MenuBottom\">usuń</button>"
             }
         }
 
@@ -40,7 +40,7 @@ TabularTables.MenuContact = new Tabular.Table({
             title: "akcje",
             render: function (id) {
                 return  "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-warning table-edit-button\" collection-name=\"MenuContact\">edytuj</button>" +
-                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\">usuń</button>"
+                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\" collection-name=\"MenuContact\">usuń</button>"
             }
         }
 
@@ -61,7 +61,7 @@ TabularTables.MenuProducts = new Tabular.Table({
             title: "akcje",
             render: function (id) {
                 return  "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-warning table-edit-button\" collection-name=\"MenuProducts\">edytuj</button>" +
-                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\">usuń</button>"
+                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\" collection-name=\"MenuProducts\">usuń</button>"
             }
         }
 
@@ -82,7 +82,7 @@ TabularTables.MenuResearch = new Tabular.Table({
             title: "akcje",
             render: function (id) {
                 return  "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-warning table-edit-button\" collection-name=\"MenuResearch\">edytuj</button>" +
-                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\">usuń</button>"
+                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\" collection-name=\"MenuResearch\">usuń</button>"
             }
         }
 
@@ -103,7 +103,7 @@ TabularTables.MenuLastColumn= new Tabular.Table({
             title: "akcje",
             render: function (id) {
                 return  "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-warning table-edit-button\" collection-name=\"MenuLastColumn\">edytuj</button>" +
-                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\">usuń</button>"
+                    "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\" collection-name=\"MenuLastColumn\">usuń</button>"
             }
         }
 
