@@ -208,7 +208,17 @@ Router.map(function () {
 
     this.route('/static/gallery', {
         name: 'gallery',
-        template: 'gallery'
+        template: 'gallery',
+        loadingTemplate: 'loading',
+        waitOn:function(){
+            return [Meteor.subscribe("gallery"), Meteor.subscribe("footer")]
+        },
+
+        action:function(){
+            if(this.ready()){
+                this.render('gallery')
+            }
+        }
     });
 
 });

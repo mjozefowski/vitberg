@@ -1,0 +1,49 @@
+<template name="gallerySliderGeneralModal">
+        <div class="modal fade modal-opinions-gallery" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="container container-opinion-slider-images" style="width:100%; padding:0;">
+                        <div id="myCarousel5" class="carousel carousel-opinion-images slide" data-ride="carousel">
+
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+
+
+                                {{#each imagesForSlider}}
+
+                                    <div class="item opinion-carousel-item">
+
+                                        {{{singleImage this}}}
+
+
+                                    </div>
+
+
+                                {{/each}}
+
+
+
+                            </div>
+
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel5" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel5" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <span class="glyphicon glyphicon-remove ico-close-modal-opinions"></span>
+
+        </div>
+
+</template>

@@ -16,11 +16,24 @@ Template.gallery.onRendered(function () {
 
 Template.gallery.helpers({
 
+    galleries: function () {
+        return Gallery.find({},{sort:{order:1}})
+    },
+    image: function (images) {
+        return images[0]
+    }
+
 })
 
 Template.gallery.events({
 
-
+    'click .glyphicon-zoom-in': function (e, t) {
+        console.log($(e.target).attr('id'))
+        Session.set('selectedOpinion', $(e.target).attr('id'));
+        Modal.show('gallerySliderGeneralModal', function () {
+            return Gallery.findOne({_id:Session.get('selectedOpinion')})
+        })
+    }
 
 })
 

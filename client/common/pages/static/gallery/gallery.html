@@ -8,75 +8,22 @@
 
         <div class="gallery-inner-container">
 
+            {{#each galleries}}
+
             <div class="main-single-gallery">
-                    <div class="photo" style="background-image: url(/photos/galeria1.jpg)">
+                    <div class="photo" style="background-image: url({{image images}})">
                         <div class="inside">
                             <div class="header-photo">
-                                MINI ZJAZD SZKOLENIOWY
+                                {{name}}
                             </div>
                             <div class="date-place">
-                                KRAKÓW CZERWIEC/2016
-                                <div class="glyphicon glyphicon glyphicon-zoom-in ico"></div>
+                                <!--KRAKÓW CZERWIEC/2016-->
+                                <div id="{{_id}}" class="glyphicon glyphicon glyphicon-zoom-in ico"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-            <div class="main-single-gallery">
-                <div class="photo" style="background-image: url(/photos/galeria1.jpg)">
-                    <div class="inside">
-                        <div class="header-photo">
-                            MINI ZJAZD SZKOLENIOWY
-                        </div>
-                        <div class="date-place">
-                            KRAKÓW CZERWIEC/2016
-                            <div class="glyphicon glyphicon glyphicon-zoom-in ico"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="main-single-gallery">
-                <div class="photo" style="background-image: url(/photos/galeria1.jpg)">
-                    <div class="inside">
-                        <div class="header-photo">
-                            MINI ZJAZD SZKOLENIOWY
-                        </div>
-                        <div class="date-place">
-                            KRAKÓW CZERWIEC/2016
-                            <div class="glyphicon glyphicon glyphicon-zoom-in ico"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="main-single-gallery">
-                <div class="photo" style="background-image: url(/photos/galeria1.jpg)">
-                    <div class="inside">
-                        <div class="header-photo">
-                            MINI ZJAZD SZKOLENIOWY
-                        </div>
-                        <div class="date-place">
-                            KRAKÓW CZERWIEC/2016
-                            <div class="glyphicon glyphicon glyphicon-zoom-in ico"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="main-single-gallery">
-                <div class="photo" style="background-image: url(/photos/galeria1.jpg)">
-                    <div class="inside">
-                        <div class="header-photo">
-                            MINI ZJAZD SZKOLENIOWY
-                        </div>
-                        <div class="date-place">
-                            KRAKÓW CZERWIEC/2016
-                            <div class="glyphicon glyphicon glyphicon-zoom-in ico"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
 
 
 
