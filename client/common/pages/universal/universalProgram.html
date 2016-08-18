@@ -2,7 +2,6 @@
 
     {{>slider}}
 
-    {{#with selectedDoc}}
 
 
         <div class="program-blocks-slider-container">
@@ -14,10 +13,10 @@
             <div class="slider-blocks-program">
                 <div class="slider-blocks-inner-program" style="transform:translate(0px);">
 
-                    {{#each icons}}
+                    {{#each programs}}
 
                     <div class="single-program-block">
-                        <div class="block-ico iconClickable" style="background:url(/temp/clickable2.png);"></div>
+                        <div id="{{_id}}" class="block-ico iconClickable" style="background:url({{icon}});"></div>
                     </div>
                     {{/each}}
 
@@ -27,7 +26,7 @@
             <button class="arrow-programs right-arrow-programs">  <span class="glyphicon glyphicon-chevron-right"></span> </button>
 
         </div>
-    {{/with}}
+
         <div class="container-programs-universal">
             {{>centerPhoto}}
             {{>leftPhoto}}

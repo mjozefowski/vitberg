@@ -1,0 +1,47 @@
+<template name="adminProgramsEditModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                {{#autoForm collection="Programs" id="adminEditPrograms" doc=selectedDoc type="update"}}
+
+
+                    {{> afQuickField name='name'}}
+
+                    {{> afQuickField name='selectedTemplate'}}
+
+                    {{> afQuickField name='title'}}
+                    {{> afQuickField name='text'}}
+
+
+                    {{> afQuickField name='col1' type="textarea"}}
+                    {{> afQuickField name='col2' type="textarea"}}
+                    {{> afQuickField name='col3' type="textarea"}}
+
+
+                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                {{/autoForm}}
+                Ikona:
+                {{#if selectedDoc.icon}}
+
+                    <img id="{{selectedDoc.icon}}" src="{{selectedDoc.icon}}" class="tabular-image">
+                    <span class="glyphicon glyphicon-remove remove-icon"></span>
+                {{else}}
+                    <input type="file" name="…" class="myFileInputIcon">
+                    {{> FS.UploadProgressBar bootstrap=true}}
+                {{/if}}
+                Obraz:
+
+                {{#if selectedDoc.image}}
+                    <img id="{{selectedDoc.image}}" src="{{selectedDoc.image}}" class="tabular-image">
+                    <span class="glyphicon glyphicon-remove remove-image"></span>
+                {{else}}
+                    <input type="file" name="…" class="myFileInput">
+                    {{> FS.UploadProgressBar bootstrap=true}}
+                {{/if}}
+
+
+            </div>
+        </div>
+    </div>
+</template>

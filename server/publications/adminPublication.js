@@ -28,7 +28,8 @@ Meteor.publish('adminPublication', function () {
             MenuBottom.find(),
             MenuResearch.find(),
             MenuLastColumn.find(),
-            Gallery.find()
+            Gallery.find(),
+            Programs.find()
         ]
     }
 

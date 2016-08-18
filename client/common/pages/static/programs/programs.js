@@ -20,6 +20,11 @@ Template.Programs.onRendered(function () {
 
 Template.Programs.helpers({
 
+    programs: function () {
+
+        return Programs.find({},{sort:{order:1}});
+    }
+
 })
 
 Template.Programs.events({

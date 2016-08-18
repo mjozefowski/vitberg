@@ -18,9 +18,9 @@ Template.universalProgram.onRendered(function () {
 Template.universalProgram.helpers({
 
 
-    selectedDoc: function () {
+    programs: function () {
         var ti = Template.instance();
-        return ProductsClickable.findOne(ti.data)
+        return Programs.find()
     }
 
 
