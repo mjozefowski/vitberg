@@ -5,20 +5,7 @@
  * Created by Maciej Józefowski, 11.06.16
  */
 
-Schemas.Cols = new SimpleSchema(({
-    title:{
-        type:String,
-        optional:true
-    },
-    text:{
-        type:String,
-        optional:true,
-        autoform:{
-            type:"textarea",
-            rows: 10
-        }
-    }
-}))
+
 
 Schemas.SubCategoriesSchema = new SimpleSchema({
 
