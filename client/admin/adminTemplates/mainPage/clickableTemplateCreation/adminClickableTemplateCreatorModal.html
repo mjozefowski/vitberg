@@ -11,21 +11,29 @@
                     {{> afQuickField name='useCase'}}
                     <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
                 {{/autoForm}}
-
+                <br>
                 Ikona:
                 {{#if parentTemplate}}
-                    <img id="{{parentTemplate}}" src="{{parentTemplate}}" class="tabular-image">
-                    <span class="glyphicon glyphicon-remove remove-image"></span>
+                    <br>
+                    <div class="flex-containr">
+                        <img id="{{parentTemplate}}" src="{{parentTemplate}}" class="tabular-image flex-item-big">
+                        <div class="glyphicon glyphicon-remove remove-image flex-item-small"></div>
+                    </div>
                 {{else}}
+                    <br>
                     <input type="file" name="…" class="myFileInput">
                     {{> FS.UploadProgressBar bootstrap=true}}
                 {{/if}}
-
+                <br>
                 Obraz po prawej:
                 {{#if selectedDoc.image}}
-                    <img id="{{selectedDoc.image}}" src="{{selectedDoc.image}}" class="tabular-image">
-                    <span class="glyphicon glyphicon-remove remove-image-left"></span>
+                    <br>
+                    <div class="flex-container">
+                    <img id="{{selectedDoc.image}}" src="{{selectedDoc.image}}" class="tabular-image flex-item-big">
+                    <div class="glyphicon glyphicon-remove remove-image-left flex-item-small"></div>
+                    </div>
                 {{else}}
+                    <br>
                     <input type="file" name="…" class="myFileInput-left">
                     {{> FS.UploadProgressBar bootstrap=true}}
                 {{/if}}
