@@ -9,9 +9,25 @@ TabularTables.UsersAdmin = new Tabular.Table({
     name: "UsersAdmin",
     collection: Meteor.users,
     columns: [
-        {data: "email", title: "email"},
-        {data: "firstName", title: "imię"},
-        {data: "lastName", title: "nazwisko"},
+        {data: "emails[0].address", title: "email"},
+        {data: "profile.firstName", title: "imię"},
+        {data: "profile.lastName", title: "nazwisko"},
+        {   data: "roles[0]",
+            title: "rola",
+            render: function (role) {
+                switch(role){
+                    case 'admin':
+                        return "Administrator";
+                        break;
+                    case 'contractor':
+                        return "Kontrahent";
+                        break;
+                    case 'editor':
+                        return "Edytor";
+                        break;
+                }
+            }
+        },
         {   data: "_id",
             title: "akcje",
             render: function (id) {

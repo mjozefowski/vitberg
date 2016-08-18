@@ -21,7 +21,7 @@ Template.menu.helpers({
        return Categories.find()
     },
     subCategories: function (id) {
-        return SubCategories.find({'categoryId':id})
+        return SubCategories.find({'categoryId':id, visible:true})
     }
 
 })

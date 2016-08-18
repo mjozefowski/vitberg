@@ -8,10 +8,14 @@
 Meteor.methods({
 
     registerUser: function (userObject) {
-        Roles.addUsersToRoles(Accounts.createUser({
+        var id = Accounts.createUser({
             email : userObject.email,
             password : userObject.password,
-        }),[userObject.role]);
+        });
+
+        Meteor.users.update(id,{$set:{profile:userObject.profile}});
+
+        Roles.addUsersToRoles(id,[userObject.role]);
     }
 
 })

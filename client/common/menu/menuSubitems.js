@@ -22,7 +22,7 @@ Template.menuSubitems.helpers({
     items: function () {
         var ti = Template.instance()
         console.log(ti.data)
-        return SubCategories.find({categoryId:ti.data})
+        return SubCategories.find({categoryId:ti.data,visible:true})
     },
     data: function () {
         var ti = Template.instance();
