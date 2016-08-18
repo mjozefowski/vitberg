@@ -8,16 +8,16 @@
 Meteor.startup(function () {
 
 
-    TemplatesForMainClickable.remove({})
-    MainPage.remove({})
-    ClickableItemsTemplate.remove({})
-    Categories.remove({});
-    SubCategories.remove({});
-    News.remove({});
-    Meteor.users.remove({})
-    Markers.remove({});
-    Notifications.remove({})
-    NotificationsUser.remove({})
+    //TemplatesForMainClickable.remove({})
+    //MainPage.remove({})
+    //ClickableItemsTemplate.remove({})
+    //Categories.remove({});
+    //SubCategories.remove({});
+    //News.remove({});
+    //Meteor.users.remove({})
+    //Markers.remove({});
+    //Notifications.remove({})
+    //NotificationsUser.remove({})
 
     //var main = MainPage.insert({type:'mainClickable',visible:true, showIcon:false, order:30});
     //var clickable = ClickableItemsTemplate.insert({mainTemplate:main});
@@ -66,39 +66,44 @@ Meteor.startup(function () {
     //        SubCategories.insert({categoryId:id,name:text2});
     //    }
     //}
-    var user;
-    user = Accounts.createUser({
-        username: 'admin',
-        email: 'admin@onebi.eu',
-        password: 'adminonebi'
-    })
-    Roles.addUsersToRoles(user, "admin");
-
-    //user = Accounts.createUser({
-    //    username: 'superAdmin',
-    //    email: 'mjozefowski@gmail.com',
-    //    password: 'M28A3090C'
-    //})
-    //
-    //Roles.addUsersToRoles(user, "admin");
 
 
-    user = Accounts.createUser({
-        username: 'editor',
-        email: 'editor@onebi.eu',
-        password: 'editoronebi'
-    })
+    try {
 
-    Roles.addUsersToRoles(user, "editor");
+        var user;
+        user = Accounts.createUser({
+            username: 'admin',
+            email: 'admin@onebi.eu',
+            password: 'adminonebi'
+        })
+        Roles.addUsersToRoles(user, "admin");
 
-    user = Accounts.createUser({
-        username: 'contractor',
-        email: 'contractor@onebi.eu',
-        password: 'contractoronebi'
-    })
+        user = Accounts.createUser({
+            username: 'superAdmin',
+            email: 'mjozefowski@gmail.com',
+            password: 'M28A3090C'
+        })
 
-    Roles.addUsersToRoles(user, "contractor");
+        Roles.addUsersToRoles(user, "admin");
 
+        user = Accounts.createUser({
+            username: 'editor',
+            email: 'editor@onebi.eu',
+            password: 'editoronebi'
+        })
 
+        Roles.addUsersToRoles(user, "editor");
+
+        user = Accounts.createUser({
+            username: 'contractor',
+            email: 'contractor@onebi.eu',
+            password: 'contractoronebi'
+        })
+
+        Roles.addUsersToRoles(user, "contractor");
+
+    }catch(e){
+        console.log("users already created")
+    }
 
 })
