@@ -1,0 +1,28 @@
+<template name="adminAccountsEditModal">
+
+
+    <div class="modal fade">
+        <div class="modal-dialog modal-dialog-add-user">
+            <div class="modal-content">
+
+                <!--{{selectedDoc}}-->
+
+
+
+                {{#autoForm collection="Meteor.users" id="adminEditUsers" doc=selectedDoc type="update"}}
+
+                    {{> afQuickField name='profile.firstName'}}
+                    {{> afQuickField name='profile.lastName'}}
+
+                    {{> afQuickField name='roles'}}
+
+                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                {{/autoForm}}
+
+
+            </div>
+        </div>
+    </div>
+
+
+</template>

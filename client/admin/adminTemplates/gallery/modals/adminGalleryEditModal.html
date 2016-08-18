@@ -1,0 +1,29 @@
+<template name="adminGalleryEditModal">
+
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                {{#autoForm collection="Gallery" id="editGalleryForm" doc=selectedDoc type="update"}}
+
+
+                    {{> afQuickField name='name'}}
+                    {{> afQuickField name='order'}}
+
+
+                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                {{/autoForm}}
+                Obrazy:
+
+                {{#each selectedDoc.images}}
+                    <img id="{{this}}" src="{{this}}" class="tabular-image">
+                    <span class="glyphicon glyphicon-remove remove-image"></span>
+
+                {{/each}}
+                <input type="file" name="…" class="myFileInput">
+                {{> FS.UploadProgressBar bootstrap=true}}
+            </div>
+        </div>
+    </div>
+
+</template>

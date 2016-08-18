@@ -21,6 +21,12 @@ Template.adminAccounts.events({
         Modal.show('adminAccountsModal', function () {
 
         });
+    },
+
+    'click .table-edit-button': function (e,t) {
+        Modal.show('adminAccountsEditModal', function () {
+            return $(e.target).attr('id')
+        })
     }
 
 })
