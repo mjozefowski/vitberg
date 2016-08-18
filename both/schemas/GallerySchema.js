@@ -19,6 +19,10 @@ Schemas.GallerySchema = new SimpleSchema({
     },
     order:{
         type:Number
+    },
+    date:{
+        type:String,
+        optional:true
     }
 
 })

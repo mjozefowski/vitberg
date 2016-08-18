@@ -10,6 +10,10 @@ Schemas.newsletterSchema = new SimpleSchema({
     email:{
         type:String,
         regEx:SimpleSchema.RegEx.Email
+    },
+    date:{
+        type:Date,
+        optional:true
     }
 
 })
