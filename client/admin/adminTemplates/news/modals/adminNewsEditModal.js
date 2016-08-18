@@ -17,9 +17,48 @@ Template.adminNewsEditModal.helpers({
 
     selectedDoc: function () {
         var ti = Template.instance();
-        return Newsletter.findOne(ti.data)
+        return News.findOne(ti.data)
     }
 
 })
 
-Template.adminNewsEditModal.events({})
+Template.adminNewsEditModal.events({
+
+
+    'change .myFileInput': function(event, t) {
+        FS.Utility.eachFile(event, function (file) {
+            Images.insert(file, function (err, fileObj) {
+                if (err) {
+                    // handle error
+                } else {
+
+                    setTimeout(function(){
+
+                        News.update(t.data,{$addToSet:{media:"/cfs/files/images/"+fileObj._id}})
+
+                    }, 3000);
+
+                    //var userId = Meteor.userId();
+                    //var imagesURL = {
+                    //    "link": "/cfs/files/pdfs/" + fileObj._id,
+                    //    "name":"item"
+                    //};
+                    //Lesson.update({_id:t.selectedDoc.get()}, {addToSet:{download:imagesURL} });
+                }
+            });
+        });
+    },
+
+    'click .remove-image': function (e, t) {
+        var id = $(e.target).prev().attr("id")
+        console.log(id)
+
+        Images.remove(id.replace("/cfs/files/images/",""), function (e, r) {
+            if(!e){
+                News.update(t.data,{$pull:{media:id}});
+            }
+        })
+
+
+    }
+})

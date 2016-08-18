@@ -10,6 +10,10 @@ Schemas.CategoriesSchema = new SimpleSchema({
 
     name:{
         type:String
+    },
+    url:{
+        type:String,
+        optional:true
     }
 
 })

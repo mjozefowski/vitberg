@@ -3,6 +3,28 @@
         <div class="modal-dialog">
             <div class="modal-content">
 
+                {{#autoForm collection="News" id="editNewsForm" doc=selectedDoc type="update"}}
+
+
+                    {{> afQuickField name='title'}}
+                    {{> afQuickField name='text' type="textarea"}}
+                    {{> afQuickField name='additionalText'}}
+                    {{> afQuickField name='video'}}
+                    {{> afQuickField name='isImportant'}}
+                    {{> afQuickField name='isSmall'}}
+
+
+                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                {{/autoForm}}
+                Obrazy:
+
+                {{#each selectedDoc.media}}
+                    <img id="{{this}}" src="{{this}}" class="tabular-image">
+                    <span class="glyphicon glyphicon-remove remove-image"></span>
+
+                {{/each}}
+                <input type="file" name="…" class="myFileInput">
+                {{> FS.UploadProgressBar bootstrap=true}}
             </div>
         </div>
     </div>

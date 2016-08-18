@@ -23,6 +23,13 @@ Template.adminNews.events({
     'click #addNewNews': function (e, t) {
         Modal.show('adminNewsAddModal')
     },
+    'click .table-edit-button': function (e,t) {
+        var id = $(e.target).attr('id');
+        Session.set('adminNewsEdit',id);
+        Modal.show('adminNewsEditModal', function () {
+            return Session.get('adminNewsEdit')
+        })
+    }
 
 
 })
