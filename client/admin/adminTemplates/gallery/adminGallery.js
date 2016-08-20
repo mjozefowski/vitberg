@@ -27,5 +27,11 @@ Template.adminGallery.events({
         Modal.show('adminGalleryEditModal', function () {
             return Session.get('adminGalleryEdit')
         })
+    },
+    'click .table-remove-button': function (e,t) {
+        var id = $(e.target).attr('id');
+
+        Meteor.call('removeGallery',id)
+
     }
 })

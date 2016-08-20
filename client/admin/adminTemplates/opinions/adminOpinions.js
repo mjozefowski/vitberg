@@ -28,6 +28,10 @@ Template.adminOpinions.events({
         Modal.show('adminOpinionsEditModal', function () {
             return Session.get('adminOpinionsPick')
         })
+    },
+    'click .table-delete-button': function (e) {
+        Opinions.remove($(e.target).attr('id'))
+
     }
 
 })

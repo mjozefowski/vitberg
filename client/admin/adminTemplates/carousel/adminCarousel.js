@@ -21,6 +21,10 @@ Template.adminCarousel.events({
 
     'click #addCarouselItem': function (e, t) {
         Modal.show('adminCarouselAddModal')
-    }
+    },
+    'click .table-delete-button': function (e, t) {
+        Carousel.remove($(e.target).attr('id'))
+
+    },
 
 })

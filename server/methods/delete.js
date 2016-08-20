@@ -52,6 +52,19 @@ Meteor.methods({
     //delete opinii
     //TODO:Dodać usuwanie podelementów
     'deleteOpinion': function (id) {
+
+        var opinion = Opinions.findOne(id);
+        var imgs = [];
+        var thumbs = [];
+        opinion.images.forEach(function (e) {
+            imgs.push(e.img);
+            thumbs.push(e.thumb)
+        })
+
+        imgs.forEach(function (e) {
+            ImagesFromClient.remove(e.replace("/cfs/files/imagesFromCilent/",""))
+        })
+
         Opinions.remove(id)
     },
 
@@ -77,6 +90,35 @@ Meteor.methods({
         });
 
 
+    },
+
+    removeGallery: function (id) {
+        if(Roles.userIsInRole(this.userId,['admin','editor'])){
+            Gallery.remove(id)
+        }
+    },
+
+    deleteFooterItem: function (obj) {
+        if (Roles.userIsInRole(this.userId, ['admin', 'editor'])) {
+            var collection = obj.collection;
+            switch (collection) {
+                case "MenuBottom":
+                    MenuBottom.remove(obj.id);
+                    break;
+                case "MenuContact":
+                    MenuContact.remove(obj.id);
+                    break;
+                case "MenuLastColumn":
+                    MenuLastColumn.remove(obj.id);
+                    break;
+                case "MenuResearch":
+                    MenuResearch.remove(obj.id);
+                    break;
+                case "MenuProducts":
+                    MenuProducts.remove(obj.id);
+                    break;
+            }
+        }
     }
 
 

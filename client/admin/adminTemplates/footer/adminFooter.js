@@ -35,6 +35,13 @@ Template.adminFooter.events({
         Modal.show('adminFooterEditModal', function () {
             return Session.get('adminFooterEditModalData')
         })
+    },
+    'click .table-delete-button': function (e, t) {
+        var editObj = {
+            id: $(e.target).attr('id'),
+            collection: $(e.target).attr('collection-name')
+        }
+        Meteor.call('deleteFooterItem',editObj)
     }
 
 })

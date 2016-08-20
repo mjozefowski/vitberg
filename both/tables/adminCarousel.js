@@ -17,7 +17,7 @@ TabularTables.AdminCarousel = new Tabular.Table({
 
             }
         },
-        {   data: "image",
+        {   data: "_id",
             title: "akcje",
             render: function (id) {
                 return "<button id=\"" + id + "\"type=\"button\" class=\"btn btn-danger table-delete-button\">usuń</button>"

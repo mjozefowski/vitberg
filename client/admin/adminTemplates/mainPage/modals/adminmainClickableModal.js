@@ -98,5 +98,13 @@ Template.adminmainClickableModal.events({
         })
 
 
+    },
+
+    "click .btn-delete-clickable-in-modal": function (e, t) {
+        var id = $(e.target).attr("id")
+        TemplatesForMainClickable.remove(id)
+        var id2 = ClickableItemsTemplate.findOne(t.data._id)
+        ClickableItemsTemplate.update(id2._id,{$pull: {icons:{"templateId":id}}})
     }
+
 })
