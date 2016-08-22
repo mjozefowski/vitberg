@@ -14,6 +14,10 @@ Schemas.CategoriesSchema = new SimpleSchema({
     url:{
         type:String,
         optional:true
+    },
+    visible:{
+        type:Boolean,
+        optional:true
     }
 
 })

@@ -39,6 +39,10 @@ Schemas.MainPage = new SimpleSchema({
         type:String,
         optional:true
     },
+    title2:{
+        type:String,
+        optional:true
+    },
     visible:{
         type:Boolean
     },
