@@ -91,10 +91,19 @@ Template.adminClickableTemplateCreatorModal.events({
     'click .remove-image': function (e, t) {
         var id = $(e.target).prev().attr("id")
         console.log(id)
-
-        Images.remove(id.replace("/cfs/files/images/",""), function (e, r) {
+        var idShort = id.replace("/cfs/files/images/","");
+        console.log(idShort);
+        Images.remove(idShort, function (e, r) {
             if(!e){
-                ClickableItemsTemplate.update({'icons.templateId':t.data._id},{$set:{image:""}});
+                var click = ClickableItemsTemplate.findOne({'icons.templateId':t.data._id,'icons.image':id});
+                var icons = click.icons;
+                    icons.forEach(function (e) {
+                        if(e.templateId== t.data._id){
+                            e.image = ""
+                        }
+                    })
+
+                ClickableItemsTemplate.update(click._id,{$set:{icons:icons}});
             }
         })
 
