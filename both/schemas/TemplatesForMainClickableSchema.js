@@ -14,6 +14,10 @@ Schemas.TemplatesForMainClickableSchema = new SimpleSchema({
         type:String,
         optional:true
     },
+    usage:{
+        type:String,
+        optional:true
+    },
 
     image:{
         type:String,
