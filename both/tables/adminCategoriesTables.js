@@ -14,7 +14,7 @@ TabularTables.AdminCategories = new Tabular.Table({
             title: "Podkategorie",
             render: function (id) {
                 //var names = _.pluck(SubCategories.find({categoryId:id}).fetch(),'name')
-                return _.pluck(SubCategories.find({categoryId:id}).fetch(),'name')
+                return _.pluck(SubCategoriesContainer.find({categoryId:id}).fetch(),'name')
             }
         },
         {   data: "_id",
