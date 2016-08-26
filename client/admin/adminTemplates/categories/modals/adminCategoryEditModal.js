@@ -31,21 +31,25 @@ Template.adminCategoryEditModal.helpers({
 Template.adminCategoryEditModal.events({
 
     'click #addNewSubCategory': function (e,t) {
-        Session.set('adminSelectedSubCategory', SubCategories.insert({categoryId:t.data,visible:false, name:"Nowa kategoria"}));
-        Modal.show('adminEditSubCategoryModal', function () {
-            return Session.get('adminSelectedSubCategory')
+        Session.set('adminSelectedSubCategoryContainer', SubCategoriesContainer.insert({categoryId:t.data,visible:false, name:"Nowy kontener"}));
+        Modal.show('adminEditSubcategoryContainerModal', function () {
+            return Session.get('adminSelectedSubCategoryContainer')
         })
     },
 
-    'click .table-edit-button-sub': function (e,t) {
-        Session.set('adminSelectedSubCategoryEdit', $(e.target).attr('id'));
-        Modal.show('adminEditSubCategoryModal', function () {
-            return Session.get('adminSelectedSubCategoryEdit')
+    'click .table-edit-button-subCont': function (e,t) {
+        Session.set('adminEditSubcategoryContainerModal', $(e.target).attr('id'));
+        Modal.show('adminEditSubcategoryContainerModal', function () {
+            return Session.get('adminEditSubcategoryContainerModal')
         })
     },
-    'click .table-delete-button-sub': function (e,t) {
-         SubCategories.remove($(e.target).attr('id'));
+    'click .table-delete-button-subCont': function (e,t) {
 
+        SubCategoriesContainer.remove($(e.target).attr('id'));
+        var ids = _.pluck(SubCategories.find({categoryId:id}).fetch,"_id")
+        ids.forEach(function (id) {
+            SubCategories.remove(id);
+        })
     }
 
 })

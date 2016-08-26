@@ -6,9 +6,14 @@
 <!--<br>-->
 <!--<br>-->
     <!--subPage {{id}}-->
-
-
-    {{> UI.dynamic template=selectedDoc.selectedTemplate data=selectedDoc}}
-
+{{#with selectedDoc}}
+    <!--{{log this}}-->
+    {{#each subcategories _id}}
+        <!--{{this}}-->
+        {{#with selectedTemplate this}}
+            <div style="display: flex">{{> UI.dynamic template=this.selectedTemplate data=this}}</div>
+        {{/with}}
+    {{/each}}
+{{/with}}
 
 </template>

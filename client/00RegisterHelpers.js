@@ -9,3 +9,9 @@
 Template.registerHelper('dateFix',function(date, locale) {
     return moment(date).locale(locale).format('D.M.YYYY');
 });
+
+Template.registerHelper('log',function(data) {
+    console.log(data)
+});
+
+

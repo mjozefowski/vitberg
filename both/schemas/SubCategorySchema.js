@@ -13,7 +13,8 @@ Schemas.SubCategoriesSchema = new SimpleSchema({
         type:String
     },
     categoryId:{
-        type:String
+        type:String,
+        optional:true
     },
     selectedTemplate:{
         type:String,

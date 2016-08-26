@@ -1,0 +1,24 @@
+<template name="adminAddSubcategoryContainerModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                {{cols}}
+
+                {{#autoForm collection="SubCategoriesContainer" id="insertSubcategoryContainer" doc=selectedDoc type="update"}}
+
+
+                    {{> afQuickField name='name'}}
+                    {{> afQuickField name='visible'}}
+
+
+                    <div class="hidden">{{> afQuickField name='categoryId' class='categoryIdInput'}}</div>
+
+                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                {{/autoForm}}
+
+
+            </div>
+        </div>
+    </div>
+</template>

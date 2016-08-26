@@ -5,7 +5,7 @@
             <div class="top-title" >{{data.title}}</div>
             <div class="bottom-title" >{{data.title2}}</div>
             <div class="text-content"> {{data.text}}</div>
-            <button id="{{data.link.url}}" class="read-more-btn left"><i class="material-icons">add</i> {{data.link.text}}</button>
+            {{#if data.link.url}}<button id="{{data.link.url}}" class="read-more-btn left"><i class="material-icons">add</i> {{data.link.text}}</button>{{/if}}
 
         </div>
 

@@ -21,11 +21,19 @@ Template.SubPage.helpers({
     },
     selectedDoc: function () {
         var ti = Template.instance();
-        return SubCategories.findOne(ti.data)
+        return SubCategoriesContainer.findOne(ti.data)
     },
-    selectedTemplate: function () {
+    subcategories: function (id) {
+        var ti = Template.instance()
+        return SubCategories.find({categoryId:id})
+    },
+    selectedTemplate: function (id) {
         var ti = Template.instance();
-        return SubCategories.findOne(ti.data).selectedTemplate
+        return SubCategories.findOne(id)
+    },
+    selectedTemplateData: function (id) {
+        var ti = Template.instance();
+        return SubCategories.findOne(id)
     }
 
 })

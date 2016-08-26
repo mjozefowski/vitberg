@@ -12,17 +12,6 @@ TabularTables.AdminSubCategories = new Tabular.Table({
     columns: [
         {data: "name", title: "nazwa"},
         {data: "selectedTemplate", title: "szablon"},
-        {data: "_id", title: "URL",
-        render: function (id) {
-            return "/"+id
-        }},
-        {data: "visible", title: "widoczny",
-        render: function (visible) {
-            if(visible)
-                return "tak"
-            else
-                return "nie"
-        }},
         {   data: "_id",
             title: "akcje",
             render: function (id) {
