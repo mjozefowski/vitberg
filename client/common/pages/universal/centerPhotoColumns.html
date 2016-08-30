@@ -11,7 +11,11 @@
             <div class="text-container simple-text-content"> {{{text}}}
             </div>
 
-            <div class="image-container"> <div class="image-div-center" style="background-image:url({{image}})"> </div></div>
+            <div class="image-container">
+                {{#each images}}
+                <div class="image-div-center" style="background-image:url({{this}})"></div>
+                {{/each}}
+            </div>
 
 
             <div class="summary-text simple-text-content row">
