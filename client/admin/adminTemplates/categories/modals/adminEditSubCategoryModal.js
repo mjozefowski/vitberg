@@ -34,7 +34,7 @@ Template.adminEditSubCategoryModal.events({
 
                     setTimeout(function(){
 
-                        SubCategories.update(t.data,{$set:{image:"/cfs/files/images/"+fileObj._id}})
+                        SubCategories.update(t.data,{$addToSet:{images:"/cfs/files/images/"+fileObj._id}})
 
                     }, 3000);
 
@@ -55,7 +55,7 @@ Template.adminEditSubCategoryModal.events({
 
         Images.remove(id.replace("/cfs/files/images/",""), function (e, r) {
             if(!e){
-                SubCategories.update(t.data,{$set:{image:""}});
+                SubCategories.update(t.data,{$pull:{images:id}});
             }
         })
 

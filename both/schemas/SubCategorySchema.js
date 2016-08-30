@@ -54,6 +54,10 @@ Schemas.SubCategoriesSchema = new SimpleSchema({
             rows: 10
         }
     },
+    images:{
+        type:[String],
+        optional:true
+    },
     image:{
         type:String,
         optional:true

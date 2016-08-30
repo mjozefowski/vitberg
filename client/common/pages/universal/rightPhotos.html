@@ -10,7 +10,9 @@
 
                     <div class="text-container simple-text-content">
                         <div class="image-container">
-                            <div class="image-div-right" style="background-image:url({{image}})"> </div>
+                        {{#each images}}
+                            <div class="image-div-right" style="background-image:url({{this}})"> </div>
+                        {{/each}}
                         </div>
 
                         {{{text}}}
