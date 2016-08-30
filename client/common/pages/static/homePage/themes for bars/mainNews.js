@@ -15,9 +15,9 @@ Template.mainNews.onRendered(function () {
 
 Template.mainNews.helpers({
 
-    imageLeft: function () {
+    image: function () {
         var ti = Template.instance();
-        return ti.data.images[0]
+        return ti.data.icon
     },
     news: function () {
         return News.find({},{limit:6})
