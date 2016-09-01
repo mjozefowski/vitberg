@@ -11,7 +11,7 @@
     {{#each subcategories _id}}
         <!--{{this}}-->
         {{#with selectedTemplate this}}
-            <div style="display: flex">{{> UI.dynamic template=this.selectedTemplate data=this}}</div>
+            <div style="display: block">{{> UI.dynamic template=this.selectedTemplate data=this}}</div>
         {{/with}}
     {{/each}}
 {{/with}}
