@@ -10,7 +10,10 @@
                     {{> afQuickField name='title' label='Tytuł' class="title-field-clickable-admin"}}
                     <button type="submit" class="btn-red btn-save-clickable-template saveButton">Zapisz</button>
                 {{/autoForm}}
-
+                <br>
+                Podtytuł:
+                {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
+                <br>
 
                 Lista elementów:
 

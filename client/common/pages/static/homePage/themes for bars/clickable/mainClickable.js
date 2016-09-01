@@ -45,6 +45,18 @@ Template.mainClickable.helpers({
     showIcon: function () {
         var ti = Template.instance();
         return ti.data.showIcon;
+    },
+    title: function () {
+        var ti = Template.instance();
+        return ti.data.title;
+    },
+    //title2: function () {
+    //  var ti = Template.instance();
+    //    return ti.data.title2;
+    //},
+    text: function () {
+        var ti = Template.instance();
+        return ti.data.text;
     }
 })
 
