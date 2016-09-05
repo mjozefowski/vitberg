@@ -11,6 +11,7 @@ TabularTables.AdminSubCategories = new Tabular.Table({
 
     columns: [
         {data: "name", title: "nazwa"},
+        {data: "order", title: "kolejność"},
         {data: "selectedTemplate", title: "szablon"},
         {   data: "_id",
             title: "akcje",
