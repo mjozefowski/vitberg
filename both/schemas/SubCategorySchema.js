@@ -74,6 +74,10 @@ Schemas.SubCategoriesSchema = new SimpleSchema({
         type:Schemas.Cols,
         optional:true
     },
+    order:{
+        type:Number,
+        optional:true
+    }
 
 
 })
