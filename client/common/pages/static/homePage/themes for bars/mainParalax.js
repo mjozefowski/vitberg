@@ -45,4 +45,3 @@ Template.mainParalax.helpers({
 
 Template.mainParalax.events({})
 
-$('.main-parallax').stellar();

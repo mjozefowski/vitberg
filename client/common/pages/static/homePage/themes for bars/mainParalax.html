@@ -1,13 +1,15 @@
 <template name="mainParalax">
 
-    <div class="main-parallax parallax-container" data-stellar-background-ratio="0.5" style="background-image:url({{imageParallax}})">
-            <!--{{imageParallax}}-->
+    <div class="main-parallax parallax-container">
 
-            <div class="whole-content-parallax">
+        <div class="parallax-element-container">
+            <img src="{{imageParallax}}">
+        </div>
+
+        <div class="whole-content-parallax" >
 
                 <div class="image-content">
                     <img src="{{imageLeft}}" width="100%">
-                    <!--{{imageLeft}}-->
                 </div>
 
                 <div class="text-content">
@@ -19,12 +21,9 @@
                 <a href="{{linkUrl}}" class="read-more-a">
                     <button class="read-more-btn pull-right">
                         <i class="material-icons">add</i> {{linkText}}
-                        <!--{{linkText}}-->
                     </button>
                 </a>
         </div>
-
-
 
     </div>
 
