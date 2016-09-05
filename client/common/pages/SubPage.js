@@ -25,7 +25,7 @@ Template.SubPage.helpers({
     },
     subcategories: function (id) {
         var ti = Template.instance()
-        return SubCategories.find({categoryId:id})
+        return SubCategories.find({categoryId:id},{sort:{order:1}})
     },
     selectedTemplate: function (id) {
         var ti = Template.instance();
