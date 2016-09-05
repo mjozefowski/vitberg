@@ -612,10 +612,6 @@ body {
 
     }
 
-    .brand-logo-big{
-      display:none;
-    }
-
   }
 
 }
@@ -729,22 +725,9 @@ body {
 
     }
 
-    .brand-logo-big{
-      margin-top: 20px;
-      z-index: 3;
-      margin-left: 8.3333333333%;
-      cursor:pointer;
 
-      img{
-        position: absolute;
-        z-index: 1;
-      }
 
-    }
 
-    .brand-logo-small{
-      display:none;
-    }
 
   }
 
@@ -761,7 +744,31 @@ body {
 
 }
 
+@media only screen and (max-width:1023px){
 
+  .brand-logo-big{
+    display:none;
+  }
+}
+
+@media only screen and (min-width:1024px){
+  .brand-logo-small{
+    display:none;
+  }
+
+  .brand-logo-big{
+    margin-top: 20px;
+    z-index: 3;
+    margin-left: 8.3333333333%;
+    cursor:pointer;
+
+    img{
+      position: absolute;
+      z-index: 1;
+    }
+
+  }
+}
 //HAMBURGER MENY STYLES
 @media only screen and (max-width:767px){
 
