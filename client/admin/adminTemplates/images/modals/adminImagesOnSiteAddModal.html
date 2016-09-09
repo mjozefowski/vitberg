@@ -1,0 +1,33 @@
+<template name="adminImagesOnSiteAddModal">
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                {{isUploadDone}}
+                <div class="panel-admin-news-container">
+                    <form id="galleryForm" class="news-add-admin-modal">
+
+                        <div class="row margin-0">
+
+                            <div id="dropzone" class="dropzone">
+                                <div class="well well-drop-zone drop-zone-box">
+                                    Upuść tutaj aby wysłać
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {{#each array}}
+                            <div class="modal-gallery-image-link">
+                                <div class="modal-gallery-image-name">{{this.data.blob.name}}</div>
+                                <div id="{{this.data.blob.name}}" class="fa fa-remove remove-image modal-gallery-image-remove"> </div>
+                            </div>
+                        {{/each}}
+
+                        <input class="btn-red" type="submit">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

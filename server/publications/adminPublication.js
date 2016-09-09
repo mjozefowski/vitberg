@@ -30,7 +30,8 @@ Meteor.publish('adminPublication', function () {
             MenuLastColumn.find(),
             Gallery.find(),
             Programs.find(),
-            SubCategoriesContainer.find()
+            SubCategoriesContainer.find(),
+            ImagesOnSiteContainer.find()
         ]
     }
 
