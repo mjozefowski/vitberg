@@ -1,30 +1,104 @@
 <template name="mainParalax">
 
-    <div class="main-parallax parallax-container">
+    <!--<div class="main-parallax parallax-container">-->
 
-        <div class="parallax-element-container">
-            <img src="{{imageParallax}}">
+        <!--<div class="parallax-element-container">-->
+            <!--<img class="parallax-image" src="{{imageParallax}}">-->
+        <!--</div>-->
+
+        <!--<div class="whole-content-parallax" >-->
+
+                <!--<div class="image-content">-->
+                    <!--<img src="{{imageLeft}}" width="100%">-->
+                <!--</div>-->
+
+                <!--<div class="text-content">-->
+                    <!--<div class="simple-text-content">-->
+                        <!--{{{text}}}-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<a href="{{linkUrl}}" class="read-more-a">-->
+                    <!--<button class="read-more-btn pull-right">-->
+                        <!--<i class="material-icons">add</i> {{linkText}}-->
+                    <!--</button>-->
+                <!--</a>-->
+        <!--</div>-->
+
+    <!--</div>-->
+
+    <div class="parallax-container">
+
+        <div class="parallax-block">
+            <div class="parallax-item"><img src="{{imageParallax}}"></div>
         </div>
 
         <div class="whole-content-parallax" >
 
-                <div class="image-content">
-                    <img src="{{imageLeft}}" width="100%">
-                </div>
+            <div class="image-content">
+                <img src="{{imageLeft}}" width="100%">
+            </div>
 
-                <div class="text-content">
-                    <div class="simple-text-content">
-                        {{{text}}}
-                    </div>
+            <div class="text-content">
+                <div class="simple-text-content">
+                    {{{text}}}
                 </div>
+            </div>
 
-                <a href="{{linkUrl}}" class="read-more-a">
-                    <button class="read-more-btn pull-right">
-                        <i class="material-icons">add</i> {{linkText}}
-                    </button>
-                </a>
+            <a href="{{linkUrl}}" class="read-more-a">
+                <button class="read-more-btn pull-right">
+                    <i class="material-icons">add</i> {{linkText}}
+                </button>
+            </a>
         </div>
 
     </div>
+
+    <script>
+
+
+        var parallax = $( ".parallax-container" );
+        var item = $('.parallax-block')
+        var parallaxPos = parallax.position().top;
+        var offset = 50.0;
+        var lastScrollTop = 0;
+        var multiplier = 0.1471670345842531;
+        var parallaxHeight = parallax.height();
+        var heightView = $( window ).outerHeight();
+
+
+        $(window).scroll(function(event){
+            var st = $(this).scrollTop();
+            var sb = st+heightView;
+            var ratioParallax=200/heightView;
+
+
+            if (st > lastScrollTop && sb > parallaxPos && st<parallaxPos+parallaxHeight){
+                // downscroll code
+                var topPosition=-100;
+                var x = sb - parallaxPos;
+                item.css('top',topPosition + x * multiplier );
+
+//                console.log("SCROLL DOWN> "+item.css('top'));
+            }
+
+            else  if (st < lastScrollTop && st < parallaxPos+parallaxHeight && sb > parallaxPos) {
+                // upscroll code
+                var topPosition=100;
+                var x = st - (parallaxPos+parallaxHeight);
+                item.css('top',topPosition +x*multiplier);
+
+//                console.log("SCROLL UP> "+item.css('top'));
+
+            }
+
+            else{
+
+            }
+
+//             console.log(sb - parallaxPos);
+            lastScrollTop = st;
+        });
+    </script>
 
 </template>

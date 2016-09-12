@@ -3102,20 +3102,19 @@ body {
 }
 
   //MAIN PARALLAX CONTAINER STYLES
+
+.parallax-image{
+  position: relative;
+}
+
 @media only screen and (max-width:767px){
 
-  .main-parallax{
-    width: 100%;
-    height: 480px;
-    background-position: 50% 0px; background-attachment: fixed;
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    position: relative;
+  .parallax-container{
 
     .whole-content-parallax{
       position: absolute;
       background-color: rgba(62, 78, 94, 0.9);
-      height: 480px;
+      height: 400px;
       padding: 30px 30px 80px;
     }
 
@@ -3181,18 +3180,13 @@ body {
 
 @media only screen and (min-width:768px) and (max-width:991px){
 
-  .main-parallax{
-    width: 100%;
-    height: 430px;
-    background-position: 50% 0px; background-attachment: fixed;
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    position: relative;
+  .parallax-container{
+
 
     .whole-content-parallax{
       position: absolute;
       background-color: rgba(62, 78, 94, 0.9);
-      height: 430px;
+      height: 400px;
       display: flex;
       padding: 0px 30px 40px;
     }
@@ -3269,18 +3263,12 @@ body {
 
 @media only screen and (min-width:992px) and (max-width:1199px){
 
-  .main-parallax{
-    width: 100%;
-    height: 430px;
-    background-position: 50% 0px; background-attachment: fixed;
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    position: relative;
+  .parallax-container{
 
     .whole-content-parallax{
       position: absolute;
       background-color: rgba(62, 78, 94, 0.9);
-      height: 430px;
+      height: 400px;
       display: flex;
       padding: 80px 30px 80px;
     }
@@ -3351,18 +3339,12 @@ body {
 
 @media only screen and (min-width:1200px){
 
-  .main-parallax{
-    width: 100%;
-    height: 415px;
-    background-position: 50% 0px; background-attachment: fixed;
-    background-position: 50% 0;
-    background-repeat: no-repeat;
-    position: relative;
+  .parallax-container{
 
     .whole-content-parallax{
       position: absolute;
       background-color: rgba(62, 78, 94, 0.9);
-      height: 415px;
+      height: 400px;
       display: flex;
       padding: 80px 8.33333% 80px;
     }
@@ -3429,6 +3411,43 @@ body {
 
   }
 
+}
+
+.parallax-container{
+  height:400px;
+  width:100%;
+  position:relative;
+  overflow:hidden;
+  background-size:cover;
+  background-position: center;
+}
+
+.parallax-block{
+  height:100%;
+  width:100%;
+  position:absolute;
+  display: flex;
+  align-items: center;
+}
+
+.parallax-item{
+  position:relative;
+  width:100%;
+  text-align:center;
+  height:400px;
+  border:none;
+  background-color:transparent;
+  background-size:cover;
+  color:white;
+  font-weight:bold;
+  display: flex;
+  justify-content: center;
+  z-index:-1;
+}
+
+.parallax-item>img{
+  object-fit: contain;
+  height: 100%;
 }
 
   //MAIN CLICKABLE CONTAINER STYLES
@@ -5585,9 +5604,7 @@ body {
   .newsFull-content-container{
 
     .newsFull-top{
-      color: white;
-      box-shadow: 2px 2px 1px rgba(0,0,0,.4);
-      background-color: @red-logo-vitberg;
+      color: #333;
       padding: 10px 15px;
       margin-bottom:20px;
 
@@ -5605,6 +5622,9 @@ body {
 
     .newsFull-content{
 
+      .glyphicon-menu-left{
+        font-size:10px;
+      }
     }
 
   }
@@ -7691,7 +7711,7 @@ body {
 
       }
     }
-    
+
   }
 
 }
