@@ -47,5 +47,6 @@ Template.slider.events({
         if(val.match(SimpleSchema.RegEx.email))
             console.log('match')
 
-    }
+    },
+
 })
