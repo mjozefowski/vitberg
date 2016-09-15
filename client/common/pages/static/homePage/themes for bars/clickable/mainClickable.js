@@ -23,6 +23,8 @@ Template.mainClickable.onRendered(function () {
 
     hideOrShowArrows($('.left-arrow-blocks'),$('.right-arrow-blocks'),$('.blocks-container'),$('.blocks-inner-container'));
 
+    var marginLeft = "calc(50% - "+($(".top-clip-clickable").outerWidth()/2) + "px)"
+    $(".top-clip-clickable").css("margin-left",marginLeft);
 
 })
 
@@ -172,10 +174,13 @@ function hideOrShowArrows(leftArrow, rightArrow, container, innerContainer){
 
 $(window).on('resize', function() {
 
-        howManyBlocks($('.blocks-container'),0,$('.single-block'),63.25);
+    howManyBlocks($('.blocks-container'),0,$('.single-block'),63.25);
 
-        $('.blocks-inner-container').css('transform','translate(0)');
+    $('.blocks-inner-container').css('transform','translate(0)');
 
-        hideOrShowArrows($('.left-arrow-blocks'),$('.right-arrow-blocks'),$('.blocks-container'),$('.blocks-inner-container'));
+    hideOrShowArrows($('.left-arrow-blocks'),$('.right-arrow-blocks'),$('.blocks-container'),$('.blocks-inner-container'));
+
+    var marginLeft = "calc(50% - "+($(".top-clip-clickable").outerWidth()/2) + "px)"
+    $(".top-clip-clickable").css("margin-left",marginLeft);
 
 });

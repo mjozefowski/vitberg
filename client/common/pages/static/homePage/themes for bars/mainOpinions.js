@@ -23,6 +23,8 @@ Template.mainOpinions.onRendered(function () {
     });
     $('.slider').slider('pause');
 
+    var marginLeft = "calc(50% - "+($(".top-clip-opinion").outerWidth()/2) + "px)"
+    $(".top-clip-opinion").css("margin-left",marginLeft);
 
 })
 
@@ -57,3 +59,7 @@ Template.mainOpinions.helpers({
 
 Template.mainOpinions.events({})
 
+$(window).resize(function () {
+    var marginLeft = "calc(50% - "+($(".top-clip-opinion").outerWidth()/2) + "px)"
+    $(".top-clip-opinion").css("margin-left",marginLeft);
+})

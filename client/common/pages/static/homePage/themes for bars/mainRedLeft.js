@@ -11,6 +11,9 @@ Template.mainRedLeft.onCreated(function () {
 
 Template.mainRedLeft.onRendered(function () {
 
+    var marginLeft = "calc(50% - "+($(".top-clip-left").outerWidth()/2) + "px)"
+    $(".top-clip-left").css("margin-left",marginLeft);
+
 })
 
 Template.mainRedLeft.helpers({
@@ -49,4 +52,9 @@ Template.mainRedLeft.helpers({
 
 Template.mainRedLeft.events({
 
+})
+
+$(window).resize(function () {
+    var marginLeft = "calc(50% - "+($(".top-clip-left").outerWidth()/2) + "px)"
+    $(".top-clip-left").css("margin-left",marginLeft);
 })
