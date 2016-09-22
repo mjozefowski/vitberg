@@ -11,6 +11,8 @@ Template.mainClickable.onCreated(function () {
     this.templateId = new ReactiveVar();
 
 
+
+
 })
 
 Template.mainClickable.onRendered(function () {
@@ -23,8 +25,8 @@ Template.mainClickable.onRendered(function () {
 
     hideOrShowArrows($('.left-arrow-blocks'),$('.right-arrow-blocks'),$('.blocks-container'),$('.blocks-inner-container'));
 
-    var marginLeft = "calc(50% - "+($(".top-clip-clickable").outerWidth()/2) + "px)"
-    $(".top-clip-clickable").css("margin-left",marginLeft);
+    calcMainClickable();
+    setTimeout(calcMainRedLeft(),200);
 
 })
 
@@ -180,7 +182,11 @@ $(window).on('resize', function() {
 
     hideOrShowArrows($('.left-arrow-blocks'),$('.right-arrow-blocks'),$('.blocks-container'),$('.blocks-inner-container'));
 
-    var marginLeft = "calc(50% - "+($(".top-clip-clickable").outerWidth()/2) + "px)"
-    $(".top-clip-clickable").css("margin-left",marginLeft);
+    calcMainClickable();
 
 });
+
+function calcMainClickable(){
+    var marginLeft = "calc(50% - "+($(".top-clip-clickable").outerWidth()/2) + "px)"
+    $(".top-clip-clickable").css("margin-left",marginLeft);
+}

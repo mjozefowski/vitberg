@@ -7,12 +7,14 @@
 
 Template.mainRedLeft.onCreated(function () {
     this.data = Template.instance();
+
+    calcMainRedLeft();
 })
 
 Template.mainRedLeft.onRendered(function () {
 
-    var marginLeft = "calc(50% - "+($(".top-clip-left").outerWidth()/2) + "px)"
-    $(".top-clip-left").css("margin-left",marginLeft);
+    calcMainRedLeft();
+    setTimeout(calcMainRedLeft(),200);
 
 })
 
@@ -55,6 +57,10 @@ Template.mainRedLeft.events({
 })
 
 $(window).resize(function () {
+    calcMainRedLeft();
+})
+
+function calcMainRedLeft(){
     var marginLeft = "calc(50% - "+($(".top-clip-left").outerWidth()/2) + "px)"
     $(".top-clip-left").css("margin-left",marginLeft);
-})
+}

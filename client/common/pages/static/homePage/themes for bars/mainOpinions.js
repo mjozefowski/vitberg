@@ -7,6 +7,8 @@
 
 Template.mainOpinions.onCreated(function () {
     this.data = Template.currentData();
+
+    calcMainOpinions();
 })
 
 Template.mainOpinions.onRendered(function () {
@@ -23,8 +25,8 @@ Template.mainOpinions.onRendered(function () {
     });
     $('.slider').slider('pause');
 
-    var marginLeft = "calc(50% - "+($(".top-clip-opinion").outerWidth()/2) + "px)"
-    $(".top-clip-opinion").css("margin-left",marginLeft);
+    calcMainOpinions();
+    setTimeout(calcMainRedLeft(),200);
 
 })
 
@@ -60,6 +62,10 @@ Template.mainOpinions.helpers({
 Template.mainOpinions.events({})
 
 $(window).resize(function () {
+    calcMainOpinions();
+})
+
+function calcMainOpinions(){
     var marginLeft = "calc(50% - "+($(".top-clip-opinion").outerWidth()/2) + "px)"
     $(".top-clip-opinion").css("margin-left",marginLeft);
-})
+}

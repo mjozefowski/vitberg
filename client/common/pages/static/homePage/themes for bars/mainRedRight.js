@@ -7,12 +7,13 @@
 
 Template.mainRedRight.onCreated(function () {
 
+    calcTopClipRight();
+
 })
 
 Template.mainRedRight.onRendered(function () {
 
-    var marginLeft = "calc(50% - "+($(".top-clip-right").outerWidth()/2) + "px)"
-    $(".top-clip-right").css("margin-left",marginLeft);
+    setTimeout(calcTopClipRight(),200);
 
 })
 
@@ -52,6 +53,12 @@ Template.mainRedRight.helpers({
 Template.mainRedRight.events({})
 
 $(window).resize(function () {
+
+    calcTopClipRight();
+
+})
+
+function calcTopClipRight(){
     var marginLeft = "calc(50% - "+($(".top-clip-right").outerWidth()/2) + "px)"
     $(".top-clip-right").css("margin-left",marginLeft);
-})
+}
