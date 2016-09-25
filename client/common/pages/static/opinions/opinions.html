@@ -5,6 +5,11 @@
 
     <div class="opinions-main-container">
 
+        <!--TODO EDYTOR I PODPIAC W ADMINIE-->
+        <div class="add-opinion-info">
+            <!--TUTAJ TEKST O PROMOCJACH ODNOSNIE DODAWANIA OPINII - EDYTOR SPOD ADMINA-->
+        </div>
+
         <button class="btn btn-add-opinion" data-toggle="collapse" data-target="#collapse">Dodaj opinię +</button>
 
         <div id="collapse" class="collapse collapse-write-opinion">
@@ -16,7 +21,7 @@
 
                     <form id="clientOpinionForm" class="client-opinion-form">
                         <legend><div>Imię</div><input type="text" name="firstName" id="clientFirstName"></legend>
-                        <legend><div>Nazwisko</div><input type="text" name="lastName" id="clientLastName"></legend>
+                        <legend><div>Nazwisko*</div><input type="text" name="lastName" id="clientLastName"></legend>
                         <legend><div>Wiek</div><input type="number" name="age" id="clientAge"></legend>
                         <legend><div>Miasto</div><input type="text" name="city" id="clientCity"></legend>
                         <legend><div>Płeć</div><select name="sex" id="clientSex">
@@ -25,11 +30,13 @@
                             <option value="unconventional">Niekonwencjonalna</option>
                         </select>
                             </legend>
-                        <legend><div>Telefon</div><input type="number" name="phone" id="clientPhone"></legend>
-                        <legend><div>Email</div><input type="email" name="email" id="clientEmail"></legend>
-                        <legend><div>Numer seryjny materaca <span class="glyphicon glyphicon-question-sign"></span></div><input type="number" name="serial" id="clientProductSerial"></legend>
+                        <legend><div>Telefon*</div><input type="number" name="phone" id="clientPhone"></legend>
+                        <legend><div>Email*</div><input type="email" name="email" id="clientEmail"></legend>
+                        <legend><div>Numer seryjny materaca* <span class="glyphicon glyphicon-question-sign"></span></div><input type="number" name="serial" id="clientProductSerial"></legend>
                         <input class="btn btn-send-opinion" type="submit">
                     </form>
+
+                    <div class="info-pola-gwiazdka">* dane oznaczone gwiazdką nie będą udostępniane publicznie</div>
 
                     <div class="captcha-container">
                     {{>reCAPTCHA}}
