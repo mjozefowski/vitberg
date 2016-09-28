@@ -7,14 +7,13 @@
 
 Template.mainRedRight.onCreated(function () {
 
-    calcTopClipRight();
-
+    setTimeout(calcTopClipRight(),800);
 })
 
 Template.mainRedRight.onRendered(function () {
 
-    setTimeout(calcTopClipRight(),200);
-
+    calcTopClipRight();
+    checkIfLoadedImage();
 })
 
 Template.mainRedRight.helpers({
@@ -59,6 +58,14 @@ $(window).resize(function () {
 })
 
 function calcTopClipRight(){
-    var marginLeft = "calc(50% - "+($(".top-clip-right").outerWidth()/2) + "px)"
+    var marginLeft = "calc(50% - "+($(".top-clip-right").outerWidth()/2 + 7.5) + "px)"
     $(".top-clip-right").css("margin-left",marginLeft);
+}
+function checkIfLoadedImage() {
+    $('.top-clip-right > img').each(function () {
+        $(this).load(function () {
+            calcTopClipRight();
+            console.log("ZALADOWANY OBRAZEK !!!!!")
+        });
+    });
 }

@@ -10,9 +10,7 @@ Template.mainClickable.onCreated(function () {
     this.selectedItem = new ReactiveVar("")
     this.templateId = new ReactiveVar();
 
-
-
-
+    setTimeout(calcMainClickable(),800);
 })
 
 Template.mainClickable.onRendered(function () {
@@ -25,9 +23,9 @@ Template.mainClickable.onRendered(function () {
 
     hideOrShowArrows($('.left-arrow-blocks'),$('.right-arrow-blocks'),$('.blocks-container'),$('.blocks-inner-container'));
 
-    calcMainClickable();
-    setTimeout(calcMainRedLeft(),200);
 
+    calcMainClickable();
+    checkIfLoadedImage()
 })
 
 Template.mainClickable.helpers({
@@ -187,6 +185,17 @@ $(window).on('resize', function() {
 });
 
 function calcMainClickable(){
-    var marginLeft = "calc(50% - "+($(".top-clip-clickable").outerWidth()/2) + "px)"
+    var marginLeft = "calc(50% - "+($(".top-clip-clickable").outerWidth()/2 + 7.5) + "px)"
     $(".top-clip-clickable").css("margin-left",marginLeft);
+    // console.log($(this.Attr("class")) + " " + $(this).height());
+    console.log("mainClickable !!!!!");
+}
+
+function checkIfLoadedImage() {
+    $('.top-clip-clickable > img').each(function () {
+        $(this).load(function () {
+            calcMainClickable();
+            console.log("ZALADOWANY OBRAZEK !!!!!")
+        });
+    });
 }

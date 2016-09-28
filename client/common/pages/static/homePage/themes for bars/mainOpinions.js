@@ -8,7 +8,7 @@
 Template.mainOpinions.onCreated(function () {
     this.data = Template.currentData();
 
-    calcMainOpinions();
+    setTimeout(calcMainOpinions(),800);
 })
 
 Template.mainOpinions.onRendered(function () {
@@ -26,8 +26,7 @@ Template.mainOpinions.onRendered(function () {
     $('.slider').slider('pause');
 
     calcMainOpinions();
-    setTimeout(calcMainRedLeft(),200);
-
+    checkIfLoadedImage()
 })
 
 Template.mainOpinions.helpers({
@@ -66,6 +65,16 @@ $(window).resize(function () {
 })
 
 function calcMainOpinions(){
-    var marginLeft = "calc(50% - "+($(".top-clip-opinion").outerWidth()/2) + "px)"
+    var marginLeft = "calc(50% - "+($(".top-clip-opinion").outerWidth()/2 + 7.5) + "px)"
     $(".top-clip-opinion").css("margin-left",marginLeft);
+    // console.log($(this.Attr("class")) + " " + $(this).height());
+    console.log("mainOPINION ");
+}
+function checkIfLoadedImage() {
+    $('.top-clip-opinion > img').each(function () {
+        $(this).load(function () {
+            calcMainOpinions();
+            console.log("ZALADOWANY OBRAZEK !!!!!")
+        });
+    });
 }

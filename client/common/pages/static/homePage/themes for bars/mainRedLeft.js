@@ -8,14 +8,13 @@
 Template.mainRedLeft.onCreated(function () {
     this.data = Template.instance();
 
-    calcMainRedLeft();
+    setTimeout(calcMainRedLeft(),800);
 })
 
 Template.mainRedLeft.onRendered(function () {
 
     calcMainRedLeft();
-    setTimeout(calcMainRedLeft(),200);
-
+    checkIfLoadedImage();
 })
 
 Template.mainRedLeft.helpers({
@@ -61,6 +60,17 @@ $(window).resize(function () {
 })
 
 function calcMainRedLeft(){
-    var marginLeft = "calc(50% - "+($(".top-clip-left").outerWidth()/2) + "px)"
+    var marginLeft = "calc(50% - "+($(".top-clip-left").outerWidth()/2 + 7.5) + "px)"
     $(".top-clip-left").css("margin-left",marginLeft);
+    // console.log($(this.Attr("class")) + " " + $(this).height());
+    console.log("mainREDleft ");
+}
+
+function checkIfLoadedImage() {
+    $('.top-clip-left > img').each(function () {
+        $(this).load(function () {
+            calcMainRedLeft();
+            console.log("ZALADOWANY OBRAZEK !!!!!")
+        });
+    });
 }
