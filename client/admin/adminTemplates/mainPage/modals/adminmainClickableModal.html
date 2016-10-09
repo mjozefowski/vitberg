@@ -3,13 +3,15 @@
         <div class="modal-dialog">
             <div class="modal-content modal-create-clickable-template-content">
 
-            <button id="addNewClickableElement" class=" btn-red-thin-border pull-right">+ Dodaj nowy</button>
-
-                Tytuł:
-                {{> editableText context=selectedDoc collection="MainPage" field="title" wysiwyg=true}}
+                <div class="admin-modal-block-content">
+                    <div class="admin-modal-header-content">Tytuł</div>
+                    {{> editableText context=selectedDoc collection="MainPage" field="title" wysiwyg=true}}
+                </div>
                 <br>
-                Podtytuł:
-                {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
+                <div class="admin-modal-block-content">
+                    <div class="admin-modal-header-content">Podtytuł</div>
+                    {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
+                </div>
                 <br>
 
                 {{#autoForm collection="MainPage" id="updateMainPage" type="update" doc=selectedDoc}}
@@ -19,8 +21,8 @@
                 {{/autoForm}}
                 <br>
 
-
                 Lista elementów:
+                <button id="addNewClickableElement" class=" btn-red-thin-border pull-right">+ Dodaj nowy</button>
 
                 <div class="clickable-blocks-container-admin">
                     {{#each clickableMain.icons}}
@@ -31,7 +33,7 @@
                                 {{#with subTemplate templateId}}
                                 <!--{{subTemplate.title templateId}}-->
                                     <!--{{_id}}-->
-                                    <div class="title-clickable-list-modal-admin">{{title}}</div><br>
+                                    <div class="title-clickable-list-modal-admin">{{title}} </div><br>
                                     <div class="title-clickable-list-modal-admin">{{title2}}</div><br>
                                     <div class="text-clickable-list-modal-admin">{{text}}</div>
                                     <button id="{{_id}}" class="btn btn-warning btn-edit-clickable-in-modal">edytuj</button>

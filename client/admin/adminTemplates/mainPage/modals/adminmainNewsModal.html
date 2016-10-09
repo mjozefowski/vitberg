@@ -9,17 +9,22 @@
                     {{> afQuickField name='visible'}}
 
                     {{> afQuickField name='link'}}
-                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                    <button type="submit" class="btn btn-primary saveButton clicked-save-news-modal" style="display:none">Zapisz</button>
                 {{/autoForm}}
-                {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
+                <div class="admin-modal-block-content">
+                    <div class="admin-modal-header-content">Treść</div>
+                    {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
+                </div>
                 {{#if selectedDoc.icon}}
-                    Ikona:
+                    <div class="admin-modal-image-name">  Ikona <i>(dziubek) </i>: </div>
                     <img id="{{selectedDoc.icon}}" src="{{selectedDoc.icon}}" class="tabular-image">
                     <span class="glyphicon glyphicon-remove remove-image"></span>
                 {{else}}
+                    <div class="admin-modal-image-name">  Ikona <i>(dziubek) </i>: </div>
                     <input type="file" name="…" class="myFileInput">
                     {{> FS.UploadProgressBar bootstrap=true}}
                 {{/if}}
+                <button id="save" class="admin-modal-save-btn click-save-news-modal">Zapisz</button>
 
             </div>
         </div>

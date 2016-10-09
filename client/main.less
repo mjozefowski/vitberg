@@ -471,6 +471,15 @@ body {
   .cssload-main{
     margin-top:150px;
   }
+
+  .margin-left-20{
+    margin-left:20px;
+  }
+  .margin-right-20{
+    margin-right:20px;
+  }
+
+
 }
 
 //TOP MENU STYLES
@@ -7187,6 +7196,49 @@ body {
 
 /*ADMIN NAVIGATION STYLES
 *********************************************************************/
+
+.admin-modal-save-btn{
+  display: block;
+  width: 120px;
+  height: 28px;
+  margin: 40px auto 10px;
+  border-radius: 5px;
+  border: 1px solid @red-logo-vitberg;
+  background-color:@red-logo-vitberg;
+  color: white;
+  outline:none;
+  transition:0.3s;
+}
+.admin-modal-save-btn:hover{
+  background-color: white;
+  color: @red-logo-vitberg;
+
+}
+
+.admin-modal-block-content{
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 5px;
+
+  .admin-modal-header-content{
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .editable-text{
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.admin-modal-load-image{
+  margin: 20px 0 0;
+}
+
+.admin-modal-image-name{
+  margin:10px 0;
+}
+
 .admin-panel-container {
   min-height:~"calc(100vh - 75px)";
   background-image:url("/photos/news_bg.jpg");
@@ -7605,6 +7657,7 @@ body {
 .btn-add-notification-admin{
   display:inline-block;
 }
+
 .notification-admin-ul{
   margin-top:25px;
 }
@@ -7627,6 +7680,7 @@ body {
   font-weight: normal;
 
 }
+
 .notification-admin-text{
   padding-bottom:10px;
   margin-bottom:10px;
@@ -7678,12 +7732,7 @@ body {
 }
 
 //ADMIN MENU FOOTER
-.margin-left-20{
-  margin-left:20px;
-}
-.margin-right-20{
-  margin-right:20px;
-}
+
 
 .footer-menu-admin{
 

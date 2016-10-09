@@ -5,20 +5,22 @@
 
                 {{#autoForm collection="MainPage" id="updateOpinionsMainPage" type="update" doc=selectedDoc}}
 
-                    {{> afQuickField name='title'}}
+                    {{> afQuickField name='title' label='Tytuł'}}
                     {{> afQuickField name='visible'}}
                     {{> afQuickField name='showIcon'}}
 
-                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                    <button type="submit" class="btn btn-primary saveButton clicked-save-opinion-modal"  style="display:none;">Zapisz</button>
                 {{/autoForm}}
                 {{#if selectedDoc.icon}}
-                    Ikona:
+                    <div class="admin-modal-image-name">  Ikona <i>(dziubek) </i>: </div>
                     <img id="{{selectedDoc.icon}}" src="{{selectedDoc.icon}}" class="tabular-image">
                     <span class="glyphicon glyphicon-remove remove-image"></span>
                 {{else}}
+                    <div class="admin-modal-image-name">  Ikona <i>(dziubek) </i>: </div>
                     <input type="file" name="…" class="myFileInput">
                     {{> FS.UploadProgressBar bootstrap=true}}
                 {{/if}}
+                <button id="save" class="admin-modal-save-btn click-save-opinion-modal">Zapisz</button>
             </div>
         </div>
     </div>

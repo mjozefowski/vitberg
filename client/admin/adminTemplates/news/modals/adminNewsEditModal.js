@@ -11,6 +11,11 @@ Template.adminNewsEditModal.onCreated(function () {
 
 Template.adminNewsEditModal.onRendered(function () {
 
+    var cache = $(".isImportantInpt");
+    $(".isImportantInpt").parent().text("Wyróżniony").append(cache);
+    var cache2 = $(".isSmallInpt");
+    $(".isSmallInpt").parent().text("Obrazek z lewej").append(cache2);
+
 })
 
 Template.adminNewsEditModal.helpers({
@@ -60,5 +65,13 @@ Template.adminNewsEditModal.events({
         })
 
 
-    }
+    },
+
+    'click .click-save-newsblock-modal':function(){
+        $('.clicked-save-newsblock-modal').click();
+
+        $(".isImportantInpt").parent().text("Wyróżniony").append(cache);
+        $(".isSmallInpt").parent().text("Obrazek z lewej").append(cache2);
+    },
+
 })

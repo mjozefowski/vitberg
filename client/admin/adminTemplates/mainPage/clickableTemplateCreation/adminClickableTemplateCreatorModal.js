@@ -11,6 +11,9 @@ Template.adminClickableTemplateCreatorModal.onCreated(function () {
 
 Template.adminClickableTemplateCreatorModal.onRendered(function () {
 
+    $('.clicked-save-subclickable-modal').prev('div').children('div.panel-heading').text("Przypadki użycia");
+
+
 })
 
 Template.adminClickableTemplateCreatorModal.helpers({
@@ -129,5 +132,9 @@ Template.adminClickableTemplateCreatorModal.events({
     //        }
     //    })
     //}
+
+    'click .click-save-subclickable-modal': function(){
+        $('.clicked-save-subclickable-modal').click();
+    }
 
 })

@@ -16,7 +16,19 @@
                         <br>
                         <div class="header-xsmall">Tekst na czerwonym pasku</div>
                         <textarea id="additionalInfo" rows="2"  name="additional" form="newsForm" class="news-create-textarea" placeholder="Tekst na czerwonym tle (tylko news z czeerwonym paskiem)"></textarea>
+
                         <br>
+
+                        <div>
+                            <input id="important" type="checkbox" name="important" style="visibility: visible; position: relative; left: 0;">
+                            Wyróżniony
+                        </div>
+
+                        <div>
+                            <input id="small" type="checkbox" name="small" style="visibility: visible; position: relative; left: 0;">
+                            Obrazek z lewej
+                        </div>
+
                         <br>
 
                         <div class="header-xsmall">URL do video</div>
@@ -38,14 +50,6 @@
                                 <div id="{{this.data.blob.name}}" class="flex-item-small fa fa-remove remove-image"></div>
                             </div>
                         {{/each}}
-
-                        <br>
-
-                        <span style="text-transform: uppercase; "><i class="material-icons">new_releases</i> Wyróżniony  </span>
-                        <input id="important" type="checkbox" name="important" style="visibility: visible; position: relative; left: 0;">
-                        <span style="text-transform: uppercase; "><i class="material-icons">new_releases</i> Obrazek z lewej </span>
-
-                        <input id="small" type="checkbox" name="small" style="visibility: visible; position: relative; left: 0;">
 
                         <br>
 

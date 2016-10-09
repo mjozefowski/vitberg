@@ -4,13 +4,15 @@
             <div class="modal-content">
 
                 {{#autoForm collection="TemplatesForMainClickable" id="updateClickable" type="update" doc=selectedDoc}}
-                    {{> afQuickField name='title'}}
-                    {{> afQuickField name='title2'}}
-                    {{> afQuickField name='usage'}}
-                    {{> afQuickField name='text' rows=5}}
+                    {{> afQuickField name='title' label="Tytuł (np. zagłówek)"}}
+                    {{> afQuickField name='title2' label="Tytuł (np. szyja)"}}
+                    {{> afQuickField name='text' rows=5 label="Treść"}}
+
                     {{> afQuickField name='link'}}
-                    {{> afQuickField name='useCase'}}
-                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+
+                    {{> afQuickField name='usage' label="Przypadki użycia - nagłówek"}}
+                    {{> afQuickField id="use-case" name='useCase' }}
+                    <button type="submit" class="btn btn-primary saveButton clicked-save-subclickable-modal" style="display:none">Zapisz</button>
                 {{/autoForm}}
                 <br>
                 Ikona:
@@ -38,6 +40,7 @@
                     <input type="file" name="…" class="myFileInput-left">
                     {{> FS.UploadProgressBar bootstrap=true}}
                 {{/if}}
+                <button id="save" class="admin-modal-save-btn click-save-subclickable-modal">Zapisz</button>
 
             </div>
         </div>

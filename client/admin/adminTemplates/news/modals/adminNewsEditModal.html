@@ -6,19 +6,19 @@
                 {{#autoForm collection="News" id="editNewsForm" doc=selectedDoc type="update"}}
 
 
-                    {{> afQuickField name='title'}}
-                    {{> afQuickField name='text' type="textarea"}}
-                    {{> afQuickField name='additionalText'}}
-                    {{> afQuickField name='video'}}
-                    {{> afQuickField name='isImportant'}}
-                    {{> afQuickField name='isSmall'}}
+                    {{> afQuickField name='title' label="Tytuł"}}
+                    {{> afQuickField name='text' type="textarea" label="Treść"}}
+                    {{> afQuickField name='additionalText' label="Tekst na czerwonym pasku (tylko gdy wyróżniony)"}}
 
+                    {{> afQuickField class="isImportantInpt" name='isImportant' style="margin-left: -90px;"}}
+                    {{> afQuickField class="isSmallInpt" name='isSmall' label="Obrazek z lewej" style="margin-left: -112px;"}}
                     <br>
-                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
-                {{/autoForm}}
-                <br><br>
-                Obrazy:
+                    {{> afQuickField name='video' label="Link do wideo"}}
 
+                    <button type="submit" class="btn btn-primary saveButton clicked-save-newsblock-modal" style="display:none;">Zapisz</button>
+                {{/autoForm}}
+
+                Obrazy:
                 {{#each selectedDoc.media}}
                     <div class="flex-container news-edit-modal-item">
                         <img id="{{this}}" src="{{this}}" class="tabular-image flex-item-big">
@@ -28,6 +28,8 @@
                 {{/each}}
                 <input type="file" name="…" class="myFileInput">
                 {{> FS.UploadProgressBar bootstrap=true}}
+
+                <button id="save" class="admin-modal-save-btn click-save-newsblock-modal">Zapisz</button>
             </div>
         </div>
     </div>

@@ -80,5 +80,9 @@ Template.adminmainOpinionModal.events({
         })
 
 
-    }
+    },
+
+    'click .click-save-opinion-modal':function (){
+        $('.clicked-save-opinion-modal').click();
+    },
 })

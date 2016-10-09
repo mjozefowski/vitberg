@@ -4,23 +4,25 @@
             <div class="modal-content">
 
                 {{#autoForm collection="MainPage" id="updateParallax" type="update" doc=selectedDoc}}
-                    {{> afQuickField name='title'}}
+                    {{> afQuickField name='title' label='Tytuł'}}
                     {{> afQuickField name='visible'}}
                     {{> afQuickField name='link'}}
                     <button type="submit" class="btn btn-primary saveButton hidden">Insert</button>
                 {{/autoForm}}
+                <div class="admin-modal-block-content">
+                    <div class="admin-modal-header-content">Treść</div>
                 {{> editableText context=selectedDoc collection="MainPage" field="text" wysiwyg=true}}
-
-                Paralaksa:
+                </div>
+                <div class="admin-modal-image-name"> Paralaksa: </div>
                 {{#if selectedDoc.parallax}}
                     <img id="{{selectedDoc.parallax}}" src="{{selectedDoc.parallax}}" class="tabular-image">
                     <span class="glyphicon glyphicon-remove remove-image"></span>
                 {{else}}
-                    <input type="file" name="…" class="myFileInput">
+                    <input type="file" name="…" class="myFileInput admin-modal-load-image">
                     {{> FS.UploadProgressBar bootstrap=true}}
                 {{/if}}
 
-                Obraz po lewej:
+                <div class="admin-modal-image-name"> Obraz po lewej: </div>
                 {{#if selectedDoc.images.[0]}}
                     <img id="{{selectedDoc.images.[0]}}" src="{{selectedDoc.images.[0]}}" class="tabular-image">
                     <span class="glyphicon glyphicon-remove remove-image-left"></span>
@@ -30,7 +32,7 @@
                 {{/if}}
 
 
-                <button id="save">Zapisz</button>
+                <button id="save" class="admin-modal-save-btn">Zapisz</button>
 
             </div>
         </div>
