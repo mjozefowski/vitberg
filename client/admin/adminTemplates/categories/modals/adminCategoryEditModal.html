@@ -6,14 +6,14 @@
                 {{#autoForm collection="Categories" id="updateCategory" type="update" doc=selectedDoc}}
 
 
-                    {{> afQuickField name='name'}}
+                    {{> afQuickField name='name' label="Nazwa"}}
                     {{> afQuickField name='url'}}
                     {{> afQuickField name='visible'}}
 
-                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                    <button type="submit" class="admin-modal-save-btn saveButton margin-vertically20">Zapisz</button>
                 {{/autoForm}}
 
-                <button id="addNewSubCategory">+ Dodaj nową podkategorię</button>
+                <button id="addNewSubCategory" class="btn-red-thin-border radius5 margin-vertically20">+ Dodaj nową podkategorię</button>
 
 
                 {{> tabular table=TabularTables.AdminSubCategoriesContainer selector=selector class="table table-striped table-bordered table-condensed"}}

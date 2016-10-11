@@ -7,24 +7,26 @@
                 {{#autoForm collection="Contact" id="adminEditContact" doc=selectedDoc type="update"}}
 
 
-                    {{> afQuickField name='firstName'}}
-                    {{> afQuickField name='lastName'}}
-                    {{> afQuickField name='position'}}
+                    {{> afQuickField name='firstName' label="Imie"}}
+                    {{> afQuickField name='lastName' label="Nazwisko"}}
+                    {{> afQuickField name='position' label="Posada"}}
 
-                    {{> afQuickField name='phone'}}
-                    {{> afQuickField name='cellPhone'}}
+                    {{> afQuickField name='phone' label="Telefon"}}
+                    {{> afQuickField name='cellPhone' label="Komórka"}}
 
-                    {{> afQuickField name='email'}}
-                    {{> afQuickField name='skype'}}
+                    {{> afQuickField name='email' label="Email"}}
+                    {{> afQuickField name='skype' label="Skype"}}
 
 
-                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                    <button type="submit" class="admin-modal-save-btn saveButton">Zapisz</button>
                 {{/autoForm}}
 
 
 
                 {{#if selectedDoc.image}}
-                    Obrazy:
+                    <div>
+                        Zdjęcie
+                    </div>
                 <div class="flex-container">
                     <img id="{{selectedDoc.image}}" src="{{selectedDoc.image}}" class="tabular-image flex-item-big">
                     <div class="glyphicon glyphicon-remove remove-image flex-item-small"></div>

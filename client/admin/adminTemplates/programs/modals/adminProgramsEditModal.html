@@ -6,22 +6,24 @@
                 {{#autoForm collection="Programs" id="adminEditPrograms" doc=selectedDoc type="update"}}
 
 
-                    {{> afQuickField name='name'}}
+                    {{> afQuickField name='name' label="Nazwa"}}
 
-                    {{> afQuickField name='selectedTemplate'}}
+                    {{> afQuickField name='selectedTemplate' label="Szablon strony"}}
 
-                    {{> afQuickField name='title'}}
-                    {{> afQuickField name='text'}}
-
-
-                    {{> afQuickField name='col1'}}
-                    {{> afQuickField name='col2'}}
-                    {{> afQuickField name='col3'}}
+                    {{> afQuickField name='title' label="Tytuł"}}
+                    {{> afQuickField name='text' label="Treść"}}
 
 
-                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                    {{> afQuickField name='col1' label="Kolumna 1"}}
+                    {{> afQuickField name='col2' label="Kolumna 2"}}
+                    {{> afQuickField name='col3' label="Kolumna 3"}}
+
+
+                    <button type="submit" class="admin-modal-save-btn saveButton">Zapisz</button>
                 {{/autoForm}}
-                Ikona:
+                <div>
+                    Ikona:
+                </div>
                 {{#if selectedDoc.icon}}
 
                     <img id="{{selectedDoc.icon}}" src="{{selectedDoc.icon}}" class="tabular-image">
@@ -30,8 +32,9 @@
                     <input type="file" name="…" class="myFileInputIcon">
                     {{> FS.UploadProgressBar bootstrap=true}}
                 {{/if}}
-                Obraz:
-
+                <div>
+                    Obraz:
+                </div>
                 {{#if selectedDoc.image}}
                     <img id="{{selectedDoc.image}}" src="{{selectedDoc.image}}" class="tabular-image">
                     <span class="glyphicon glyphicon-remove remove-image"></span>

@@ -9,11 +9,11 @@
                 {{#autoForm collection=selectedCollection id="addSelectedMenuItem" type="insert"}}
 
 
-                    {{> afQuickField name='name'}}
+                    {{> afQuickField name='name' label="Nazwa"}}
                     {{> afQuickField name='url'}}
-                    {{> afQuickField name='order'}}
+                    {{> afQuickField name='order' label="Kolejność"}}
 
-                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                    <button type="submit" class="admin-modal-save-btn saveButton">Zapisz</button>
                 {{/autoForm}}
 
 

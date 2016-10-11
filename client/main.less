@@ -6392,6 +6392,15 @@ body {
   position: absolute;
 }
 
+.radius5{
+  border-radius: 5px !important;
+}
+
+.margin-vertically20{
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+
 
   @media only screen and (max-width:767px){
 
@@ -7204,15 +7213,29 @@ body {
   margin: 40px auto 10px;
   border-radius: 5px;
   border: 1px solid @red-logo-vitberg;
-  background-color:@red-logo-vitberg;
+  background-color: @red-logo-vitberg;
   color: white;
-  outline:none;
-  transition:0.3s;
+  outline: none;
+  transition: 0.3s;
 }
 .admin-modal-save-btn:hover{
   background-color: white;
   color: @red-logo-vitberg;
 
+}
+
+.admin-modal-cancel-btn{
+  height: 28px;
+  border-radius: 5px;
+  border: 1px solid @red-logo-vitberg;
+  background-color: white;
+  color: @red-logo-vitberg;
+  outline :none;
+  transition: 0.3s;
+}
+.admin-modal-cancel-btn:hover{
+  background-color:@red-logo-vitberg;
+  color: white;
 }
 
 .admin-modal-block-content{
@@ -7227,6 +7250,7 @@ body {
 
   .editable-text{
     background-color: transparent;
+    border:1px dashed #cccccc;
     cursor: pointer;
   }
 }
@@ -7306,6 +7330,10 @@ body {
     max-height:100px;
     object-fit:cover;
   }
+}
+
+.isVisibleInpt{
+  margin-left: -77px !important;
 }
 
 //ADMIN NEWS STYLES

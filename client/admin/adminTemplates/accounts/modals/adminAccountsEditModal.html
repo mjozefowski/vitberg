@@ -7,16 +7,14 @@
 
                 <!--{{selectedDoc}}-->
 
-
-
                 {{#autoForm collection="Meteor.users" id="adminEditUsers" doc=selectedDoc type="update"}}
 
-                    {{> afQuickField name='profile.firstName'}}
-                    {{> afQuickField name='profile.lastName'}}
+                    {{> afQuickField name='profile.firstName' label="Imie"}}
+                    {{> afQuickField name='profile.lastName' label="Nazwisko"}}
 
-                    {{> afQuickField name='roles'}}
+                    {{> afQuickField name='roles' label="Rola"}}
 
-                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                    <button type="submit" class="admin-modal-save-btn saveButton">Zapisz</button>
                 {{/autoForm}}
 
 

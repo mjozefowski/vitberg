@@ -6,23 +6,23 @@
                 {{#autoForm collection="SubCategories" id="adminEditSubcategory" doc=selectedDoc type="update"}}
 
 
-                    {{> afQuickField name='name'}}
+                    {{> afQuickField name='name' label="Nazwa"}}
                     {{> afQuickField name='visible'}}
-                    {{> afQuickField name='order'}}
+                    {{> afQuickField name='order' label="Kolejność"}}
 
-                    {{> afQuickField name='selectedTemplate' class='selectedTemplate'}}
+                    {{> afQuickField name='selectedTemplate' class='selectedTemplate' label="Szablon strony"}}
 
-                    {{> afQuickField name='title'}}
-                    {{> afQuickField name='text'}}
+                    {{> afQuickField name='title' label="Tytuł"}}
+                    {{> afQuickField name='text' label="Treść"}}
 
 
-                          {{> afQuickField name='col1'}}
-                          {{> afQuickField name='col2'}}
-                          {{> afQuickField name='col3'}}
+                          {{> afQuickField name='col1' label="Kolumna 1"}}
+                          {{> afQuickField name='col2' label="Kolumna 2"}}
+                          {{> afQuickField name='col3' label="Kolumna 3"}}
 
 
                     <div class="hidden">{{> afQuickField name='categoryId' class='categoryIdInput'}}</div>
-                    <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                    <button type="submit" class="admin-modal-save-btn saveButton">Zapisz</button>
                 {{/autoForm}}
 
                 {{#each selectedDoc.images}}

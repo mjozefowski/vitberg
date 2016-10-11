@@ -9,20 +9,21 @@
 
                 <div class="modal-body">
                     <div class="container-modal-notification">
-
+                        <div class="admin-modal-block-content">
+                            <div class="admin-modal-header-content">Treść</div>
                         {{> editableText context=selectedDoc collection="Notifications" field="text" wysiwyg=true}}
-
+                        </div>
                         {{#autoForm collection="Notifications" id="updateNotification" type="update" doc=selectedDoc}}
 
 
-                            {{> afQuickField name='visible'}}
+                            {{> afQuickField name='visible' class="isVisibleInpt" label="Widoczny"}}
 
-                            <button type="submit" class="btn btn-primary saveButton">Zapisz</button>
+                            <button type="submit" class="saveButton admin-modal-save-btn">Zapisz</button>
                         {{/autoForm}}
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
+                        <button type="button" class="admin-modal-cancel-btn" data-dismiss="modal">Anuluj</button>
                     </div>
 
                 </div>
