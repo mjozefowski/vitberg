@@ -11,8 +11,6 @@ Template.addNotificationModal.onCreated(function () {
 
 Template.addNotificationModal.onRendered(function () {
 
-    changeToPolish($(".isVisibleInpt"))
-
 })
 
 Template.addNotificationModal.helpers({
@@ -32,8 +30,3 @@ Template.addNotificationModal.events({
 
 
 })
-
-function changeToPolish(inpt){
-        var cache = inpt;
-        inpt.parent().text("Widoczny").append(cache);
-}
