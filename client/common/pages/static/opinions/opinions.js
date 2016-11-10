@@ -143,6 +143,7 @@ Template.dropzone.events({
                                                 Opinions.update(opinion, {$addToSet: {images: {img:"/cfs/files/imagesFromClient/"+fileObj._id,thumb:file._id}}}, function (e, r) {
                                                     if (e) {
                                                         console.log("update failed")
+                                                    }else{
                                                     }
                                                 })
 
@@ -155,6 +156,7 @@ Template.dropzone.events({
                                 }
                             });
                         })
+                        sAlert.success('Bardzo dziękujemy, że poświęciłeś dla nas swój czas i zaopiniowałeś naszą pracę. Już niebawem Twoja opinia pojawi się na naszej stronie', {effect: 'slide', position: 'bottom', timeout: 'none', onRouteClose: true, stack: true, offset: '80px'});
 
                     }else{
                         console.log("insert failed")
